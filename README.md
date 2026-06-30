@@ -1,5 +1,7 @@
 # BulletCluster
 
+![Bullet Cluster (1E 0657-558) — Abrikosov Vortex Test](Gemini_Generated_Image_Abrikosov.png)
+
 **Interrogation of every telescope's worth of data that resolved the Bullet Cluster (1E 0657-558) for Ptychography of the Shape of the Space — not a map of where 'stuff' is. Hypercomplex Turbulent Flow. Two Surface Ripples Interacting.**
 
 **Author:** Cody Michael Allison  

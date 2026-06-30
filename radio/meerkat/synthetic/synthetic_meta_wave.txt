@@ -1,0 +1,6 @@
+Synthetic MeerKAT L-band cubes
+DM model: wave
+Spatial: 256x256 pixels @ 4.0"/px
+Frequency: 900–1670 MHz, 800 channels
+Replace with: SARAO archive proposal SSV-20180624-FC-01
+Enhanced products: Stokes I/Q/U cubes, ~8" resolution

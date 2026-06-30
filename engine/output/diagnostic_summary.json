@@ -1,0 +1,11 @@
+{
+  "verdict": "FARADAY SCREEN DETECTED \u2014 consistent with PARTICLE DM",
+  "dm_model_favoured": "particle",
+  "max_abs_delta_rm": 106.0,
+  "threshold_radm2": 5.0,
+  "data_source": "SYNTHETIC",
+  "transect_length_arcmin": 10.0,
+  "n_points": 200,
+  "sigma_half": 0.5,
+  "d_star": 0.246
+}

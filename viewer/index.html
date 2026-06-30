@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bullet Cluster — Multi-wavelength Polarization Viewer</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #090c12;
+  --panel:     #0d1117;
+  --border:    #1e2a3a;
+  --accent:    #e8b84b;
+  --accent2:   #4af0ff;
+  --text:      #c8d8e8;
+  --dim:       #5a7090;
+  --panel-w:   300px;
+}
+
+body { background: var(--bg); color: var(--text); font: 13px/1.5 'JetBrains Mono', 'Consolas', monospace; display: flex; height: 100vh; overflow: hidden; }
+
+/* ── Sidebar ─────────────────────────────────────────────────────────────── */
+#sidebar {
+  width: var(--panel-w); flex-shrink: 0;
+  background: var(--panel); border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+#sidebar-header {
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid var(--border);
+}
+#sidebar-header h1 { font-size: 11px; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; }
+#sidebar-header h2 { font-size: 17px; font-weight: 700; color: #fff; margin-top: 2px; }
+#sidebar-header p  { font-size: 10px; color: var(--dim); margin-top: 4px; }
+
+#layer-list { flex: 1; overflow-y: auto; padding: 8px 0; }
+#layer-list::-webkit-scrollbar { width: 4px; }
+#layer-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.layer-item {
+  padding: 8px 14px;
+  border-bottom: 1px solid #111820;
+  transition: background 0.1s;
+}
+.layer-item:hover { background: #111820; }
+
+.layer-top {
+  display: flex; align-items: center; gap: 8px; cursor: pointer;
+}
+.layer-check {
+  width: 14px; height: 14px; flex-shrink: 0;
+  accent-color: var(--accent);
+}
+.layer-swatch {
+  width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0;
+}
+.layer-name { font-size: 11px; font-weight: 600; color: #ddeeff; flex: 1; }
+.layer-tag  { font-size: 9px; color: var(--dim); padding: 1px 4px; border: 1px solid var(--border); border-radius: 2px; }
+.layer-tag.data    { border-color: #2a4; color: #4d9; }
+.layer-tag.model   { border-color: #a72; color: #eb8; }
+.layer-tag.pending { border-color: #555; color: #777; }
+
+.layer-controls { margin-top: 6px; padding-left: 22px; display: none; }
+.layer-item.open .layer-controls { display: block; }
+
+.ctrl-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.ctrl-label { font-size: 10px; color: var(--dim); width: 54px; }
+.ctrl-row input[type=range] { flex: 1; height: 3px; accent-color: var(--accent); }
+.ctrl-row select { flex: 1; background: var(--bg); border: 1px solid var(--border); color: var(--text); font-size: 10px; padding: 2px; }
+
+/* ── Transect panel ───────────────────────────────────────────────────────── */
+#transect-panel {
+  border-top: 1px solid var(--border);
+  padding: 10px 14px;
+}
+#transect-panel h3 { font-size: 10px; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
+#transect-tools { display: flex; gap: 6px; margin-bottom: 8px; }
+.tool-btn {
+  flex: 1; padding: 5px; font-size: 10px; background: var(--bg); border: 1px solid var(--border);
+  color: var(--text); cursor: pointer; border-radius: 3px; transition: all 0.1s;
+}
+.tool-btn:hover, .tool-btn.active { background: var(--accent); color: #000; border-color: var(--accent); }
+#plot-canvas { width: 100%; background: #000; border: 1px solid var(--border); border-radius: 3px; margin-top: 4px; }
+#coord-display { font-size: 10px; color: var(--dim); margin-top: 4px; min-height: 1.4em; }
+
+/* ── Main canvas area ─────────────────────────────────────────────────────── */
+#main {
+  flex: 1; position: relative; overflow: hidden; background: #000;
+  display: flex; align-items: center; justify-content: center;
+}
+#canvas-wrap { position: relative; }
+#canvas-wrap canvas { position: absolute; top: 0; left: 0; }
+#composite-canvas { position: relative !important; }
+#overlay-canvas { cursor: crosshair; }
+
+/* ── Toolbar ──────────────────────────────────────────────────────────────── */
+#toolbar {
+  position: absolute; top: 12px; left: 12px;
+  display: flex; gap: 6px; z-index: 10;
+}
+.tb-btn {
+  padding: 5px 10px; font-size: 11px; font-family: inherit;
+  background: rgba(13,17,23,0.85); border: 1px solid var(--border);
+  color: var(--text); cursor: pointer; border-radius: 4px; backdrop-filter: blur(4px);
+  transition: all 0.15s;
+}
+.tb-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Info overlay ─────────────────────────────────────────────────────────── */
+#info-overlay {
+  position: absolute; bottom: 12px; right: 12px;
+  background: rgba(13,17,23,0.85); border: 1px solid var(--border);
+  padding: 8px 12px; border-radius: 4px; font-size: 10px; color: var(--dim);
+  backdrop-filter: blur(4px); z-index: 10; min-width: 180px;
+}
+#info-overlay .coord { color: var(--text); font-weight: 600; }
+#scalebar {
+  position: absolute; bottom: 12px; left: 12px;
+  background: rgba(13,17,23,0.85); border: 1px solid var(--border);
+  padding: 6px 10px; border-radius: 4px; font-size: 10px; color: var(--text);
+  backdrop-filter: blur(4px); z-index: 10; display: flex; align-items: center; gap: 6px;
+}
+#scalebar-line { height: 2px; background: #fff; }
+</style>
+</head>
+<body>
+
+<!-- ── Sidebar ── -->
+<div id="sidebar">
+  <div id="sidebar-header">
+    <h1>Ainulindale / Ptolemy</h1>
+    <h2>1E 0657-558</h2>
+    <p>Bullet Cluster &nbsp;|&nbsp; z = 0.296<br>RA 104.6098° &nbsp;Dec −55.9446°</p>
+  </div>
+
+  <div id="layer-list">
+    <!-- Layers injected by JS -->
+  </div>
+
+  <div id="transect-panel">
+    <h3>Transect / Profile</h3>
+    <div id="transect-tools">
+      <button class="tool-btn" id="btn-transect">Draw Line</button>
+      <button class="tool-btn" id="btn-clear-t">Clear</button>
+      <button class="tool-btn" id="btn-screenshot">Export PNG</button>
+    </div>
+    <canvas id="plot-canvas" height="120"></canvas>
+    <div id="coord-display">Hover canvas for coordinates</div>
+  </div>
+</div>
+
+<!-- ── Main view ── -->
+<div id="main">
+  <div id="toolbar">
+    <button class="tb-btn" id="btn-zoom-in">＋</button>
+    <button class="tb-btn" id="btn-zoom-out">－</button>
+    <button class="tb-btn" id="btn-reset">⌂ Reset</button>
+    <button class="tb-btn" id="btn-north">N ↑</button>
+    <a href="viewer3d.html" style="margin-left:8px; padding:5px 10px; font-size:11px; font-family:inherit; background:rgba(13,17,23,0.85); border:1px solid #1e2a3a; color:#b090ff; cursor:pointer; border-radius:4px; text-decoration:none; backdrop-filter:blur(4px); transition:all 0.15s;" onmouseover="this.style.borderColor='#b090ff'" onmouseout="this.style.borderColor='#1e2a3a'">⬡ 3D View</a>
+  </div>
+
+  <div id="canvas-wrap">
+    <canvas id="composite-canvas"></canvas>
+    <canvas id="overlay-canvas"></canvas>
+  </div>
+
+  <div id="scalebar">
+    <div id="scalebar-line"></div>
+    <span id="scalebar-label"></span>
+  </div>
+
+  <div id="info-overlay">
+    <div>RA &nbsp;<span class="coord" id="disp-ra">—</span></div>
+    <div>Dec <span class="coord" id="disp-dec">—</span></div>
+    <div style="margin-top:4px; color:#3a5070;">Pixel value</div>
+    <div id="disp-vals" style="color:#6af; font-size:9px; line-height:1.8;"></div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+//  LAYER DEFINITIONS
+// ═══════════════════════════════════════════════════════════════════
+const LAYER_DEFS = [
+  {
+    id: 'optical_jwst',
+    name: 'Optical / NIR',
+    sub: 'JWST NIRCam GO-4598',
+    file: 'layers/optical_jwst.png',
+    swatch: '#ffe8a0',
+    tag: 'data',
+    opacity: 0.90,
+    blend: 'screen',
+    cmap: 'gold',
+    desc: 'JWST NIRCam F200W mosaic. Stars, galaxies, lensed arcs.',
+  },
+  {
+    id: 'optical_hst',
+    name: 'Optical (HST)',
+    sub: 'ACS F814W+F606W',
+    file: 'layers/optical_hst.png',
+    swatch: '#c8b070',
+    tag: 'data',
+    opacity: 0.75,
+    blend: 'screen',
+    cmap: 'gray',
+    desc: 'HST ACS drizzled lensing images (programs 10200, 10863).',
+  },
+  {
+    id: 'xray_chandra',
+    name: 'X-ray Gas',
+    sub: 'Chandra ACIS-I 0.5–7 keV',
+    file: 'layers/xray_chandra.png',
+    swatch: '#ff4488',
+    tag: 'data',
+    opacity: 0.75,
+    blend: 'screen',
+    cmap: 'hot',
+    desc: 'Chandra ACIS-I merged 500 ks. Shows bullet sub-cluster bow shock and main gas halo. The gas lags behind the dark matter halos — direct proof of DM separation.',
+  },
+  {
+    id: 'lensing_kappa',
+    name: 'DM Mass (Lensing)',
+    sub: 'Clowe+2006 κ model',
+    file: 'layers/lensing_kappa.png',
+    swatch: '#4488ff',
+    tag: 'model',
+    opacity: 0.60,
+    blend: 'screen',
+    cmap: 'blues',
+    desc: 'Gravitational lensing convergence κ. Two-NFW model from Clowe et al. 2006 ApJL 648 L109. BLUE = dark matter halos displaced from X-ray gas peaks. Model, not raw shear.',
+  },
+  {
+    id: 'sz_planck',
+    name: 'SZ Pressure',
+    sub: 'Planck MILCA y-map',
+    file: 'layers/sz_planck.png',
+    swatch: '#aa44ff',
+    tag: 'data',
+    opacity: 0.55,
+    blend: 'screen',
+    cmap: 'purple',
+    desc: 'Sunyaev-Zeldovich Compton-y parameter. Traces integrated thermal electron pressure. Resolves the hot gas bubble.',
+  },
+  {
+    id: 'submm_planck857',
+    name: 'Submm 857 GHz',
+    sub: 'Planck HFI',
+    file: 'layers/submm_planck857.png',
+    swatch: '#ff8844',
+    tag: 'data',
+    opacity: 0.45,
+    blend: 'screen',
+    cmap: 'heat',
+    desc: 'Planck 857 GHz continuum. Dust + SZ. Large beam (~4.5 arcmin) blends both halos.',
+  },
+  {
+    id: 'radio_meerkat',
+    name: 'Radio Halo+Relic',
+    sub: 'MeerKAT MGCLS L-band',
+    file: 'layers/radio_meerkat.png',
+    swatch: '#00ffdd',
+    tag: 'data',
+    opacity: 0.70,
+    blend: 'screen',
+    cmap: 'cyan',
+    desc: 'MeerKAT 900–1670 MHz. Diffuse radio halo (reaccelerated electrons) + radio relic (shock front). MGCLS DR1 proposal SSV-20180624-FC-01.',
+  },
+  {
+    id: 'polarization',
+    name: 'Polarization E-vectors',
+    sub: 'RM synthesis output',
+    file: 'layers/polarization.png',
+    swatch: '#ffd700',
+    tag: 'pending',
+    opacity: 1.00,
+    blend: 'normal',
+    cmap: 'vectors',
+    desc: 'GOLD ARROWS = electric vector position angles from RM synthesis on MeerKAT Stokes Q/U cubes. Arrow length ∝ polarized fraction. Direction encodes B-field geometry. THE KEY DIAGNOSTIC: rotation measure discontinuity at DM band edges → particle DM. Smooth curvature → wave/interference DM.',
+  },
+  {
+    id: 'rm_faraday',
+    name: 'Faraday Depth (RM)',
+    sub: 'rmsynth3d output',
+    file: 'layers/rm_faraday.png',
+    swatch: '#ff6600',
+    tag: 'pending',
+    opacity: 0.80,
+    blend: 'screen',
+    cmap: 'spectral',
+    desc: 'Rotation measure / Faraday depth in rad/m². Encodes B·n_e·dl along line of sight. Discontinuity at DM band = Faraday screen = particle DM. Smooth gradient = no screen = wave DM.',
+  },
+];
+
+// ═══════════════════════════════════════════════════════════════════
+//  WCS — simple gnomonic (TAN) projection
+//  RA₀=104.6098  Dec₀=−55.9446  scale=1"/px  size=800px (13.3')
+// ═══════════════════════════════════════════════════════════════════
+const WCS = {
+  ra0:  104.6098,
+  dec0: -55.9446,
+  scale: 1.0 / 3600,   // degrees per pixel
+  size:  800,           // pixels
+};
+function wcs2pix(ra, dec) {
+  const D = Math.PI / 180;
+  const ra0 = WCS.ra0 * D, dec0 = WCS.dec0 * D;
+  const ra_ = ra * D, dec_ = dec * D;
+  const cd = Math.cos(dec0), sd = Math.sin(dec0);
+  const dra = ra_ - ra0;
+  const denom = sd * Math.sin(dec_) + cd * Math.cos(dec_) * Math.cos(dra);
+  const xi  = -Math.cos(dec_) * Math.sin(dra) / denom;
+  const eta = (cd * Math.sin(dec_) - sd * Math.cos(dec_) * Math.cos(dra)) / denom;
+  const px = WCS.size / 2 - xi  / (WCS.scale * D);
+  const py = WCS.size / 2 - eta / (WCS.scale * D);
+  return [px, py];
+}
+function pix2wcs(px, py) {
+  const D = Math.PI / 180;
+  const xi  = -(px - WCS.size / 2) * WCS.scale * D;
+  const eta = -(py - WCS.size / 2) * WCS.scale * D;
+  const dec0 = WCS.dec0 * D;
+  const denom = Math.cos(dec0) - eta * Math.sin(dec0);
+  const ra  = WCS.ra0 + Math.atan2(xi, denom) / D;
+  const dec = Math.atan((Math.sin(dec0) + eta * Math.cos(dec0)) / Math.sqrt(xi * xi + denom * denom)) / D;
+  return [ra, dec];
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  KEY POSITIONS (from literature)
+// ═══════════════════════════════════════════════════════════════════
+const LANDMARKS = [
+  { label: 'DM NW',   ra: 104.6383, dec: -55.9252, color: '#4488ff', r: 6 },
+  { label: 'DM SE',   ra: 104.5726, dec: -55.9563, color: '#4488ff', r: 6 },
+  { label: 'Gas NW',  ra: 104.625,  dec: -55.930,  color: '#ff4488', r: 4 },
+  { label: 'Gas SE',  ra: 104.569,  dec: -55.961,  color: '#ff4488', r: 4 },
+  { label: 'Bow Shock', ra: 104.558, dec: -55.958, color: '#ffaa00', r: 5 },
+  { label: 'Radio Relic', ra: 104.44, dec: -55.97, color: '#00ffdd', r: 5 },
+];
+
+// ═══════════════════════════════════════════════════════════════════
+//  CANVAS SETUP
+// ═══════════════════════════════════════════════════════════════════
+const SIZE = WCS.size;
+const compC   = document.getElementById('composite-canvas');
+const overlayC = document.getElementById('overlay-canvas');
+[compC, overlayC].forEach(c => { c.width = SIZE; c.height = SIZE; });
+document.getElementById('canvas-wrap').style.cssText = `width:${SIZE}px;height:${SIZE}px;position:relative;`;
+
+const ctx   = compC.getContext('2d');
+const octx  = overlayC.getContext('2d');
+
+// ═══════════════════════════════════════════════════════════════════
+//  LAYER STATE & IMAGE CACHE
+// ═══════════════════════════════════════════════════════════════════
+const layerState = {};
+const imageCache  = {};
+
+LAYER_DEFS.forEach(def => {
+  layerState[def.id] = {
+    visible: def.tag !== 'pending',
+    opacity: def.opacity,
+    blend:   def.blend,
+    cmap:    def.cmap,
+    loaded:  false,
+    img:     null,
+  };
+});
+
+// ═══════════════════════════════════════════════════════════════════
+//  BUILD SIDEBAR
+// ═══════════════════════════════════════════════════════════════════
+const layerList = document.getElementById('layer-list');
+
+LAYER_DEFS.forEach(def => {
+  const st = layerState[def.id];
+  const item = document.createElement('div');
+  item.className = 'layer-item';
+  item.innerHTML = `
+    <div class="layer-top">
+      <input class="layer-check" type="checkbox" id="chk-${def.id}" ${st.visible ? 'checked' : ''}>
+      <div class="layer-swatch" style="background:${def.swatch}"></div>
+      <span class="layer-name">${def.name}</span>
+      <span class="layer-tag ${def.tag}">${def.tag === 'pending' ? '⏳' : def.tag === 'model' ? 'MODEL' : 'DATA'}</span>
+    </div>
+    <div style="font-size:10px; color:var(--dim); margin: 3px 0 0 22px;">${def.sub}</div>
+    <div class="layer-controls">
+      <div class="ctrl-row">
+        <span class="ctrl-label">Opacity</span>
+        <input type="range" id="op-${def.id}" min="0" max="100" value="${Math.round(st.opacity * 100)}">
+        <span id="opv-${def.id}" style="font-size:10px;width:28px;">${Math.round(st.opacity*100)}%</span>
+      </div>
+      <div class="ctrl-row">
+        <span class="ctrl-label">Blend</span>
+        <select id="bl-${def.id}">
+          ${['screen','multiply','overlay','normal','lighten','add'].map(m =>
+            `<option ${m===st.blend?'selected':''}>${m}</option>`).join('')}
+        </select>
+      </div>
+      <div style="font-size:10px;color:#4a6080;margin-top:4px;line-height:1.4;">${def.desc}</div>
+    </div>
+  `;
+  layerList.appendChild(item);
+
+  // Toggle expand controls
+  item.querySelector('.layer-top').addEventListener('click', e => {
+    if (e.target.type === 'checkbox') return;
+    item.classList.toggle('open');
+  });
+
+  // Visibility
+  document.getElementById(`chk-${def.id}`).addEventListener('change', e => {
+    st.visible = e.target.checked;
+    compose();
+  });
+
+  // Opacity slider
+  const opSlider = document.getElementById(`op-${def.id}`);
+  opSlider.addEventListener('input', e => {
+    st.opacity = e.target.value / 100;
+    document.getElementById(`opv-${def.id}`).textContent = e.target.value + '%';
+    compose();
+  });
+
+  // Blend mode
+  document.getElementById(`bl-${def.id}`).addEventListener('change', e => {
+    st.blend = e.target.value;
+    compose();
+  });
+});
+
+// ═══════════════════════════════════════════════════════════════════
+//  LOAD IMAGES
+// ═══════════════════════════════════════════════════════════════════
+let loadedCount = 0;
+
+LAYER_DEFS.forEach(def => {
+  const img = new Image();
+  img.onload = () => {
+    layerState[def.id].loaded = true;
+    layerState[def.id].img = img;
+    loadedCount++;
+    // Update tag to show loaded
+    const tagEl = document.querySelector(`#chk-${def.id}`).closest('.layer-item').querySelector('.layer-tag');
+    if (def.tag === 'data') { tagEl.textContent = '✓ DATA'; tagEl.style.color = '#4d9'; tagEl.style.borderColor = '#2a4'; }
+    if (def.tag === 'model') { tagEl.textContent = '✓ MODEL'; }
+    compose();
+  };
+  img.onerror = () => {
+    // Not yet generated — show placeholder
+    const tagEl = document.querySelector(`#chk-${def.id}`) ?
+      document.querySelector(`#chk-${def.id}`).closest('.layer-item').querySelector('.layer-tag') : null;
+    if (tagEl && def.tag !== 'pending') { tagEl.textContent = '↻'; tagEl.style.color = '#a76'; }
+  };
+  img.src = def.file;
+  layerState[def.id].img = img;
+});
+
+// ═══════════════════════════════════════════════════════════════════
+//  COMPOSE
+// ═══════════════════════════════════════════════════════════════════
+function compose() {
+  ctx.clearRect(0, 0, SIZE, SIZE);
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, SIZE, SIZE);
+
+  LAYER_DEFS.slice().reverse().forEach(def => {
+    const st = layerState[def.id];
+    if (!st.visible || !st.loaded) return;
+    ctx.save();
+    ctx.globalAlpha = st.opacity;
+    ctx.globalCompositeOperation = st.blend === 'add' ? 'lighter' : st.blend;
+    ctx.drawImage(st.img, 0, 0, SIZE, SIZE);
+    ctx.restore();
+  });
+
+  drawLandmarks();
+  drawNorthArrow();
+  updateScalebar();
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  LANDMARKS — key positions
+// ═══════════════════════════════════════════════════════════════════
+function drawLandmarks() {
+  LANDMARKS.forEach(lm => {
+    const [px, py] = wcs2pix(lm.ra, lm.dec);
+    ctx.save();
+    ctx.strokeStyle = lm.color;
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([3, 3]);
+    ctx.beginPath();
+    ctx.arc(px, py, lm.r, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = lm.color;
+    ctx.font = '9px monospace';
+    ctx.fillText(lm.label, px + lm.r + 3, py + 3);
+    ctx.restore();
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  NORTH ARROW
+// ═══════════════════════════════════════════════════════════════════
+function drawNorthArrow() {
+  const x = 36, y = SIZE - 50;
+  ctx.save();
+  ctx.strokeStyle = '#fff'; ctx.fillStyle = '#fff'; ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x, y - 24); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(x, y - 28); ctx.lineTo(x - 5, y - 18); ctx.lineTo(x + 5, y - 18); ctx.closePath(); ctx.fill();
+  ctx.font = '10px monospace'; ctx.textAlign = 'center';
+  ctx.fillText('N', x, y - 32);
+  // East arrow
+  ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x - 20, y); ctx.stroke();
+  ctx.fillText('E', x - 28, y + 4);
+  ctx.restore();
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  SCALE BAR (dynamic with zoom)
+// ═══════════════════════════════════════════════════════════════════
+function updateScalebar() {
+  // 1' = 60 pixels at 1"/px
+  const pxPer1arcmin = 60 / zoom;
+  const lineEl  = document.getElementById('scalebar-line');
+  const labelEl = document.getElementById('scalebar-label');
+  lineEl.style.width = Math.round(pxPer1arcmin) + 'px';
+  labelEl.textContent = "1'";
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  ZOOM & PAN
+// ═══════════════════════════════════════════════════════════════════
+let zoom = 1, panX = 0, panY = 0;
+let isPanning = false, panStart = null;
+
+function applyTransform() {
+  const w = document.getElementById('main');
+  const mainW = w.clientWidth - 300;
+  const mainH = w.clientHeight;
+  const s = Math.min(mainW, mainH);
+  const sc = (s / SIZE) * zoom;
+  const tx = (mainW - SIZE * sc) / 2 + panX;
+  const ty = (mainH - SIZE * sc) / 2 + panY;
+  const wrap = document.getElementById('canvas-wrap');
+  wrap.style.transform = `translate(${tx}px, ${ty}px) scale(${sc})`;
+  wrap.style.transformOrigin = '0 0';
+}
+
+document.getElementById('btn-zoom-in').onclick  = () => { zoom = Math.min(zoom * 1.3, 8); applyTransform(); updateScalebar(); };
+document.getElementById('btn-zoom-out').onclick = () => { zoom = Math.max(zoom / 1.3, 0.25); applyTransform(); updateScalebar(); };
+document.getElementById('btn-reset').onclick    = () => { zoom = 1; panX = 0; panY = 0; applyTransform(); updateScalebar(); };
+
+overlayC.addEventListener('wheel', e => {
+  e.preventDefault();
+  zoom = e.deltaY < 0 ? Math.min(zoom * 1.15, 8) : Math.max(zoom / 1.15, 0.25);
+  applyTransform(); updateScalebar();
+}, { passive: false });
+
+overlayC.addEventListener('mousedown', e => {
+  if (transectMode) return;
+  isPanning = true;
+  panStart = { x: e.clientX - panX, y: e.clientY - panY };
+});
+window.addEventListener('mousemove', e => {
+  if (isPanning) { panX = e.clientX - panStart.x; panY = e.clientY - panStart.y; applyTransform(); }
+});
+window.addEventListener('mouseup', () => { isPanning = false; });
+
+// ═══════════════════════════════════════════════════════════════════
+//  COORDINATE DISPLAY ON HOVER
+// ═══════════════════════════════════════════════════════════════════
+overlayC.addEventListener('mousemove', e => {
+  const rect = overlayC.getBoundingClientRect();
+  const scaleX = SIZE / rect.width;
+  const scaleY = SIZE / rect.height;
+  const px = (e.clientX - rect.left) * scaleX;
+  const py = (e.clientY - rect.top)  * scaleY;
+  const [ra, dec] = pix2wcs(px, py);
+
+  const raH  = Math.floor(ra / 15);
+  const raM  = Math.floor((ra / 15 - raH) * 60);
+  const raS  = ((ra / 15 - raH) * 60 - raM) * 60;
+  const decD = Math.floor(Math.abs(dec));
+  const decM = Math.floor((Math.abs(dec) - decD) * 60);
+  const decS = ((Math.abs(dec) - decD) * 60 - decM) * 60;
+
+  document.getElementById('disp-ra').textContent  = `${String(raH).padStart(2,'0')}ʰ${String(raM).padStart(2,'0')}ᵐ${raS.toFixed(1)}ˢ`;
+  document.getElementById('disp-dec').textContent = `${dec<0?'−':'+'}${String(decD).padStart(2,'0')}°${String(decM).padStart(2,'0')}′${decS.toFixed(0)}″`;
+
+  // Pixel values per layer
+  const vals = [];
+  LAYER_DEFS.forEach(def => {
+    const st = layerState[def.id];
+    if (!st.visible || !st.loaded) return;
+    // Sample from off-screen canvas
+    const tmp = document.createElement('canvas');
+    tmp.width = tmp.height = SIZE;
+    const tc = tmp.getContext('2d');
+    tc.drawImage(st.img, 0, 0, SIZE, SIZE);
+    try {
+      const d = tc.getImageData(Math.round(px), Math.round(py), 1, 1).data;
+      vals.push(`${def.name.substring(0,12).padEnd(12)} R:${d[0]} G:${d[1]} B:${d[2]}`);
+    } catch(e) {}
+  });
+  document.getElementById('disp-vals').innerHTML = vals.slice(0,4).join('<br>');
+
+  if (transectMode && transectStart) drawTransectPreview(px, py);
+  if (transectStart && transectEnd) {} // static
+});
+
+// ═══════════════════════════════════════════════════════════════════
+//  TRANSECT TOOL
+// ═══════════════════════════════════════════════════════════════════
+let transectMode  = false;
+let transectStart = null;
+let transectEnd   = null;
+
+document.getElementById('btn-transect').addEventListener('click', () => {
+  transectMode = !transectMode;
+  document.getElementById('btn-transect').classList.toggle('active', transectMode);
+  overlayC.style.cursor = transectMode ? 'crosshair' : 'default';
+  if (!transectMode) { transectStart = null; transectEnd = null; octx.clearRect(0, 0, SIZE, SIZE); }
+});
+
+document.getElementById('btn-clear-t').addEventListener('click', () => {
+  transectStart = null; transectEnd = null;
+  octx.clearRect(0, 0, SIZE, SIZE);
+  const plotCtx = document.getElementById('plot-canvas').getContext('2d');
+  plotCtx.clearRect(0, 0, 280, 120);
+  document.getElementById('coord-display').textContent = 'Transect cleared';
+});
+
+overlayC.addEventListener('click', e => {
+  if (!transectMode) return;
+  const rect = overlayC.getBoundingClientRect();
+  const px = (e.clientX - rect.left) * (SIZE / rect.width);
+  const py = (e.clientY - rect.top)  * (SIZE / rect.height);
+  if (!transectStart) {
+    transectStart = [px, py];
+    document.getElementById('coord-display').textContent = 'Click second point';
+  } else {
+    transectEnd = [px, py];
+    drawTransectLine(transectStart, transectEnd);
+    plotTransect(transectStart, transectEnd);
+    transectStart = null;
+    document.getElementById('coord-display').textContent = 'Profile plotted below';
+  }
+});
+
+function drawTransectPreview(px, py) {
+  if (!transectStart) return;
+  octx.clearRect(0, 0, SIZE, SIZE);
+  octx.strokeStyle = '#ffd700'; octx.lineWidth = 1.5; octx.setLineDash([4, 4]);
+  octx.beginPath(); octx.moveTo(transectStart[0], transectStart[1]); octx.lineTo(px, py); octx.stroke();
+  octx.setLineDash([]);
+}
+
+function drawTransectLine(a, b) {
+  octx.clearRect(0, 0, SIZE, SIZE);
+  octx.strokeStyle = '#ffd700'; octx.lineWidth = 1.5;
+  octx.beginPath(); octx.moveTo(a[0], a[1]); octx.lineTo(b[0], b[1]); octx.stroke();
+  // Endpoints
+  [[a, '①'], [b, '②']].forEach(([pt, lbl]) => {
+    octx.fillStyle = '#ffd700';
+    octx.beginPath(); octx.arc(pt[0], pt[1], 3, 0, Math.PI * 2); octx.fill();
+    octx.font = '10px monospace'; octx.fillText(lbl, pt[0] + 5, pt[1] - 5);
+  });
+}
+
+function plotTransect(a, b) {
+  const N = 200;
+  const plotC = document.getElementById('plot-canvas');
+  const PW = plotC.clientWidth || 280, PH = 120;
+  plotC.width = PW; plotC.height = PH;
+  const pc = plotC.getContext('2d');
+  pc.fillStyle = '#000'; pc.fillRect(0, 0, PW, PH);
+
+  const dx = (b[0] - a[0]) / N, dy = (b[1] - a[1]) / N;
+
+  const colors = { xray_chandra: '#ff4488', radio_meerkat: '#00ffdd', lensing_kappa: '#4488ff', sz_planck: '#aa44ff', optical_jwst: '#ffe8a0' };
+  const traces = {};
+
+  Object.keys(colors).forEach(id => { traces[id] = []; });
+
+  // Build off-screen canvases for sampling
+  const samplers = {};
+  LAYER_DEFS.forEach(def => {
+    const st = layerState[def.id];
+    if (!st.loaded || !colors[def.id]) return;
+    const tmp = document.createElement('canvas'); tmp.width = tmp.height = SIZE;
+    const tc = tmp.getContext('2d'); tc.drawImage(st.img, 0, 0, SIZE, SIZE);
+    samplers[def.id] = tc;
+  });
+
+  for (let i = 0; i <= N; i++) {
+    const px = Math.round(a[0] + dx * i);
+    const py = Math.round(a[1] + dy * i);
+    if (px < 0 || px >= SIZE || py < 0 || py >= SIZE) { Object.keys(traces).forEach(k => traces[k].push(null)); continue; }
+    Object.entries(samplers).forEach(([id, tc]) => {
+      try {
+        const d = tc.getImageData(px, py, 1, 1).data;
+        traces[id].push((d[0] + d[1] + d[2]) / 3 / 255);
+      } catch { traces[id].push(null); }
+    });
+  }
+
+  // Draw axes
+  pc.strokeStyle = '#1e2a3a'; pc.lineWidth = 1;
+  pc.beginPath(); pc.moveTo(28, 4); pc.lineTo(28, PH - 18); pc.lineTo(PW - 4, PH - 18); pc.stroke();
+
+  // Plot each trace
+  const margin = { l: 30, r: 4, t: 4, b: 18 };
+  const plotW = PW - margin.l - margin.r;
+  const plotH = PH - margin.t - margin.b;
+
+  Object.entries(traces).forEach(([id, vals]) => {
+    const color = colors[id];
+    pc.strokeStyle = color; pc.lineWidth = 1.5; pc.beginPath();
+    let started = false;
+    vals.forEach((v, i) => {
+      if (v === null) { started = false; return; }
+      const x = margin.l + (i / N) * plotW;
+      const y = margin.t + plotH - v * plotH;
+      if (!started) { pc.moveTo(x, y); started = true; } else { pc.lineTo(x, y); }
+    });
+    pc.stroke();
+  });
+
+  // X label
+  pc.fillStyle = '#4a6080'; pc.font = '9px monospace';
+  pc.fillText('① ─── transect ──→ ②', margin.l, PH - 4);
+
+  // Legend
+  let lx = margin.l;
+  Object.entries(colors).forEach(([id, c]) => {
+    const def = LAYER_DEFS.find(d => d.id === id);
+    if (!def) return;
+    pc.fillStyle = c; pc.fillRect(lx, 2, 8, 6);
+    pc.fillStyle = '#7090a0'; pc.font = '8px monospace';
+    pc.fillText(def.name.substring(0,5), lx + 10, 9);
+    lx += 50;
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  NORTH TOGGLE — annotate with DM band marker
+// ═══════════════════════════════════════════════════════════════════
+let showBandMarker = false;
+document.getElementById('btn-north').addEventListener('click', () => {
+  showBandMarker = !showBandMarker;
+  compose();
+  if (showBandMarker) drawDMBand();
+});
+
+function drawDMBand() {
+  // The "center band" — line between the two DM halos, extended
+  const [x1, y1] = wcs2pix(104.6383, -55.9252);
+  const [x2, y2] = wcs2pix(104.5726, -55.9563);
+  const dx = x2 - x1, dy = y2 - y1;
+  const len = Math.sqrt(dx*dx + dy*dy);
+  const ext = 80;
+  const nx = dx / len, ny = dy / len;
+  // Perpendicular — the "band" is the region between DM halos
+  // Draw the interstitial band region
+  ctx.save();
+  ctx.strokeStyle = '#ffd70088'; ctx.lineWidth = 1; ctx.setLineDash([6, 3]);
+  ctx.beginPath();
+  ctx.moveTo(x1 - ext * nx, y1 - ext * ny);
+  ctx.lineTo(x2 + ext * nx, y2 + ext * ny);
+  ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = '#ffd700aa';
+  ctx.font = '9px monospace';
+  ctx.fillText('⟵ DM band ⟶', (x1+x2)/2 - 30, (y1+y2)/2 - 8);
+  // Perpendicular width indication (~250 kpc at z=0.296 ≈ 1.2')
+  const perp_len = 36; // pixels ≈ 0.6'
+  const px = -ny, py = nx;
+  ctx.strokeStyle = '#ffd70066'; ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo((x1+x2)/2 - px*perp_len, (y1+y2)/2 - py*perp_len);
+  ctx.lineTo((x1+x2)/2 + px*perp_len, (y1+y2)/2 + py*perp_len);
+  ctx.stroke();
+  ctx.restore();
+}
+
+// ═══════════════════════════════════════════════════════════════════
+//  SCREENSHOT
+// ═══════════════════════════════════════════════════════════════════
+document.getElementById('btn-screenshot').addEventListener('click', () => {
+  const out = document.createElement('canvas');
+  out.width = SIZE; out.height = SIZE;
+  const oc = out.getContext('2d');
+  oc.drawImage(compC, 0, 0);
+  oc.drawImage(overlayC, 0, 0);
+  const a = document.createElement('a');
+  a.download = 'bullet_cluster_composite.png';
+  a.href = out.toDataURL();
+  a.click();
+});
+
+// ═══════════════════════════════════════════════════════════════════
+//  INITIAL RENDER & RESPONSIVE RESIZE
+// ═══════════════════════════════════════════════════════════════════
+window.addEventListener('resize', applyTransform);
+applyTransform();
+compose();
+
+// Auto-refresh layers every 30s (PNG files may be generated progressively)
+setInterval(() => {
+  LAYER_DEFS.forEach(def => {
+    const st = layerState[def.id];
+    if (st.loaded) return; // don't reload if already good
+    const img = new Image();
+    img.onload = () => { st.loaded = true; st.img = img; compose(); };
+    img.src = def.file + '?t=' + Date.now(); // cache bust
+  });
+}, 30000);
+</script>
+</body>
+</html>

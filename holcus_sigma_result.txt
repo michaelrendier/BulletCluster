@@ -1,0 +1,17 @@
+Bullet Cluster — Holcus Single-Input σ Result
+Critical line: Re(s) = ½  (σ forced by Noether balance)
+
+cluster_name: γ=25.010858  nearest=γ_2(25.010858)  Δ=0.000000
+common_name: γ=25.010858  nearest=γ_2(25.010858)  Δ=0.000000
+coords: γ=14.134725  nearest=γ_0(14.134725)  Δ=0.000000
+full_id: γ=14.134725  nearest=γ_0(14.134725)  Δ=0.000000
+ainulindale_id: γ=21.022040  nearest=γ_1(21.022040)  Δ=0.000000
+measurement_state: γ=25.010858  nearest=γ_2(25.010858)  Δ=0.000000
+gradient_tensor: γ=14.134725  nearest=γ_0(14.134725)  Δ=0.000000
+data_sha256: γ=21.022040  nearest=γ_1(21.022040)  Δ=0.000000
+wave dark matter: γ=14.134725  nearest=γ_0(14.134725)  Δ=0.000000
+zero divisor: γ=25.010858  nearest=γ_2(25.010858)  Δ=0.000000
+Faraday rotation: γ=14.134725  nearest=γ_0(14.134725)  Δ=0.000000
+interference dark matter: γ=14.134725  nearest=γ_0(14.134725)  Δ=0.000000
+gravitational standing wave: γ=25.010858  nearest=γ_2(25.010858)  Δ=0.000000
+sedenion boundary transit: γ=21.022040  nearest=γ_1(21.022040)  Δ=0.000000

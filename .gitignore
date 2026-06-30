@@ -1,0 +1,41 @@
+# Large telescope data files — do not commit
+*.fits
+*.fits.gz
+*.fits.fz
+*.tgz
+*.tar.gz
+
+# Raw TIF (large)
+The_Bullet_Cluster.tif
+
+# Downloaded data directories
+radio/meerkat/MGCLS_DR1/
+mm_sz/planck/COM_CompMap_YSZ_R2.01/
+mm_sz/planck/*.tgz
+optical/jwst/*/mastDownload/
+optical/hst/*/mastDownload/
+gamma/
+xray/chandra/*.fits
+xray/chandra/*.fits.gz
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+engine/__pycache__/
+engine/modules/__pycache__/
+engine/ptorrent/__pycache__/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Download logs
+*.log
+download_resume_state.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large output arrays
+engine/output/*.npz

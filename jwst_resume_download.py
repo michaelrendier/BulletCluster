@@ -18,32 +18,29 @@ import json
 import os
 import sys
 import time
-import hashlib
 import requests
 from pathlib import Path
 from datetime import datetime
 
 # ── Target ────────────────────────────────────────────────────────────────────
-PROGRAM_ID = 4598
-TARGET_RA  = 104.6098
-TARGET_DEC = -55.9446
-SEARCH_RADIUS_ARCMIN = 4.0
+PROGRAM_ID        = 4598
+TARGET_RA         = 104.6098
+TARGET_DEC        = -55.9446
+SEARCH_RADIUS_DEG = 0.07          # 4.2 arcmin
 
-BASE_DIR   = Path(__file__).parent / "optical" / "jwst" / str(PROGRAM_ID)
+BASE_DIR   = Path(__file__).parent / "optical" / "jwst" / str(PROGRAM_ID) / "mastDownload"
 STATE_FILE = Path(__file__).parent / "jwst_download_state.json"
 LOG_FILE   = Path(__file__).parent / "jwst_download.log"
 
 # Filters in priority order (science-critical first)
 PRIORITY_FILTERS = [
-    "F277W",   # weak lensing shear — most critical
-    "F444W",   # already partial
+    "F277W",   # weak lensing shear — most critical for polarization analysis
+    "F444W",   # already partially downloaded
     "F115W", "F150W", "F200W",
-    "F356W", "F410M", "F606W", "F814W",
+    "F356W", "F410M",
+    "F606W", "F814W",
     "F090W", "F140M", "F162M", "F182M", "F210M",
 ]
-
-MAST_API = "https://mast.stsci.edu/api/v0.1"
-MAST_DL  = "https://mast.stsci.edu/api/v0.1/Download/file"
 
 # ── State management ──────────────────────────────────────────────────────────
 
@@ -57,115 +54,108 @@ def save_state(state):
     with open(STATE_FILE, "w") as f:
         json.dump(state, f, indent=2)
 
-# ── MAST query ────────────────────────────────────────────────────────────────
+# ── MAST query via astroquery ─────────────────────────────────────────────────
 
-def query_mast_products():
-    """Query MAST for all JWST products from program 4598 around Bullet Cluster."""
-    log("Querying MAST for program 4598 products...")
+def query_products():
+    """Query MAST for JWST program 4598 around Bullet Cluster."""
+    try:
+        from astroquery.mast import Observations
+        from astropy.coordinates import SkyCoord
+        import astropy.units as u
+        log("Using astroquery.mast...")
+    except ImportError:
+        log("ERROR: astroquery not installed. Run: pip install astroquery")
+        sys.exit(1)
 
-    # Cone search
-    params = {
-        "ra": TARGET_RA,
-        "dec": TARGET_DEC,
-        "radius": SEARCH_RADIUS_ARCMIN / 60.0,
-        "service": "Mast.Caom.Cone",
-        "format": "json",
-        "pagesize": 5000,
-    }
-    r = requests.post(f"{MAST_API}/invoke", data={"request": json.dumps({
-        "service": "Mast.Caom.Cone",
-        "format": "json",
-        "params": params,
-    })}, timeout=60)
-    r.raise_for_status()
-    obs = r.json().get("data", [])
+    coord = SkyCoord(ra=TARGET_RA, dec=TARGET_DEC, unit="deg")
+    log(f"Querying MAST: Program {PROGRAM_ID}, radius={SEARCH_RADIUS_DEG*60:.1f} arcmin")
 
-    # Filter to JWST program 4598
-    jwst_obs = [o for o in obs
-                if str(o.get("proposal_id", "")) == str(PROGRAM_ID)
-                and o.get("obs_collection", "") in ("JWST", "HST")]
+    obs = Observations.query_criteria(
+        coordinates=coord,
+        radius=SEARCH_RADIUS_DEG * u.deg,
+        obs_collection="JWST",
+        proposal_id=str(PROGRAM_ID),
+    )
+    log(f"  Found {len(obs)} observations")
 
-    log(f"  Found {len(jwst_obs)} JWST observations")
-    if not jwst_obs:
-        log("  Falling back to direct product name list from prior session...")
-        return _known_products()
+    if len(obs) == 0:
+        log("  No observations found — check program ID and coordinates")
+        return []
 
-    # Get product lists
-    products = []
-    obs_ids = [o["obsid"] for o in jwst_obs]
-    r2 = requests.post(f"{MAST_API}/invoke", data={"request": json.dumps({
-        "service": "Mast.Caom.Products",
-        "format": "json",
-        "params": {"obsid": ",".join(str(x) for x in obs_ids)},
-    })}, timeout=120)
-    r2.raise_for_status()
-    all_prods = r2.json().get("data", [])
+    products = Observations.get_product_list(obs)
+    log(f"  {len(products)} total products")
 
-    # Want science (_drz, _cal, _i2d) FITS files, skip previews
-    sci = [p for p in all_prods
-           if p.get("type") == "S"
-           and any(p.get("productFilename", "").endswith(ext)
-                   for ext in ("_drz.fits", "_cal.fits", "_i2d.fits", ".fits"))
-           and not p.get("productFilename", "").endswith("_thumb.jpg")]
-
-    log(f"  {len(sci)} science products identified")
+    # Science products only — calibrated or mosaic FITS
+    mask = (
+        (products["type"] == "S") &
+        (products["dataproduct_type"].astype(str) != "preview") &
+        [fname.endswith((".fits", "_drz.fits", "_cal.fits", "_i2d.fits"))
+         for fname in products["productFilename"].astype(str)]
+    )
+    sci = products[mask]
+    log(f"  {len(sci)} science products after filtering")
     return sci
 
-def _known_products():
-    """Fallback: products identified in prior session."""
-    return [
-        {"productFilename": f"jw0{PROGRAM_ID:04d}_F444W_mosaic_i2d.fits",
-         "dataURI": f"mast:JWST/product/jw0{PROGRAM_ID:04d}_F444W_mosaic_i2d.fits",
-         "size": 300_000_000},
-    ]
+# ── Download with byte-range resume ──────────────────────────────────────────
 
-# ── Download with resume ──────────────────────────────────────────────────────
+def download_file(uri, dest_path, expected_size=0):
+    """Resumable download. Returns True on success."""
+    from astroquery.mast import Observations
 
-def download_file(uri, dest_path, expected_size=None):
-    """Download with byte-range resume. Returns True on success."""
     dest_path = Path(dest_path)
     dest_path.parent.mkdir(parents=True, exist_ok=True)
     tmp_path = dest_path.with_suffix(dest_path.suffix + ".part")
 
+    # If destination already exists and size matches, skip
+    if dest_path.exists():
+        if expected_size == 0 or dest_path.stat().st_size >= expected_size * 0.99:
+            log(f"  ✓ Already complete: {dest_path.name}")
+            return True
+
     resume_byte = tmp_path.stat().st_size if tmp_path.exists() else 0
 
-    headers = {}
-    if resume_byte > 0:
-        headers["Range"] = f"bytes={resume_byte}-"
-        log(f"  Resuming from {resume_byte/1e6:.1f} MB")
-
-    url = f"{MAST_DL}?uri={uri}"
     try:
+        # Get the direct download URL from astroquery
+        url = f"https://mast.stsci.edu/api/v0.1/Download/file?uri={uri}"
+        headers = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0"}
+        if resume_byte > 0:
+            headers["Range"] = f"bytes={resume_byte}-"
+            log(f"  Resuming {dest_path.name} from {resume_byte/1e6:.1f} MB")
+        else:
+            log(f"  Starting {dest_path.name}")
+
         r = requests.get(url, headers=headers, stream=True, timeout=300)
+
         if r.status_code == 416:
-            # Range not satisfiable — file may already be complete
-            if expected_size and tmp_path.stat().st_size >= expected_size:
+            # Already complete
+            if tmp_path.exists():
                 tmp_path.rename(dest_path)
-                return True
-            resume_byte = 0
-            r = requests.get(url, stream=True, timeout=300)
+            return True
 
         r.raise_for_status()
         total = int(r.headers.get("content-length", 0)) + resume_byte
         mode = "ab" if resume_byte > 0 else "wb"
-
         downloaded = resume_byte
+
         with open(tmp_path, mode) as f:
-            for chunk in r.iter_content(chunk_size=1024 * 1024):  # 1 MB chunks
+            for chunk in r.iter_content(chunk_size=2 * 1024 * 1024):  # 2 MB chunks
                 if chunk:
                     f.write(chunk)
                     downloaded += len(chunk)
                     pct = downloaded / total * 100 if total else 0
-                    print(f"\r    {downloaded/1e6:.1f} / {total/1e6:.1f} MB  ({pct:.1f}%)",
+                    print(f"\r    {downloaded/1e6:.0f} / {total/1e6:.0f} MB  ({pct:.1f}%)",
                           end="", flush=True)
 
         print()
         tmp_path.rename(dest_path)
-        log(f"  ✓ Complete: {dest_path.name} ({downloaded/1e6:.1f} MB)")
+        log(f"  ✓ {dest_path.name}  ({downloaded/1e6:.0f} MB)")
         return True
 
+    except KeyboardInterrupt:
+        log(f"\n  Interrupted — partial file saved to {tmp_path}")
+        raise
     except Exception as e:
-        log(f"  ✗ Error: {e}")
+        log(f"  ✗ Error downloading {dest_path.name}: {e}")
         return False
 
 # ── Logging ───────────────────────────────────────────────────────────────────
@@ -182,87 +172,90 @@ def log(msg):
 def main():
     log("=" * 60)
     log("BulletCluster JWST Resume Download")
-    log(f"Program: {PROGRAM_ID}  Target: RA={TARGET_RA} Dec={TARGET_DEC}")
+    log(f"Program: {PROGRAM_ID}  RA={TARGET_RA} Dec={TARGET_DEC}")
     log("=" * 60)
 
     state = load_state()
-    completed = set(state["completed"])
-    failed = set(state["failed"])
+    completed = set(state.get("completed", []))
+    failed    = set(state.get("failed", []))
 
     try:
-        products = query_mast_products()
+        products = query_products()
     except Exception as e:
-        log(f"MAST query failed: {e}")
-        log("Check network and try again.")
+        log(f"Query failed: {e}")
         sys.exit(1)
 
-    if not products:
-        log("No products found. Check program ID and coordinates.")
+    if not len(products):
+        log("No products returned.")
         sys.exit(1)
 
     # Sort by filter priority
-    def filter_priority(p):
-        fn = p.get("productFilename", "")
+    def filter_priority(row):
+        fn = str(row["productFilename"])
         for i, f in enumerate(PRIORITY_FILTERS):
             if f.lower() in fn.lower():
                 return i
         return len(PRIORITY_FILTERS)
 
-    products.sort(key=filter_priority)
+    try:
+        products_sorted = sorted(products, key=filter_priority)
+    except Exception:
+        products_sorted = list(products)
 
-    log(f"\nTotal products to download: {len(products)}")
-    log(f"Already completed: {len(completed)}")
-    log(f"Previously failed: {len(failed)}")
-    log("")
+    log(f"\nTotal: {len(products_sorted)} products  |  Done: {len(completed)}  |  Failed: {len(failed)}\n")
 
     success_count = 0
     fail_count = 0
 
-    for i, prod in enumerate(products):
-        fname = prod.get("productFilename", f"product_{i}.fits")
-        uri   = prod.get("dataURI", "")
-        size  = prod.get("size", 0)
-
-        if fname in completed:
-            log(f"[{i+1}/{len(products)}] SKIP (done): {fname}")
+    for i, prod in enumerate(products_sorted):
+        try:
+            fname = str(prod["productFilename"])
+            uri   = str(prod["dataURI"])
+            size  = int(prod.get("size", 0) or 0)
+        except Exception:
             continue
 
-        log(f"[{i+1}/{len(products)}] Downloading: {fname}  ({size/1e6:.0f} MB)")
+        if fname in completed:
+            continue
 
-        # Determine destination path
-        filter_name = "unknown"
+        log(f"[{i+1}/{len(products_sorted)}] {fname}  ({size/1e6:.0f} MB)")
+
+        # Determine destination — group by filter
+        filter_dir = "misc"
         for f in PRIORITY_FILTERS:
             if f.lower() in fname.lower():
-                filter_name = f
+                filter_dir = f
                 break
 
-        dest = BASE_DIR / "mastDownload" / filter_name / fname
+        dest = BASE_DIR / filter_dir / fname
 
-        ok = download_file(uri, dest, expected_size=size)
+        try:
+            ok = download_file(uri, dest, expected_size=size)
+        except KeyboardInterrupt:
+            log("Interrupted by user — state saved.")
+            save_state(state)
+            sys.exit(0)
 
         if ok:
             completed.add(fname)
-            if fname in failed:
-                failed.discard(fname)
+            failed.discard(fname)
             success_count += 1
-            state["completed"] = list(completed)
-            state["failed"] = list(failed)
-            save_state(state)
         else:
             failed.add(fname)
             fail_count += 1
-            state["failed"] = list(failed)
-            save_state(state)
-            log(f"  Will retry on next run.")
-            time.sleep(5)
+            time.sleep(10)
+
+        state["completed"] = list(completed)
+        state["failed"] = list(failed)
+        save_state(state)
 
     log("")
     log("=" * 60)
-    log(f"Session complete: {success_count} downloaded, {fail_count} failed")
-    log(f"State saved to: {STATE_FILE}")
-    if fail_count > 0:
-        log("Re-run this script to retry failed files.")
+    log(f"Done: {success_count} downloaded, {fail_count} failed")
+    if fail_count:
+        log("Re-run to retry failed files.")
     log("=" * 60)
+
 
 if __name__ == "__main__":
     main()

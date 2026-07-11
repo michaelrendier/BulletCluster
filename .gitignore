@@ -39,3 +39,7 @@ Thumbs.db
 
 # Large output arrays
 engine/output/*.npz
+
+# Pixel-resolution shear field arrays (56MB each, regenerate via
+# optical/jwst/pixel_vector_field.py in ~25s/label — not worth committing)
+optical/jwst/prepped/pixel_field/*.npy

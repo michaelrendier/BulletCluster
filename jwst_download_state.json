@@ -1,0 +1,33 @@
+{
+  "completed": [
+    "jw04598001001_19101_00003_nrca2_uncal.fits",
+    "jw04598001001_04101_00005_nrca1_o001_crf.fits",
+    "jw04598001001_04101_00001_nrca3_cal.fits",
+    "jw04598001001_19101_00003_nrca2_rateints.fits",
+    "jw04598001001_04101_00001_nrca3_rate.fits",
+    "jw04598001001_04101_00001_nrca1_rate.fits",
+    "jw04598001001_04101_00005_nrca1_i2d.fits",
+    "jw04598001001_04101_00005_nrca1_rate.fits",
+    "jw04598001001_19101_00001_nrca1_o001_crf.fits",
+    "jw04598001001_04101_00001_nrca1_uncal.fits",
+    "jw04598001001_04101_00001_nrca3_uncal.fits",
+    "jw04598001001_19101_00003_nrca2_o001_crf.fits",
+    "jw04598001001_19101_00003_nrca2_i2d.fits",
+    "jw04598001001_04101_00001_nrca3_i2d.fits",
+    "jw04598001001_04101_00001_nrca1_rateints.fits",
+    "jw04598001001_19101_00003_nrca2_cal.fits",
+    "jw04598001001_04101_00001_nrca1_i2d.fits",
+    "jw04598001001_19101_00003_nrca2_rate.fits",
+    "jw04598001001_04101_00005_nrca1_rateints.fits",
+    "jw04598001001_04101_00005_nrca1_cal.fits",
+    "jw04598001001_04101_00001_nrca3_o001_crf.fits",
+    "jw04598001001_19101_00001_nrca1_cal.fits",
+    "jw04598001001_19101_00001_nrca1_i2d.fits",
+    "jw04598001001_04101_00005_nrca1_uncal.fits",
+    "jw04598001001_04101_00001_nrca1_cal.fits",
+    "jw04598001001_04101_00001_nrca3_rateints.fits",
+    "jw04598001001_04101_00001_nrca1_o001_crf.fits"
+  ],
+  "failed": [],
+  "started": "2026-06-29 21:40:03.637857"
+}

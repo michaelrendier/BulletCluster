@@ -9,8 +9,8 @@ import sys, time
 from pathlib import Path
 from astroquery.mast import Observations
 
-BASE    = Path("/media/rendier/0123-4567/bullet_cluster/optical/hst/10200/mastDownload")
-LOGFILE = Path("/media/rendier/0123-4567/bullet_cluster/optical/hst/resume_hst.log")
+BASE    = Path(__file__).resolve().parent / "10200" / "mastDownload"
+LOGFILE = Path(__file__).resolve().parent / "resume_hst.log"
 
 def log(msg):
     ts = time.strftime('%Y-%m-%d %H:%M:%S')

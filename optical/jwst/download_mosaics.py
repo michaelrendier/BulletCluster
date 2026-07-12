@@ -11,8 +11,8 @@ import sys, time, os
 from pathlib import Path
 from astroquery.mast import Observations
 
-BASE    = Path("/media/rendier/0123-4567/ThePlace/BulletCluster/optical/jwst/4598/mastDownload")
-LOGFILE = Path("/media/rendier/0123-4567/ThePlace/BulletCluster/optical/jwst/download_mosaics.log")
+BASE    = Path(__file__).resolve().parent / "4598" / "mastDownload"
+LOGFILE = Path(__file__).resolve().parent / "download_mosaics.log"
 
 def log(msg):
     ts   = time.strftime('%Y-%m-%d %H:%M:%S')

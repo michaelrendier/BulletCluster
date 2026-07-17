@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>L_(I|O) x Polarization — pixel-zoom viewer</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #090c12; color: #c8d8e8;
+               font-family: -apple-system, sans-serif; overflow: hidden; height: 100%; }
+  #stage { position: fixed; inset: 0; overflow: hidden; cursor: grab; touch-action: none; }
+  #stage.dragging { cursor: grabbing; }
+  #canvas { position: absolute; left: 0; top: 0; transform-origin: 0 0;
+            image-rendering: pixelated; }
+  #hud { position: fixed; top: 10px; left: 10px; z-index: 10; background: rgba(9,12,18,0.82);
+         border: 1px solid #1e2a3a; border-radius: 8px; padding: 10px 14px; font-size: 13px;
+         line-height: 1.6; pointer-events: none; }
+  #hud b { color: #4af0ff; }
+  #controls { position: fixed; top: 10px; right: 10px; z-index: 10; display: flex; gap: 8px; }
+  button { background: #131a24; color: #c8d8e8; border: 1px solid #2a3a4e; border-radius: 6px;
+           padding: 8px 12px; font-size: 13px; cursor: pointer; }
+  button:hover { background: #1c2836; }
+  button.active { border-color: #4af0ff; color: #4af0ff; }
+  #legend { position: fixed; bottom: 10px; left: 10px; z-index: 10; background: rgba(9,12,18,0.82);
+            border: 1px solid #1e2a3a; border-radius: 8px; padding: 8px 12px; font-size: 12px; }
+  .swatch { display: inline-block; width: 22px; height: 3px; margin-right: 6px; vertical-align: middle; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <img id="canvas" src="l_io_polarization_composite_annotated.png">
+</div>
+<div id="hud">
+  zoom: <b id="zoomval">--</b> &nbsp; native px: <b id="pxval">--, --</b>
+  <br>scroll = zoom to cursor &middot; drag = pan &middot; dblclick = reset
+</div>
+<div id="controls">
+  <button id="toggleAnn" class="active">annotated</button>
+  <button id="reset">reset view</button>
+  <button id="fit">fit</button>
+  <button id="hundred">100%</button>
+</div>
+<div id="legend">
+  <span class="swatch" style="background:#4af0ff"></span>polarization E(e1,e2) — per native px
+  <br><span class="swatch" style="background:#ffb347"></span>L_(I|O) deflection alpha — per smoothing-scale cell
+</div>
+<script>
+const stage = document.getElementById('stage');
+const img = document.getElementById('canvas');
+const zoomval = document.getElementById('zoomval');
+const pxval = document.getElementById('pxval');
+let scale = 1, tx = 0, ty = 0;
+let natW = 0, natH = 0;
+let dragging = false, lastX = 0, lastY = 0;
+
+function apply() {
+  img.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+  zoomval.textContent = (scale * 100).toFixed(1) + '%';
+}
+
+function fitToScreen() {
+  if (!natW) return;
+  const sw = stage.clientWidth, sh = stage.clientHeight;
+  scale = Math.min(sw / natW, sh / natH) * 0.96;
+  tx = (sw - natW * scale) / 2;
+  ty = (sh - natH * scale) / 2;
+  apply();
+}
+
+img.onload = () => { natW = img.naturalWidth; natH = img.naturalHeight; fitToScreen(); };
+if (img.complete && img.naturalWidth) { natW = img.naturalWidth; natH = img.naturalHeight; fitToScreen(); }
+
+stage.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  const rect = stage.getBoundingClientRect();
+  const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+  const imgX = (mx - tx) / scale, imgY = (my - ty) / scale;
+  const factor = Math.exp(-e.deltaY * 0.0015);
+  scale = Math.min(Math.max(scale * factor, 0.02), 64);
+  tx = mx - imgX * scale;
+  ty = my - imgY * scale;
+  apply();
+}, { passive: false });
+
+stage.addEventListener('mousedown', (e) => {
+  dragging = true; lastX = e.clientX; lastY = e.clientY; stage.classList.add('dragging');
+});
+window.addEventListener('mousemove', (e) => {
+  if (dragging) {
+    tx += e.clientX - lastX; ty += e.clientY - lastY;
+    lastX = e.clientX; lastY = e.clientY;
+    apply();
+  }
+  const rect = stage.getBoundingClientRect();
+  const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+  const px = Math.floor((mx - tx) / scale);
+  const py_native_top_down = Math.floor((my - ty) / scale);
+  if (px >= 0 && px < natW && py_native_top_down >= 0 && py_native_top_down < natH) {
+    pxval.textContent = `${px}, ${natH - py_native_top_down}`;
+  } else {
+    pxval.textContent = '--, --';
+  }
+});
+window.addEventListener('mouseup', () => { dragging = false; stage.classList.remove('dragging'); });
+
+// touch: one-finger pan, two-finger pinch zoom
+let touchState = null;
+stage.addEventListener('touchstart', (e) => {
+  if (e.touches.length === 1) {
+    touchState = { mode: 'pan', x: e.touches[0].clientX, y: e.touches[0].clientY };
+  } else if (e.touches.length === 2) {
+    const [a, b] = e.touches;
+    touchState = {
+      mode: 'pinch',
+      dist: Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY),
+      cx: (a.clientX + b.clientX) / 2, cy: (a.clientY + b.clientY) / 2,
+      scale0: scale,
+    };
+  }
+}, { passive: true });
+stage.addEventListener('touchmove', (e) => {
+  e.preventDefault();
+  if (touchState?.mode === 'pan' && e.touches.length === 1) {
+    tx += e.touches[0].clientX - touchState.x;
+    ty += e.touches[0].clientY - touchState.y;
+    touchState.x = e.touches[0].clientX; touchState.y = e.touches[0].clientY;
+    apply();
+  } else if (touchState?.mode === 'pinch' && e.touches.length === 2) {
+    const [a, b] = e.touches;
+    const dist = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+    const rect = stage.getBoundingClientRect();
+    const mx = touchState.cx - rect.left, my = touchState.cy - rect.top;
+    const imgX = (mx - tx) / scale, imgY = (my - ty) / scale;
+    scale = Math.min(Math.max(touchState.scale0 * (dist / touchState.dist), 0.02), 64);
+    tx = mx - imgX * scale;
+    ty = my - imgY * scale;
+    apply();
+  }
+}, { passive: false });
+stage.addEventListener('touchend', () => { touchState = null; });
+
+stage.addEventListener('dblclick', fitToScreen);
+document.getElementById('reset').onclick = fitToScreen;
+document.getElementById('fit').onclick = fitToScreen;
+document.getElementById('hundred').onclick = () => {
+  const rect = stage.getBoundingClientRect();
+  const cx = rect.width / 2, cy = rect.height / 2;
+  const imgX = (cx - tx) / scale, imgY = (cy - ty) / scale;
+  scale = 1;
+  tx = cx - imgX * scale; ty = cy - imgY * scale;
+  apply();
+};
+document.getElementById('toggleAnn').onclick = (e) => {
+  const isAnn = img.src.includes('_annotated');
+  img.src = isAnn ? 'l_io_polarization_composite.png' : 'l_io_polarization_composite_annotated.png';
+  e.target.classList.toggle('active', !isAnn);
+};
+window.addEventListener('resize', fitToScreen);
+</script>
+</body>
+</html>

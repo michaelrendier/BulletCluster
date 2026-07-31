@@ -1,0 +1,332 @@
+====================================================================================
+                              TELESCOPE DATA INVENTORY                              
+                    BulletCluster / L_(I|O) validation programme                    
+                           generated 2026-07-29 06:40:22                            
+====================================================================================
+
+STATUS KEY:   [ON DISK] downloaded and present    [PARTIAL] some files present
+              [PLANNED] queued, not yet fetched   [POINTER] no download needed
+
+Volume: 150.4 GB free of 239.0 GB (37% used)
+
+====================================================================================
+PRE-EXISTING BULLET CLUSTER HOLDINGS
+(acquired before the validation programme; not managed by the downloader)
+====================================================================================
+
+  [MISSING]  Chandra X-ray
+      path : xray/chandra/merged_xray.fits
+      files: 0   size: 0 B
+      desc : Merged ACIS event map -- the shocked baryonic gas, the bow shock, and
+             the X-ray centroid that defines RA0/DEC0.
+
+  [ON DISK]  Planck (mm/SZ)
+      path : mm_sz/planck/COM_CompMap_YSZ_R2.01/milca_ymaps.fits
+      files: 1   size: 576.0 MB
+      desc : MILCA Compton-y map -- thermal Sunyaev-Zel'dovich signal, an
+             independent tracer of the hot gas that does not depend on X-ray
+             emissivity.
+
+  [ON DISK]  MeerKAT (radio)
+      path : radio/meerkat/MGCLS_DR1
+      files: 8   size: 1.5 GB
+      desc : MGCLS DR1 total-intensity cubes, 15 arcsec and full resolution. STOKES
+             I ONLY -- no Q/U for this cluster, which is what blocks the RM-ratio
+             test.
+
+  [ON DISK]  MeerKAT (synthetic)
+      path : radio/meerkat/synthetic
+      files: 10   size: 1.2 GB
+      desc : Synthetic Stokes Q/U cubes, wave and particle models. What the engine
+             was verified on (0.861 vs 0.967). NOT observational data.
+
+  [ON DISK]  JWST NIRCam
+      path : optical/jwst/4598
+      files: 41   size: 12.5 GB
+      desc : Programme 4598 imaging mosaics, 8 filters F090W-F444W. Intensity only
+             -- JWST has no polarimetric mode. Source of all background-galaxy
+             shear.
+
+  [ON DISK]  HST
+      path : optical/hst/10200
+      files: 4   size: 836.4 MB
+      desc : Programme 10200 imaging. Partial: j90702020_drz.fits stalled
+             mid-download.
+
+  [ON DISK]  gamma-ray
+      path : gamma
+      files: 1   size: 155.1 KB
+      desc : Gamma-ray data for the field.
+
+  [ON DISK]  composite
+      path : The_Bullet_Cluster.tif
+      files: 1   size: 9.2 MB
+      desc : Published composite image (optical + X-ray + lensing), used for the
+             RGB channel separation in tif_channels.png.
+
+  Pre-existing subtotal: 16.5 GB
+
+====================================================================================
+GROUP A -- EINSTEIN CROSSES (quad-image lenses)
+telescope/archive: HST / JWST
+------------------------------------------------------------------------------------
+  Break the mass-sheet degeneracy. Image positions give alpha with absolute
+  normalisation; time delays give the Fermat potential difference, which IS
+  L_(I|O) - L. Validates the machinery, NOT the dark-matter hypothesis.
+====================================================================================
+
+  [PLANNED]  A1_sn_refsdal_macs1149
+      resolve : MACS J1149.5+2223    mode: imaging
+      search  : RA 177.3987  Dec +22.3986  r = 3.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : SN Refsdal. Four images around a cluster elliptical. The
+                reappearance SX was PREDICTED from lens models and then observed --
+                prediction-then-verification of exactly our quantity. Cluster
+                scale. The benchmark.
+
+  [PLANNED]  A2_sdss_j1004+4112
+      resolve : SDSS J1004+4112    mode: imaging
+      search  : RA 151.1450  Dec +41.2108  r = 2.5 arcmin
+      on disk : 0 files, 0 B
+      desc    : Cluster-lensed quad quasar, ~15 arcsec separation, measured delays
+                including the very long one. Bridges galaxy scale to Bullet-Cluster
+                scale.
+
+  [PLANNED]  A3_rxj1131-1231
+      resolve : RX J1131-1231    mode: imaging
+      search  : RA 172.9650  Dec -12.5325  r = 2.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : Galaxy scale, long delays, best-characterised Fermat potential.
+                z_lens ~ 0.295, essentially identical to the Bullet Cluster's 0.296
+                -- distance factors are shared.
+
+  [PLANNED]  A4_he0435-1223
+      resolve : HE 0435-1223    mode: imaging
+      search  : RA 69.5621  Dec -12.2873  r = 2.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : Independent galaxy-scale system. Exists to test that A3 was not a
+                fluke.
+
+  [PLANNED]  A5_q2237+0305
+      resolve : Q2237+0305    mode: imaging
+      search  : RA 340.1262  Dec +3.3586  r = 2.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : Huchra's Lens, the original Einstein Cross. Delays are hours, so
+                useless for dt -- but the cleanest pure-geometry alpha test: four
+                images through a near-face-on bulge with minimal external shear.
+
+====================================================================================
+GROUP B -- STRIPPED NUCLEI, UCDs, DM-POOR DWARFS
+telescope/archive: HST / JWST
+------------------------------------------------------------------------------------
+  Test the vortex coherence length. Wave DM cannot compress below xi, so it
+  predicts UCDs are DM-free; CDM predicts a surviving central cusp. This is
+  the right mass scale for a wave test -- the cluster scale is not.
+====================================================================================
+
+  [PLANNED]  B1_m60_ucd1
+      resolve : M60-UCD1    mode: imaging
+      search  : RA 190.9000  Dec +11.5197  r = 2.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : THE 'too big to be a globular cluster' object. ~2e8 Msun inside ~24
+                pc, hosts an SMBH that is ~15% of its total mass. If IMBH/SMBH
+                explains the excess M/L here, the residual-DM reading loses its
+                best case.
+
+  [PLANNED]  B2_omega_centauri
+      resolve : NGC 5139    mode: imaging
+      search  : RA 201.6970  Dec -47.4795  r = 6.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : Stripped nucleus of an accreted progenitor. ~20 yr of HST proper
+                motions attributed its core excess mass to an ~8200 Msun IMBH, NOT
+                dark matter. Include it precisely because it cuts against us.
+
+  [PLANNED]  B3_m54_ngc6715
+      resolve : NGC 6715    mode: imaging
+      search  : RA 283.7639  Dec -30.4799  r = 5.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : The nucleus of the Sagittarius dwarf, still embedded in its host.
+                The cleanest 'satellite galactic core' -- stripping is caught in
+                progress rather than inferred.
+
+  [PLANNED]  B4_ngc1052-df2
+      resolve : NGC 1052-DF2    mode: imaging
+      search  : RA 40.4450  Dec -8.4025  r = 3.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : Galaxy apparently lacking dark matter. Awkward under CDM; natural
+                if a vortex is either pinned somewhere or is not.
+
+  [PLANNED]  B5_ngc1052-df4
+      resolve : NGC 1052-DF4    mode: imaging
+      search  : RA 39.8129  Dec -8.1161  r = 3.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : Second DM-poor dwarf in the same group. Confirms DF2 is not a
+                one-off measurement failure.
+
+====================================================================================
+GROUP C -- NON-LENSING POLARIZATION (the negative control)
+telescope/archive: HST / JWST
+------------------------------------------------------------------------------------
+  Demonstrate what is NOT the prediction. Real polarized fields with known
+  non-lensing origins, pushed through the identical eb_decompose(). Lensing
+  shear is curl-free (E-only); dust and synchrotron carry real B-mode.
+====================================================================================
+
+  [PLANNED]  C1_crab_nebula
+      resolve : M1    mode: polarimetry only
+      search  : RA 83.6331  Dec +22.0145  r = 6.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : THE reference non-lensing polarized field. Synchrotron,
+                polarization degree up to tens of percent, mapped with ACS POLV
+                filters. Large, bright, high-S/N, and its polarization origin is
+                not in dispute. If eb_decompose() cannot tell the Crab from a
+                lensing field, the statistic is worthless.
+
+  [PLANNED]  C2_egg_nebula_crl2688
+      resolve : CRL 2688    mode: polarimetry only
+      search  : RA 315.0000  Dec +36.6947  r = 3.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : Textbook centrosymmetric SCATTERING polarization (NICMOS
+                polarimetry). The pattern is known a priori, so it doubles as a
+                correctness check on our Q/U angle conventions -- if we do not
+                recover a centrosymmetric field here, our sign or angle convention
+                is wrong and every other result is too.
+
+  [PLANNED]  C3_ngc1068
+      resolve : NGC 1068    mode: polarimetry only
+      search  : RA 40.6696  Dec -0.0133  r = 3.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : AGN scattering cone, ACS polarimetry. A third independent
+                polarization MECHANISM, so Group C is not one physical process
+                argued three ways.
+
+  [PLANNED]  C4_ngc7023_iris
+      resolve : NGC 7023    mode: polarimetry only
+      search  : RA 315.3958  Dec +68.1633  r = 8.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : Reflection nebula -- dust scattering over a wide field. Closest
+                analogue to diffuse galactic dust that still has resolved HST-scale
+                polarimetry.
+
+  [PLANNED]  C5_pillars_m16
+      resolve : M16    mode: imaging
+      search  : RA 274.7000  Dec -13.8070  r = 8.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : Pillars of Creation. JWST/HST INTENSITY only -- no polarimetry
+                exists (JWST has no polarimetric mode at all). Its job is the
+                mode='img' null test: maximally structured, filamentary, zero
+                lensing. Any coherent E-mode our pipeline reports here is pipeline,
+                not sky.
+
+  [PLANNED]  C6_horsehead_b33
+      resolve : Barnard 33    mode: imaging
+      search  : RA 85.2458  Dec -2.4586  r = 6.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : Horsehead. Same mode='img' null test as C5, different dust
+                morphology and a sharp illuminated ridge -- an edge is the single
+                most likely thing to fool a shape estimator into reporting coherent
+                alignment.
+
+====================================================================================
+GROUP D -- ALL-SKY POLARIZATION & FARADAY (direct URL, not MAST)
+telescope/archive: Planck / all-sky surveys
+------------------------------------------------------------------------------------
+  Measured galactic dust polarization and the Galactic Faraday screen. Both
+  are all-sky, so both already cover the Bullet Cluster line of sight.
+====================================================================================
+
+  [ON DISK]  D1_planck_353_iqu
+      products: HFI_SkyMap_353-psb_2048_R3.01_full.fits
+      on disk : 1 files, 1.9 GB
+      desc    : Planck 353 GHz Stokes I/Q/U, nside 2048. The dust polarization
+                workhorse. Gives measured galactic-dust E and B power directly.
+                - HFI_SkyMap_353-psb_2048_R3.01_full.fits  (1.9 GB)
+
+  [ON DISK]  D2_planck_dustpol_commander
+      products: COM_CompMap_DustPol-commander_1024_R2.00.fits
+      on disk : 1 files, 672.0 MB
+      desc    : Commander-separated thermal dust polarization component. Dust Q/U
+                with the CMB and synchrotron already removed -- the cleanest
+                dust-only comparison field.
+                - COM_CompMap_DustPol-commander_1024_R2.00.fits  (672.0 MB)
+
+  [ON DISK]  D3_planck_217_iqu
+      products: HFI_SkyMap_217_2048_R3.01_full.fits
+      on disk : 1 files, 1.9 GB
+      desc    : Second frequency. Dust polarization is strongly frequency
+                dependent; lensing shear is achromatic. A frequency lever arm no
+                shear systematic can imitate.
+                - HFI_SkyMap_217_2048_R3.01_full.fits  (1.9 GB)
+
+  [ON DISK]  D4_galactic_faraday_sky
+      products: faraday2020v2.fits
+      on disk : 1 files, 24.0 MB
+      desc    : Galactic Faraday rotation sky (Hutschenreuter et al. 2022), all-sky
+                RM with uncertainties. THE foreground subtraction the RM-ratio test
+                needs. Sample it along the NW->SE merger transect at MERGER_PA_DEG
+                and compare the Galactic RM gradient against the DM-vs-gas
+                difference the 0.95 threshold is meant to detect. If they are
+                comparable, the threshold is measuring the Milky Way. This can and
+                should be run BEFORE MeerKAT Q/U ever arrives -- it needs no
+                cluster data at all. URL verified 2026-07-29, 25.2 MB.
+                - faraday2020v2.fits  (24.0 MB)
+
+  [POINTER]  D5_planck_353_covers_bullet
+      products: _NOTE_planck353_covers_bullet.txt
+      on disk : 0 files, 0 B
+      desc    : NOT A DOWNLOAD -- a pointer. D1 is all-sky, so it already contains
+                the Bullet Cluster line of sight at (l,b) ~ (266, -21). Cut a patch
+                at RA0/DEC0 to get the measured galactic dust polarization
+                foreground toward the target, at ~5 arcmin resolution. That is
+                real, published, already-in-hand Bullet Cluster polarization data
+                -- just not of the cluster. It bounds how much of any polarization
+                signal in that direction is Milky Way dust.
+
+  [ON DISK]  D6_faraday_components
+      products: components2020v2.fits
+      on disk : 1 files, 48.0 MB
+      desc    : Companion to D4: the separated Galactic Faraday sky components plus
+                the per-pixel uncertainty. The uncertainty map is the part that
+                matters -- it converts 'the foreground gradient is small' from an
+                assertion into an error bar on the RM ratio. Verified, 50.3 MB.
+                - components2020v2.fits  (48.0 MB)
+
+====================================================================================
+GROUP E -- THE BULLET CLUSTER ITSELF
+telescope/archive: HST / JWST
+------------------------------------------------------------------------------------
+  Settle by query rather than assumption what polarimetry of the Bullet
+  Cluster exists, and look for archival coverage of DM_NW.
+====================================================================================
+
+  [PLANNED]  E1_bullet_cluster_pol
+      resolve : 1E 0657-558    mode: polarimetry only
+      search  : RA 104.6098  Dec -55.9446  r = 10.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : Direct MAST query for ANY HST/JWST polarimetric observation of the
+                Bullet Cluster field. Expected result: nothing -- JWST has no
+                polarimeter and HST POL programmes on this field are unlikely.
+                Included because 'we checked and it is not there' is data, and 'we
+                assumed it is not there' is not. Costs one query.
+
+  [PLANNED]  E2_bullet_cluster_img
+      resolve : 1E 0657-558    mode: imaging
+      search  : RA 104.6098  Dec -55.9446  r = 10.0 arcmin
+      on disk : 0 files, 0 B
+      desc    : Full HST/JWST imaging inventory over a 10 arcmin radius -- wider
+                than the 4.2 arcmin used by jwst_resume_download.py.
+                dust_confound_report.json records that only DM_SE falls inside the
+                current F444W tile; the whole wave-vs-particle contrast needs BOTH
+                peaks. This looks for archival coverage of DM_NW that the narrower
+                search missed.
+
+====================================================================================
+TOTALS
+====================================================================================
+  Pre-existing holdings      : 16.5 GB
+  Validation programme       : 4.5 GB on disk
+  Combined                   : 21.0 GB
+
+  Regenerate:  python3 lensing_validation/make_data_inventory.py
+  Live status: python3 lensing_validation/download_validation_targets.py --status
+====================================================================================

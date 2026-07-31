@@ -29,9 +29,11 @@ engine/ptorrent/__pycache__/
 # Jupyter checkpoints
 .ipynb_checkpoints/
 
-# Download logs
+# Download logs & runtime state
 *.log
+*.pid
 download_resume_state.json
+validation_download_state.json
 
 # OS
 .DS_Store

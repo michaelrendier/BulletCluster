@@ -45,3 +45,15 @@ engine/output/*.npz
 # Pixel-resolution shear field arrays (56MB each, regenerate via
 # optical/jwst/pixel_vector_field.py in ~25s/label — not worth committing)
 optical/jwst/prepped/pixel_field/*.npy
+
+# Regeneratable heavy artifacts — reproduced from source scripts, kept local only.
+# Background composite cache (make_background.py)
+optical/jwst/prepped/background_cache.npz
+# pixel_field renders (pixel_vector_field.py / pixel_polarization_map.py /
+# l_io_polarization_composite.py / ptychography_polarization.py)
+optical/jwst/prepped/pixel_field/*.png
+# Radial/segment profile arrays (prep_jwst.py / topo_map.py)
+optical/jwst/prepped/radial_profiles/*.npz
+optical/jwst/prepped/profile_*.npz
+# L_io lensing arrays (l_io_lensing.py)
+optical/jwst/prepped/l_io/*.npy

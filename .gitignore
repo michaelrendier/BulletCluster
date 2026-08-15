@@ -57,3 +57,11 @@ optical/jwst/prepped/radial_profiles/*.npz
 optical/jwst/prepped/profile_*.npz
 # L_io lensing arrays (l_io_lensing.py)
 optical/jwst/prepped/l_io/*.npy
+
+# analysis venv (2026-08-14) — see env.sh
+.venv/
+venv_install.log
+
+# In-progress resumable downloads (2026-08-15)
+*.part
+*.fits.part

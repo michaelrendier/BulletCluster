@@ -28,18 +28,48 @@ TARGET_RA         = 104.6098
 TARGET_DEC        = -55.9446
 SEARCH_RADIUS_DEG = 0.07          # 4.2 arcmin
 
+# ── WHICH PRODUCTS TO KEEP ────────────────────────────────────────────────────
+# ⚠ 2026-08-14 BUG FIX. The old filter was
+#       fname.endswith((".fits", "_drz.fits", "_cal.fits", "_i2d.fits"))
+#   and a bare ".fits" SUBSUMES every other pattern in that tuple, so the mask
+#   did nothing: 43,326 products passed — every cal/crf/rate/uncal frame for
+#   every exposure, ~118 MB each. That is terabytes, not the ~14 GB intended.
+#
+# _i2d.fits is the drizzled, WCS-aligned MOSAIC — the science product, and the
+# only thing needed to extend the footprint so DM_NW comes into the field
+# (see L_IO_SPECIFICATION.md, N4). _drz.fits is the HST equivalent.
+#
+# To do real ptychography on the dithers later, add "_cal.fits" — those are the
+# individual overlapping probe positions. Expect a very large increase.
+KEEP_SUFFIXES = ("_i2d.fits", "_drz.fits")
+
 BASE_DIR   = Path(__file__).parent / "optical" / "jwst" / str(PROGRAM_ID) / "mastDownload"
 STATE_FILE = Path(__file__).parent / "jwst_download_state.json"
 LOG_FILE   = Path(__file__).parent / "jwst_download.log"
 
-# Filters in priority order (science-critical first)
+# Filters in priority order.
+#
+# ── REPRIORITISED 2026-08-14 (Cody): EINSTEIN CROSSES, NOT DUST ──────────────
+# The strong-lensing multiple-image systems are the real test of L_(I|O): one
+# source, four paths, one observer.  Any difference between the images is
+# PURELY path-dependent, so the source is its own control and no source model
+# has to be assumed.  That removes the degeneracy the transect analysis carries.
+#
+# Resolution is the binding constraint: an Einstein cross spans ~1-2 arcsec and
+# must be resolved into components.  NIRCam SHORT wavelength = 0.031"/pix;
+# LONG wavelength = 0.063"/pix.  So short-wave leads.
+#
+# Dust penetration (the long-wave motivation) is DEPRIORITISED — the
+# polarization scattering result off an anisotropic surface already exists in
+# the literature and does not need re-deriving here.
 PRIORITY_FILTERS = [
-    "F277W",   # weak lensing shear — most critical for polarization analysis
-    "F444W",   # already partially downloaded
-    "F115W", "F150W", "F200W",
-    "F356W", "F410M",
+    # short wavelength — 0.031"/pix, resolves multiple images
+    "F090W", "F115W", "F150W", "F200W",
+    "F162M", "F182M", "F210M", "F140M",
+    # HST optical — astrometry and colour for image identification
     "F606W", "F814W",
-    "F090W", "F140M", "F162M", "F182M", "F210M",
+    # long wavelength — 0.063"/pix, dust penetration (deprioritised)
+    "F277W", "F356W", "F410M", "F444W",
 ]
 
 # ── State management ──────────────────────────────────────────────────────────
@@ -82,14 +112,40 @@ def query_products():
         log("  No observations found — check program ID and coordinates")
         return []
 
-    products = Observations.get_product_list(obs)
+    # ── BATCHED product-list query ───────────────────────────────────────────
+    # 2026-08-14: get_product_list(obs) on all 292 observations at once HUNG for
+    # ~7 hours -- 0% CPU, blocked on a socket, zero files written. astroquery
+    # puts no timeout on this call, so a slow/unresponsive MAST response blocks
+    # forever. Batch it, retry each batch, and log progress so a stall is
+    # visible immediately instead of looking like a long download.
+    from astropy.table import vstack
+    BATCH, RETRIES = 15, 3
+    chunks = []
+    for i in range(0, len(obs), BATCH):
+        part = obs[i:i+BATCH]
+        for attempt in range(1, RETRIES+1):
+            try:
+                chunks.append(Observations.get_product_list(part))
+                log(f"  products batch {i//BATCH+1}/{(len(obs)+BATCH-1)//BATCH}"
+                    f"  (obs {i+1}-{min(i+BATCH,len(obs))})  ok")
+                break
+            except Exception as e:
+                log(f"  batch {i//BATCH+1} attempt {attempt}/{RETRIES} failed: {e}")
+                if attempt == RETRIES:
+                    log(f"  batch {i//BATCH+1} GIVING UP — continuing without it")
+                else:
+                    time.sleep(5 * attempt)
+    if not chunks:
+        log("  no product lists retrieved")
+        return []
+    products = vstack(chunks) if len(chunks) > 1 else chunks[0]
     log(f"  {len(products)} total products")
 
     # Science products only — calibrated or mosaic FITS
     mask = (
         (products["type"] == "S") &
         (products["dataproduct_type"].astype(str) != "preview") &
-        [fname.endswith((".fits", "_drz.fits", "_cal.fits", "_i2d.fits"))
+        [fname.endswith(KEEP_SUFFIXES)
          for fname in products["productFilename"].astype(str)]
     )
     sci = products[mask]

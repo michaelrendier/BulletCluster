@@ -155,9 +155,19 @@ def query_products():
 # ── Download with byte-range resume ──────────────────────────────────────────
 
 def download_file(uri, dest_path, expected_size=0):
-    """Resumable download. Returns True on success."""
-    from astroquery.mast import Observations
+    """Resumable download that PAUSES on signal loss instead of failing.
 
+    2026-08-17: wrapped in netgate.NetworkGate. Previously a network switch or a
+    suspend raised out of requests, this returned False, the file was marked
+    failed, and the run moved on -- so an overnight suspend cost the whole tail
+    of the queue and a full re-query on restart. Now a dead signal is a PAUSE:
+    the process stays alive, the product list stays in memory, and the transfer
+    resumes from the .part offset via the Range header when the signal returns.
+
+    The read timeout is what makes a *stall* (as opposed to a clean disconnect)
+    visible: a single 300s value meant a hung socket blocked for five minutes
+    before erroring. (10, 30) detects it in thirty seconds.
+    """
     dest_path = Path(dest_path)
     dest_path.parent.mkdir(parents=True, exist_ok=True)
     tmp_path = dest_path.with_suffix(dest_path.suffix + ".part")
@@ -168,51 +178,59 @@ def download_file(uri, dest_path, expected_size=0):
             log(f"  ✓ Already complete: {dest_path.name}")
             return True
 
-    resume_byte = tmp_path.stat().st_size if tmp_path.exists() else 0
+    url = f"https://mast.stsci.edu/api/v0.1/Download/file?uri={uri}"
+    headers_base = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:120.0) "
+                                  "Gecko/20100101 Firefox/120.0"}
 
-    try:
-        # Get the direct download URL from astroquery
-        url = f"https://mast.stsci.edu/api/v0.1/Download/file?uri={uri}"
-        headers = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0"}
+    while True:
+        resume_byte = tmp_path.stat().st_size if tmp_path.exists() else 0
+        before = resume_byte
+        headers = dict(headers_base)
         if resume_byte > 0:
             headers["Range"] = f"bytes={resume_byte}-"
             log(f"  Resuming {dest_path.name} from {resume_byte/1e6:.1f} MB")
         else:
             log(f"  Starting {dest_path.name}")
 
-        r = requests.get(url, headers=headers, stream=True, timeout=300)
+        try:
+            r = requests.get(url, headers=headers, stream=True, timeout=(10, 30))
 
-        if r.status_code == 416:
-            # Already complete
-            if tmp_path.exists():
-                tmp_path.rename(dest_path)
+            if r.status_code == 416:            # range past EOF: already complete
+                if tmp_path.exists():
+                    tmp_path.rename(dest_path)
+                return True
+
+            r.raise_for_status()
+            total = int(r.headers.get("content-length", 0)) + resume_byte
+            mode = "ab" if resume_byte > 0 else "wb"
+            downloaded = resume_byte
+
+            with open(tmp_path, mode) as f:
+                for chunk in r.iter_content(chunk_size=2 * 1024 * 1024):
+                    if chunk:
+                        f.write(chunk)
+                        downloaded += len(chunk)
+                        pct = downloaded / total * 100 if total else 0
+                        print(f"\r    {downloaded/1e6:.0f} / {total/1e6:.0f} MB "
+                              f"({pct:.1f}%)", end="", flush=True)
+
+            print()
+            tmp_path.rename(dest_path)
+            log(f"  ✓ {dest_path.name}  ({downloaded/1e6:.0f} MB)")
             return True
 
-        r.raise_for_status()
-        total = int(r.headers.get("content-length", 0)) + resume_byte
-        mode = "ab" if resume_byte > 0 else "wb"
-        downloaded = resume_byte
-
-        with open(tmp_path, mode) as f:
-            for chunk in r.iter_content(chunk_size=2 * 1024 * 1024):  # 2 MB chunks
-                if chunk:
-                    f.write(chunk)
-                    downloaded += len(chunk)
-                    pct = downloaded / total * 100 if total else 0
-                    print(f"\r    {downloaded/1e6:.0f} / {total/1e6:.0f} MB  ({pct:.1f}%)",
-                          end="", flush=True)
-
-        print()
-        tmp_path.rename(dest_path)
-        log(f"  ✓ {dest_path.name}  ({downloaded/1e6:.0f} MB)")
-        return True
-
-    except KeyboardInterrupt:
-        log(f"\n  Interrupted — partial file saved to {tmp_path}")
-        raise
-    except Exception as e:
-        log(f"  ✗ Error downloading {dest_path.name}: {e}")
-        return False
+        except KeyboardInterrupt:
+            log(f"\n  Interrupted — partial file saved to {tmp_path}")
+            raise
+        except Exception as e:
+            print()
+            now = tmp_path.stat().st_size if tmp_path.exists() else 0
+            # The gate decides: signal down -> wait however long it takes.
+            # Signal up but nothing moving -> not a network fault, give up.
+            if GATE.pause(e, progressed=(now > before)):
+                continue
+            log(f"  ✗ Giving up on {dest_path.name}: {e}")
+            return False
 
 # ── Logging ───────────────────────────────────────────────────────────────────
 
@@ -220,8 +238,20 @@ def log(msg):
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     line = f"[{ts}] {msg}"
     print(line, flush=True)
-    with open(LOG_FILE, "a") as f:
-        f.write(line + "\n")
+    # 2026-08-17: only write the file when stdout is a terminal. The documented
+    # launch redirects stdout INTO LOG_FILE, so doing both wrote every line
+    # twice -- the whole log was duplicated end to end.
+    if sys.stdout.isatty():
+        with open(LOG_FILE, "a") as f:
+            f.write(line + "\n")
+
+
+# ── the network gate: pause on signal loss, never abort ──────────────────────
+from netgate import NetworkGate          # noqa: E402  (needs log() defined)
+
+GATE = NetworkGate("mast.stsci.edu", 443,
+                   min_wait=5.0, max_wait=300.0, heartbeat=900.0,
+                   no_progress_limit=6, log=log)
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 

@@ -38,41 +38,55 @@ If DM = charged particle plasma (CDM):
 Threshold: RM_RATIO_THRESHOLD = 0.95  (set in constants.py, DO NOT change)
 ```
 
-Engine verified on synthetic data:
-```
-Wave model:     ratio = 0.861  →  NO FARADAY SCREEN  ✓
-Particle model: ratio = 0.967  →  SCREEN DETECTED    ✓
-```
+**Status of this prediction: NEVER RUN ON OBSERVATIONAL DATA.**
+
+The engine has only ever been run on synthetic cubes from `engine/modules/synthetic.py`,
+which **injects ΔRM at the DM peaks** and then recovers it (wave 0.861 / particle 0.967).
+That is a correct harness self-test and it is **circular by construction** — it verifies the
+code, not the universe. It is not a result. See `Cleanup/RETRACTED.md` RT4.
+
+Two things block the real test, not one:
+
+1. **Real Stokes Q/U** — MGCLS DR1 has Stokes I only (`NAXIS4 = 1`, verified on the files).
+2. **Foreground subtraction** — the Galactic Faraday screen is common-mode and additive
+   (18.27 ± 19.67 rad/m², all reference points in ONE HEALPix pixel), which drags a *ratio*
+   toward 1: the particle verdict. Acquiring Q/U is necessary but **not sufficient**.
+   See `Cleanup/REAL_RESULTS.md` R2.
 
 ---
 
 ## What's Already Here
 
-### Visualizations (generated from real data)
+> **Results live in [`Cleanup/REAL_RESULTS.md`](Cleanup/REAL_RESULTS.md).** That file lists
+> only measurements made on real observational data, with reproducing code and stated limits:
+> one data product (the Chandra mosaic), one methodological finding (the RM-ratio test is
+> biased toward the particle verdict by the Galactic foreground), one measurement (radio
+> spectral index), five nulls, one passed negative control, two infrastructure fixes.
+>
+> **No claim about wave vs particle dark matter is supported yet.** The zero-free-parameter
+> prediction has never been run on observational data, because real Stokes Q/U does not
+> exist on disk.
+>
+> A previous results list here was withdrawn on 2026-08-17 — six of its figures had no
+> generating code, and two of its claims were contradicted by their own plotted data. The
+> full record of what was withdrawn and why is in
+> [`Cleanup/RETRACTED.md`](Cleanup/RETRACTED.md). The figures remain on disk as history.
 
-| File | Content | Source |
-|------|---------|--------|
-| `The_Bullet_Cluster-defined.png` | Composite (optical+X-ray+lensing) with N-Shape boundaries annotated | HST+Chandra+lensing |
-| `dm_topography.png` | Dark matter convergence κ topography — two halos, interaction saddle, ZD surface | HST lensing (Clowe+2006) |
-| `dm_laplacian_topo.png` | ∇²κ attractor/repeller/inflection map — Abrikosov vortex structure visible | Derived from κ |
-| `bullet_polarization.png` | Background galaxy shear vectors (n=450) — interference pattern in DM band | JWST F277W |
-| `bullet_polarization_field.png` | Shear vector field with magnitude colour map — vortex winding at DM positions | JWST F277W |
-| `band_coherence.png` | Coherence vs brightness across DM band midpoint — wave signature in coherence peak | JWST F277W |
-| `lcdrm_polarization_map.png` | ΛCDRM vs NFW: κ, shear, polarization angle, magnification — interference rings in Δκ | Model comparison |
-| `tif_channels.png` | RGB channel separation — stellar (red), intermediate (green), X-ray gas (blue) | Raw TIF |
+### Figures on disk
 
-### Already Confirmed (from existing data)
+Kept for history. **Provenance varies and most cannot be regenerated** — see `RETRACTED.md`
+before citing any of them.
 
-```
-✓ Coherence peaks at DM band center          (band_coherence.png)
-✓ Polarization angle aligned to merger axis  (band_coherence.png)
-✓ Vortex winding in shear field at DM peaks  (bullet_polarization_field.png)
-✓ Interference fringes in Δκ model           (lcdrm_polarization_map.png)
-✓ ZD transit surface at interaction saddle   (dm_laplacian_topo.png)
-✓ Abrikosov attractor/repeller in ∇²κ        (dm_laplacian_topo.png)
-✓ N-Shape geometry in X-ray shock fronts     (The_Bullet_Cluster-defined.png)
-✓ Holcus hash: all key concepts → γ₀,γ₁,γ₂  (holcus_sigma_result.txt)
-```
+| File | Status |
+|------|--------|
+| `xray/bullet_chandra_0.5-7keV.png` | **real data**, reproducible (`xray/make_chandra_map.py`) |
+| `lensing_validation/out/bullet_foreground_maps.png` | **real data**, reproducible |
+| `tif_channels.png` | reproducible; RGB channel split of the raw TIF |
+| `The_Bullet_Cluster-defined.png` | hand-annotated. Read by no code (verified) — not a measurement |
+| `dm_topography.png`, `dm_laplacian_topo.png` | no generating code; derived from a κ map since measured to be noise |
+| `bullet_polarization*.png`, `band_coherence.png` | no generating code; "polarization" here is galaxy shear — JWST has no polarimeter |
+| `lcdrm_polarization_map.png` | model-vs-model comparison, not data |
+| `viewer/layers/polarization*.png`, `rm_faraday.png` | synthetic B-field model, labelled as such in `generate_layers.py` |
 
 ### Still Needed
 

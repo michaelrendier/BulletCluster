@@ -120,8 +120,18 @@ read by any code** — verified by grep. It cannot have leaked into any output.
 
 ## ADDENDUM 2026-08-14 — five nulls, one cause
 
-*Addenda, not corrections. Every prior result stands as written; these sit
-beneath them. Failures stay in the code.*
+> ⚠ **POLICY WITHDRAWN 2026-08-17.** This read: *"Addenda, not corrections. Every prior
+> result stands as written; these sit beneath them."*
+>
+> **That policy was the fault.** These nulls **do** refute earlier claims, and leaving those
+> claims in place — annotated but present — meant they kept being read as results for weeks,
+> including by later Claude sessions working from this directory. A refuted claim left in a
+> file is still a claim, to a human skimming and to any automated reader ingesting the tree.
+>
+> **The rule now:** when a measurement refutes a claim, the claim is **removed** from the
+> live files and preserved once in [`Cleanup/RETRACTED.md`](Cleanup/RETRACTED.md).
+> Failures stay in the **code** — that part was right. Refuted **claims** do not stay in the
+> **docs**.
 
 **Formal spec written: [`L_IO_SPECIFICATION.md`](L_IO_SPECIFICATION.md)** — each
 step of L_(I|O), its prerequisites, its regime of validity, and the mandatory

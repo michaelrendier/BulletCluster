@@ -107,11 +107,24 @@ import requests
 # or /storage/emulated/0 -- those three appear in different scripts in this repo
 # and none of them currently resolve.
 HERE          = Path(__file__).resolve().parent
+# 2026-08-19: data/ is now a SYMLINK to
+#   /media/rendier/Datasets/ThePlace/BulletCluster/lensing_validation/data
+# so the bulk sits on the 469 GB Datasets volume, not /home. Every free-space
+# check therefore measures DATA_DIR, never HERE -- those are different volumes
+# now and reading HERE would let the floor pass while the real target fills.
 DATA_DIR      = HERE / "data"
 STATE_FILE    = HERE / "validation_download_state.json"
 MANIFEST_FILE = HERE / "validation_manifest.json"
 LOG_FILE      = HERE / "validation_download.log"
 PID_FILE      = HERE / "validation_download.pid"
+
+# The state, the log and the script itself must survive the data volume going
+# away -- otherwise the outage takes down the very thing that would recover
+# from it. Nothing here may live on the removable drive.
+if str(HERE).startswith("/media/"):
+    raise SystemExit(
+        f"refusing to run from {HERE}: state, log and script must live off the "
+        f"data volume so they survive it being unplugged")
 
 # ── Tunables ──────────────────────────────────────────────────────────────────
 CHUNK_BYTES        = 4 * 1024 * 1024   # 4 MB -- unlimited LTE, go wide
@@ -737,10 +750,146 @@ def free_gb(path):
         return float("inf")
 
 
+# ── Removable-volume and network safety ───────────────────────────────────────
+# 2026-08-19: the Datasets drive dropped off the bus mid-run and came back as a
+# DIFFERENT device node -- /dev/sdc1 -> /dev/sdd1, same UUID, ext4 journal
+# recovery on remount. The mount PATH was unchanged, so the run survived by
+# luck. Three things had to change for that to be by design instead of luck:
+#
+#   1. NEVER mkdir into the mount point. With the volume absent, the mount
+#      point is an ordinary empty directory on / and mkdir -p cheerfully
+#      creates the whole tree there, after which the run downloads 140 GB onto
+#      the root filesystem and reports success. Every mkdir on the data side is
+#      now gated on volume_ok().
+#   2. Location loss is a WAIT, not a failure. A missing volume must not burn a
+#      retry attempt and must not mark a file failed -- the run parks until the
+#      drive is back and then resumes.
+#   3. The in-flight .part is DISCARDED after a volume loss. Resume trusts the
+#      byte count on disk, and an unclean disconnect plus journal recovery can
+#      leave a correctly-sized tail full of zeros. One re-fetched file is much
+#      cheaper than one silently corrupt FITS.
+#
+# Same shape for the network: total connectivity loss is a wait, not four fast
+# failures that mark good files bad.
+#
+# The script MUST live off the volume so it can keep running and keep logging
+# while the volume is gone. Asserted at import.
+VOLUME_UUID      = "356095de-3a44-409a-aa7d-34db75a3d635"
+VOLUME_ROOT      = Path("/media/rendier/Datasets")
+VOLUME_SENTINEL  = VOLUME_ROOT / ".datasets_volume_id"
+VOLUME_POLL_S    = 15          # first poll interval; doubles
+VOLUME_POLL_MAX  = 300         # ...up to 5 minutes between polls
+NET_PROBE_URL    = "https://mast.stsci.edu/"
+
+
+class VolumeGone(OSError):
+    """The data volume is not mounted. Recoverable: park and wait."""
+
+
+def _mounted_device(mountpoint):
+    """Device currently mounted at `mountpoint`, per /proc/mounts, or None."""
+    want = str(mountpoint).replace(" ", "\\040")
+    dev = None
+    try:
+        with open("/proc/mounts") as f:
+            for line in f:
+                parts = line.split()
+                if len(parts) > 1 and parts[1] == want:
+                    dev = parts[0]          # last wins: later mounts shadow
+    except OSError:
+        return None
+    return dev
+
+
+def _uuid_of(dev):
+    """UUID of a device node, resolved through /dev/disk/by-uuid."""
+    if not dev:
+        return None
+    try:
+        target = os.path.realpath(dev)
+        for link in Path("/dev/disk/by-uuid").iterdir():
+            if os.path.realpath(link) == target:
+                return link.name
+    except OSError:
+        return None
+    return None
+
+
+def volume_ok():
+    """True only if the REAL Datasets volume is mounted at VOLUME_ROOT.
+
+    Three independent checks, because each one alone has a hole:
+      ismount       catches "not mounted", but not "a different disk"
+      uuid          catches a different disk, and survives sdc1 -> sdd1
+      sentinel+dev  catches a stale tree left on / by an earlier mkdir
+                    accident, which is the failure this whole block exists for
+    """
+    try:
+        if not os.path.ismount(VOLUME_ROOT):
+            return False
+        if _uuid_of(_mounted_device(VOLUME_ROOT)) != VOLUME_UUID:
+            return False
+        return os.stat(VOLUME_SENTINEL).st_dev == os.stat(VOLUME_ROOT).st_dev
+    except OSError:
+        return False
+
+
+def wait_for_volume(why=""):
+    """Park until the volume returns. False only if asked to shut down."""
+    if volume_ok():
+        return True
+    log(f"VOLUME LOST{' -- ' + why if why else ''}")
+    log(f"   {VOLUME_ROOT} is not the Datasets volume ({VOLUME_UUID}).")
+    log("   Parking. Nothing is marked failed; no attempt is consumed.")
+    wait = waited = 0
+    wait = VOLUME_POLL_S
+    while not SHUTDOWN.requested:
+        time.sleep(wait)
+        waited += wait
+        if volume_ok():
+            log(f"   volume back after {waited}s ({waited/60:.1f} min). Resuming.")
+            return True
+        log(f"   still waiting for the volume ({waited}s)")
+        wait = min(wait * 2, VOLUME_POLL_MAX)
+    return False
+
+
+def network_ok(session):
+    try:
+        session.head(NET_PROBE_URL, timeout=(10, 20), allow_redirects=True)
+        return True
+    except Exception:
+        return False
+
+
+def wait_for_network(session, why=""):
+    """Park until MAST is reachable again. False only on shutdown."""
+    log(f"NETWORK LOST{' -- ' + why if why else ''}")
+    log("   Parking. Nothing is marked failed; no attempt is consumed.")
+    wait = VOLUME_POLL_S
+    waited = 0
+    while not SHUTDOWN.requested:
+        time.sleep(wait)
+        waited += wait
+        if network_ok(session):
+            log(f"   network back after {waited}s ({waited/60:.1f} min). Resuming.")
+            return True
+        log(f"   still waiting for the network ({waited}s)")
+        wait = min(wait * 2, VOLUME_POLL_MAX)
+    return False
+
+
+def safe_mkdir(path):
+    """mkdir -p, but only ever onto the mounted volume."""
+    if not volume_ok():
+        raise VolumeGone(f"refusing to create {path}: volume not mounted")
+    path.mkdir(parents=True, exist_ok=True)
+
+
 def download_one(session, product, dest):
     """Byte-range-resumable single-file download.
     Returns (ok: bool, bytes_on_disk: int)."""
-    dest.parent.mkdir(parents=True, exist_ok=True)
+    safe_mkdir(dest.parent)
     part = dest.with_name(dest.name + ".part")
     expected = product["size"]
 
@@ -750,10 +899,31 @@ def download_one(session, product, dest):
     # Group D products carry an absolute URL; MAST products carry a mast: URI.
     url = product.get("url") or (MAST_DOWNLOAD_URL + product["uri"])
 
-    for attempt in range(1, MAX_ATTEMPTS + 1):
+    # Manual counter, not range(): a volume or network outage must NOT consume
+    # an attempt. Only a genuine per-file failure does.
+    attempt = 0
+    while attempt < MAX_ATTEMPTS:
         if SHUTDOWN.requested:
             return False, part.stat().st_size if part.exists() else 0
 
+        # The volume must be present before we so much as stat the .part.
+        if not volume_ok():
+            if not wait_for_volume(f"before {dest.name}"):
+                return False, 0
+            # An unclean disconnect can leave a .part that is the right SIZE
+            # and the wrong BYTES -- ext4 recovery zero-fills the tail. Resume
+            # trusts the size, so the only safe move is to drop it and refetch.
+            try:
+                if part.exists():
+                    n = part.stat().st_size
+                    part.unlink()
+                    log(f"      discarded {human(n)} .part written across the "
+                        f"outage -- refetching {dest.name} from 0")
+            except OSError:
+                pass
+            continue
+
+        attempt += 1
         resume_at = part.stat().st_size if part.exists() else 0
         headers = {"User-Agent": USER_AGENT}
         if resume_at:
@@ -830,6 +1000,21 @@ def download_one(session, product, dest):
         except Exception as e:
             if SHUTDOWN.requested:
                 return False, part.stat().st_size if part.exists() else 0
+
+            # Classify BEFORE counting. Location loss and network loss are
+            # conditions of the world, not verdicts on this file, so they hand
+            # the attempt back rather than spending it.
+            if not volume_ok():
+                attempt -= 1
+                if not wait_for_volume(f"during {dest.name}: {e}"):
+                    return False, 0
+                continue
+            if not network_ok(session):
+                attempt -= 1
+                if not wait_for_network(session, f"during {dest.name}: {e}"):
+                    return False, part.stat().st_size if part.exists() else 0
+                continue
+
             wait = BACKOFF_BASE * (2 ** (attempt - 1))
             if attempt < MAX_ATTEMPTS:
                 log(f"      attempt {attempt}/{MAX_ATTEMPTS} failed: {e} "
@@ -926,7 +1111,7 @@ def print_status(state, manifest):
         f"{sum(d['failed'] for d in by_target.values()):5d} "
         f"{sum(d['pending'] for d in by_target.values()):5d}   "
         f"{human(tot_done):>10s} / {human(tot_all):>9s}")
-    log(f"Free space on volume: {free_gb(HERE):.1f} GB")
+    log(f"Free space on volume: {free_gb(DATA_DIR):.1f} GB")
     if n_all:
         log(f"Progress: {100*n_done/n_all:.1f}% of files, "
             f"{100*tot_done/tot_all if tot_all else 0:.1f}% of bytes")
@@ -1001,12 +1186,21 @@ def main():
 
     acquire_lock()
     try:
+        # free_gb() returns inf on OSError, so a missing DATA_DIR would silently
+        # disable the free-space floor. Make sure it exists before any check --
+        # but ONLY on the real volume. The unguarded mkdir this replaces would,
+        # with the drive absent, have built the tree on / and filled the root
+        # filesystem while reporting success.
+        if not wait_for_volume("at startup"):
+            log("Shutdown while waiting for the volume.")
+            return
+        safe_mkdir(DATA_DIR)
         log("=" * 76)
         log("L_(I|O) validation download")
         log(f"pid {os.getpid()}  |  data -> {DATA_DIR}")
         log(f"products: {'ALL levels' if args.all_products else 'drizzled mosaics only'} "
             f"{suffixes}")
-        log(f"budget this run: {args.budget_gb:.0f} GB  |  free now: {free_gb(HERE):.1f} GB")
+        log(f"budget this run: {args.budget_gb:.0f} GB  |  free now: {free_gb(DATA_DIR):.1f} GB")
         log("=" * 76)
 
         # Group D is direct-URL only. If that is all that was asked for, skip the
@@ -1096,7 +1290,13 @@ def main():
                     f"Re-run to continue (state is saved).")
                 break
 
-            avail = free_gb(HERE)
+            # Volume first: free_gb() on a vanished mount reads / , not sdd1,
+            # and would happily report hundreds of GB free on the wrong disk.
+            if not volume_ok() and not wait_for_volume(f"before [{i}/{len(todo)}]"):
+                log("Shutdown while waiting for the volume -- stopping cleanly.")
+                break
+
+            avail = free_gb(DATA_DIR)
             if avail < MIN_FREE_GB:
                 log(f"Only {avail:.1f} GB free (floor is {MIN_FREE_GB} GB). Stopping.")
                 break

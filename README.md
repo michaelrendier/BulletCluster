@@ -8,6 +8,8 @@
 **Framework:** The Ainulindalë Conjecture — Abrikosov Lattice / σ=½ ZD boundary hypothesis  
 **Status:** Engine verified on synthetic data. Real MeerKAT Q/U data pending. JWST mosaic pending.
 
+**Paper:** [`paper_draft.md`](paper_draft.md) — *"Gravity is a Shape, Not a Stuff — GR and QM Read Through Each Other, In Code."* Abstract seeded; a supposition/thesis layer, changes no data status here. Lead-in to `FourthAgePapers/DM_GalacticCavity`.
+
 ---
 
 ## The Central Claim

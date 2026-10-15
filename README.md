@@ -197,7 +197,7 @@ The Bullet Cluster phenomenon is described by the **first three nodes of the Abr
 
 ## License
 
-All rights reserved. No license is granted at this time.
+Licensed under the GNU General Public License, version 3.0 (GPL-3.0-only); see `LICENSE`.
 
 ---
 

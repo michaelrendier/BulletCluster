@@ -1,0 +1,11 @@
+kappa range -0.189..+0.190 ; -psi range -42.3..+42.4
+Poisson check: if panel 2 = -psi with lap(psi)=2*kappa, then corr(kappa, laplacian(-psi)) must be negative
+ sigma= 3px  corr(kappa, lap(-psi)) = -0.105   corr(kappa, -psi) = +0.305
+ sigma= 6px  corr(kappa, lap(-psi)) = -0.345   corr(kappa, -psi) = +0.325
+ sigma=10px  corr(kappa, lap(-psi)) = -0.625   corr(kappa, -psi) = +0.355
+ sigma=16px  corr(kappa, lap(-psi)) = -0.803   corr(kappa, -psi) = +0.393
+ lower blue lobe (112,22): kappa -0.189   -psi +0.7   (mean of -psi +14.2)
+ upper blue lobe (120,40): kappa -0.189   -psi +10.4   (mean of -psi +14.2)
+ variance share at scales >25 px: -psi 80 %, kappa 9 %
+ share of panel-1 pixels at the darkest-blue end: 1.5 %
+ share of panel-1 pixels at the darkest-red end: 0.9 %

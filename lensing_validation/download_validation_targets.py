@@ -782,6 +782,24 @@ VOLUME_POLL_MAX  = 300         # ...up to 5 minutes between polls
 NET_PROBE_URL    = "https://mast.stsci.edu/"
 
 
+# 2026-10-17: the Datasets drive (VOLUME_UUID above) was stolen. --huchra mode writes to a normal
+# directory instead, and the guard that matters is the same one this block exists for: NEVER let the
+# run fill the SYSTEM partition. LOCAL_DATA_ROOT is None except in --huchra mode.
+LOCAL_DATA_ROOT = None
+
+
+def local_volume_ok():
+    """True if LOCAL_DATA_ROOT (or its nearest existing ancestor) is on a different filesystem
+    than '/'. On this machine / is a 92 GB system partition and /home is its own 856 GB one."""
+    try:
+        p = Path(LOCAL_DATA_ROOT)
+        while not p.exists():
+            p = p.parent
+        return os.stat(p).st_dev != os.stat("/").st_dev
+    except OSError:
+        return False
+
+
 class VolumeGone(OSError):
     """The data volume is not mounted. Recoverable: park and wait."""
 
@@ -824,6 +842,8 @@ def volume_ok():
       sentinel+dev  catches a stale tree left on / by an earlier mkdir
                     accident, which is the failure this whole block exists for
     """
+    if LOCAL_DATA_ROOT is not None:       # --huchra mode: see local_volume_ok()
+        return local_volume_ok()
     try:
         if not os.path.ismount(VOLUME_ROOT):
             return False
@@ -1118,6 +1138,434 @@ def print_status(state, manifest):
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
+# ═════════════════════════════════════════════════════════════════════════════
+# HUCHRA'S LENS EXPERIMENT MODE  (added 2026-10-17)      python3 download_validation_targets.py --huchra jwst
+# ═════════════════════════════════════════════════════════════════════════════
+# Target A5_q2237+0305 (Q2237+0305, the Einstein Cross), done as ONE dataset at a time because two
+# downloads at once crash this machine. Stages, in Cody's order:
+#
+#   jwst   every JWST observation within the target radius, ALL instruments/cameras, all product levels
+#          selected by --tiers. If MAST holds none, that is recorded as a FINDING, not an error.
+#   pol    every polarimetric observation (HST ACS POL*V, WFPC2 POLQ, NICMOS POL*S, FOC, and any JWST
+#          polarizer/Wollaston element) -- recorded as a finding if there are none.
+#   hst    every other HST observation of the field: the per-exposure, dithered frames ptychography needs.
+#   all    jwst, then pol, then hst, in this process, sequentially.
+#
+# WHY A DIFFERENT PRODUCT SET FROM THE DEFAULT. Ptychography reconstructs phase from OVERLAPPING exposures at
+# KNOWN probe positions. Drizzled mosaics resample away the sub-pixel dither offsets, so the default
+# (_drz/_drc/_i2d only) is the wrong class for this. Products are therefore tiered:
+#     tier 1  per-exposure frames + everything that fixes WHERE each exposure was pointed and WHEN
+#             (_flc/_flt/_raw/_cal/_rate, _spt/_jit/_jif jitter + support, _asn association = the dither set,
+#             _trl/_log, header-lets with alternate astrometric solutions, WFPC2/FOC/NICMOS native families)
+#     tier 2  drizzled and derived products (kept for astrometry cross-checks; wrong class for the retrieval)
+#     tier 3  ramps and integrations (_uncal/_ramp/_rateints/_calints): enormous, opt-in
+#     tier 9  previews/thumbnails: never fetched
+# Default --tiers 1,2.  Instruments that cannot separate the four images (HST COS: 2.5" aperture) are
+# excluded by RESOLVE_BLOCKLIST.
+#
+# OBSERVER GEOMETRY (Cody: "ensure parallax is taken into account due to Earth's ellipse"). Every observation
+# row carries its epoch; earth_geometry() computes, for that epoch and the target direction, Earth's
+# barycentric position and velocity (astropy built-in ephemeris, offline), the annual-aberration shift, the
+# light-time offset to the barycentre and the parallax baseline. --geometry-pass then reads the headers of the
+# files already on disk and records whatever spacecraft-state / velocity-aberration / reference-file keywords
+# they carry. Q2237 (z=1.695) and its lens galaxy (z=0.039) have negligible parallax; what matters is the
+# aberration, which differs across the field, and the parallax of the FOREGROUND PSF STARS.
+#
+# ROBOTS. mast.stsci.edu's robots.txt for a generic agent is `Disallow: /` (checked 2026-10-17). This mode logs
+# the verdict, records it in the manifest, and proceeds -- as every earlier script here has -- UNLESS
+# --respect-robots is given, in which case it refuses to contact a disallowed host. The choice is Cody's.
+# ═════════════════════════════════════════════════════════════════════════════
+HUCHRA_KEY   = "A5_q2237+0305"
+HUCHRA_STAGES = ("jwst", "pol", "hst")
+POL_TOKENS   = ("POL", "WOLL")                # substring match, same spirit as POL_TOKEN
+RESOLVE_BLOCKLIST = ("COS",)                  # spectrograph aperture integrates the whole cross
+GLOBAL_LOCK  = Path.home() / ".cache" / "one_download_at_a_time.pid"
+
+_T9 = (".jpg", ".jpeg", ".png", ".gif")
+_T3 = ("_uncal.", "_ramp.", "_rateints.", "_calints.", "_trapsfilled.", "_pool.")
+_T1 = ("_flc.", "_flt.", "_raw.", "_cal.", "_rate.", "_spt.", "_jit.", "_jif.", "_asn.", "_trl.", "_log.",
+       "_flt_hlet.", "_flc_hlet.", "_ima.", "_ime.",
+       # WFPC2 / FOC / FOS / GHRS native families (calibrated, raw, quality, support, jitter)
+       "_c0m.", "_c1m.", "_c3m.", "_c0f.", "_c1f.", "_c3f.", "_d0m.", "_d0f.", "_q0m.", "_q1m.",
+       "_shm.", "_shf.", "_x0m.", "_x0f.", "_pdq.", "_cmh.", "_cqh.")
+
+
+def classify_tier(filename):
+    """1 per-exposure + pointing, 2 drizzled/derived, 3 ramps/integrations, 9 previews (never fetched)."""
+    low = filename.lower()
+    if low.endswith(_T9) or "thumb" in low or "preview" in low:
+        return 9
+    if any(t in low for t in _T3):
+        return 3
+    if any(t in low for t in _T1):
+        return 1
+    return 2
+
+
+def is_pol_obs(row):
+    text = " ".join(str(row.get(k, "") or "") for k in ("filters", "instrument_name")).upper()
+    return any(t in text for t in POL_TOKENS)
+
+
+def earth_geometry(mjd, ra_deg, dec_deg):
+    """Earth's barycentric state at `mjd` (UTC) and the first-order observer effects toward (ra, dec).
+
+    Returns plain floats. Offline: astropy's built-in ephemeris. Conventions: ICRS axes.
+      aberration_arcsec   magnitude of the annual-aberration shift of the apparent position
+      aberration_E/N      its components on the sky (east, north), arcsec
+      light_time_s        (r . n)/c : add to the observation time to refer it to the barycentre
+      parallax_baseline_au  |r_perp|: a source with parallax p (arcsec) shifts by p * baseline (arcsec)
+    The observatory's own offset from Earth's centre (HST ~4.6e-5 au, JWST at L2 ~1.0e-2 au) is OBSERVATORY_OFFSET_AU.
+    """
+    import math
+    import numpy as np
+    import astropy.units as u
+    from astropy.time import Time
+    from astropy.coordinates import get_body_barycentric_posvel
+
+    C_KMS = 299792.458
+    ARCSEC = 206264.80624709636
+    t = Time(float(mjd), format="mjd", scale="utc")
+    pos, vel = get_body_barycentric_posvel("earth", t)
+    r = np.array([pos.x.to_value(u.au), pos.y.to_value(u.au), pos.z.to_value(u.au)])
+    v = np.array([vel.x.to_value(u.km / u.s), vel.y.to_value(u.km / u.s), vel.z.to_value(u.km / u.s)])
+    ra, dec = math.radians(ra_deg), math.radians(dec_deg)
+    n = np.array([math.cos(dec) * math.cos(ra), math.cos(dec) * math.sin(ra), math.sin(dec)])
+    e_ra = np.array([-math.sin(ra), math.cos(ra), 0.0])
+    e_dec = np.array([-math.sin(dec) * math.cos(ra), -math.sin(dec) * math.sin(ra), math.cos(dec)])
+    beta = v / C_KMS
+    beta_perp = beta - np.dot(beta, n) * n
+    r_perp = r - np.dot(r, n) * n
+    return {
+        "mjd": float(mjd),
+        "earth_pos_au": [float(x) for x in r],
+        "earth_vel_kms": [float(x) for x in v],
+        "earth_speed_kms": float(np.linalg.norm(v)),
+        "aberration_arcsec": float(np.linalg.norm(beta_perp) * ARCSEC),
+        "aberration_E_arcsec": float(np.dot(beta, e_ra) * ARCSEC),
+        "aberration_N_arcsec": float(np.dot(beta, e_dec) * ARCSEC),
+        "light_time_s": float(np.dot(r, n) * 499.00478384),
+        "parallax_baseline_au": float(np.linalg.norm(r_perp)),
+    }
+
+
+OBSERVATORY_OFFSET_AU = {"HST": 6911.0 / 1.495978707e8, "JWST": 1.5e6 / 1.495978707e8}   # approximate orbit radii
+
+# Keys worth recording from a downloaded file's headers. Only those PRESENT are recorded; nothing is invented.
+GEOMETRY_KEYS = (
+    "INSTRUME", "DETECTOR", "FILTER", "FILTER1", "FILTER2", "PUPIL", "APERTURE", "PROPOSID", "VISIT", "OBSERVTN", "OBS_ID",
+    "DATE-OBS", "TIME-OBS", "EXPSTART", "EXPEND", "EXPTIME", "MJD-OBS", "TDB-BEG", "TDB-MID", "TDB-END",
+    "RA_TARG", "DEC_TARG", "PA_V3", "ORIENTAT", "PA_APER",
+    "VAFACTOR", "VA_SCALE",                                   # velocity-aberration factor / scale
+    "POSTNSTX", "POSTNSTY", "POSTNSTZ", "VELOCSTX", "VELOCSTY", "VELOCSTZ",          # HST orbit state (support header)
+    "JWST_X", "JWST_Y", "JWST_Z", "JWST_DX", "JWST_DY", "JWST_DZ", "EPH_TIME", "EPH_TYPE", "EPH_COOR",   # JWST ephemeris
+    "PATTTYPE", "PATT_NUM", "NUMDITHS", "DITHPNTS", "PRIDTYPE", "XOFFSET", "YOFFSET", "P_XOFFSE", "P_YOFFSE",
+    "WCSAXES", "CTYPE1", "CTYPE2", "CRVAL1", "CRVAL2", "CRPIX1", "CRPIX2", "CD1_1", "CD1_2", "CD2_1", "CD2_2",
+    "CDELT1", "CDELT2", "PC1_1", "PC1_2", "PC2_1", "PC2_2",
+    "IDCTAB", "DGEOFILE", "NPOLFILE", "D2IMFILE", "OSCNTAB", "FLATFILE", "DARKFILE", "BIASFILE", "PFLTFILE",
+    "CRDS_CTX", "CRDS_VER",
+)
+
+
+def scan_headers(path):
+    """Header facts from one local FITS file: primary header plus the first image extension carrying a WCS.
+    Reference-file keys (JWST R_*) are picked up by prefix. Returns {} for an unreadable file."""
+    from astropy.io import fits
+    out = {}
+    try:
+        with fits.open(path, memmap=True) as hdul:
+            hdrs = [("PRIMARY", hdul[0].header)]
+            for h in hdul[1:]:
+                if "CRVAL1" in h.header or "CD1_1" in h.header:
+                    hdrs.append((f"{h.name},{h.ver}", h.header))
+                    break
+            for label, hd in hdrs:
+                for k in GEOMETRY_KEYS:
+                    if k in hd:
+                        out.setdefault(k, {})[label] = hd[k] if not hasattr(hd[k], "item") else hd[k].item()
+                for k in hd:
+                    if str(k).startswith("R_") and hd[k]:
+                        out.setdefault(str(k), {})[label] = str(hd[k])
+    except Exception as e:                                 # noqa: BLE001 -- recorded, not fatal
+        return {"_error": str(e)}
+    return out
+
+
+def _pid_exists(pid):
+    try:
+        os.kill(pid, 0)
+        return True
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+
+
+def acquire_global_lock():
+    """ONE download at a time on this machine, across scripts that honour ~/.cache/one_download_at_a_time.pid."""
+    GLOBAL_LOCK.parent.mkdir(parents=True, exist_ok=True)
+    if GLOBAL_LOCK.exists():
+        try:
+            old = int(GLOBAL_LOCK.read_text().split()[0])
+        except (ValueError, IndexError, OSError):
+            old = None
+        if old and old != os.getpid() and _pid_exists(old):
+            log(f"Another download holds {GLOBAL_LOCK} (pid {old}). Two at once crash this machine: refusing to start.")
+            sys.exit(3)
+    GLOBAL_LOCK.write_text(f"{os.getpid()} {Path(__file__).name} {datetime.now(timezone.utc).isoformat()}\n")
+
+
+def release_global_lock():
+    try:
+        if GLOBAL_LOCK.exists() and GLOBAL_LOCK.read_text().split()[0] == str(os.getpid()):
+            GLOBAL_LOCK.unlink()
+    except (OSError, IndexError):
+        pass
+
+
+def robots_verdict(host, paths, session=None):
+    """What `host`'s robots.txt says to a generic agent (the Mozilla UA falls into the `*` group)."""
+    import urllib.robotparser
+    s = session or requests.Session()
+    try:
+        r = s.get(f"https://{host}/robots.txt", headers={"User-Agent": USER_AGENT}, timeout=(10, 20))
+    except Exception as e:                                 # noqa: BLE001
+        return {"host": host, "state": "unreachable", "error": str(e), "allowed": {p: True for p in paths}}
+    if r.status_code == 404:
+        return {"host": host, "state": "no_robots_file", "allowed": {p: True for p in paths}}
+    if r.status_code != 200 or "<html" in r.text[:300].lower():
+        return {"host": host, "state": f"unparseable (http {r.status_code})", "allowed": {p: True for p in paths}}
+    rp = urllib.robotparser.RobotFileParser()
+    rp.parse(r.text.splitlines())
+    return {"host": host, "state": "parsed", "crawl_delay": rp.crawl_delay(USER_AGENT),
+            "allowed": {p: rp.can_fetch(USER_AGENT, f"https://{host}{p}") for p in paths}}
+
+
+def _cell(row, col, default=""):
+    try:
+        v = row[col]
+    except (KeyError, IndexError, ValueError):
+        return default
+    if v is None or getattr(v, "mask", False) is True:
+        return default
+    return v.item() if hasattr(v, "item") else v
+
+
+def build_huchra_manifest(stage, tiers, observer_agent=USER_AGENT):
+    """Query MAST for ONE stage. Returns {"stage", "findings", "census", "observations", "products"}.
+    Everything is logged; an empty result is a recorded finding."""
+    from astroquery.mast import Observations
+    from astropy.coordinates import SkyCoord
+    import astropy.units as u
+
+    try:                                    # Mozilla UA on astroquery's own session too
+        Observations._session.headers["User-Agent"] = observer_agent
+    except Exception:                       # noqa: BLE001
+        pass
+    t = next(x for x in TARGETS if x["key"] == HUCHRA_KEY)
+    coord = SkyCoord(ra=t["ra"], dec=t["dec"], unit="deg")
+    obs = Observations.query_region(coord, radius=t["radius_arcmin"] * u.arcmin)
+    log(f"  {len(obs)} MAST observations of any kind within {t['radius_arcmin']}' of {HUCHRA_KEY}")
+
+    census = {}
+    for row in obs:
+        k = f"{_cell(row, 'obs_collection')}/{_cell(row, 'instrument_name')}"
+        census[k] = census.get(k, 0) + 1
+    for k, n in sorted(census.items()):
+        log(f"     {k:28s} {n}")
+
+    keep = []
+    for i, row in enumerate(obs):
+        coll = str(_cell(row, "obs_collection"))
+        inst = str(_cell(row, "instrument_name")).upper()
+        if any(b in inst for b in RESOLVE_BLOCKLIST):
+            continue
+        pol = is_pol_obs({"filters": _cell(row, "filters"), "instrument_name": inst})
+        if stage == "jwst" and coll == "JWST" and not pol:
+            keep.append(i)
+        elif stage == "pol" and coll in ("JWST", "HST") and pol:
+            keep.append(i)
+        elif stage == "hst" and coll == "HST" and not pol:
+            keep.append(i)
+    findings = []
+    if not keep:
+        msg = (f"NO {stage.upper()} OBSERVATIONS of {HUCHRA_KEY} within {t['radius_arcmin']}' in MAST "
+               f"({datetime.now(timezone.utc).date()}). That is a finding; it is recorded, not assumed.")
+        log("  " + msg)
+        findings.append(msg)
+        return {"stage": stage, "findings": findings, "census": census, "observations": [], "products": []}
+    sel = obs[keep]
+    log(f"  stage {stage}: {len(sel)} observations selected")
+
+    observations = {}
+    for row in sel:
+        oid = str(_cell(row, "obsid"))
+        t0, t1 = _cell(row, "t_min", None), _cell(row, "t_max", None)
+        rec = {k: _cell(row, k) for k in ("obs_collection", "instrument_name", "filters", "proposal_id", "proposal_pi",
+                                          "obs_id", "target_name", "dataproduct_type", "calib_level",
+                                          "t_min", "t_max", "t_exptime", "s_ra", "s_dec")}
+        if t0 not in (None, "") and t1 not in (None, ""):
+            try:
+                mid = 0.5 * (float(t0) + float(t1))
+                rec["geometry"] = earth_geometry(mid, t["ra"], t["dec"])
+                rec["observatory_offset_au"] = OBSERVATORY_OFFSET_AU.get(str(rec["obs_collection"]))
+            except Exception as e:                         # noqa: BLE001
+                rec["geometry_error"] = str(e)
+        observations[oid] = rec
+
+    products = []
+    seen = set()
+    for i in range(0, len(sel), 25):
+        batch = sel[i:i + 25]
+        for prow in Observations.get_product_list(batch):
+            fname = str(_cell(prow, "productFilename"))
+            if not fname or fname in seen:
+                continue
+            tier = classify_tier(fname)
+            if tier == 9 or tier not in tiers:
+                continue
+            seen.add(fname)
+            oid = str(_cell(prow, "parent_obsid"))
+            meta = observations.get(oid, {})
+            try:
+                size = int(_cell(prow, "size", 0) or 0)
+            except (TypeError, ValueError):
+                size = 0
+            products.append({
+                "filename": fname, "uri": str(_cell(prow, "dataURI")), "size": size,
+                "target": HUCHRA_KEY, "group": "A", "priority": 1 if tier == 1 else 2, "mode": stage,
+                "collection": str(meta.get("obs_collection", "")), "tier": tier, "obsid": oid,
+                "obs_id": meta.get("obs_id", ""), "instrument": meta.get("instrument_name", ""),
+                "filters": meta.get("filters", ""), "proposal_id": meta.get("proposal_id", ""),
+                "product_type": str(_cell(prow, "productType")),
+                "subgroup": str(_cell(prow, "productSubGroupDescription")),
+            })
+    products.sort(key=lambda p: (p["tier"], p["size"]))
+    log(f"  -> {len(products)} products in tiers {sorted(tiers)}, {human(sum(p['size'] for p in products))}")
+    return {"stage": stage, "findings": findings, "census": census, "observations": observations, "products": products}
+
+
+def huchra_main(args):
+    """--huchra STAGE | --geometry-pass. One stage at a time; `all` runs jwst, pol, hst in order."""
+    global DATA_DIR, STATE_FILE, MANIFEST_FILE, LOG_FILE, PID_FILE, LOCAL_DATA_ROOT
+    tag = "huchra"
+    DATA_DIR = Path(args.data_dir).expanduser() if args.data_dir else HERE.parent / "huchras_lens" / "data"
+    LOCAL_DATA_ROOT = DATA_DIR
+    STATE_FILE = HERE / f"validation_download_state_{tag}.json"
+    LOG_FILE = HERE / f"validation_download_{tag}.log"
+    PID_FILE = HERE / f"validation_download_{tag}.pid"
+    tiers = {int(x) for x in str(args.tiers).split(",") if x.strip()}
+    if not tiers <= {1, 2, 3}:
+        print("--tiers must be a comma list drawn from 1,2,3", file=sys.stderr)
+        sys.exit(2)
+
+    if args.geometry_pass:                       # offline: reads what is already on disk
+        out = {"built": datetime.now(timezone.utc).isoformat(), "data_dir": str(DATA_DIR), "files": {}}
+        for fp in sorted(DATA_DIR.rglob("*.fits")) if DATA_DIR.exists() else []:
+            out["files"][str(fp.relative_to(DATA_DIR))] = scan_headers(fp)
+        dest = HERE.parent / "huchras_lens" / "catalog" / "observer_geometry_headers.json"
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(json.dumps(out, indent=1, default=str))
+        log(f"geometry pass: {len(out['files'])} files -> {dest}")
+        return
+
+    stages = list(HUCHRA_STAGES) if args.huchra == "all" else [args.huchra]
+    acquire_lock()
+    acquire_global_lock()
+    try:
+        if not wait_for_volume("at startup"):
+            return
+        safe_mkdir(DATA_DIR)
+        log("=" * 76)
+        log(f"Huchra's Lens experiment download | stages {stages} | tiers {sorted(tiers)}")
+        log(f"pid {os.getpid()} | data -> {DATA_DIR} | free {free_gb(DATA_DIR):.1f} GB | budget {args.budget_gb:.0f} GB")
+        log("one dataset at a time: global lock held at " + str(GLOBAL_LOCK))
+        log("=" * 76)
+        session = requests.Session()
+        session.headers.update({"User-Agent": USER_AGENT})
+
+        # robots first, always logged; refuse only when asked to.
+        verdict = robots_verdict("mast.stsci.edu", ["/api/v0/invoke", "/api/v0.1/Download/file"], session)
+        log(f"ROBOTS mast.stsci.edu: {verdict['state']}  allowed={verdict['allowed']}  crawl-delay={verdict.get('crawl_delay')}")
+        if not all(verdict["allowed"].values()):
+            if args.respect_robots:
+                log("--respect-robots: MAST disallows these paths for a generic agent. Refusing to contact it.")
+                log("Options are written up in PTorrent/in_situ/huchras_lens/ACCESS_OUTLINE.md section 3.")
+                sys.exit(4)
+            log("robots.txt DISALLOWS these paths for a generic agent. Proceeding because --respect-robots was not given;")
+            log("this is recorded in each manifest. (These are MAST's documented programmatic endpoints.)")
+
+        state = load_state()
+        files = state.setdefault("files", {})
+        for stage in stages:
+            if SHUTDOWN.requested:
+                break
+            mf = HERE / f"validation_manifest_{tag}_{stage}.json"
+            log("")
+            log(f"########  STAGE {stage.upper()}  ########")
+            manifest = None
+            if mf.exists() and not args.requery:
+                try:
+                    m = json.load(open(mf))
+                    age = (datetime.now(timezone.utc) - datetime.fromisoformat(m["built"])).days
+                    if age <= MANIFEST_MAX_AGE_D and set(m.get("tiers", [])) == tiers:
+                        manifest = m
+                        log(f"using cached manifest ({len(m['products'])} products, {age} d old); --requery to refresh")
+                except (OSError, ValueError, KeyError, json.JSONDecodeError):
+                    manifest = None
+            if manifest is None:
+                manifest = build_huchra_manifest(stage, tiers)
+                manifest.update({"built": datetime.now(timezone.utc).isoformat(), "tiers": sorted(tiers),
+                                 "robots": verdict})
+                tmp = mf.with_suffix(".tmp")
+                with open(tmp, "w") as f:
+                    json.dump(manifest, f, indent=2, default=str)
+                    f.flush()
+                    os.fsync(f.fileno())
+                os.replace(tmp, mf)
+            for fnd in manifest.get("findings", []):
+                log("FINDING: " + fnd)
+            products = manifest["products"]
+            todo = [p for p in products if files.get(p["filename"], {}).get("status") != "done"]
+            log(f"{len(products)} products | {len(products)-len(todo)} done | {len(todo)} to fetch "
+                f"({human(sum(p['size'] for p in todo))})")
+            if args.dry_run:
+                for p in todo[:200]:
+                    log(f"   T{p['tier']} {p['collection']:5s} {p['instrument'][:12]:12s} {p['filename']:52s} {human(p['size']):>10s}")
+                if len(todo) > 200:
+                    log(f"   ... {len(todo)-200} more")
+                continue
+            spent = 0
+            for i, p in enumerate(todo, 1):
+                if SHUTDOWN.requested:
+                    break
+                if spent >= args.budget_gb * 1e9:
+                    log(f"run budget of {args.budget_gb:.0f} GB reached; re-run to continue")
+                    break
+                if not volume_ok() and not wait_for_volume(f"before [{i}/{len(todo)}]"):
+                    break
+                avail = free_gb(DATA_DIR)
+                if avail < MIN_FREE_GB or (p["size"] and avail * 1e9 - p["size"] < MIN_FREE_GB * 1e9):
+                    log(f"free-space floor ({MIN_FREE_GB} GB) would be breached at {avail:.1f} GB free; stopping")
+                    break
+                dest = DATA_DIR / stage / p["filename"]
+                log(f"[{i}/{len(todo)}] {stage} T{p['tier']} :: {p['filename']} ({human(p['size'])})")
+                ok, nbytes = download_one(session, p, dest)
+                files[p["filename"]] = {"status": "done" if ok else "failed", "target": HUCHRA_KEY, "stage": stage,
+                                        "bytes": nbytes, "size": p["size"], "path": str(dest),
+                                        "updated": datetime.now(timezone.utc).isoformat()}
+                save_state(state)
+                if ok:
+                    spent += nbytes
+        log("")
+        todo_stages = [x for x in HUCHRA_STAGES if x not in stages]
+        log("done." + (f" Stages not run this time: {', '.join(todo_stages)}." if todo_stages else ""))
+        log("Next: python3 download_validation_targets.py --huchra jwst --geometry-pass  (offline: header scan of what is on disk)")
+    finally:
+        release_global_lock()
+        release_lock()
+
+
 def main():
     ap = argparse.ArgumentParser(
         description="Checkpointed MAST download for the L_(I|O) validation programme.")
@@ -1150,7 +1598,30 @@ def main():
                     help="skip group D (direct-URL) products entirely")
     ap.add_argument("--budget-gb", type=float, default=DEFAULT_BUDGET_GB,
                     help=f"stop after this many GB this run (default {DEFAULT_BUDGET_GB})")
+    # --- Huchra's Lens experiment mode (2026-10-17) ---
+    ap.add_argument("--huchra", choices=["jwst", "pol", "hst", "all"], default=None,
+                    help="Q2237+0305 experiment: ONE stage at a time (jwst = every JWST camera, pol = every "
+                         "polarimetric observation, hst = the per-exposure dithered HST frames; all = those three in order). "
+                         "Per-exposure + pointing products, not drizzled mosaics. See the block comment above huchra_main().")
+    ap.add_argument("--tiers", default="1,2",
+                    help="with --huchra: product tiers, comma list from 1 (per-exposure + pointing), 2 (drizzled/derived), "
+                         "3 (ramps/integrations, enormous). Default 1,2")
+    ap.add_argument("--data-dir", default=None,
+                    help="with --huchra: where the data lands (default ../huchras_lens/data). Must NOT be on the "
+                         "system partition; the Datasets volume guard is replaced by that rule in this mode")
+    ap.add_argument("--respect-robots", action="store_true",
+                    help="with --huchra: refuse to contact mast.stsci.edu if its robots.txt disallows the API paths for a "
+                         "generic agent (it does, 2026-10-17). Without this flag the verdict is logged and recorded, and the run proceeds")
+    ap.add_argument("--geometry-pass", action="store_true",
+                    help="with --huchra: offline. Read the headers of every FITS file already in the data dir and write "
+                         "../huchras_lens/catalog/observer_geometry_headers.json (epochs, spacecraft state, velocity "
+                         "aberration, WCS, dither offsets, reference-file names)")
     args = ap.parse_args()
+    if args.huchra or args.geometry_pass:
+        if not args.huchra:
+            args.huchra = "all"
+        huchra_main(args)
+        return
 
     suffixes = ALL_SUFFIXES if args.all_products else DEFAULT_SUFFIXES
     only = set(args.target) if args.target else None

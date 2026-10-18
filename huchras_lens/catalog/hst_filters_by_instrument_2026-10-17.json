@@ -1,0 +1,106 @@
+{
+ "query": "MAST CAOM cone ra=340.125975 dec=3.3585083 r=0.01 deg; HST rows with target_name containing 2237",
+ "date": "2026-10-17",
+ "n_observations": 172,
+ "by_instrument": {
+  "ACS": {
+   "n": 32,
+   "filters": [
+    "F165LP",
+    "detection"
+   ],
+   "proposals": [
+    "11225",
+    "11791",
+    "None"
+   ]
+  },
+  "FOC": {
+   "n": 11,
+   "filters": [
+    "CLEAR1;CLEAR2;CLEAR3;F502M",
+    "CLEAR1;F342W;CLEAR3;CLEAR4",
+    "CLEAR1;F342W;F1ND;CLEAR4",
+    "F2ND;F430W;CLEAR3;CLEAR4"
+   ],
+   "proposals": [
+    "1059",
+    "2502",
+    "2996",
+    "3087"
+   ]
+  },
+  "NICMOS": {
+   "n": 2,
+   "filters": [
+    "F160W",
+    "F205W"
+   ],
+   "proposals": [
+    "7495"
+   ]
+  },
+  "STIS": {
+   "n": 18,
+   "filters": [
+    "G140L",
+    "G140L;G230L",
+    "G230L",
+    "MIRVIS"
+   ],
+   "proposals": [
+    "13801"
+   ]
+  },
+  "WFC3": {
+   "n": 41,
+   "filters": [
+    "F218W",
+    "F438W",
+    "F555W",
+    "F625W",
+    "F814W",
+    "detection"
+   ],
+   "proposals": [
+    "11791",
+    "13113",
+    "None"
+   ]
+  },
+  "WFPC": {
+   "n": 15,
+   "filters": [
+    "F336W",
+    "F555W",
+    "F702W",
+    "F785LP"
+   ],
+   "proposals": [
+    "1116",
+    "3068",
+    "3799"
+   ]
+  },
+  "WFPC2": {
+   "n": 53,
+   "filters": [
+    "F218W",
+    "F255W",
+    "F300W",
+    "F336W",
+    "F439W",
+    "F555W",
+    "F675W",
+    "F814W",
+    "detection"
+   ],
+   "proposals": [
+    "5236",
+    "5937",
+    "8252"
+   ]
+  }
+ },
+ "polarizer_filters_found": []
+}

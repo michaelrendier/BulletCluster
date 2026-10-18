@@ -65,3 +65,6 @@ venv_install.log
 # In-progress resumable downloads (2026-08-15)
 *.part
 *.fits.part
+
+# Huchra's Lens experiment: archive data downloaded by download_validation_targets.py --huchra (never committed)
+huchras_lens/data/

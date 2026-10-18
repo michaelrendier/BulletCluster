@@ -1,0 +1,21 @@
+# In situ feasibility probe, 2026-10-17. Nothing was downloaded to disk except what is quoted here.
+# Script: PTorrent/in_situ/huchras_lens/probe/insitu_probe.py   (user agent: Mozilla, public S3 bucket, anonymous)
+# Target file: ib0r02u2q_flc.fits  (HST WFC3/UVIS F218W, proposal 11791, calibrated per-exposure frame)
+
+## 1. Does MAST serve partial reads?  (HEAD, then Range)
+MAST download API   HEAD: HTTP/2 200, accept-ranges: bytes, content-length: 168382080
+MAST download API   Range bytes=0-2879: HTTP 206, 2880 bytes returned, first card "SIMPLE  =                    T / file does conform to FITS standard"
+Public S3 bucket    stpubdata/hst/public/ib0r/ib0r02u2q/ib0r02u2q_flc.fits   HEAD: 200 OK, Accept-Ranges: bytes, Content-Length: 168382080   (anonymous)
+
+## 2. Evaluate a cutout of the lens WITHOUT downloading the file
+file 168382080 bytes, 17 HDUs, header walk used 21 requests, 241920 bytes
+target in HDU 4 EXTVER 2 at pixel x=2035.5 y=1086.1 of [4096, 2051]; BITPIX -32
+cutout (64, 64) read with 64 requests, 16384 bytes; total transferred 258304 bytes = 0.1534% of the file, 44.7 s
+on-the-server evaluation: median 1.638, peak 10139.191 at cutout (11,60), sum(cut-median) 50828.5 e-/s, units ELECTRONS
+
+## 3. Reading of the numbers (honest)
+- Feasible: header walk + one 64x64 cutout = 85 range requests, 258 KB, 0.15 % of one frame.
+- The header walk is 94 % of the traffic (242 KB of 258 KB) and was sequential; it can be cut by reading only the SCI extension headers (known layout) and by parallel requests.
+- 44.7 s was sequential; not an optimised time.
+- This is a FEASIBILITY probe. The peak was not identified with an image A-D, no PSF was fitted, no calibration of the e-/s numbers was attempted.
+- "On the server" here means the bytes stay on the archive and only the requested ranges reach RAM; no compute runs at MAST/AWS. The only archive-side compute found is ADQL (TAP).

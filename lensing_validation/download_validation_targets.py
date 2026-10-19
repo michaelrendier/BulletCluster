@@ -1447,8 +1447,10 @@ def build_huchra_manifest(stage, tiers, observer_agent=USER_AGENT):
 
 def huchra_main(args):
     """--huchra STAGE | --geometry-pass. One stage at a time; `all` runs jwst, pol, hst in order."""
-    global DATA_DIR, STATE_FILE, MANIFEST_FILE, LOG_FILE, PID_FILE, LOCAL_DATA_ROOT
-    tag = "huchra"
+    global DATA_DIR, STATE_FILE, MANIFEST_FILE, LOG_FILE, PID_FILE, LOCAL_DATA_ROOT, HUCHRA_KEY
+    if args.huchra_target:                       # 2026-10-18: same staged machinery, another TARGETS key
+        HUCHRA_KEY = args.huchra_target
+    tag = "huchra" if HUCHRA_KEY == "A5_q2237+0305" else HUCHRA_KEY
     DATA_DIR = Path(args.data_dir).expanduser() if args.data_dir else HERE.parent / "huchras_lens" / "data"
     LOCAL_DATA_ROOT = DATA_DIR
     STATE_FILE = HERE / f"validation_download_state_{tag}.json"
@@ -1526,6 +1528,9 @@ def huchra_main(args):
             for fnd in manifest.get("findings", []):
                 log("FINDING: " + fnd)
             products = manifest["products"]
+            if args.only:                        # 2026-10-18: e.g. level-3 combined mosaics only
+                products = [p for p in products if re.search(args.only, p["filename"])]
+                log(f"--only {args.only!r}: {len(products)} products kept")
             todo = [p for p in products if files.get(p["filename"], {}).get("status") != "done"]
             log(f"{len(products)} products | {len(products)-len(todo)} done | {len(todo)} to fetch "
                 f"({human(sum(p['size'] for p in todo))})")
@@ -1603,6 +1608,11 @@ def main():
                     help="Q2237+0305 experiment: ONE stage at a time (jwst = every JWST camera, pol = every "
                          "polarimetric observation, hst = the per-exposure dithered HST frames; all = those three in order). "
                          "Per-exposure + pointing products, not drizzled mosaics. See the block comment above huchra_main().")
+    ap.add_argument("--huchra-target", default=None, metavar="KEY",
+                    help="with --huchra: run the same staged download for another TARGETS key (e.g. E2_bullet_cluster_img). "
+                         "State, log and manifests are tagged by that key, so they never mix with Huchra's.")
+    ap.add_argument("--only", default=None, metavar="REGEX",
+                    help="with --huchra: keep only products whose filename matches this regex (applied after the manifest is built)")
     ap.add_argument("--tiers", default="1,2",
                     help="with --huchra: product tiers, comma list from 1 (per-exposure + pointing), 2 (drizzled/derived), "
                          "3 (ramps/integrations, enormous). Default 1,2")

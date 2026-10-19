@@ -9,7 +9,8 @@ set -u
 HERE="$(cd "$(dirname "$0")" && pwd)"
 MNT=/media/rendier/0123-4567
 ROOT=$MNT/BulletCluster
-DATA="$ROOT/huchras_lens/data"; STATE="$ROOT/huchras_lens/run_state"
+SUB="${SUBDIR:-huchras_lens}"; EXTRA="${EXTRA_ARGS:-}"   # SUBDIR + EXTRA_ARGS: another target (see SCAFFOLD_FIRST.md)
+DATA="$ROOT/$SUB/data"; STATE="$ROOT/$SUB/run_state"
 MEM_MAX="${MEM_MAX:-2G}"; MEM_HIGH="${MEM_HIGH:-1500M}"; BUDGET="${BUDGET_GB:-100}"; MAX_TRIES="${MAX_TRIES:-25}"; ATTEMPT_LIMIT="${ATTEMPT_LIMIT:-7200}"
 UA="${CLAUDE_UA:-Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0}"
 mkdir -p "$DATA" "$STATE"
@@ -28,7 +29,7 @@ for stage in ${STAGES:-jwst pol}; do
     tries=$((tries + 1)); log "stage $stage attempt $tries"
     systemd-run --user --scope --quiet -p MemoryMax="$MEM_MAX" -p MemoryHigh="$MEM_HIGH" -p CPUQuota=70% -- \
       timeout -s TERM -k 60 "$ATTEMPT_LIMIT" nice -n 15 ionice -c3 \
-      python3 "$HERE/download_validation_targets.py" --huchra "$stage" --data-dir "$DATA" --tiers 1,2 --budget-gb "$BUDGET" >> "$STATE/$stage.log" 2>&1
+      python3 "$HERE/download_validation_targets.py" --huchra "$stage" --data-dir "$DATA" --tiers 1,2 --budget-gb "$BUDGET" $EXTRA >> "$STATE/$stage.log" 2>&1
     rc=$?
     if [ "$rc" -eq 0 ]; then touch "$STATE/$stage.done"; log "stage $stage finished (rc 0)"; break; fi
     shift_n=$(( tries > 5 ? 5 : tries )); back=$(( 30 * (2 ** shift_n) )); [ "$back" -gt 900 ] && back=900

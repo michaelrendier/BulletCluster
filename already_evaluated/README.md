@@ -9,4 +9,6 @@ Each folder holds: the MAST manifests (every observation and product, with URI a
 | `huchras_lens_Q2237+0305/` | Einstein Cross, 2′ radius | jwst: none exist; pol: none exist; hst: done | 3 697 | 67.0 GB |
 | `bullet_cluster_scaffold/` | Bullet Cluster, 10′ radius, JWST level-3 mosaics only | done; kept by request | 77 | 20.3 GB |
 
+Band accounting (metadata only, 2026-10-19): `huchras_lens_Q2237+0305/BAND_ACCOUNTING.md`.
+
 Not yet evaluated (queue: Huchra's Lens only): radio (VLA 8.4 GHz, MERLIN 5 GHz), Chandra (30+), XMM (3).

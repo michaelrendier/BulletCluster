@@ -1,0 +1,1127 @@
+{
+ "HEASARC/agilecat": 0,
+ "HEASARC/egret3": 0,
+ "HEASARC/fermi3fgl": 0,
+ "HEASARC/fermi3fhl": 0,
+ "HEASARC/fermifhl": 0,
+ "HEASARC/fermilpsc": 0,
+ "HEASARC/fermilgrb": 0,
+ "HEASARC/fermilblaz": 0,
+ "HEASARC/fermigbrst": 0,
+ "HEASARC/intbsc": 0,
+ "HEASARC/integralao": 0,
+ "HEASARC/swbat105m": 0,
+ "HEASARC/swbat157m": 0,
+ "HEASARC/swbatagn60": 0,
+ "HEASARC/swbatsfxt": 0,
+ "HEASARC/swiftgrb": 0,
+ "HEASARC/nustarssc": 0,
+ "HEASARC/nustarssc2": 0,
+ "HEASARC/maxigsc7yr": 0,
+ "HEASARC/saxwfccat": 0,
+ "HEASARC/saxwfccat2": 0,
+ "HEASARC/sax2to10": 0,
+ "HEASARC/saxao": 0,
+ "HEASARC/roshri": 2,
+ "HEASARC/roshritotal": 5,
+ "HEASARC/hriphot": 0,
+ "HEASARC/ipcphot": 0,
+ "HEASARC/rosmaster": 1,
+ "HEASARC/euvecat2": 0,
+ "HEASARC/swift2sxps": 0,
+ "HEASARC/swiftlsxps": 0,
+ "HEASARC/swiftmastr": 0,
+ "HEASARC/wfcpoint": 0,
+ "HEASARC/hesscat": 0,
+ "HEASARC/suzakuwam": 0,
+ "HEASARC/xrismmastr": 0,
+ "HEASARC/ascamaster": 0,
+ "HEASARC/einstein2e": 0,
+ "HEASARC/chanmaster": 5,
+ "HEASARC/xmmmaster": 3,
+ "HEASARC/xmmssc": 5,
+ "HEASARC/galextdsc": 0,
+ "NED": "ERR Failed to parse NED result! The raw response can be found in self.response, and ",
+ "VizieR_catalogs": [
+  [
+   "METAobj",
+   3,
+   "Objects listed in ReadMe files"
+  ],
+  [
+   "ReadMeObj",
+   3,
+   "Objects listed in 'ReadMe' files"
+  ],
+  [
+   "I/197A/tic",
+   1,
+   "The catalogue, zones 0/37.5deg"
+  ],
+  [
+   "I/200/npm1rgal",
+   1,
+   "The Catalogue"
+  ],
+  [
+   "I/243/out",
+   1,
+   "* output (out of 526,280,881 stars)"
+  ],
+  [
+   "I/255/out",
+   1,
+   "output (out of 25,258,765 positions)"
+  ],
+  [
+   "I/267/out",
+   1,
+   "Output"
+  ],
+  [
+   "I/284/out",
+   1,
+   "data (around 0+0)"
+  ],
+  [
+   "I/297/out",
+   1,
+   "Example of the an output of NOMAD-1"
+  ],
+  [
+   "I/304/out",
+   1,
+   "catalog output (6'x6' centered on 0+0)"
+  ],
+  [
+   "I/312/sample",
+   1,
+   "PPMX Sample"
+  ],
+  [
+   "I/317/sample",
+   1,
+   "Example of formatted output"
+  ],
+  [
+   "I/322A/out",
+   1,
+   "UCAC4 output (out of 113780093 stars)"
+  ],
+  [
+   "I/324/igsl3",
+   2,
+   "the IGSL3 data release"
+  ],
+  [
+   "I/327/cmc15",
+   1,
+   "catalog output"
+  ],
+  [
+   "I/329/urat1",
+   1,
+   "URAT1 catalog"
+  ],
+  [
+   "I/337/gaia",
+   1,
+   "GaiaSource data"
+  ],
+  [
+   "I/338/kmac3",
+   1,
+   "The catalogue KMAC3"
+  ],
+  [
+   "I/339/hsoy",
+   1,
+   "The HSOY catalogue (583001653 sources)"
+  ],
+  [
+   "I/340/ucac5",
+   1,
+   "UCAC5 catalog (107,758,513 sources)"
+  ],
+  [
+   "I/345/gaia2",
+   1,
+   "GaiaSource DR2 data"
+  ],
+  [
+   "I/347/gaia2dis",
+   1,
+   "Estimating distances from parallaxes (1331909727 sources)"
+  ],
+  [
+   "I/350/gaiaedr3",
+   1,
+   "GaiaSource EDR3 data"
+  ],
+  [
+   "I/352/gedr3dis",
+   1,
+   "Estimating distances from parallaxes (1467744818 sources)"
+  ],
+  [
+   "I/353/gsc242",
+   2,
+   "records of GSC 2.4.2"
+  ],
+  [
+   "I/355/gaiadr3",
+   1,
+   "Gaia DR3 source catalog (1811709771 sources)"
+  ],
+  [
+   "I/355/paramp",
+   1,
+   "1D astrophysical parameters produced by the Apsis processing chain dev"
+  ],
+  [
+   "I/355/epphot",
+   3,
+   "Light curves for a given object in bands G, BP and RP (555868797 rows)"
+  ],
+  [
+   "I/355/xpsummary",
+   1,
+   "Auxiliary information about the mean BP/RP spectrum (219197643 sources"
+  ],
+  [
+   "I/355/xpcont",
+   1,
+   "Mean BP and RP spectra based on the continuous representation in basis"
+  ],
+  [
+   "I/356/galcand",
+   1,
+   "Parameters derived from various modules dedicated to the classificatio"
+  ],
+  [
+   "I/356/qsocand",
+   1,
+   "Parameters derived from various modules dedicated to the classificatio"
+  ],
+  [
+   "I/358/varisum",
+   1,
+   "Information on where a source_id can be found in the different Variabi"
+  ],
+  [
+   "I/358/vclassre",
+   1,
+   "Variability classification results of all classifiers (vari_classifier"
+  ],
+  [
+   "I/358/vagn",
+   1,
+   "AGN properties (vari_agn)"
+  ],
+  [
+   "I/360/syntphot",
+   1,
+   "Synthetic photometry generated from the Gaia BP/RP mean spectra (21893"
+  ],
+  [
+   "I/361/lenscand",
+   3,
+   "Sources identified as possible gravitational lens candidates (lens_can"
+  ],
+  [
+   "I/361/lenscatn",
+   1,
+   "Lens catalogue names (lens\\_catalogue_name)"
+  ],
+  [
+   "I/361/lensobs",
+   3,
+   "Observations associated with the components found in the lens candidat"
+  ],
+  [
+   "I/361/lensout",
+   3,
+   "Individual observations that have been discarded from the analysis of "
+  ],
+  [
+   "II/246/out",
+   1,
+   "2MASS Point Source Catalogue, output (on a total of 470,992,970 source"
+  ],
+  [
+   "II/311/wise",
+   1,
+   "the WISE All-Sky release (among 563,921,584 sources)"
+  ],
+  [
+   "II/312/ais",
+   1,
+   "the AIS (All-sky Imaging Survey) (out of 65,266,291 sources)"
+  ],
+  [
+   "II/319/las9",
+   2,
+   "the UKIDSS-DR9 Large Area Survey (on a total of 82,655,526 sources)"
+  ],
+  [
+   "II/328/allwise",
+   1,
+   "*the AllWISE data release (among 747,634,026 sources) (updated version"
+  ],
+  [
+   "II/335/galex_ais",
+   1,
+   "the revised GALEX catalog of UV sources (GUVcat_AIS) from GR6+7 (82,99"
+  ],
+  [
+   "II/336/apass9",
+   1,
+   "The APASS catalog, output (on a total of 62 million sources)"
+  ],
+  [
+   "II/340/xmmom2_1",
+   1,
+   "The XMM-Newton Optical Monitor Serendipitous Source Survey Catalogue, "
+  ],
+  [
+   "II/342/hsc1",
+   3,
+   "Hubble Source Catalog V1 ( 101,789,844 sources)"
+  ],
+  [
+   "II/342/hsc2",
+   3,
+   "Hubble Source Catalog V2 ( 383,834,027 sources)"
+  ],
+  [
+   "II/349/ps1",
+   1,
+   "Pan-STARRS DR1 catalogue, output (on a total of 1,919,106,885 sources)"
+  ],
+  [
+   "II/356/xmmom41s",
+   2,
+   "The XMM-Newton Optical Monitor Serendipitous Source Survey Catalogue, "
+  ],
+  [
+   "II/363/unwise",
+   1,
+   "the band-merged unWISE catalog (among 2,214,734,224 sources)"
+  ],
+  [
+   "II/365/catwise",
+   1,
+   "the CatWISE2020 catalog (among 1,890,715,640 sources)"
+  ],
+  [
+   "II/368/sstsl2",
+   1,
+   "Bandmerged list of photometry for high-reliability compact sources (ex"
+  ],
+  [
+   "II/370/xmmom5s",
+   2,
+   "The XMM-Newton Optical Monitor Serendipitous Source Survey Catalogue, "
+  ],
+  [
+   "II/378/xmmom6s",
+   2,
+   "The XMM-Newton Optical Monitor Serendipitous Source Survey Catalogue, "
+  ],
+  [
+   "II/379/smssdr4",
+   1,
+   "SkyMapper DR4"
+  ],
+  [
+   "II/381/hlsp_ps1_tm",
+   1,
+   "Probabilistic Classifications of Unresolved Point Sources in PanSTARRS"
+  ],
+  [
+   "II/389/ps1_dr2",
+   1,
+   "Pan-STARRS DR2 catalog, output (on a total of 1,868,236,315 sources)"
+  ],
+  [
+   "IV/38/tic",
+   3,
+   "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.0 (TIC"
+  ],
+  [
+   "IV/39/tic82",
+   3,
+   "Transiting Exoplanet Survey Satellite (TESS) Input Catalog - v8.2 (TIC"
+  ],
+  [
+   "V/139/sdss9",
+   3,
+   "* output of the SDSS photometric catalog"
+  ],
+  [
+   "V/147/sdss12",
+   3,
+   "* output of the SDSS photometric catalog"
+  ],
+  [
+   "V/149/dr2",
+   3,
+   "LAMOST DR2 catalog (30/06/2016 version)"
+  ],
+  [
+   "V/149/stellar2",
+   1,
+   "A, F, G and K type stars catalog"
+  ],
+  [
+   "V/153/dr4",
+   3,
+   "LAMOST DR4 catalog (09/08/2018 version)"
+  ],
+  [
+   "V/153/astars4",
+   1,
+   "A type stars catalog"
+  ],
+  [
+   "V/154/sdss16",
+   3,
+   "* output of the SDSS photometric catalog"
+  ],
+  [
+   "V/156/dr7lrs",
+   3,
+   "LAMOST LRS General Catalog"
+  ],
+  [
+   "V/156/dr7aslrs",
+   1,
+   "LAMOST LRS A Star Catalog"
+  ],
+  [
+   "V/156/dr7melrs",
+   1,
+   "LAMOST LRS Multiple Epoch Catalog"
+  ],
+  [
+   "V/160/shboost",
+   1,
+   "Data model of the Gaia DR3 SHBoost catalogue"
+  ],
+  [
+   "V/162/dr11l",
+   3,
+   "LAMOST LRS General Catalog"
+  ],
+  [
+   "V/162/dr11sl",
+   1,
+   "LAMOST LRS A, F, G and K Star Catalog"
+  ],
+  [
+   "V/162/dr11al",
+   1,
+   "LAMOST LRS Line-Index Catalog of A Type Stars"
+  ],
+  [
+   "V/162/dr11mel",
+   1,
+   "LAMOST LRS Multiple Epoch Catalog"
+  ],
+  [
+   "V/162/dr11il",
+   3,
+   "LAMOST LRS Input Catalog"
+  ],
+  [
+   "V/164/dr5",
+   3,
+   "LAMOST DR5 catalog (04/07/2019 version)"
+  ],
+  [
+   "V/164/astars5",
+   1,
+   "A type stars catalog"
+  ],
+  [
+   "VI/42/out",
+   1,
+   "Compute constellation name from position"
+  ],
+  [
+   "VI/139/herschel",
+   1,
+   "The Herschel Observation Log"
+  ],
+  [
+   "VI/145/attitude",
+   1,
+   "Gaia Attitude Star Catalog (ASC)"
+  ],
+  [
+   "VII/155/rc3",
+   1,
+   "The revised RC3 catalog"
+  ],
+  [
+   "VII/193/zcat",
+   1,
+   "The CfA Redshift Catalogue"
+  ],
+  [
+   "VII/233/xsc",
+   1,
+   "*The 2MASS Extended Catalog (2MASX)"
+  ],
+  [
+   "VII/237/pgc",
+   1,
+   "Catalog of galaxies (table 5 in the paper)"
+  ],
+  [
+   "VII/258/vv10",
+   1,
+   "Quasars (M_v_<-22.25), BL Lac and AGNs (M_v_>-22.25)"
+  ],
+  [
+   "VII/275/glade1",
+   1,
+   "GLADE catalog (Galaxy List for the Advanced Detector Era)"
+  ],
+  [
+   "VII/281/glade2",
+   1,
+   "GLADE v2.3 catalog (Galaxy List for the Advanced Detector Era)"
+  ],
+  [
+   "VII/285/gdr2ext",
+   1,
+   "GDR2 extragalactic catalogue"
+  ],
+  [
+   "VII/291/gladep",
+   1,
+   "GLADE+ catalog (updated version, 31/10/2022)"
+  ],
+  [
+   "VII/292/south",
+   1,
+   "Legacy Surveys DR8 South Photometric Redshifts catalog (1 252 523 992 "
+  ],
+  [
+   "VII/298/catalog",
+   1,
+   "QUasar Atlas and Catalogue (QUAC)"
+  ],
+  [
+   "VII/300/desils10",
+   1,
+   "Legacy Surveys DR10 photometric redshifts catalog of galaxies (\\origin"
+  ],
+  [
+   "VIII/77/table3",
+   1,
+   "Properties of detected galaxies derived from spectra in digital archiv"
+  ],
+  [
+   "VIII/112/spsc250",
+   1,
+   "Herschel/SPIRE Point Source Catalogue @ 250um"
+  ],
+  [
+   "IX/28A/hricat",
+   3,
+   "ROSAT Source Catalog of Pointed Observations with the High Resolution "
+  ],
+  [
+   "IX/45/csc11",
+   1,
+   "The Chandra Source Catalog, Version 1.1"
+  ],
+  [
+   "IX/50/xmm3r6s",
+   1,
+   "The 3XMM-DR6 Catalog, \"slim\" version"
+  ],
+  [
+   "IX/54/xmm3r7s",
+   1,
+   "The 3XMM-DR7 Catalog, \"slim\" version"
+  ],
+  [
+   "IX/55/xmm3r8s",
+   1,
+   "The 3XMM-DR8 Catalog, \"slim\" version"
+  ],
+  [
+   "IX/57/csc2master",
+   1,
+   "Chandra Source Catalog, V2.0; master sources"
+  ],
+  [
+   "IX/59/xmm4dr9s",
+   1,
+   "The 4XMM-DR9 Catalog, \"slim\" version"
+  ],
+  [
+   "IX/61/xmm4r9st",
+   3,
+   "Source catalogue"
+  ],
+  [
+   "IX/63/xmm4d10s",
+   1,
+   "The 4XMM-DR10 Catalog, \"slim\" version"
+  ],
+  [
+   "IX/64/xmm410st",
+   3,
+   "Stacked source catalogue 4XMM-DR10s"
+  ],
+  [
+   "IX/65/xmm4d11s",
+   1,
+   "The 4XMM-DR11 Catalog, \"slim\" version"
+  ],
+  [
+   "IX/66/xmm411st",
+   3,
+   "Stacked source catalogue 4XMM-DR11s"
+  ],
+  [
+   "IX/68/xmm4d12s",
+   1,
+   "The 4XMM-DR12 Catalog, \"slim\" version"
+  ],
+  [
+   "IX/69/xmm4d13s",
+   1,
+   "The 4XMM-DR13 Catalog, \"slim\" version"
+  ],
+  [
+   "IX/70/csc21mas",
+   2,
+   "Chandra Source Catalog version 2.1"
+  ],
+  [
+   "B/hst/obscore",
+   3,
+   "HST observation logs (sample)"
+  ],
+  [
+   "B/hst/hstlog",
+   3,
+   "Merged log of HST Observations"
+  ],
+  [
+   "B/cfht/cfht",
+   3,
+   "Old Observation Log (October 2002 to 2007)"
+  ],
+  [
+   "B/chandra/chandra",
+   3,
+   "The Chandra Log (2026-10-04)"
+  ],
+  [
+   "B/xmm/xmmlog",
+   2,
+   "The XMM-Newton Observation log (2026-10-05)"
+  ],
+  [
+   "B/eso/eso_arc",
+   3,
+   "Full ESO science archive log from 1991"
+  ],
+  [
+   "B/assocdata/obscore",
+   3,
+   "VizieR Spectra, images gathered in a table"
+  ],
+  [
+   "B/gemini/obscore",
+   2,
+   "Gemini Observations"
+  ],
+  [
+   "J/ApJ/751/52/table5",
+   1,
+   "The \"W2\" (WISE/2MASS) sample of moderate-likelihood AGN candidates"
+  ],
+  [
+   "J/ApJ/755/31/table1",
+   1,
+   "Summary of the properties of the strongly lensed systems"
+  ],
+  [
+   "J/ApJ/862/12/scussphz",
+   1,
+   "Photometric redshifts of galaxies"
+  ],
+  [
+   "J/ApJ/867/105/refcat2",
+   1,
+   "ATLAS all-sky stellar reference catalog, ATLAS-REFCAT2"
+  ],
+  [
+   "J/ApJ/867/107/added",
+   1,
+   "Additional lenses not in main (Table 6) with local and line-of-sight ("
+  ],
+  [
+   "J/ApJ/872/134/table5",
+   1,
+   "The 2MRS galaxies not in spectroscopic sample"
+  ],
+  [
+   "J/ApJ/914/121/table2",
+   1,
+   "2MRS galaxy catalog with estimates of the supermassive black hole (SMB"
+  ],
+  [
+   "J/ApJ/984/58/table1",
+   1,
+   "Stellar Parameters Derived from XP Spectra"
+  ],
+  [
+   "J/ApJS/121/287/cfa2s",
+   1,
+   "CfA survey radial velocities (tables 1 + 4)"
+  ],
+  [
+   "J/ApJS/150/343/table2",
+   1,
+   "Source Classification"
+  ],
+  [
+   "J/ApJS/169/401/ChaMP",
+   2,
+   "Main and supplementary ChaMP catalog of X-ray point sources (tables 5,"
+  ],
+  [
+   "J/ApJS/199/26/table3",
+   1,
+   "2MRS catalog"
+  ],
+  [
+   "J/ApJS/221/12/table1",
+   1,
+   "Mid-IR AGNs data"
+  ],
+  [
+   "J/ApJS/224/40/table5",
+   1,
+   "Independent X-ray sources and their average properties in multiple obs"
+  ],
+  [
+   "J/ApJS/224/40/counts",
+   3,
+   "Detected X-ray point sources in the Chandra  ACIS survey and counts in"
+  ],
+  [
+   "J/ApJS/245/34/catalog",
+   1,
+   "The recommended catalog created by combining the result from the LAMOS"
+  ],
+  [
+   "J/ApJS/246/9/catalog",
+   1,
+   "The Catalog of the 5 million converged LAMOST DR5 K giant stars with S"
+  ],
+  [
+   "J/ApJS/256/15/table1",
+   1,
+   "Revised Principal Galaxy Catalog association to the Mass AssociatioN f"
+  ],
+  [
+   "J/ApJS/259/11/table4",
+   1,
+   "LAMOST variable source candidates catalog"
+  ],
+  [
+   "J/ApJS/259/37/table6",
+   1,
+   "IDEOS observables"
+  ],
+  [
+   "J/ApJS/269/3/sga2020",
+   1,
+   "Ellipse-fitting results"
+  ],
+  [
+   "J/ApJS/271/54/table4",
+   1,
+   "The CatNorth quasar candidate catalog"
+  ],
+  [
+   "J/ApJS/272/1/table6",
+   1,
+   "*Classification results of variable stars for LAMOST DR9 based on Ligh"
+  ],
+  [
+   "J/ApJS/274/8/tableb1",
+   1,
+   "Target information in the X-WING sample"
+  ],
+  [
+   "J/ApJS/279/54/table4",
+   1,
+   "CatGlobe quasar candidate catalog"
+  ],
+  [
+   "J/ApJS/280/69/table2",
+   1,
+   "Catalog of 9,482 model-identified dust-lane spheroidal galaxy (DLSG) c"
+  ],
+  [
+   "J/A+A/412/707/table1",
+   1,
+   "*Quasars"
+  ],
+  [
+   "J/A+A/588/A14/table1",
+   1,
+   "Catalog of 2mrs galaxies"
+  ],
+  [
+   "J/A+A/588/A14/table2",
+   1,
+   "Catalog of combined dataset galaxies"
+  ],
+  [
+   "J/A+A/596/A14/grlist_2",
+   1,
+   "List of groups and their parameters detected in 2MRS (Table A.1)"
+  ],
+  [
+   "J/A+A/596/A14/galist_2",
+   1,
+   "List of 2MRS galaxies used, as well as their IDs and coordinates (Tabl"
+  ],
+  [
+   "J/A+A/616/A118/stars",
+   1,
+   "List of studied QSOs"
+  ],
+  [
+   "J/A+A/618/A56/table4",
+   3,
+   "Compiled list of 478 known gravitationally lensed systems"
+  ],
+  [
+   "J/A+A/618/A81/2mrs_gal",
+   1,
+   "Catalogue of galaxies"
+  ],
+  [
+   "J/A+A/640/A105/stars",
+   1,
+   "List of studied stars"
+  ],
+  [
+   "J/A+A/645/A74/xfcz",
+   1,
+   "The XMM-Newton spectral-fit Z catalogue"
+  ],
+  [
+   "J/A+A/648/A44/tabled1",
+   1,
+   "Catalog of large amplitude variables from Gaia DR2"
+  ],
+  [
+   "J/A+A/657/A138/table7",
+   1,
+   "Classification of 4XMM-DR10 sources"
+  ],
+  [
+   "J/A+A/659/A188/ulx-xmm9",
+   1,
+   "All entries, including ULX candidates"
+  ],
+  [
+   "J/A+A/674/A22/catalog",
+   1,
+   "Cross-match catalog of 17841723 of Gaia sources"
+  ],
+  [
+   "J/A+A/674/A25/vspursig",
+   1,
+   "Spurious signals (vari\\_vari\\_spursign)"
+  ],
+  [
+   "J/A+A/675/A195/lz-ztfg",
+   1,
+   "Labeled set (LS) for ZTF g-band model"
+  ],
+  [
+   "J/A+A/675/A195/lz-ztfr",
+   1,
+   "Labeled set (LS) for ZTF r-band model"
+  ],
+  [
+   "J/A+A/683/A112/lqac6",
+   1,
+   "6th release of LQAC"
+  ],
+  [
+   "J/A+A/683/A119/stars",
+   1,
+   "List of studied stars"
+  ],
+  [
+   "J/A+A/685/A130/table2",
+   3,
+   "Multiplet analysis"
+  ],
+  [
+   "J/A+A/687/A250/catalog",
+   1,
+   "STONKS MultiMission Xray catalog"
+  ],
+  [
+   "J/A+A/692/A115/pristine_ca",
+   1,
+   "Photometry catalogue that includes both the synthetic CaHKsyn and the "
+  ],
+  [
+   "J/A+A/692/A115/pristine_dr1",
+   1,
+   "Pristine DR1 metallicity catalogue (table 3) (6380652 sources)"
+  ],
+  [
+   "J/A+A/704/A16/catalog1",
+   2,
+   "Spectral fitting of an absorbed power-law model to all extracted spect"
+  ],
+  [
+   "J/A+A/704/A16/catalog2",
+   1,
+   "Spectral fitting of both an absorbed power-law model and an absorbed b"
+  ],
+  [
+   "J/A+A/704/A16/catalog3",
+   2,
+   "Modelling the count rates of 4XMM-DR11"
+  ],
+  [
+   "J/A+A/704/A16/catalog4",
+   1,
+   "Spectral fitting of physical models of sources with available classifi"
+  ],
+  [
+   "J/A+A/704/A344/4xmmls10",
+   3,
+   "Legacy Survey DR10 counterparts to 4XMM and field population used for "
+  ],
+  [
+   "J/A+A/704/A344/4xmmge3",
+   3,
+   "Gaia EDR3 counterparts to 4XMM and field population used for training"
+  ],
+  [
+   "J/A+A/704/A344/4xmmcw20",
+   1,
+   "CatWISE2020 counterparts to 4XMM and field population used for trainin"
+  ],
+  [
+   "J/A+A/705/A247/catalog",
+   1,
+   "Coordinates, some light curve features, classifications and their prob"
+  ],
+  [
+   "J/A+A/706/A284/regalade",
+   1,
+   "REGALADE catalog (Revised Galaxy List for Advanced Detector Era) (tabl"
+  ],
+  [
+   "J/A+A/707/A198/lotssdr3",
+   1,
+   "Raw radio component catalogue of LoTSS-DR3 (with correct labels, 24-Ju"
+  ],
+  [
+   "J/A+A/707/A345/tablea1",
+   3,
+   "Compiled list of 364 known gravitationally lensed systems"
+  ],
+  [
+   "J/A+AS/140/89/table2",
+   1,
+   "New measurements of accurate coordinates"
+  ],
+  [
+   "J/AJ/112/62/table5",
+   1,
+   "Low redshift MgII absorption line sample"
+  ],
+  [
+   "J/AJ/134/1488/catalog",
+   1,
+   "MG1 variable-star catalog (MG1-VSC)"
+  ],
+  [
+   "J/AJ/138/1938/table4",
+   1,
+   "All Digital HI catalog"
+  ],
+  [
+   "J/AJ/149/171/table4",
+   1,
+   "Nest members"
+  ],
+  [
+   "J/AJ/149/171/table5",
+   1,
+   "Combined Catalog"
+  ],
+  [
+   "J/AJ/154/114/table3",
+   1,
+   "from the second Data Release (DR2) of the Keck Observatory Database of"
+  ],
+  [
+   "J/AJ/154/114/table2",
+   2,
+   "from the first Data Release (DR1) of the Keck Observatory Database of "
+  ],
+  [
+   "J/AJ/155/189/table12",
+   1,
+   "The LAMOST Quasar Survey Data Release Two Quasar Catalog"
+  ],
+  [
+   "J/AJ/168/210/table3",
+   1,
+   "The classification result of the XMM-WISE-SDSS by CatBoost and Self-Pa"
+  ],
+  [
+   "J/AJ/169/266/obs",
+   1,
+   "Observations and derived quantities (table target from CDS and table2 "
+  ],
+  [
+   "J/AJ/171/17/mdw_dr1",
+   1,
+   "MDW catalog sources"
+  ],
+  [
+   "J/PASP/111/438/catalog",
+   1,
+   "UZC catalog (table 1)"
+  ],
+  [
+   "J/MNRAS/416/2840/catalog",
+   1,
+   "*The 2M++ catalogue"
+  ],
+  [
+   "J/MNRAS/455/1796/tableb1",
+   1,
+   "IDEOS redshift table"
+  ],
+  [
+   "J/MNRAS/466/3088/table2",
+   1,
+   "List of all known lenses in SDSS, along with selected membership proba"
+  ],
+  [
+   "J/MNRAS/472/4193/table1",
+   1,
+   "Selected 2168 spectra of 1549 unique LAMOST DR4 WD+FGK binary candidat"
+  ],
+  [
+   "J/MNRAS/487/1823/table1",
+   1,
+   "properties"
+  ],
+  [
+   "J/MNRAS/497/2954/table3",
+   1,
+   "2MRS group member catalogue"
+  ],
+  [
+   "J/MNRAS/498/4790/table1",
+   1,
+   "Parameters of the 2218 host galaxies"
+  ],
+  [
+   "J/MNRAS/498/4790/table2",
+   1,
+   "Properties of the 23043 X-ray sources"
+  ],
+  [
+   "J/MNRAS/503/5263/table10",
+   1,
+   "predicted results of machine learning classifications of 4XMM-DR9 sour"
+  ],
+  [
+   "J/MNRAS/506/1896/hecate",
+   1,
+   "The Heraklion Extragalactic galaxies sources CATaloguE as HECATE"
+  ],
+  [
+   "J/MNRAS/509/1587/master",
+   1,
+   "Master ULX catalogue"
+  ],
+  [
+   "J/MNRAS/509/1587/csc2",
+   2,
+   "Chandra CSC2 ULX candidates"
+  ],
+  [
+   "J/MNRAS/515/4711/wiseps1",
+   1,
+   "Neural network source class and photometric z catalog from WISE All-Sk"
+  ],
+  [
+   "J/MNRAS/524/1855/xpparams",
+   1,
+   "Astrometrics and revised stellar atmospheric parameters of Gaia XP sta"
+  ],
+  [
+   "J/MNRAS/525/1106/tableb1",
+   1,
+   "Basic parameters of our basic sample"
+  ],
+  [
+   "J/MNRAS/525/1106/tableb4",
+   1,
+   "Fibre pointings for the FP targets"
+  ],
+  [
+   "J/MNRAS/526/4768/catalog",
+   1,
+   "Catalog of detailed morphology measurements"
+  ],
+  [
+   "J/MNRAS/548/G522/hecatev2",
+   1,
+   "HECATE V2"
+  ],
+  [
+   "J/AZh/78/675/catalog",
+   1,
+   "Catalog of quasar-galaxy associations"
+  ],
+  [
+   "J/other/PASA/43.89/srdr2",
+   1,
+   "SPICE-RACS DR2 catalog"
+  ],
+  [
+   "J/other/PASA/43.89/sources",
+   1,
+   "RACS-low3 INITIAL sources"
+  ],
+  [
+   "J/other/PASA/43.89/comp",
+   1,
+   "RACS-low3 INITIAL components"
+  ],
+  [
+   "J/other/RAA/19.29/kqcg",
+   1,
+   "Known QSOs catalog for Gaia mission catalog"
+  ]
+ ]
+}

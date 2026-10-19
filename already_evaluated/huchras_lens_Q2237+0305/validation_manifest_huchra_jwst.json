@@ -1,0 +1,48 @@
+{
+  "stage": "jwst",
+  "findings": [
+    "NO JWST OBSERVATIONS of A5_q2237+0305 within 2.0' in MAST (2026-10-19). That is a finding; it is recorded, not assumed."
+  ],
+  "census": {
+    "TESS/Photometer": 5,
+    "SDSS/SDSS Camera": 4,
+    "PS1/GPC1": 5,
+    "IUE/LWP": 1,
+    "HST/ACS/SBC": 32,
+    "HST/WFC3/UVIS": 45,
+    "HST/WFPC2/PC": 63,
+    "HST/STIS": 3,
+    "HST/NICMOS/NIC2": 4,
+    "HST/STIS/FUV-MAMA": 7,
+    "HST/STIS/CCD": 13,
+    "HST/STIS/NUV-MAMA": 7,
+    "HST/WFPC/WFC": 6,
+    "HST/WFPC/PC": 13,
+    "HST/FOC/96": 11,
+    "HST/NICMOS/NIC1": 2,
+    "HST/NICMOS/NIC3": 2,
+    "HLSP/Photometer": 5,
+    "HLA/WFPC2/PC": 20,
+    "HLA/WFPC2/WFC": 20,
+    "HLA/ACS/SBC": 10,
+    "HLA/WFC3/UVIS": 14,
+    "HLA/NICMOS/NIC2": 4,
+    "GALEX/GALEX": 2
+  },
+  "observations": [],
+  "products": [],
+  "built": "2026-10-19T03:01:37.614136+00:00",
+  "tiers": [
+    1,
+    2
+  ],
+  "robots": {
+    "host": "mast.stsci.edu",
+    "state": "parsed",
+    "crawl_delay": null,
+    "allowed": {
+      "/api/v0/invoke": false,
+      "/api/v0.1/Download/file": false
+    }
+  }
+}

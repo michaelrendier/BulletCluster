@@ -68,3 +68,7 @@ venv_install.log
 
 # Huchra's Lens experiment: archive data downloaded by download_validation_targets.py --huchra (never committed)
 huchras_lens/data/
+
+# Refsdal prediction papers: kept locally
+pending/next_cross/MACS_J1149_Refsdal/papers/
+__pycache__/

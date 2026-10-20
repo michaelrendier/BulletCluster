@@ -1,0 +1,723 @@
+[
+ {
+  "name": "SMACS J0723.3-7327",
+  "ra": 110.8054,
+  "dec": -73.457,
+  "mast_collections": {
+   "TESS": 45,
+   "SWIFT": 3,
+   "OPO": 1,
+   "JWST": 489,
+   "HST": 140,
+   "HLSP": 527,
+   "HLA": 49,
+   "GALEX": 2
+  },
+  "jwst_instruments": {
+   "NIRCAM": 21,
+   "MIRI": 4,
+   "NIRISS": 9,
+   "NIRSPEC": 455
+  },
+  "jwst_programs": 10,
+  "jwst_all4": true,
+  "jpeg_nircam": [
+   "mast:JWST/product/jw02736-o001_t001_nircam_clear-f090w_i2d.jpg",
+   "mast:JWST/product/jw02736-o001_t001_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw02736-o001_t001_nircam_clear-f200w_i2d.jpg",
+   "mast:JWST/product/jw02736-o001_t001_nircam_clear-f277w_i2d.jpg",
+   "mast:JWST/product/jw02736-o001_t001_nircam_clear-f356w_i2d.jpg",
+   "mast:JWST/product/jw02736-o001_t001_nircam_clear-f444w_i2d.jpg"
+  ],
+  "nrao_rows": 1092,
+  "nrao_facilities": {
+   "ALMA": 1092
+  },
+  "nrao_projects": [
+   "2018.1.00035.L",
+   "2021.A.00022.S",
+   "2025.1.00360.S"
+  ],
+  "chandra_obs": 5,
+  "xmm_obs": 5,
+  "papers_title_abstract": 38,
+  "top_papers": [
+   [
+    "Discovery and properties of ultra-high redshift galaxies (9 < z < 12) in the JWST ERO SMAC",
+    272,
+    2022
+   ],
+   [
+    "Panic! at the Disks: First Rest-frame Optical Observations of Galaxy Structure at z > 3 wi",
+    151,
+    2022
+   ],
+   [
+    "The Physical Conditions of Emission-line Galaxies at Cosmic Dawn from JWST/NIRSpec Spectro",
+    128,
+    2023
+   ]
+  ]
+ },
+ {
+  "name": "Abell 2744",
+  "ra": 3.58345833,
+  "dec": -30.38827778,
+  "mast_collections": {
+   "TESS": 6,
+   "PS1": 20,
+   "OPO": 10,
+   "JWST": 3825,
+   "HST": 1005,
+   "HLSP": 714,
+   "HLA": 265,
+   "GALEX": 4
+  },
+  "jwst_instruments": {
+   "NIRISS": 15,
+   "NIRCAM": 316,
+   "NIRSPEC": 3074,
+   "MIRI": 420
+  },
+  "jwst_programs": 40,
+  "jwst_all4": true,
+  "jpeg_nircam": [
+   "mast:JWST/product/jw02561-o001_t003_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw02561-o001_t003_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw02561-o001_t003_nircam_clear-f200w_i2d.jpg",
+   "mast:JWST/product/jw02561-o001_t003_nircam_clear-f277w_i2d.jpg",
+   "mast:JWST/product/jw02561-o001_t003_nircam_clear-f356w_i2d.jpg",
+   "mast:JWST/product/jw02561-o001_t003_nircam_clear-f410m_i2d.jpg"
+  ],
+  "nrao_rows": 20287,
+  "nrao_facilities": {
+   "ALMA": 19818,
+   "NRAO": 469
+  },
+  "nrao_projects": [
+   "14B-205",
+   "16B-319",
+   "17A-177",
+   "2013.1.00999.S",
+   "2013.1.01119.S",
+   "2015.1.00463.S",
+   "2015.1.00594.S",
+   "2015.1.00807.S",
+   "2017.1.00697.S",
+   "2017.1.01219.S",
+   "2017.1.01305.S",
+   "2018.1.00035.L"
+  ],
+  "chandra_obs": 5,
+  "xmm_obs": 5,
+  "papers_title_abstract": 302,
+  "top_papers": [
+   [
+    "THE EVOLUTION OF THE GALAXY REST-FRAME ULTRAVIOLET LUMINOSITY FUNCTION OVER THE FIRST TWO ",
+    729,
+    2015
+   ],
+   [
+    "The Frontier Fields: Survey Design and Initial Results",
+    645,
+    2017
+   ],
+   [
+    "Directly Observing the Galaxies Likely Responsible for Reionization",
+    377,
+    2017
+   ]
+  ]
+ },
+ {
+  "name": "MACS J0416.1-2403",
+  "ra": 64.03491667,
+  "dec": -24.07244444,
+  "mast_collections": {
+   "TESS": 10,
+   "PS1": 10,
+   "OPO": 2,
+   "JWST": 1623,
+   "HST": 1029,
+   "HLSP": 343,
+   "HLA": 302,
+   "GALEX": 2
+  },
+  "jwst_instruments": {
+   "NIRCAM": 271,
+   "NIRISS": 16,
+   "NIRSPEC": 1334,
+   "MIRI": 2
+  },
+  "jwst_programs": 15,
+  "jwst_all4": true,
+  "jpeg_nircam": [
+   "mast:JWST/product/jw01176-o211_t009_nircam_clear-f090w_i2d.jpg",
+   "mast:JWST/product/jw01176-o211_t009_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw01176-o211_t009_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw01176-o211_t009_nircam_clear-f200w_i2d.jpg",
+   "mast:JWST/product/jw01176-o211_t009_nircam_clear-f277w_i2d.jpg",
+   "mast:JWST/product/jw01176-o211_t009_nircam_clear-f356w_i2d.jpg"
+  ],
+  "nrao_rows": 5425,
+  "nrao_facilities": {
+   "ALMA": 4477,
+   "NRAO": 948
+  },
+  "nrao_projects": [
+   "13B-038",
+   "14A-012",
+   "14B-205",
+   "15A-282",
+   "17A-177",
+   "2013.1.00999.S",
+   "2015.1.00463.S",
+   "2016.1.00117.S",
+   "2016.1.00656.S",
+   "2017.1.00225.S",
+   "2017.1.00486.S",
+   "2018.1.00035.L"
+  ],
+  "chandra_obs": 5,
+  "xmm_obs": 5,
+  "papers_title_abstract": 47,
+  "top_papers": [
+   [
+    "Paving the way for the JWST: witnessing globular cluster formation at z > 3",
+    180,
+    2017
+   ],
+   [
+    "The ASTRODEEP Frontier Fields catalogues",
+    121,
+    2016
+   ],
+   [
+    "Massive star cluster formation under the microscope at z = 6",
+    114,
+    2018
+   ]
+  ]
+ },
+ {
+  "name": "MACS J1149.5+2223",
+  "ra": 177.39916667,
+  "dec": 22.39861111,
+  "mast_collections": {
+   "TESS": 2,
+   "SDSS": 8,
+   "PS1": 20,
+   "OPO": 4,
+   "JWST": 1463,
+   "HST": 1728,
+   "HLSP": 359,
+   "HLA": 734,
+   "GALEX": 2
+  },
+  "jwst_instruments": {
+   "NIRCAM": 37,
+   "NIRISS": 15,
+   "MIRI": 8,
+   "NIRSPEC": 1403
+  },
+  "jwst_programs": 12,
+  "jwst_all4": true,
+  "jpeg_nircam": [
+   "mast:JWST/product/jw01176-o231_t011_nircam_clear-f090w_i2d.jpg",
+   "mast:JWST/product/jw01176-o231_t011_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw01176-o231_t011_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw01176-o231_t011_nircam_clear-f200w_i2d.jpg",
+   "mast:JWST/product/jw01176-o231_t011_nircam_clear-f277w_i2d.jpg",
+   "mast:JWST/product/jw01176-o231_t011_nircam_clear-f356w_i2d.jpg"
+  ],
+  "nrao_rows": 3884,
+  "nrao_facilities": {
+   "ALMA": 2870,
+   "NRAO": 1014
+  },
+  "nrao_projects": [
+   "13A-056",
+   "13B-038",
+   "14A-012",
+   "14B-205",
+   "15B-089",
+   "17A-177",
+   "18A-234",
+   "18B-303",
+   "2013.1.00582.S",
+   "2013.1.00999.S",
+   "2015.1.00428.S",
+   "2016.1.00293.S"
+  ],
+  "chandra_obs": 5,
+  "xmm_obs": 5,
+  "papers_title_abstract": 33,
+  "top_papers": [
+   [
+    "A magnified young galaxy from about 500 million years after the Big Bang",
+    313,
+    2012
+   ],
+   [
+    "Understanding caustic crossings in giant arcs: Characteristic scales, event rates, and con",
+    228,
+    2018
+   ],
+   [
+    "Extreme magnification of an individual star at redshift 1.5 by a galaxy-cluster lens",
+    167,
+    2018
+   ]
+  ]
+ },
+ {
+  "name": "MACS J0138.0-2155",
+  "ra": 24.5,
+  "dec": -21.91666667,
+  "mast_collections": {
+   "TESS": 5,
+   "SWIFT": 1,
+   "PS1": 5,
+   "OPO": 1,
+   "JWST": 325,
+   "HST": 142,
+   "HLSP": 22,
+   "HLA": 6,
+   "GALEX": 2
+  },
+  "jwst_instruments": {
+   "NIRCAM": 278,
+   "MIRI": 3,
+   "NIRSPEC": 44
+  },
+  "jwst_programs": 8,
+  "jwst_all4": false,
+  "jpeg_nircam": [
+   "mast:JWST/product/jw02345-o005_t003_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw02345-o005_t003_nircam_clear-f444w_i2d.jpg",
+   "mast:JWST/product/jw08799-o003_t001_nircam_clear-f200w_i2d.jpg",
+   "mast:JWST/product/jw08799-o003_t001_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw08799-o003_t001_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw08799-o003_t001_nircam_clear-f277w_i2d.jpg"
+  ],
+  "nrao_rows": 743,
+  "nrao_facilities": {
+   "ALMA": 735,
+   "NRAO": 8
+  },
+  "nrao_projects": [
+   "16A-167",
+   "2016.2.00097.S",
+   "2019.1.00203.S",
+   "2019.1.00227.S",
+   "2024.1.00099.S",
+   "2024.1.00897.S",
+   "2024.1.01086.S",
+   "BE076"
+  ],
+  "chandra_obs": 5,
+  "xmm_obs": 5,
+  "papers_title_abstract": 14,
+  "top_papers": [
+   [
+    "Cosmology with supernova Encore in the strong lensing cluster MACS J0138–2155",
+    15,
+    2026
+   ],
+   [
+    "Cosmology with Supernova Encore in the Strong Lensing Cluster MACS J0138–2155: Time Delays",
+    10,
+    2026
+   ],
+   [
+    "Cosmology with supernova Encore in the strong lensing cluster MACS J0138−2155",
+    10,
+    2025
+   ]
+  ]
+ },
+ {
+  "name": "PLCK G165.7+67.0",
+  "ra": 171.810417,
+  "dec": 42.473611,
+  "mast_collections": {
+   "TESS": 4,
+   "SDSS": 8,
+   "PS1": 5,
+   "OPO": 1,
+   "JWST": 168,
+   "HST": 13,
+   "HLSP": 11,
+   "HLA": 4,
+   "GALEX": 2
+  },
+  "jwst_instruments": {
+   "NIRCAM": 48,
+   "MIRI": 16,
+   "NIRSPEC": 104
+  },
+  "jwst_programs": 7,
+  "jwst_all4": false,
+  "jpeg_nircam": [
+   "mast:JWST/product/jw01176-o251_t013_nircam_clear-f090w_i2d.jpg",
+   "mast:JWST/product/jw01176-o251_t013_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw01176-o251_t013_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw01176-o251_t013_nircam_clear-f200w_i2d.jpg",
+   "mast:JWST/product/jw01176-o251_t013_nircam_clear-f277w_i2d.jpg",
+   "mast:JWST/product/jw01176-o251_t013_nircam_clear-f356w_i2d.jpg"
+  ],
+  "nrao_rows": 3618,
+  "nrao_facilities": {
+   "ALMA": 3445,
+   "NRAO": 173
+  },
+  "nrao_projects": [
+   "15A-273",
+   "18A-399",
+   "2021.1.00607.S",
+   "2022.1.01282.S",
+   "22B-078",
+   "AGBT16A_278",
+   "EE12.1.00112.S",
+   "VLASS3.2"
+  ],
+  "chandra_obs": 5,
+  "xmm_obs": 5,
+  "papers_title_abstract": 24,
+  "top_papers": [
+   [
+    "The JWST Discovery of the Triply Imaged Type Ia “Supernova H0pe” and Observations of the G",
+    72,
+    2024
+   ],
+   [
+    "SN H0pe: The First Measurement of H 0 from a Multiply Imaged Type Ia Supernova, Discovered",
+    66,
+    2025
+   ],
+   [
+    "JWST Photometric Time-delay and Magnification Measurements for the Triply Imaged Type Ia “",
+    41,
+    2024
+   ]
+  ]
+ },
+ {
+  "name": "Abell S1063",
+  "ra": 342.189,
+  "dec": -44.5282,
+  "mast_collections": {
+   "TESS": 6,
+   "OPO": 3,
+   "JWST": 788,
+   "HST": 868,
+   "HLSP": 246,
+   "HLA": 272,
+   "GALEX": 4
+  },
+  "jwst_instruments": {
+   "NIRCAM": 22,
+   "NIRSPEC": 766
+  },
+  "jwst_programs": 8,
+  "jwst_all4": false,
+  "jpeg_nircam": [
+   "mast:JWST/product/jw01840-o010_t003_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw01840-o010_t003_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw01840-o010_t003_nircam_clear-f200w_i2d.jpg",
+   "mast:JWST/product/jw01840-o010_t003_nircam_clear-f250m_i2d.jpg",
+   "mast:JWST/product/jw01840-o010_t003_nircam_clear-f300m_i2d.jpg",
+   "mast:JWST/product/jw01840-o010_t003_nircam_clear-f444w_i2d.jpg"
+  ],
+  "nrao_rows": 7312,
+  "nrao_facilities": {
+   "ALMA": 7110,
+   "NRAO": 202
+  },
+  "nrao_projects": [
+   "16B-251",
+   "19B-121",
+   "2013.1.01052.S",
+   "2013.1.01119.S",
+   "2015.1.00807.S",
+   "2015.1.01425.S",
+   "2016.1.00643.S",
+   "2016.1.00656.S",
+   "2018.1.00035.L",
+   "2023.1.00843.S",
+   "2024.1.00876.S",
+   "2025.1.00360.S"
+  ],
+  "chandra_obs": 5,
+  "xmm_obs": 5,
+  "papers_title_abstract": 80,
+  "top_papers": [
+   [
+    "The Frontier Fields: Survey Design and Initial Results",
+    645,
+    2017
+   ],
+   [
+    "Size–Luminosity Relations and UV Luminosity Functions at z = 6–9 Simultaneously Derived fr",
+    169,
+    2018
+   ],
+   [
+    "CLASH-VLT: A highly precise strong lensing model of the galaxy cluster RXC J2248.7−4431 (A",
+    147,
+    2016
+   ]
+  ]
+ },
+ {
+  "name": "MACS J0717.5+3745",
+  "ra": 109.40208333,
+  "dec": 37.75638889,
+  "mast_collections": {
+   "TESS": 3,
+   "SDSS": 2,
+   "PS1": 5,
+   "OPO": 2,
+   "JWST": 10,
+   "HST": 820,
+   "HLSP": 341,
+   "HLA": 276,
+   "GALEX": 2
+  },
+  "jwst_instruments": {
+   "NIRCAM": 10
+  },
+  "jwst_programs": 1,
+  "jwst_all4": false,
+  "jpeg_nircam": [
+   "mast:JWST/product/jw06882-o029_t063_nircam_clear-f090w_i2d.jpg",
+   "mast:JWST/product/jw06882-o029_t063_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw06882-o029_t063_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw06882-o029_t063_nircam_clear-f200w_i2d.jpg",
+   "mast:JWST/product/jw06882-o029_t063_nircam_clear-f210m_i2d.jpg",
+   "mast:JWST/product/jw06882-o029_t063_nircam_clear-f277w_i2d.jpg"
+  ],
+  "nrao_rows": 2369,
+  "nrao_facilities": {
+   "ALMA": 1179,
+   "NRAO": 1190
+  },
+  "nrao_projects": [
+   "10C-128",
+   "13B-038",
+   "14A-012",
+   "15B-089",
+   "17A-177",
+   "2015.1.01425.S",
+   "2016.1.00293.S",
+   "2016.1.00656.S",
+   "2017.1.00091.S",
+   "2018.1.00003.S",
+   "2021.1.00272.S",
+   "2021.1.01021.S"
+  ],
+  "chandra_obs": 5,
+  "xmm_obs": 5,
+  "papers_title_abstract": 18,
+  "top_papers": [
+   [
+    "Strong-lensing analysis of MACS J0717.5+3745 fromHubbleFrontier Fields observations: How w",
+    114,
+    2016
+   ],
+   [
+    "THE EVOLUTION OF THE FAINT END OF THE UV LUMINOSITY FUNCTION DURING THE PEAK EPOCH OF STAR",
+    94,
+    2016
+   ],
+   [
+    "Strong lensing by a node of the cosmic web",
+    77,
+    2012
+   ]
+  ]
+ },
+ {
+  "name": "RX J1131-1231",
+  "ra": 172.96499999999997,
+  "dec": -12.5325,
+  "mast_collections": {
+   "TESS": 4,
+   "SWIFT": 10,
+   "PS1": 5,
+   "OPO": 1,
+   "JWST": 33,
+   "HST": 68,
+   "HLSP": 9,
+   "HLA": 30,
+   "GALEX": 2
+  },
+  "jwst_instruments": {
+   "NIRSPEC": 29,
+   "MIRI": 4
+  },
+  "jwst_programs": 2,
+  "jwst_all4": false,
+  "jpeg_nircam": [],
+  "nrao_rows": 317,
+  "nrao_facilities": {
+   "ALMA": 213,
+   "NRAO": 104
+  },
+  "nrao_projects": [
+   "17B-271",
+   "2013.1.01207.S",
+   "2019.1.00332.S",
+   "AS765",
+   "AW741"
+  ],
+  "chandra_obs": 5,
+  "xmm_obs": 5,
+  "papers_title_abstract": 37,
+  "top_papers": [
+   [
+    "X-RAY MICROLENSING IN RXJ1131-1231 AND HE1104-1805",
+    180,
+    2009
+   ],
+   [
+    "GRAVITATIONAL LENS MODELING WITH BASIS SETS",
+    160,
+    2015
+   ],
+   [
+    "COSMOGRAIL: the COSmological MOnitoring of GRAvItational Lenses",
+    150,
+    2013
+   ]
+  ]
+ },
+ {
+  "name": "SPT-CL J0615-5746",
+  "ra": 93.97916666666666,
+  "dec": -57.766666666666666,
+  "mast_collections": {
+   "TESS": 56,
+   "OPO": 1,
+   "JWST": 118,
+   "HST": 129,
+   "HLSP": 438,
+   "HLA": 39,
+   "GALEX": 2
+  },
+  "jwst_instruments": {
+   "NIRCAM": 12,
+   "MIRI": 16,
+   "NIRSPEC": 90
+  },
+  "jwst_programs": 3,
+  "jwst_all4": false,
+  "jpeg_nircam": [
+   "mast:JWST/product/jw04212-o001_t001_nircam_clear-f090w_i2d.jpg",
+   "mast:JWST/product/jw04212-o001_t001_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw04212-o001_t001_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw04212-o001_t001_nircam_clear-f200w_i2d.jpg",
+   "mast:JWST/product/jw04212-o001_t001_nircam_clear-f277w_i2d.jpg",
+   "mast:JWST/product/jw04212-o001_t001_nircam_clear-f356w_i2d.jpg"
+  ],
+  "nrao_rows": 569,
+  "nrao_facilities": {
+   "ALMA": 569
+  },
+  "nrao_projects": [
+   "2018.1.00295.S",
+   "2019.1.00327.S",
+   "2022.1.01356.S"
+  ],
+  "chandra_obs": 5,
+  "xmm_obs": 5,
+  "papers_title_abstract": 5,
+  "top_papers": [
+   [
+    "JWST spectroscopic confirmation of the Cosmic Gems arc at z = 9.625",
+    11,
+    2025
+   ],
+   [
+    "Unveiling the Cosmic Gems Arc at z ∼ 10 with JWST NIRCam",
+    10,
+    2025
+   ],
+   [
+    "Environmental Quenching seen in CO Emitting Galaxies in a Massive Cluster SPT-CL J0615-574",
+    1,
+    2021
+   ]
+  ]
+ },
+ {
+  "name": "Abell 370",
+  "ra": 39.96041667,
+  "dec": -1.58555556,
+  "mast_collections": {
+   "TESS": 2,
+   "SDSS": 16,
+   "PS1": 20,
+   "OPO": 2,
+   "JWST": 492,
+   "HST": 857,
+   "HLSP": 254,
+   "HLA": 283,
+   "GALEX": 3
+  },
+  "jwst_instruments": {
+   "NIRCAM": 123,
+   "NIRISS": 23,
+   "NIRSPEC": 346
+  },
+  "jwst_programs": 14,
+  "jwst_all4": false,
+  "jpeg_nircam": [
+   "mast:JWST/product/jw01208-o002_t001_nircam_clear-f090w_i2d.jpg",
+   "mast:JWST/product/jw01208-o002_t001_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw01208-o002_t001_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw01208-o002_t001_nircam_clear-f200w_i2d.jpg",
+   "mast:JWST/product/jw01208-o002_t001_nircam_clear-f277w_i2d.jpg",
+   "mast:JWST/product/jw01208-o002_t001_nircam_clear-f356w_i2d.jpg"
+  ],
+  "nrao_rows": 6713,
+  "nrao_facilities": {
+   "ALMA": 2171,
+   "NRAO": 4542
+  },
+  "nrao_projects": [
+   "11B-100",
+   "12B-223",
+   "14A-151",
+   "16A-057",
+   "16B-251",
+   "16B-319",
+   "17A-177",
+   "2011.0.00747.S",
+   "2013.1.00403.S",
+   "2015.1.00302.S",
+   "2015.1.01425.S",
+   "2016.1.00282.S"
+  ],
+  "chandra_obs": 5,
+  "xmm_obs": 5,
+  "papers_title_abstract": 164,
+  "top_papers": [
+   [
+    "The Frontier Fields: Survey Design and Initial Results",
+    645,
+    2017
+   ],
+   [
+    "A Redshift [CLC][ITAL]z[/ITAL][/CLC] = 6.56 Galaxy behind the Cluster Abell 370",
+    319,
+    2002
+   ],
+   [
+    "Morphological studies of the galaxy populations in distant 'Butcher-Oemler' clusters with ",
+    214,
+    1994
+   ]
+  ]
+ }
+]

@@ -1,0 +1,700 @@
+{
+  "version": 1,
+  "started": "2026-10-19T06:41:48.933625+00:00",
+  "files": {
+    "jw04598-o002_t010_nircam_clear-f410m_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1420848,
+      "size": 1420848,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f410m_cat.ecsv",
+      "updated": "2026-10-19T06:41:49.684055+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f356w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1430301,
+      "size": 1430301,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f356w_cat.ecsv",
+      "updated": "2026-10-19T06:41:49.941116+00:00"
+    },
+    "jw04598-o001_t001_niriss_f115w-gr150c_c1d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1471680,
+      "size": 1471680,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_f115w-gr150c_c1d.fits",
+      "updated": "2026-10-19T06:41:50.346284+00:00"
+    },
+    "jw04598-o001_t001_niriss_clear-f150w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1531620,
+      "size": 1531620,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_clear-f150w_cat.ecsv",
+      "updated": "2026-10-19T06:41:50.626903+00:00"
+    },
+    "jw04598-o001_t001_niriss_clear-f115w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1534456,
+      "size": 1534456,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_clear-f115w_cat.ecsv",
+      "updated": "2026-10-19T06:41:50.982934+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f444w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1554696,
+      "size": 1554696,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f444w_cat.ecsv",
+      "updated": "2026-10-19T06:41:51.348644+00:00"
+    },
+    "jw06882-o049_t025_nircam_clear-f444w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1596067,
+      "size": 1596067,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_nircam_clear-f444w_cat.ecsv",
+      "updated": "2026-10-19T06:41:51.738008+00:00"
+    },
+    "jw04598-o001_t001_niriss_clear-f200w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1618727,
+      "size": 1618727,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_clear-f200w_cat.ecsv",
+      "updated": "2026-10-19T06:41:52.021284+00:00"
+    },
+    "jw06882-o049_t025_nircam_clear-f300m_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1625373,
+      "size": 1625373,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_nircam_clear-f300m_cat.ecsv",
+      "updated": "2026-10-19T06:41:52.422884+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f090w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1707049,
+      "size": 1707049,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f090w_cat.ecsv",
+      "updated": "2026-10-19T06:41:52.819150+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f115w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1742664,
+      "size": 1742664,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f115w_cat.ecsv",
+      "updated": "2026-10-19T06:41:53.233931+00:00"
+    },
+    "jw04598-o001_t001_niriss_f115w-gr150r_c1d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1785600,
+      "size": 1785600,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_f115w-gr150r_c1d.fits",
+      "updated": "2026-10-19T06:41:54.021828+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f277w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1955046,
+      "size": 1955046,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f277w_cat.ecsv",
+      "updated": "2026-10-19T06:41:54.501023+00:00"
+    },
+    "jw04598-o001_t001_niriss_f150w-gr150c_c1d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1958400,
+      "size": 1958400,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_f150w-gr150c_c1d.fits",
+      "updated": "2026-10-19T06:41:54.703014+00:00"
+    },
+    "jw04598-o001_t001_niriss_f200w-gr150c_c1d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1967040,
+      "size": 1967040,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_f200w-gr150c_c1d.fits",
+      "updated": "2026-10-19T06:41:55.131815+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f444w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 2116059,
+      "size": 2116059,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f444w_cat.ecsv",
+      "updated": "2026-10-19T06:41:55.625743+00:00"
+    },
+    "jw06882-o049_t025_niriss_clearp-f277w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 2214782,
+      "size": 2214782,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_niriss_clearp-f277w_cat.ecsv",
+      "updated": "2026-10-19T06:41:56.239774+00:00"
+    },
+    "jw06882-o049_t025_niriss_clearp-f356w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 2335358,
+      "size": 2335358,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_niriss_clearp-f356w_cat.ecsv",
+      "updated": "2026-10-19T06:41:56.561728+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f410m_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 2362055,
+      "size": 2362055,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f410m_cat.ecsv",
+      "updated": "2026-10-19T06:41:56.889821+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f200w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 2390076,
+      "size": 2390076,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f200w_cat.ecsv",
+      "updated": "2026-10-19T06:41:57.399517+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f356w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 2569255,
+      "size": 2569255,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f356w_cat.ecsv",
+      "updated": "2026-10-19T06:41:58.359840+00:00"
+    },
+    "jw06882-o049_t025_nircam_clear-f150w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 2597273,
+      "size": 2597273,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_nircam_clear-f150w_cat.ecsv",
+      "updated": "2026-10-19T06:41:58.907769+00:00"
+    },
+    "jw06882-o049_t025_nircam_clear-f210m_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 3119709,
+      "size": 3119709,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_nircam_clear-f210m_cat.ecsv",
+      "updated": "2026-10-19T06:41:59.360782+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f090w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 3321723,
+      "size": 3321723,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f090w_cat.ecsv",
+      "updated": "2026-10-19T06:41:59.732605+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f115w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 3552672,
+      "size": 3552672,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f115w_cat.ecsv",
+      "updated": "2026-10-19T06:42:00.209847+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f150w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 3673983,
+      "size": 3673983,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f150w_cat.ecsv",
+      "updated": "2026-10-19T06:42:00.686054+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f200w_cat.ecsv": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 4049161,
+      "size": 4049161,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f200w_cat.ecsv",
+      "updated": "2026-10-19T06:42:01.571662+00:00"
+    },
+    "jw04598-o001_t001_niriss_clear-f150w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 18478080,
+      "size": 18478080,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_clear-f150w_segm.fits",
+      "updated": "2026-10-19T06:42:04.130255+00:00"
+    },
+    "jw04598-o001_t001_niriss_clear-f200w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 18478080,
+      "size": 18478080,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_clear-f200w_segm.fits",
+      "updated": "2026-10-19T06:42:05.790229+00:00"
+    },
+    "jw04598-o001_t001_niriss_clear-f115w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 18486720,
+      "size": 18486720,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_clear-f115w_segm.fits",
+      "updated": "2026-10-19T06:42:07.428126+00:00"
+    },
+    "jw06882-o049_t025_niriss_clearp-f277w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 18506880,
+      "size": 18506880,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_niriss_clearp-f277w_segm.fits",
+      "updated": "2026-10-19T06:42:09.099537+00:00"
+    },
+    "jw06882-o049_t025_niriss_clearp-f356w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 18506880,
+      "size": 18506880,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_niriss_clearp-f356w_segm.fits",
+      "updated": "2026-10-19T06:42:10.710924+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f444w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 41397120,
+      "size": 41397120,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f444w_segm.fits",
+      "updated": "2026-10-19T06:42:14.168686+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f410m_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 41417280,
+      "size": 41417280,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f410m_segm.fits",
+      "updated": "2026-10-19T06:42:17.703340+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f356w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 41425920,
+      "size": 41425920,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f356w_segm.fits",
+      "updated": "2026-10-19T06:42:22.009423+00:00"
+    },
+    "jw06882-o049_t025_nircam_clear-f444w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 43871040,
+      "size": 43871040,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_nircam_clear-f444w_segm.fits",
+      "updated": "2026-10-19T06:42:28.552069+00:00"
+    },
+    "jw06882-o049_t025_nircam_clear-f300m_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 43891200,
+      "size": 43891200,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_nircam_clear-f300m_segm.fits",
+      "updated": "2026-10-19T06:42:34.983932+00:00"
+    },
+    "jw04598-o001_t001_niriss_f150w-gr150c_x1d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 48585600,
+      "size": 48585600,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_f150w-gr150c_x1d.fits",
+      "updated": "2026-10-19T06:42:43.678736+00:00"
+    },
+    "jw04598-o001_t001_niriss_f200w-gr150c_x1d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 48723840,
+      "size": 48723840,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_f200w-gr150c_x1d.fits",
+      "updated": "2026-10-19T06:42:53.845220+00:00"
+    },
+    "jw04598-o001_t001_niriss_f115w-gr150c_x1d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 56136960,
+      "size": 56136960,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_f115w-gr150c_x1d.fits",
+      "updated": "2026-10-19T06:43:03.983203+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f277w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 56715840,
+      "size": 56715840,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f277w_segm.fits",
+      "updated": "2026-10-19T06:43:15.136300+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f444w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 56715840,
+      "size": 56715840,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f444w_segm.fits",
+      "updated": "2026-10-19T06:43:32.209029+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f410m_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 56718720,
+      "size": 56718720,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f410m_segm.fits",
+      "updated": "2026-10-19T06:43:38.308816+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f356w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 56727360,
+      "size": 56727360,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f356w_segm.fits",
+      "updated": "2026-10-19T06:43:43.641841+00:00"
+    },
+    "jw04598-o001_t001_niriss_f115w-gr150r_x1d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 89556480,
+      "size": 89556480,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_f115w-gr150r_x1d.fits",
+      "updated": "2026-10-19T06:43:56.439265+00:00"
+    },
+    "jw04598-o001_t001_niriss_clear-f150w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 128880000,
+      "size": 128880000,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_clear-f150w_i2d.fits",
+      "updated": "2026-10-19T06:44:22.696080+00:00"
+    },
+    "jw04598-o001_t001_niriss_clear-f200w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 128880000,
+      "size": 128880000,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_clear-f200w_i2d.fits",
+      "updated": "2026-10-19T06:44:44.742556+00:00"
+    },
+    "jw04598-o001_t001_niriss_clear-f115w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 128891520,
+      "size": 128891520,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_niriss_clear-f115w_i2d.fits",
+      "updated": "2026-10-19T06:45:19.999085+00:00"
+    },
+    "jw06882-o049_t025_niriss_clearp-f277w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 128977920,
+      "size": 128977920,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_niriss_clearp-f277w_i2d.fits",
+      "updated": "2026-10-19T06:46:13.290700+00:00"
+    },
+    "jw06882-o049_t025_niriss_clearp-f356w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 128977920,
+      "size": 128977920,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_niriss_clearp-f356w_i2d.fits",
+      "updated": "2026-10-19T06:46:28.348378+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f115w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 174041280,
+      "size": 174041280,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f115w_segm.fits",
+      "updated": "2026-10-19T06:47:36.180284+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f090w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 174098880,
+      "size": 174098880,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f090w_segm.fits",
+      "updated": "2026-10-19T06:48:15.450801+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f200w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 174430080,
+      "size": 174430080,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f200w_segm.fits",
+      "updated": "2026-10-19T06:48:51.668611+00:00"
+    },
+    "jw06882-o049_t025_nircam_clear-f210m_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 184610880,
+      "size": 184610880,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_nircam_clear-f210m_segm.fits",
+      "updated": "2026-10-19T06:49:16.062417+00:00"
+    },
+    "jw06882-o049_t025_nircam_clear-f150w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 184610880,
+      "size": 184610880,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_nircam_clear-f150w_segm.fits",
+      "updated": "2026-10-19T06:49:35.312906+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f090w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 238291200,
+      "size": 238291200,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f090w_segm.fits",
+      "updated": "2026-10-19T06:49:55.734059+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f115w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 238314240,
+      "size": 238314240,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f115w_segm.fits",
+      "updated": "2026-10-19T06:50:40.611939+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f150w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 238314240,
+      "size": 238314240,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f150w_segm.fits",
+      "updated": "2026-10-19T06:51:26.090023+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f200w_segm.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 238605120,
+      "size": 238605120,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f200w_segm.fits",
+      "updated": "2026-10-19T06:51:57.697444+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f444w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 289238400,
+      "size": 289238400,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f444w_i2d.fits",
+      "updated": "2026-10-19T06:53:06.140860+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f410m_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 289379520,
+      "size": 289379520,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f410m_i2d.fits",
+      "updated": "2026-10-19T06:53:55.782075+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f356w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 289440000,
+      "size": 289440000,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f356w_i2d.fits",
+      "updated": "2026-10-19T06:54:33.110963+00:00"
+    },
+    "jw06882-o049_t025_nircam_clear-f444w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 306512640,
+      "size": 306512640,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_nircam_clear-f444w_i2d.fits",
+      "updated": "2026-10-19T06:56:09.106493+00:00"
+    },
+    "jw06882-o049_t025_nircam_clear-f300m_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 306653760,
+      "size": 306653760,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_nircam_clear-f300m_i2d.fits",
+      "updated": "2026-10-19T06:56:53.039256+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f277w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 396345600,
+      "size": 396345600,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f277w_i2d.fits",
+      "updated": "2026-10-19T06:57:36.812067+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f444w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 396348480,
+      "size": 396348480,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f444w_i2d.fits",
+      "updated": "2026-10-19T06:59:08.146481+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f410m_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 396348480,
+      "size": 396348480,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f410m_i2d.fits",
+      "updated": "2026-10-19T07:01:27.719770+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f356w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 396429120,
+      "size": 396429120,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f356w_i2d.fits",
+      "updated": "2026-10-19T07:03:09.871188+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f115w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1217571840,
+      "size": 1217571840,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f115w_i2d.fits",
+      "updated": "2026-10-19T07:06:48.949190+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f090w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1217975040,
+      "size": 1217975040,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f090w_i2d.fits",
+      "updated": "2026-10-19T07:10:03.301728+00:00"
+    },
+    "jw04598-o002_t010_nircam_clear-f200w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1220293440,
+      "size": 1220293440,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o002_t010_nircam_clear-f200w_i2d.fits",
+      "updated": "2026-10-19T07:11:10.182264+00:00"
+    },
+    "jw06882-o049_t025_nircam_clear-f210m_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1291533120,
+      "size": 1291533120,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_nircam_clear-f210m_i2d.fits",
+      "updated": "2026-10-19T07:13:06.714020+00:00"
+    },
+    "jw06882-o049_t025_nircam_clear-f150w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1291533120,
+      "size": 1291533120,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw06882-o049_t025_nircam_clear-f150w_i2d.fits",
+      "updated": "2026-10-19T07:14:27.652537+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f090w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1905122880,
+      "size": 1905122880,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f090w_i2d.fits",
+      "updated": "2026-10-19T07:17:06.497105+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f150w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1905304320,
+      "size": 1905304320,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f150w_i2d.fits",
+      "updated": "2026-10-19T07:20:54.316211+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f115w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1905307200,
+      "size": 1905307200,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f115w_i2d.fits",
+      "updated": "2026-10-19T07:26:33.939696+00:00"
+    },
+    "jw04598-o001_t001_nircam_clear-f200w_i2d.fits": {
+      "status": "done",
+      "target": "E2_bullet_cluster_img",
+      "stage": "jwst",
+      "bytes": 1907634240,
+      "size": 1907634240,
+      "path": "/media/rendier/0123-4567/BulletCluster/bullet_cluster/data/jwst/jw04598-o001_t001_nircam_clear-f200w_i2d.fits",
+      "updated": "2026-10-19T07:31:55.774739+00:00"
+    }
+  },
+  "updated": "2026-10-19T07:31:55.774790+00:00"
+}

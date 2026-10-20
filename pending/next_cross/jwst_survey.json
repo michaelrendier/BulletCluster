@@ -1,0 +1,514 @@
+[
+ {
+  "name": "SMACS J0723.3-7327",
+  "kind": "cluster",
+  "jwst_obs": 415,
+  "instruments": {
+   "NIRCAM": 21,
+   "MIRI": 4,
+   "NIRISS": 9,
+   "NIRSPEC": 381
+  },
+  "programs": [
+   "12774",
+   "2736",
+   "2957",
+   "2959",
+   "2969",
+   "4043",
+   "4368",
+   "6882"
+  ],
+  "hst_obs": 140,
+  "jpeg": [
+   "mast:JWST/product/jw02736-o001_t001_nircam_clear-f090w_i2d.jpg",
+   "mast:JWST/product/jw02736-o001_t001_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw02736-o001_t001_nircam_clear-f200w_i2d.jpg"
+  ],
+  "ra": 89.94465125780533,
+  "dec": -75.1362981467764
+ },
+ {
+  "name": "Abell 2744",
+  "kind": "cluster",
+  "jwst_obs": 3826,
+  "instruments": {
+   "NIRISS": 15,
+   "NIRCAM": 316,
+   "NIRSPEC": 3075,
+   "MIRI": 420
+  },
+  "programs": [
+   "10445",
+   "11373",
+   "1176",
+   "12267",
+   "12435",
+   "1324",
+   "1840",
+   "1893",
+   "2561",
+   "2756",
+   "2883",
+   "2957",
+   "3073",
+   "3516",
+   "3538",
+   "3990",
+   "4111",
+   "4455",
+   "4463",
+   "4530",
+   "4553",
+   "5015",
+   "5266",
+   "5578",
+   "6053",
+   "6123",
+   "6434",
+   "6626",
+   "6743",
+   "6761",
+   "6793",
+   "7014",
+   "7677",
+   "8051",
+   "8204",
+   "8607",
+   "9165",
+   "9214",
+   "9645",
+   "9695"
+  ],
+  "hst_obs": 1005,
+  "jpeg": [
+   "mast:JWST/product/jw01324-o001_t001_niriss_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw01324-o001_t001_niriss_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw01324-o001_t001_niriss_clear-f200w_i2d.jpg"
+  ],
+  "ra": 1.0052099483064731,
+  "dec": -25.74511118111222
+ },
+ {
+  "name": "MACS J0416.1-2403",
+  "kind": "cluster",
+  "jwst_obs": 1623,
+  "instruments": {
+   "NIRCAM": 271,
+   "NIRISS": 16,
+   "NIRSPEC": 1334,
+   "MIRI": 2
+  },
+  "programs": [
+   "10341",
+   "1176",
+   "1208",
+   "1908",
+   "2514",
+   "2777",
+   "2883",
+   "3362",
+   "3538",
+   "4528",
+   "4750",
+   "5578",
+   "5890",
+   "6882",
+   "9969"
+  ],
+  "hst_obs": 1029,
+  "jpeg": [
+   "mast:JWST/product/jw01176-o211_t009_nircam_clear-f090w_i2d.jpg",
+   "mast:JWST/product/jw01176-o211_t009_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw01176-o211_t009_nircam_clear-f150w_i2d.jpg"
+  ],
+  "ra": 65.49041145255389,
+  "dec": -26.99264518308794
+ },
+ {
+  "name": "MACS J1149.5+2223",
+  "kind": "cluster (Refsdal)",
+  "jwst_obs": 1463,
+  "instruments": {
+   "NIRCAM": 37,
+   "NIRISS": 15,
+   "MIRI": 8,
+   "NIRSPEC": 1403
+  },
+  "programs": [
+   "1176",
+   "1199",
+   "1208",
+   "1262",
+   "1484",
+   "1490",
+   "2883",
+   "3362",
+   "4530",
+   "4552",
+   "5890",
+   "6882"
+  ],
+  "hst_obs": 1728,
+  "jpeg": [
+   "mast:JWST/product/jw01176-o231_t011_nircam_clear-f090w_i2d.jpg",
+   "mast:JWST/product/jw01176-o231_t011_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw01176-o231_t011_nircam_clear-f150w_i2d.jpg"
+  ],
+  "ra": 181.73957313619175,
+  "dec": 25.46111370348876
+ },
+ {
+  "name": "RX J1131-1231",
+  "kind": "quad quasar, single lens galaxy",
+  "error": "ResolverError: Could not resolve \"RX J1131-1231\" to a sky position."
+ },
+ {
+  "name": "HE 0435-1223",
+  "kind": "quad quasar, single lens galaxy",
+  "jwst_obs": 18,
+  "instruments": {
+   "NIRCAM": 4,
+   "NIRSPEC": 10,
+   "MIRI": 4
+  },
+  "programs": [
+   "1198",
+   "2046"
+  ],
+  "hst_obs": 83,
+  "jpeg": [
+   "mast:JWST/product/jw01198-o007_t005_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw01198-o007_t005_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw01198-o007_t005_nircam_clear-f277w_i2d.jpg"
+  ],
+  "ra": 63.78867895901618,
+  "dec": -15.066367086882765
+ },
+ {
+  "name": "PG 1115+080",
+  "kind": "quad quasar, single lens galaxy",
+  "jwst_obs": 13,
+  "instruments": {
+   "NIRCAM": 4,
+   "NIRSPEC": 5,
+   "MIRI": 4
+  },
+  "programs": [
+   "1198",
+   "2046"
+  ],
+  "hst_obs": 283,
+  "jpeg": [
+   "mast:JWST/product/jw01198-o010_t006_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw01198-o010_t006_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw01198-o010_t006_nircam_clear-f277w_i2d.jpg"
+  ],
+  "ra": 173.32309487189954,
+  "dec": 10.123660977574168
+ },
+ {
+  "name": "H1413+117",
+  "kind": "Cloverleaf quad quasar",
+  "jwst_obs": 4,
+  "instruments": {
+   "MIRI": 4
+  },
+  "programs": [
+   "2046"
+  ],
+  "hst_obs": 458,
+  "jpeg": [
+   "mast:JWST/product/jw02046-o017_t016_miri_f1280w-brightsky_i2d.jpg",
+   "mast:JWST/product/jw02046-o017_t016_miri_f1800w-brightsky_i2d.jpg",
+   "mast:JWST/product/jw02046-o017_t016_miri_f2550w-brightsky_i2d.jpg"
+  ],
+  "ra": 212.58129274307584,
+  "dec": 12.342141074993913
+ },
+ {
+  "name": "B1608+656",
+  "kind": "quad radio source, lens pair",
+  "error": "ResolverError: Could not resolve \"B1608+656\" to a sky position."
+ },
+ {
+  "name": "SDSS J1004+4112",
+  "kind": "cluster quad quasar",
+  "jwst_obs": 3,
+  "instruments": {
+   "NIRCAM": 3
+  },
+  "programs": [
+   "6675"
+  ],
+  "hst_obs": 114,
+  "jpeg": [
+   "mast:JWST/product/jw06675-o005_t006_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw06675-o005_t006_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw06675-o005_t006_nircam_clear-f444w_i2d.jpg"
+  ],
+  "ra": 153.42816649452197,
+  "dec": 36.677348803865
+ },
+ {
+  "name": "Cosmic Horseshoe",
+  "kind": "near-complete ring, single massive galaxy",
+  "jwst_obs": 52,
+  "instruments": {
+   "MIRI": 4,
+   "NIRCAM": 48
+  },
+  "programs": [
+   "10417",
+   "3257"
+  ],
+  "hst_obs": 65,
+  "jpeg": [
+   "mast:JWST/product/jw03257-o005_t005_miri_ch2-long_s3d.jpg",
+   "mast:JWST/product/jw03257-o005_t005_miri_ch3-long_s3d.jpg",
+   "mast:JWST/product/jw03257-o005_t005_miri_ch4-long_s3d.jpg"
+  ],
+  "ra": 175.98362302734037,
+  "dec": 14.715510220777437
+ },
+ {
+  "name": "SPT0615-JD",
+  "kind": "Cosmic Gems arc, cluster",
+  "error": "ResolverError: Could not resolve \"SPT0615-JD\" to a sky position."
+ },
+ {
+  "name": "WHL0137-08",
+  "kind": "Sunrise arc / Earendel, cluster",
+  "error": "ResolverError: Could not resolve \"WHL0137-08\" to a sky position."
+ },
+ {
+  "name": "MG 0414+0534",
+  "kind": "quad lensed radio source",
+  "jwst_obs": 4,
+  "instruments": {
+   "MIRI": 4
+  },
+  "programs": [
+   "2046"
+  ],
+  "hst_obs": 86,
+  "jpeg": [
+   "mast:JWST/product/jw02046-o005_t005_miri_f1280w-brightsky_i2d.jpg",
+   "mast:JWST/product/jw02046-o005_t005_miri_f1800w-brightsky_i2d.jpg",
+   "mast:JWST/product/jw02046-o005_t005_miri_f2550w-brightsky_i2d.jpg"
+  ],
+  "ra": 59.88776797559416,
+  "dec": 8.418879001360354
+ },
+ {
+  "name": "SDP.81",
+  "kind": "Einstein ring (submm)",
+  "jwst_obs": 0,
+  "instruments": {},
+  "programs": [],
+  "hst_obs": 14,
+  "jpeg": [],
+  "ra": 138.51298920665835,
+  "dec": 3.559927403623207
+ },
+ {
+  "name": "Cosmic Eye",
+  "kind": "lensed galaxy ring",
+  "jwst_obs": 24,
+  "instruments": {
+   "NIRCAM": 6,
+   "NIRSPEC": 18
+  },
+  "programs": [
+   "4125"
+  ],
+  "hst_obs": 51,
+  "jpeg": [
+   "mast:JWST/product/jw04125-o017_t039_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw04125-o017_t039_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw04125-o017_t039_nircam_clear-f182m_i2d.jpg"
+  ],
+  "ra": 321.6658474064242,
+  "dec": -1.0606637488558648
+ },
+ {
+  "name": "HS 0810+2554",
+  "kind": "quad quasar",
+  "jwst_obs": 4,
+  "instruments": {
+   "NIRCAM": 4
+  },
+  "programs": [
+   "4204"
+  ],
+  "hst_obs": 105,
+  "jpeg": [
+   "mast:JWST/product/jw04204-o005_t005_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw04204-o005_t005_nircam_clear-f200w_i2d.jpg",
+   "mast:JWST/product/jw04204-o005_t005_nircam_clear-f277w_i2d.jpg"
+  ],
+  "ra": 123.42313263217265,
+  "dec": 26.790870823129836
+ },
+ {
+  "name": "WFI 2033-4723",
+  "kind": "quad quasar",
+  "jwst_obs": 13,
+  "instruments": {
+   "NIRCAM": 4,
+   "NIRSPEC": 5,
+   "MIRI": 4
+  },
+  "programs": [
+   "1198",
+   "2046"
+  ],
+  "hst_obs": 70,
+  "jpeg": [
+   "mast:JWST/product/jw01198-o004_t004_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw01198-o004_t004_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw01198-o004_t004_nircam_clear-f277w_i2d.jpg"
+  ],
+  "ra": 311.5180989753187,
+  "dec": -42.7952943210698
+ },
+ {
+  "name": "B1422+231",
+  "kind": "quad quasar",
+  "jwst_obs": 0,
+  "instruments": {},
+  "programs": [],
+  "hst_obs": 116,
+  "jpeg": [],
+  "ra": 212.40683561490715,
+  "dec": 25.16685751085584
+ },
+ {
+  "name": "Q0957+561",
+  "kind": "twin quasar",
+  "jwst_obs": 0,
+  "instruments": {},
+  "programs": [],
+  "hst_obs": 214,
+  "jpeg": [],
+  "ra": 143.83180836727607,
+  "dec": 52.37960557835239
+ },
+ {
+  "name": "SDSS J0946+1006",
+  "kind": "double Einstein ring",
+  "jwst_obs": 21,
+  "instruments": {
+   "NIRCAM": 21
+  },
+  "programs": [
+   "12088"
+  ],
+  "hst_obs": 21,
+  "jpeg": [],
+  "ra": 146.2011423510709,
+  "dec": 7.8222438531906935
+ },
+ {
+  "name": "Abell 1689",
+  "kind": "cluster",
+  "jwst_obs": 25,
+  "instruments": {
+   "NIRCAM": 19,
+   "NIRSPEC": 6
+  },
+  "programs": [
+   "1840",
+   "5782",
+   "6882",
+   "9273"
+  ],
+  "hst_obs": 635,
+  "jpeg": [
+   "mast:JWST/product/jw01840-o019_t009_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw01840-o019_t009_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw01840-o019_t009_nircam_clear-f200w_i2d.jpg"
+  ],
+  "ra": 198.94336432898132,
+  "dec": -0.834037155387192
+ },
+ {
+  "name": "Abell 370",
+  "kind": "cluster",
+  "jwst_obs": 488,
+  "instruments": {
+   "NIRCAM": 123,
+   "NIRISS": 19,
+   "NIRSPEC": 346
+  },
+  "programs": [
+   "10341",
+   "1208",
+   "12503",
+   "12583",
+   "2883",
+   "3362",
+   "3538",
+   "4568",
+   "5324",
+   "5890",
+   "6882",
+   "7345",
+   "9277",
+   "9371"
+  ],
+  "hst_obs": 857,
+  "jpeg": [
+   "mast:JWST/product/jw01208-o002_t001_nircam_clear-f090w_i2d.jpg",
+   "mast:JWST/product/jw01208-o002_t001_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw01208-o002_t001_nircam_clear-f150w_i2d.jpg"
+  ],
+  "ra": 34.04324226596264,
+  "dec": 1.0371972659086042
+ },
+ {
+  "name": "El Gordo",
+  "kind": "cluster",
+  "jwst_obs": 12,
+  "instruments": {
+   "NIRCAM": 12
+  },
+  "programs": [
+   "1176",
+   "6882"
+  ],
+  "hst_obs": 132,
+  "jpeg": [
+   "mast:JWST/product/jw01176-o241_t012_nircam_clear-f090w_i2d.jpg",
+   "mast:JWST/product/jw01176-o241_t012_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw01176-o241_t012_nircam_clear-f150w_i2d.jpg"
+  ],
+  "ra": 17.723345780892966,
+  "dec": -45.508702630665475
+ },
+ {
+  "name": "MACS J0647.7+7015",
+  "kind": "cluster",
+  "jwst_obs": 388,
+  "instruments": {
+   "NIRCAM": 8,
+   "NIRSPEC": 359,
+   "MIRI": 21
+  },
+  "programs": [
+   "1433",
+   "4246",
+   "4528",
+   "7390",
+   "9165"
+  ],
+  "hst_obs": 226,
+  "jpeg": [
+   "mast:JWST/product/jw01433-o010_t001_nircam_clear-f115w_i2d.jpg",
+   "mast:JWST/product/jw01433-o010_t001_nircam_clear-f150w_i2d.jpg",
+   "mast:JWST/product/jw01433-o010_t001_nircam_clear-f200w_i2d.jpg"
+  ],
+  "ra": 84.80363843570849,
+  "dec": 71.03134562724185
+ }
+]

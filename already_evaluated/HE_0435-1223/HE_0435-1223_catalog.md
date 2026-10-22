@@ -3,14 +3,14 @@
 Target RA 69.56208° Dec −12.28722° (04ʰ38ᵐ14.9ˢ −12°17′14″), quad lensed quasar z≈1.69, lens z≈0.45, sparse field with a few neighbours.
 Data root: `/media/rendier/Telescope Data/BulletCluster/EinsteinCrosses/HE_0435-1223/<TELESCOPE>/`. One script per telescope sits beside this file.
 Rules: Mozilla user agent on every request; ONE download at a time, in the order below; nothing runs without Cody's go; user email is never sent anywhere without his explicit say-so.
-Sizes were measured from the MAST product lists / NRAO TAP on 2026-10-22; nothing has been downloaded yet.
+Sizes were measured from the MAST product lists / NRAO TAP on 2026-10-22. Downloaded 2026-10-22: HST, JWST, ALMA (below); VLA pending an NRAO account.
 
 | # | Telescope | Script | What | Size | Status |
 |---|---|---|---|---|---|
-| 1 | **JWST** (imaging scaffold) | `download_JWST.py` | whole level-3: NIRCam F150W/F115W (1442 MB each), F277W/F356W (344 MB each), MIRI F560W/F1280W/F1800W/F2550W i2d (37.8 MB each), NIRSpec IFU G140M/F100LP s3d (62.8 + 40.9 MB), x1d, catalogs, segmentation maps | **≈ 4.37 GB** (3.84 GB without segm maps, `--no-segm`) | queued |
-| 2 | HST | `download_HST.py` | ACS/WFC F814W + F555W drc (326.7 MB each), WFC3/IR F160W (21.4) + F140W (26.2) drz, point/segment catalogs | **≈ 708 MB** (≈ 132 MB with `--cutout` on the ACS pair) | queued |
-| 3 | VLA / EVLA | `download_VLA.py` | 12B-030, C band 4.7–6.5 cm, full polarization RR RL LR LL, two execution blocks (MJD 56226, 56240) | **≈ 47.4 GB** (archive estimate: 25.5 + 21.9) | queued; needs the NRAO portal (email) |
-| 4 | ALMA (optional) | `download_ALMA.py` | 2024.1.00291.S, 11 member blocks, 0.87–3.38 mm, XX/YY only (no polarization products) | **≈ 6.6 GB** | optional |
+| 1 | **JWST** (imaging scaffold) | `download_JWST.py` | whole level-3: NIRCam F150W/F115W (1442 MB each), F277W/F356W (344 MB each), MIRI F560W/F1280W/F1800W/F2550W i2d (37.8 MB each), NIRSpec IFU G140M/F100LP s3d (62.8 + 40.9 MB), x1d, catalogs, segmentation maps | **4.37 GB** (28 files) | **DONE 2026-10-22 11:16** |
+| 2 | HST | `download_HST.py` | ACS/WFC F814W + F555W drc (326.7 MB each), WFC3/IR F160W (21.4) + F140W (26.2) drz, point/segment catalogs | **0.71 GB** (12 files) | **DONE 2026-10-22 11:00** |
+| 3 | VLA / EVLA | `download_VLA.py` | 12B-030, C band 4.7–6.5 cm, full polarization RR RL LR LL, two execution blocks (MJD 56226, 56240) | **≈ 47.4 GB** (archive estimate: 25.5 + 21.9) | pending: NRAO portal needs an account + email |
+| 4 | ALMA (optional) | `download_ALMA.py` | 2024.1.00291.S, 11 member blocks, 0.87–3.38 mm, XX/YY only (no polarization products) | **0.95 GB** (21 files; public DataLink URLs, no email; 7 member OUS, README + product tar + auxiliary tar each) | **DONE 2026-10-22 11:45** |
 
 ## JWST detail
 GO-1198 (NIRCam ×4 filters; NIRSpec IFU G140M/F100LP, observations o008 + o012) and GO-2046 (MIRI ×4 filters). NIRISS: no public observation. No JWST imaging polarimeter exists.

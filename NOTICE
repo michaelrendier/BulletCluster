@@ -1,0 +1,10 @@
+BulletCluster — third-party notices and data acknowledgements
+
+Code and maths in this repository are GNU GPL v3.0 (LICENSE). The notices below apply to the telescope data the analyses use.
+
+DATA ACKNOWLEDGEMENTS
+
+NRAO / Green Bank Observatory (VLA, VLBA, GBT archive data; e.g. VLA project 12B-030, HE 0435-1223):
+  The National Radio Astronomy Observatory and Green Bank Observatory are facilities of the U.S. National Science Foundation operated under cooperative agreement by Associated Universities, Inc.
+
+Include this statement in any paper, document or release that uses NRAO archive data.

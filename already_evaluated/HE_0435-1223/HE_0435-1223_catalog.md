@@ -28,3 +28,6 @@ Programs 9744 (ACS), 12889 (WFC3/IR F160W), 13732 (WFC3/IR F140W + G141). No pol
 ## Files beside this catalog
 `he0435_common.py` (shared helpers, HTTP-Range cutouts), `telescope_download.py` (resumable whole-file downloader), `nrao_holdings_2026-10-22.csv`, `alma_holdings_2026-10-22.csv`.
 Run `python3 download_<TELESCOPE>.py --dry-run` (JWST/HST) or `--list` (VLA/ALMA) for read-only sizes.
+
+## Data acknowledgement (NRAO)
+The National Radio Astronomy Observatory and Green Bank Observatory are facilities of the U.S. National Science Foundation operated under cooperative agreement by Associated Universities, Inc. (also in `BulletCluster/NOTICE`; any paper using the VLA 12B-030 data must carry it).

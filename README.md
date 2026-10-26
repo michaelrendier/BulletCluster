@@ -206,3 +206,7 @@ Licensed under the GNU General Public License, version 3.0 (GPL-3.0-only); see `
 *His Work (Abrikosov, 1957) describes the dark matter. He just found it in copper first."*
 
 *— Cody Michael Allison, 2026-06-30*
+
+## Licences and data acknowledgements
+
+Code: GPL v3.0 (`LICENSE`). Telescope-data acknowledgements, including the required NRAO / Green Bank Observatory statement: `NOTICE`.

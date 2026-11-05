@@ -6,7 +6,7 @@
 
 **Author:** Cody Michael Allison  
 **Framework:** The Ainulindalë Conjecture — Abrikosov Lattice / σ=½ ZD boundary hypothesis  
-**Status:** Engine verified on synthetic data. Real MeerKAT Q/U data pending. JWST mosaic pending.
+**Status:** Engine verified on synthetic data. Real Q/U data pending (tape request). JWST mosaics complete; data inventory verified 2026-11-04.
 
 **Paper:** [`paper_draft.md`](paper_draft.md) — *"Gravity is a Shape, Not a Stuff — GR and QM Read Through Each Other, In Code."* Abstract seeded; a supposition/thesis layer, changes no data status here. Lead-in to `FourthAgePapers/DM_GalacticCavity`.
 
@@ -92,13 +92,14 @@ before citing any of them.
 
 ### Still Needed
 
+See [`DATA_INVENTORY.md`](DATA_INVENTORY.md) (verified file by file, 2026-11-04).
+
 ```
-✗ Real Stokes Q/U from MeerKAT (SARAO IDIA or direct PI contact — see CLAUDE_PRIMER.md)
-✗ Complete JWST mosaic (Program 4598, 14 filters, 13.7 GB — download in progress)
-✗ Complete HST (Program 10200 — j90702020 stalled, needs resume)
+✗ Real Stokes Q/U (tape request to SARAO for MeerKAT visibilities pending; ASKAP/POSSUM and RACS hold public Q/U behind a CASDA login)
+✗ A citable lensing-mass map as the control (Clowe 2006 / Bradač 2006 data release: not on disk)
+⏳ HST: programs 10863, 11591, 10200-combined, 11099 downloading (2.83 GB)
 ✗ Real κ at high resolution → extract Δκ fringes vs NFW fit
 ```
-
 ---
 
 ## The Abrikosov Framework — Key Identifications
@@ -156,6 +157,16 @@ engine/
 
 | Dataset | Status | Notes |
 |---------|--------|-------|
+| Chandra X-ray | ✓ VERIFIED (10 ObsIDs) | `Chandra/<ObsID>/`; the merged map is built by `xray/make_chandra_map.py` |
+| Planck MILCA y-map, 545/857 GHz | ✓ VERIFIED | `Planck/` |
+| MeerKAT MGCLS Stokes I | ✓ VERIFIED | Stokes I ONLY; `MeerKAT/synthetic/` is simulated |
+| MeerKAT / ASKAP / ATCA Q/U | ✗ NOT ON DISK | see DATA_INVENTORY.md |
+| JWST level-3 mosaics (4598 + 6882) | ✓ VERIFIED, complete (23 `i2d`) | `JWST_scaffold_level3/` |
+| HST program 10200 | ✓ VERIFIED (4 `drz`) | more HST downloading |
+
+All paths are under `$BC_DATA_ROOT` (default `/media/rendier/Telescope Data/BulletCluster/BCData`, see `bc_paths.py`).
+
+---------|--------|-------|
 | Chandra X-ray | ✓ PRESENT | `xray/chandra/merged_xray.fits` |
 | Planck MILCA y-map | ✓ PRESENT | `mm_sz/planck/COM_CompMap_YSZ_R2.01/milca_ymaps.fits` (577 MB) |
 | Planck 545/857 GHz | ✓ PRESENT | submm layers generated |

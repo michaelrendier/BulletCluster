@@ -14,6 +14,11 @@ Superposed field:  Ψ(x,y) = Σ_i ψ_i(|pos - pos_i|)
 Intensity pattern: I(x,y) = Ψ²   (scalar field, no phase offset)
 """
 
+import os as _os, sys as _sys
+_d = _os.path.dirname(_os.path.abspath(__file__))
+while not _os.path.exists(_os.path.join(_d, 'bc_paths.py')): _d = _os.path.dirname(_d)
+_sys.path.insert(0, _d)
+import bc_paths
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
@@ -197,7 +202,7 @@ def main():
     render(field_now, gx, gy,
            'Galaxy wave superposition — current epoch (z=0.296)',
            '/tmp/ripple_current.png',
-           bg_path='/media/rendier/0123-4567/bullet_cluster/The_Bullet_Cluster.tif')
+           bg_path=str(bc_paths.REPO / 'The_Bullet_Cluster.tif'))
 
     # ── run 2: rolled back to collision epoch ──────────────────────────────
     print("\nRolling back to collision epoch (~240 Myr ago)...")
@@ -207,7 +212,7 @@ def main():
     render(field_rb, gx, gy,
            'Galaxy wave superposition — collision epoch (rolled back ~240 Myr)',
            '/tmp/ripple_rollback.png',
-           bg_path='/media/rendier/0123-4567/bullet_cluster/The_Bullet_Cluster.tif')
+           bg_path=str(bc_paths.REPO / 'The_Bullet_Cluster.tif'))
 
     # ── difference: what moved ─────────────────────────────────────────────
     fig, ax = plt.subplots(figsize=(10, 7), facecolor='k')

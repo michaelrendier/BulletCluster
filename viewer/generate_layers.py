@@ -25,7 +25,12 @@ RA0, DEC0 = 104.6098, -55.9446   # Bullet Cluster centre
 SIZE       = 800                   # pixels
 SCALE      = 1.0 / 3600           # 1 arcsec/pixel
 OUT        = os.path.join(os.path.dirname(__file__), 'layers')
-BASE       = '/media/rendier/0123-4567/bullet_cluster'
+import os as _os, sys as _sys
+_d = _os.path.dirname(_os.path.abspath(__file__))
+while not _os.path.exists(_os.path.join(_d, 'bc_paths.py')): _d = _os.path.dirname(_d)
+_sys.path.insert(0, _d)
+import bc_paths
+BASE       = str(bc_paths.ROOT)
 os.makedirs(OUT, exist_ok=True)
 
 def make_target_wcs():
@@ -99,7 +104,7 @@ def layer_chandra():
     print("── Chandra X-ray ─────────────────────────────")
     from scipy.ndimage import gaussian_filter
 
-    chdir = os.path.join(BASE, 'xray', 'chandra')
+    chdir = str(bc_paths.dir('xray/chandra'))
     img = np.zeros((SIZE, SIZE), dtype=float)
     total_events = 0
 
@@ -184,21 +189,21 @@ def planck_cutout(fits_path, out_name, cmap_colors, label):
 
 def layer_planck():
     planck_cutout(
-        os.path.join(BASE, 'mm_sz', 'planck', 'HFI_SkyMap_857_2048_R2.02_full.fits'),
+        os.path.join(str(bc_paths.dir('mm_sz/planck')), 'HFI_SkyMap_857_2048_R2.02_full.fits'),
         'submm_planck857',
         ['#000000','#1a0020','#5a0040','#cc0066','#ff6600','#ffdd00','#ffffff'],
         '857GHz')
 
     planck_cutout(
-        os.path.join(BASE, 'mm_sz', 'planck', 'HFI_SkyMap_545_2048_R2.02_full.fits'),
+        os.path.join(str(bc_paths.dir('mm_sz/planck')), 'HFI_SkyMap_545_2048_R2.02_full.fits'),
         'submm_planck545',
         ['#000000','#000820','#002266','#0066cc','#44ddff','#ffffff'],
         '545GHz')
 
     # SZ y-map — check for extracted FITS
     for ymap_path in [
-        os.path.join(BASE, 'mm_sz', 'planck', 'COM_CompMap_Compton-SZMap-milca_2048_R2.00.fits'),
-        os.path.join(BASE, 'mm_sz', 'planck', 'COM_CompMap_SZ_milca_2048_R2.00.fits'),
+        os.path.join(str(bc_paths.dir('mm_sz/planck')), 'COM_CompMap_Compton-SZMap-milca_2048_R2.00.fits'),
+        os.path.join(str(bc_paths.dir('mm_sz/planck')), 'COM_CompMap_SZ_milca_2048_R2.00.fits'),
     ]:
         if os.path.exists(ymap_path) and os.path.getsize(ymap_path) > 1e6:
             planck_cutout(ymap_path, 'sz_planck',
@@ -285,7 +290,7 @@ def layer_lensing():
 # ══════════════════════════════════════════════════════════════════════════════
 def layer_radio():
     print("── Radio MeerKAT (diffuse catalogue) ──────────")
-    cat_path = os.path.join(BASE, 'radio', 'meerkat', 'MGCLS_Table4_diffuse.fits')
+    cat_path = os.path.join(str(bc_paths.dir('radio/meerkat')), 'MGCLS_Table4_diffuse.fits')
     if not os.path.exists(cat_path) or os.path.getsize(cat_path) < 1000:
         print("  Missing MGCLS Table4"); save_placeholder('radio_meerkat'); return
 
@@ -357,7 +362,7 @@ def layer_radio():
 # ══════════════════════════════════════════════════════════════════════════════
 def layer_optical_hst():
     print("── Optical HST ─────────────────────────────────")
-    hst_root = os.path.join(BASE, 'optical', 'hst')
+    hst_root = str(bc_paths.dir('optical/hst'))
     fits_files = []
     for root, _, files in os.walk(hst_root):
         for f in files:
@@ -391,7 +396,7 @@ def layer_optical_hst():
 # ══════════════════════════════════════════════════════════════════════════════
 def layer_optical_jwst():
     print("── Optical JWST NIRCam ──────────────────────────")
-    jwst_root = os.path.join(BASE, 'optical', 'jwst')
+    jwst_root = str(bc_paths.dir('optical/jwst'))
     # Look for F200W mosaic (best sensitivity, representative)
     fits_files = []
     for root, _, files in os.walk(jwst_root):

@@ -12,6 +12,11 @@ Requires: astroquery, requests, wget (system)
   pip install astroquery requests
 """
 
+import os as _os, sys as _sys
+_d = _os.path.dirname(_os.path.abspath(__file__))
+while not _os.path.exists(_os.path.join(_d, 'bc_paths.py')): _d = _os.path.dirname(_d)
+_sys.path.insert(0, _d)
+import bc_paths
 import argparse
 import os
 import subprocess
@@ -24,7 +29,7 @@ from pathlib import Path
 RA        = 104.6098
 DEC       = -55.9446
 RADIUS    = 20.0          # arcmin — covers both lensing peaks + radio relic
-BASE      = Path("/media/rendier/0123-4567/bullet_cluster")
+BASE      = bc_paths.ROOT
 
 # ── Chandra ObsIDs (all public observations of 1E 0657-558) ──────────────────
 CHANDRA_OBSIDS = [
@@ -110,7 +115,7 @@ def wget(url, dest: Path, label=""):
 
 def download_chandra():
     log("\n═══ CHANDRA (0.5–7 keV)  10 ObsIDs  ~500 ks ═══", "gold")
-    out = BASE / "xray" / "chandra"
+    out = bc_paths.dir("xray/chandra")
     out.mkdir(parents=True, exist_ok=True)
 
     # Try CIAO download_chandra_obsid first (best: gets all level-2 products)
@@ -141,7 +146,7 @@ def download_chandra():
 
 def download_xmm():
     log("\n═══ XMM-NEWTON (0.3–10 keV) ═══", "gold")
-    out = BASE / "xray" / "xmm"
+    out = bc_paths.dir("xray/xmm")
     out.mkdir(parents=True, exist_ok=True)
     try:
         from astroquery.esa.xmm_newton import XMMNewton
@@ -172,7 +177,7 @@ def download_xmm():
 
 def download_nustar():
     log("\n═══ NuSTAR (3–79 keV) ═══", "gold")
-    out = BASE / "xray" / "nustar"
+    out = bc_paths.dir("xray/nustar")
     out.mkdir(parents=True, exist_ok=True)
     try:
         from astroquery.heasarc import Heasarc
@@ -208,7 +213,7 @@ def download_nustar():
 
 def download_hst():
     log("\n═══ HST ACS/WFC (optical/UV lensing) ═══", "gold")
-    out = BASE / "optical" / "hst"
+    out = bc_paths.dir("optical/hst")
     out.mkdir(parents=True, exist_ok=True)
     try:
         from astroquery.mast import Observations
@@ -244,7 +249,7 @@ def download_hst():
 
 def download_jwst():
     log("\n═══ JWST NIRCam (GO-4598, Jan 2025, 8 filters) ═══", "gold")
-    out = BASE / "optical" / "jwst"
+    out = bc_paths.dir("optical/jwst")
     out.mkdir(parents=True, exist_ok=True)
     try:
         from astroquery.mast import Observations
@@ -288,7 +293,7 @@ def download_jwst():
 
 def download_planck():
     log("\n═══ PLANCK SZ + submm maps ═══", "gold")
-    out = BASE / "mm_sz" / "planck"
+    out = bc_paths.dir("mm_sz/planck")
     out.mkdir(parents=True, exist_ok=True)
     for label, (url, fname) in PLANCK_FILES.items():
         wget(url, out / fname, label)
@@ -299,7 +304,7 @@ def download_planck():
 def download_meerkat():
     log("\n═══ MeerKAT MGCLS (900–1670 MHz, L-band, ~8\") ═══", "gold")
     log("  Radio halo + relic  |  Proposal SSV-20180624-FC-01", "gold")
-    out = BASE / "radio" / "meerkat"
+    out = bc_paths.dir("radio/meerkat")
     out.mkdir(parents=True, exist_ok=True)
 
     # Try DR1 archive direct paths
@@ -344,7 +349,7 @@ def download_meerkat():
 
 def download_atca():
     log("\n═══ ATCA (843 MHz – 9 GHz, multiple bands) ═══", "gold")
-    out = BASE / "radio" / "atca"
+    out = bc_paths.dir("radio/atca")
     out.mkdir(parents=True, exist_ok=True)
 
     # Published processed images deposited at CDS/VizieR (Shimwell et al. 2014)
@@ -378,7 +383,7 @@ def download_atca():
 
 def download_vla():
     log("\n═══ VLA (1.4 GHz radio halo/relic — Liang et al. 2000) ═══", "gold")
-    out = BASE / "radio" / "vla"
+    out = bc_paths.dir("radio/vla")
     out.mkdir(parents=True, exist_ok=True)
 
     # Try CDS/VizieR for the Liang 2000 published image
@@ -404,7 +409,7 @@ def download_act_spt():
     log("\n═══ ACT (148 GHz SZ) + SPT (multifreq SZ) ═══", "gold")
 
     # ACT DR6 — public via LAMBDA
-    act_out = BASE / "mm_sz" / "act"
+    act_out = bc_paths.dir("mm_sz/act")
     act_out.mkdir(parents=True, exist_ok=True)
     log("  ACT DR6 cluster catalog (includes Bullet Cluster SZ)")
     lambda_act = (
@@ -421,7 +426,7 @@ def download_act_spt():
         wget(url, act_out / fname, f"ACT DR6 {freq}")
 
     # SPT — contact LAMBDA
-    spt_out = BASE / "mm_sz" / "spt"
+    spt_out = bc_paths.dir("mm_sz/spt")
     spt_out.mkdir(parents=True, exist_ok=True)
     log("\n  SPT SZ — data at LAMBDA/HEASARC")
     log("  https://lambda.gsfc.nasa.gov/product/spt/")
@@ -432,7 +437,7 @@ def download_act_spt():
 
 def download_fermi():
     log("\n═══ FERMI-LAT (>100 MeV — null, 10-yr upper limit) ═══", "gold")
-    out = BASE / "gamma" / "fermi"
+    out = bc_paths.dir("gamma/fermi")
     out.mkdir(parents=True, exist_ok=True)
 
     # Fermi Science Support Center — photon data query around cluster coords
@@ -455,7 +460,7 @@ def download_fermi():
 
 def download_rosat():
     log("\n═══ ROSAT (0.1–2.4 keV — original discovery) ═══", "gold")
-    out = BASE / "xray" / "rosat"
+    out = bc_paths.dir("xray/rosat")
     out.mkdir(parents=True, exist_ok=True)
     # ROSAT All-Sky Survey cutout
     rosat_url = (

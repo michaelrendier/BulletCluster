@@ -16,14 +16,19 @@ The engine produces the same result regardless of the order stages complete.
 import sys, os, json, subprocess, time
 from pathlib import Path
 
-ROOT    = Path('/media/rendier/0123-4567/bullet_cluster')
-ENGINE  = ROOT / 'engine'
+import os as _os, sys as _sys
+_d = _os.path.dirname(_os.path.abspath(__file__))
+while not _os.path.exists(_os.path.join(_d, 'bc_paths.py')): _d = _os.path.dirname(_d)
+_sys.path.insert(0, _d)
+import bc_paths
+ROOT    = bc_paths.ROOT
+ENGINE  = bc_paths.REPO / 'engine'
 MODULES = ENGINE / 'modules'
 OUTPUT  = ENGINE / 'output'
-RADIO   = ROOT / 'radio/meerkat'
+RADIO   = bc_paths.dir('radio/meerkat')
 MGCLS   = RADIO / 'MGCLS_DR1'
 SYNTH   = RADIO / 'synthetic'
-VIEWER  = ROOT / 'viewer'
+VIEWER  = bc_paths.REPO / 'viewer'
 
 sys.path.insert(0, str(MODULES))
 

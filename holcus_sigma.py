@@ -22,7 +22,7 @@ import sys, hashlib, math, struct
 import numpy as np
 from pathlib import Path
 
-sys.path.insert(0, '/media/rendier/0123-4567/Ainulindale/outreach/semantic_engine')
+sys.path.insert(0, '/home/rendier/Projects/ThePlace/Ainulindale/outreach/semantic_engine')
 import semantic_engine as _se
 from semantic_engine import Understand, RIEMANN_ZEROS
 
@@ -64,9 +64,14 @@ def zero_report(word):
     return g, s, E, z, idx, d, pct
 
 # ── Canonical dataset string builders ────────────────────────────────────────
-DATA_ROOT = Path("/media/rendier/0123-4567/bullet_cluster")
-PREPPED   = DATA_ROOT / "optical/jwst/prepped"
-FITS_ROOT = DATA_ROOT / "optical/jwst/4598/mastDownload/JWST"
+import os as _os, sys as _sys
+_d = _os.path.dirname(_os.path.abspath(__file__))
+while not _os.path.exists(_os.path.join(_d, 'bc_paths.py')): _d = _os.path.dirname(_d)
+_sys.path.insert(0, _d)
+import bc_paths
+DATA_ROOT = bc_paths.ROOT
+PREPPED   = bc_paths.dir("optical/jwst") / "prepped"
+FITS_ROOT = bc_paths.dir("optical/jwst") / "4598/mastDownload/JWST"
 
 def build_identifier_strings():
     """Surface forms: how we name and describe the observation."""

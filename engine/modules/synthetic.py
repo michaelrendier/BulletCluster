@@ -23,12 +23,17 @@ from astropy.io import fits
 from astropy.wcs import WCS
 import sys
 sys.path.insert(0, os.path.dirname(__file__))
+import os as _os, sys as _sys
+_d = _os.path.dirname(_os.path.abspath(__file__))
+while not _os.path.exists(_os.path.join(_d, 'bc_paths.py')): _d = _os.path.dirname(_d)
+_sys.path.insert(0, _d)
+import bc_paths
 from constants import (RA0, DEC0, DM_NW, DM_SE, GAS_NW, GAS_SE,
                        FREQ_MIN_HZ, FREQ_MAX_HZ, N_FREQ_CHAN,
                        LAMBDA2_MIN, LAMBDA2_MAX)
 
-BASE     = '/media/rendier/0123-4567/bullet_cluster'
-OUT_DIR  = os.path.join(BASE, 'radio', 'meerkat', 'synthetic')
+BASE     = str(bc_paths.ROOT)
+OUT_DIR  = os.path.join(str(bc_paths.dir('radio/meerkat')), 'synthetic')
 SIZE_PIX = 256           # spatial: 256×256 at 4"/pixel → 17' field
 SCALE_DEG = 4.0 / 3600  # 4 arcsec/pixel (MeerKAT ~8" beam, Nyquist)
 

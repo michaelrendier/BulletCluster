@@ -36,6 +36,7 @@ from transect   import (transect_endpoints, sample_points,
                         compute_diagnostic, print_diagnostic)
 
 BASE_PATH = Path(BASE)
+import bc_paths   # noqa  (BC_DATA_ROOT layout map)
 
 
 class BulletEngine:
@@ -62,33 +63,33 @@ class BulletEngine:
 
     @property
     def xray_path(self):
-        return BASE_PATH / 'xray' / 'chandra' / 'merged_xray.fits'
+        return bc_paths.dir('xray/chandra') / 'merged_xray.fits'
 
     @property
     def kappa_path(self):
-        return BASE_PATH / 'optical' / 'lensing' / 'kappa_model.fits'
+        return bc_paths.dir('optical/lensing') / 'kappa_model.fits'
 
     @property
     def sz_path(self):
-        return BASE_PATH / 'mm_sz' / 'planck' / 'sz_ymap_cutout.fits'
+        return bc_paths.dir('mm_sz/planck') / 'sz_ymap_cutout.fits'
 
     @property
     def radio_q_path(self):
         if self.use_real_radio:
             # SARAO MGCLS enhanced products — Stokes Q cube
-            return BASE_PATH / 'radio' / 'meerkat' / 'MGCLS_1E0657-558_Q_cube.fits'
+            return bc_paths.dir('radio/meerkat') / 'MGCLS_1E0657-558_Q_cube.fits'
         return Path(SYNTH_DIR) / 'synthetic_Q_wave.fits'
 
     @property
     def radio_u_path(self):
         if self.use_real_radio:
-            return BASE_PATH / 'radio' / 'meerkat' / 'MGCLS_1E0657-558_U_cube.fits'
+            return bc_paths.dir('radio/meerkat') / 'MGCLS_1E0657-558_U_cube.fits'
         return Path(SYNTH_DIR) / 'synthetic_U_wave.fits'
 
     @property
     def radio_freq_path(self):
         if self.use_real_radio:
-            return BASE_PATH / 'radio' / 'meerkat' / 'MGCLS_freqs.dat'
+            return bc_paths.dir('radio/meerkat') / 'MGCLS_freqs.dat'
         return Path(SYNTH_DIR) / 'synthetic_freqs_wave.dat'
 
     # ── Setup ─────────────────────────────────────────────────────────────────

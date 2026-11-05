@@ -25,7 +25,12 @@ USERAGENT   = 'Mozilla/5.0 (X11; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/
 PUBLIC_S3   = 'https://archive-gw-1.kat.ac.za/public'
 AUTH_S3     = 'https://archive-gw-1.kat.ac.za'
 GQL         = 'https://archive.sarao.ac.za/graphql'
-BASE_DIR    = Path('/media/rendier/0123-4567/bullet_cluster/radio/meerkat')
+import os as _os, sys as _sys
+_d = _os.path.dirname(_os.path.abspath(__file__))
+while not _os.path.exists(_os.path.join(_d, 'bc_paths.py')): _d = _os.path.dirname(_d)
+_sys.path.insert(0, _d)
+import bc_paths
+BASE_DIR    = bc_paths.dir('radio/meerkat')
 MGCLS_DIR   = BASE_DIR / 'MGCLS_DR1'
 NEW_DIR     = BASE_DIR / 'new_2024_2025'
 

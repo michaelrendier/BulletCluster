@@ -3,8 +3,13 @@ constants.py — Bullet Cluster engine fixed values.
 No free parameters. Numbers from literature, cited.
 """
 
+import os as _os, sys as _sys
+_d = _os.path.dirname(_os.path.abspath(__file__))
+while not _os.path.exists(_os.path.join(_d, 'bc_paths.py')): _d = _os.path.dirname(_d)
+_sys.path.insert(0, _d)
+import bc_paths
 # ── Base directory ────────────────────────────────────────────────────────────
-BASE = '/media/rendier/0123-4567/bullet_cluster'
+BASE = str(bc_paths.ROOT)    # data root: $BC_DATA_ROOT (see bc_paths.py)
 
 # ── Cluster ───────────────────────────────────────────────────────────────────
 RA0       = 104.6098   # deg  centroid (X-ray)

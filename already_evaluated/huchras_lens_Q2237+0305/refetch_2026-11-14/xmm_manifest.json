@@ -1,0 +1,32 @@
+[
+ {
+  "url": "https://nxsa.esac.esa.int/nxsa-sl/servlet/data-action-aio?obsno=0110960101&level=ODF",
+  "dest": "/media/rendier/Telescope Data/BulletCluster/EinsteinCrosses/Q2237+0305/xmm/0110960101/0110960101_ODF.tar.gz",
+  "size": 0
+ },
+ {
+  "url": "https://nxsa.esac.esa.int/nxsa-sl/servlet/data-action-aio?obsno=0110960101&level=PPS",
+  "dest": "/media/rendier/Telescope Data/BulletCluster/EinsteinCrosses/Q2237+0305/xmm/0110960101/0110960101_PPS.tar",
+  "size": 0
+ },
+ {
+  "url": "https://nxsa.esac.esa.int/nxsa-sl/servlet/data-action-aio?obsno=0781210201&level=ODF",
+  "dest": "/media/rendier/Telescope Data/BulletCluster/EinsteinCrosses/Q2237+0305/xmm/0781210201/0781210201_ODF.tar.gz",
+  "size": 0
+ },
+ {
+  "url": "https://nxsa.esac.esa.int/nxsa-sl/servlet/data-action-aio?obsno=0781210201&level=PPS",
+  "dest": "/media/rendier/Telescope Data/BulletCluster/EinsteinCrosses/Q2237+0305/xmm/0781210201/0781210201_PPS.tar",
+  "size": 0
+ },
+ {
+  "url": "https://nxsa.esac.esa.int/nxsa-sl/servlet/data-action-aio?obsno=0823730101&level=ODF",
+  "dest": "/media/rendier/Telescope Data/BulletCluster/EinsteinCrosses/Q2237+0305/xmm/0823730101/0823730101_ODF.tar.gz",
+  "size": 0
+ },
+ {
+  "url": "https://nxsa.esac.esa.int/nxsa-sl/servlet/data-action-aio?obsno=0823730101&level=PPS",
+  "dest": "/media/rendier/Telescope Data/BulletCluster/EinsteinCrosses/Q2237+0305/xmm/0823730101/0823730101_PPS.tar",
+  "size": 0
+ }
+]

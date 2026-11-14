@@ -1,0 +1,17 @@
+[
+{
+"url": "https://almascience.nrao.edu/dataPortal/2018.1.01162.S_uid___A001_X133d_X3f66_001_of_001.tar",
+"dest": "/media/rendier/Telescope Data/BulletCluster/Dust/Orion_BNKL_OMC1/ALMA_2018.1.01162.S/2018.1.01162.S_uid___A001_X133d_X3f66_001_of_001.tar",
+"size": 3570612224
+},
+{
+"url": "https://almascience.nrao.edu/dataPortal/2018.1.01162.S_uid___A001_X133d_X3f66_auxiliary.tar",
+"dest": "/media/rendier/Telescope Data/BulletCluster/Dust/Orion_BNKL_OMC1/ALMA_2018.1.01162.S/2018.1.01162.S_uid___A001_X133d_X3f66_auxiliary.tar",
+"size": 77021184
+},
+{
+"url": "https://almascience.nrao.edu/dataPortal/2018.1.01162.S_uid___A002_Xda845c_X12635.asdm.sdm.tar",
+"dest": "/media/rendier/Telescope Data/BulletCluster/Dust/Orion_BNKL_OMC1/ALMA_2018.1.01162.S/2018.1.01162.S_uid___A002_Xda845c_X12635.asdm.sdm.tar",
+"size": 13196242944
+}
+]

@@ -1,0 +1,1 @@
+2026-11-13: Orion NICMOS manifest: MAST product-list size != served size for HLA products (e.g. POL0L_drz.fits 2283840 listed vs 2306880 served). Size check dropped for mast:HLA entries only; downloader still uses the server Content-Length. Pillars ALMA (B) completed 16/16 27.42 GB.

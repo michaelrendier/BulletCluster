@@ -13,3 +13,11 @@ Findings: stage jwst and stage pol found NO observations in MAST (2026-10-19). S
 asol1, eph1, images), 379 MB. Retrieve: `python3 lensing_validation/fetch_chandra_q2237.py`
 (source cxc.cfa.harvard.edu/cdaftp/byobsid/{obsid%10}/{obsid}/primary/, resumable, Mozilla UA).
 File lists: chandra_files.tsv, chandra_manifest.tsv. Run log completed with 0 errors.
+
+## Re-fetch onto Telescope Data (2026-11-13 → 14)
+After the 2026-11-04 loss of the Datasets drive the target was fetched again to `/media/rendier/Telescope Data/BulletCluster/EinsteinCrosses/Q2237+0305/{chandra,hst,xmm,run_state}/`.
+- **Chandra:** 280 files, 316 MB, 0 errors (same obsids and method as above).
+- **HST:** 3,697 files, 66.98 GB, from the MAST manifest `refetch_2026-11-14/hst_manifest.json` (each entry `{url, dest, size}`; url `https://mast.stsci.edu/api/v0.1/Download/file?uri=<dataURI>`). Run with `~/.claude/skills/telescope-download/telescope_download.py MANIFEST --state STATE --min-free-gb 20 --notify-secs 900` (Mozilla user agent; resumes from `.part` by HTTP Range). Completed 2026-11-14 01:13. Verified: 0 missing, 0 size mismatches (every entry with a known size), 60 randomly chosen files re-hashed and equal to the recorded sha256; the 38 entries with manifest size 0 are files of unknown size. Per-file state: `refetch_2026-11-14/hst_state.json.gz`; log: `hst.log`.
+- **Interruption (kept):** on 2026-11-14 00:00 the (older, SATA) drive fell off the desk and was not unmounted. It re-attached as `sdc`, ext4 replayed its journal, the 3,632 files completed before the fall passed the size check and a re-hash of the 40 newest; the downloader was restarted with the same command and resumed the partial file. No file needed re-fetching. `fsck` was not run (drive mounted); SMART not available.
+- **XMM-Newton (queued next, started 2026-11-14 01:22):** three public observations within 10′: 0110960101 (2002-05-28), 0781210201 (2016-11-26), 0823730101 (2018-05-19; 141.6 ks), found by an ESA XSA TAP query on `v_public_observations` (no login, no email). Products: `https://nxsa.esac.esa.int/nxsa-sl/servlet/data-action-aio?obsno=<id>&level=ODF` and `level=PPS`; sizes are not reported before download. Manifest `xmm_manifest.json` in `run_state/`.
+

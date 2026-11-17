@@ -1,0 +1,217 @@
+[
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw01714-o006_t005_nircam_clear-f480m_i2d.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/jwst_nircam_scaffold/jw01714-o006_t005_nircam_clear-f480m_i2d.fits",
+  "size": 1322714880
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fj8q410fmq_flc.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_acs_pol_2003/j8q410fmq_flc.fits",
+  "size": 42145920
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fj8q410fnq_flc.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_acs_pol_2003/j8q410fnq_flc.fits",
+  "size": 42145920
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fj8q410fwq_flc.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_acs_pol_2003/j8q410fwq_flc.fits",
+  "size": 42145920
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fj8q410fxq_flc.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_acs_pol_2003/j8q410fxq_flc.fits",
+  "size": 42145920
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fj8q410g5q_flc.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_acs_pol_2003/j8q410g5q_flc.fits",
+  "size": 42145920
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fj8q410g6q_flc.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_acs_pol_2003/j8q410g6q_flc.fits",
+  "size": 42145920
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fhst_9787_10_acs_wfc_f606w-pol0v_j8q410_drc.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_acs_pol_2003/hst_9787_10_acs_wfc_f606w-pol0v_j8q410_drc.fits",
+  "size": 58800960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fhst_9787_10_acs_wfc_f606w-pol120v_j8q410_drc.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_acs_pol_2003/hst_9787_10_acs_wfc_f606w-pol120v_j8q410_drc.fits",
+  "size": 58800960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fhst_9787_10_acs_wfc_f606w-pol60v_j8q410_drc.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_acs_pol_2003/hst_9787_10_acs_wfc_f606w-pol60v_j8q410_drc.fits",
+  "size": 58800960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u60901t_c0f.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u60901t_c0f.fits",
+  "size": 10307520
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u60901t_c0m.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u60901t_c0m.fits",
+  "size": 10307520
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u60901t_c1f.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u60901t_c1f.fits",
+  "size": 5184000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u60901t_c3t.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u60901t_c3t.fits",
+  "size": 210240
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u60902t_c0f.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u60902t_c0f.fits",
+  "size": 10307520
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u60902t_c0m.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u60902t_c0m.fits",
+  "size": 10307520
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u60902t_c1f.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u60902t_c1f.fits",
+  "size": 5184000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u60902t_c3t.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u60902t_c3t.fits",
+  "size": 210240
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61001t_c0f.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61001t_c0f.fits",
+  "size": 10307520
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61001t_c0m.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61001t_c0m.fits",
+  "size": 10307520
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61001t_c1f.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61001t_c1f.fits",
+  "size": 5184000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61001t_c3t.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61001t_c3t.fits",
+  "size": 210240
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61002t_c0f.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61002t_c0f.fits",
+  "size": 10307520
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61002t_c0m.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61002t_c0m.fits",
+  "size": 10307520
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61002t_c1f.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61002t_c1f.fits",
+  "size": 5184000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61002t_c3t.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61002t_c3t.fits",
+  "size": 210240
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61101t_c0f.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61101t_c0f.fits",
+  "size": 10307520
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61101t_c0m.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61101t_c0m.fits",
+  "size": 10307520
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61101t_c1f.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61101t_c1f.fits",
+  "size": 5184000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61101t_c3t.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61101t_c3t.fits",
+  "size": 210240
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61102t_c0f.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61102t_c0f.fits",
+  "size": 10307520
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61102t_c0m.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61102t_c0m.fits",
+  "size": 10307520
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61102t_c1f.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61102t_c1f.fits",
+  "size": 5184000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fu2u61102t_c3t.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_wfpc2_pol_1996/u2u61102t_c3t.fits",
+  "size": 210240
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fn4av02byq_cal.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_nicmos_pol_1997/n4av02byq_cal.fits",
+  "size": 1120320
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fn4av02byq_ima.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_nicmos_pol_1997/n4av02byq_ima.fits",
+  "size": 7692480
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fn4av02byq_raw.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_nicmos_pol_1997/n4av02byq_raw.fits",
+  "size": 1831680
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fn4av02bzq_cal.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_nicmos_pol_1997/n4av02bzq_cal.fits",
+  "size": 1120320
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fn4av02bzq_ima.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_nicmos_pol_1997/n4av02bzq_ima.fits",
+  "size": 7692480
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fn4av02bzq_raw.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_nicmos_pol_1997/n4av02bzq_raw.fits",
+  "size": 1831680
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fn4av02c0q_cal.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_nicmos_pol_1997/n4av02c0q_cal.fits",
+  "size": 1120320
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fn4av02c0q_ima.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_nicmos_pol_1997/n4av02c0q_ima.fits",
+  "size": 7692480
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AHST%2Fproduct%2Fn4av02c0q_raw.fits",
+  "dest": "/media/rendier/Telescope Data/CrabNebula/data/hst_nicmos_pol_1997/n4av02c0q_raw.fits",
+  "size": 1831680
+ }
+]

@@ -8,3 +8,6 @@ Survey (read-only, MAST + NRAO TAP, 2026-11-16): JWST program 1714 (NIRCam F150W
 Downloaded on 2026-11-16 (43 files, 1.94 GB, `manifest.json`): JWST NIRCam F480M level-3 `i2d` (scaffold, 1.32 GB); ACS flc ×6 and HAP drc ×3 (polarizers); WFPC2 c0f/c0m/c1f/c3t ×6 exposures; NICMOS cal/ima/raw ×3.
 Not downloaded: NIRCam F150W2+F162M `i2d` (8.9 GB), MIRI, Chandra, IXPE, Euclid (no polarimeter), VLA (requires the NRAO portal; the author supplies links; the author's email is never sent by the assistant).
 Re-fetch: `run_download.sh manifest.json state.json "/media/rendier/Telescope Data" download.log` from the telescope-download skill; MAST file URLs `https://mast.stsci.edu/api/v0.1/Download/file?uri=<dataURI>`.
+
+## Result (2026-11-17 00:04)
+43 of 43 files downloaded, 1.94 GB, in about 13 minutes of transfer; sizes match the manifest for all 43; every file opens with astropy; headers confirm the target and instrument: NIRCam F480M 2022-10-31 (`Crab Nebula`); ACS F606W with POL0V/POL60V/POL120V 2003-08-08/09 (`CRAB-POL`); NICMOS POL0L/POL120L/POL240L 1997-12-15 (`CRAB-FK10`); WFPC2 1996-01-26 (`CRAB-PULSAR`, filter given as wheel position 24 in the header; the archive lists it as F547M-POLQ). The WFPC2 `c3t` table files have no image header and were checked by size only.

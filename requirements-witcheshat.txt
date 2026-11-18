@@ -1,0 +1,18 @@
+# The Witch's Hat family environment (BulletCluster/.venv): data processing, the sibling papers, notebooks, CASA for the radio data.
+numpy
+scipy
+astropy
+matplotlib
+pillow
+mpmath
+sympy
+healpy
+reproject
+pytest
+jupyter
+nbconvert
+ipykernel
+six
+casatools
+casatasks
+casadata

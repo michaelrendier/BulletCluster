@@ -72,3 +72,4 @@ huchras_lens/data/
 # Refsdal prediction papers: kept locally
 pending/next_cross/MACS_J1149_Refsdal/papers/
 __pycache__/
+.venv/

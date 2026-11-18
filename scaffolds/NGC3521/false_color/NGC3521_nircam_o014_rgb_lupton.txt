@@ -1,0 +1,2 @@
+channels (blue -> red): jw09258-o014_t002_nircam_clear-f070w,jw09258-o014_t002_nircam_clear-f090w,jw09258-o014_t002_nircam_clear-f115w,jw09258-o014_t002_nircam_clear-f150w | jw09258-o014_t002_nircam_clear-f187n,jw09258-o014_t002_nircam_clear-f250m,jw09258-o014_t002_nircam_clear-f300m | jw09258-o014_t002_nircam_clear-f335m,jw09258-o014_t002_nircam_clear-f356w,jw09258-o014_t002_nircam_clear-f444w
+grid 2199x2202, pixel 0.078 arcsec

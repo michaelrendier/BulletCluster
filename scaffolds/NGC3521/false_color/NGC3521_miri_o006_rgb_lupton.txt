@@ -1,0 +1,2 @@
+channels (blue -> red): jw09258-o006_t002_miri_f560w | jw09258-o006_t002_miri_f770w | jw09258-o006_t002_miri_f1000w
+grid 1399x1407, pixel 0.111 arcsec

@@ -1,0 +1,2 @@
+channels (blue -> red): jw03707-o045_t026_miri_f770w | jw03707-o045_t026_miri_f770w,jw03707-o045_t026_miri_f2100w | jw03707-o045_t026_miri_f2100w
+grid 1419x1484, pixel 0.222 arcsec

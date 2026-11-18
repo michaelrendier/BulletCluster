@@ -5,7 +5,7 @@ Group = one pointing (obs id) and one instrument; groups are not combined across
 
 | target | data | raw images | composites | single-filter | IFU cubes |
 |---|---|---|---|---|---|
-| CrabNebula | JWST GO 1714: MIRI 5 pointings + NIRCam F480M (F150W2+F162M mosaic incomplete: drive fault, see CrabNebula record) | 18 | 5 | 1 | 0 |
+| CrabNebula | JWST GO 1714: MIRI 5 pointings + NIRCam F480M (F150W2+F162M mosaic now complete, 2026-11-17) | 18 | 5 | 1 | 0 |
 | HE_0435-1223 | Einstein cross: NIRCam + MIRI + NIRSpec | 10 | 2 | 0 | 2 |
 | NGC0300 | JWST SPARC IFU control | 4 | 2 | 0 | 0 |
 | NGC0891 | JWST SPARC IFU control | 70 | 6 | 1 | 47 |

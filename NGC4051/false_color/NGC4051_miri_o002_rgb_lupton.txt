@@ -1,0 +1,3 @@
+_rgb_lupton.png = sky-subtracted (per-channel 15th percentile of positive pixels removed); _rgb_lupton_nosky.png = the original BulletCluster algorithm without sky subtraction
+channels (blue -> red): jw03535-o002_t001_miri_f560w | jw03535-o002_t001_miri_f770w | jw03535-o002_t001_miri_f1130w
+grid 1453x1453, pixel 0.111 arcsec

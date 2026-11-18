@@ -1,0 +1,2 @@
+channels (blue -> red): jw03707-o046_t026_nircam_clear-f150w,jw03707-o046_t026_nircam_clear-f187n | jw03707-o046_t026_nircam_clear-f300m | jw03707-o046_t026_nircam_clear-f335m
+grid 1907x1911, pixel 0.092 arcsec

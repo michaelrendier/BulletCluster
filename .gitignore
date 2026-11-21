@@ -73,3 +73,6 @@ huchras_lens/data/
 pending/next_cross/MACS_J1149_Refsdal/papers/
 __pycache__/
 .venv/
+
+# NRAO request links carry per-request keys: keep out of this public repository
+pending/nrao_downloads/links_PRIVATE.md

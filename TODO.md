@@ -23,3 +23,6 @@ Candidates recorded 2026-11-20 (see `DATA_VERIFIED_2026-11-20.md`): Pillars HST 
 
 ## Waiting on the author
 - The Gemini `.md` of Crab and pulsar download links.
+
+## NRAO Crab nebula and pulsar downloads  (RECORDED, NOT DOWNLOADED)
+Ten requests, seven EVLA ones still to fetch; links (private, gitignored) and methods in `pending/nrao_downloads/`. Next step when you say go: list each request read-only to get files and sizes, then download one at a time.

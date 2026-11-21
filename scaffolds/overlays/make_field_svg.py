@@ -125,4 +125,4 @@ ST.addEventListener("dblclick",()=>{{vb=DATA.slice();setvb()}});
 document.getElementById("zi").onclick=()=>zoom(1.4);document.getElementById("zo").onclick=()=>zoom(1/1.4);document.getElementById("fit").onclick=()=>{{vb=DATA.slice();setvb()}};document.getElementById("full").onclick=()=>{{vb=FULL.slice();setvb()}};
 addEventListener("keydown",e=>{{if(e.key==="+"||e.key==="=")zoom(1.4);if(e.key==="-")zoom(1/1.4);if(e.key==="f"||e.key==="F"){{vb=FULL.slice();setvb()}}}});
 for(const [cb,id] of [["tv","vec"],["tl","lines"],["ti","interp"],["tb","bg"]])document.getElementById(cb).onchange=e=>document.getElementById(id).style.display=e.target.checked?"":"none";{{const h=new URLSearchParams(location.hash.slice(1)).get("vb");if(h){{const q=h.split(",").map(Number);if(q.length===4&&q.every(isFinite))vb=q}}}}setvb();</script></body></html>"""
-open(f"{OUT}/{a.name}.html", "w").write(page); print("wrote", f"viewers/{a.name}.html", f"({len(page)//1024} KB)")
+import contact; page = contact.inject(page); open(f"{OUT}/{a.name}.html", "w").write(page); print("wrote", f"viewers/{a.name}.html", f"({len(page)//1024} KB)")

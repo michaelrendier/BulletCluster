@@ -42,5 +42,6 @@ for i in items:
     for _, path in i["false"] + i["raw"]:
         if path and os.path.exists(path + ".wcs.json"): WCS[path] = json.load(open(path + ".wcs.json"))
 html = open("gallery_template.html").read().replace("/*DATA*/", json.dumps(items)).replace("/*OVERLAYS*/", json.dumps(OV)).replace("/*WCS*/", json.dumps(WCS))
+import contact; html = contact.inject(html)
 open("gallery.html", "w").write(html)
 n = sum(len(i["raw"]) for i in items); print(len(OV), "targets with overlays,", len(WCS), "images with WCS;", len(items), "scaffold items,", sum(len(i["false"]) for i in items), "false-colour images,", n, "raw images paired")

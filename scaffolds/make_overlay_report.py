@@ -37,3 +37,5 @@ for title, panels in cards:
     body.append("</div></section>")
 open(f"{HERE}/overlay_report.html", "w").write(f"<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Scaffold overlays</title><link rel='icon' type='image/png' href='{FAV}'><style>{css}</style></head><body>{''.join(body)}</body></html>")
 print("overlay_report.html written;", sum(1 for _, ps in cards for p in ps if p[1]), "images")
+
+import contact; _p = f"{HERE}/overlay_report.html"; open(_p, "w").write(contact.inject(open(_p).read()))

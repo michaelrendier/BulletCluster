@@ -16,3 +16,6 @@ six
 casatools
 casatasks
 casadata
+sep
+photutils
+scikit-image

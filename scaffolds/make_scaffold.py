@@ -62,6 +62,14 @@ def asinh_gray(a, lo=1, hi=99.7):
     return (np.arcsinh(10 * x) / np.arcsinh(10) * 255).astype(np.uint8)
 
 
+def write_wcs(png_path, crval, cd, crpix, H, W):
+    """Sidecar <png>.wcs.json: sky -> pixel for the PNG.  TAN projection; crpix is FITS 1-based in the UNFLIPPED array of shape (H, W);
+    the PNG is that array flipped vertically (png_row = H-1-array_row), so north is up for north-up grids."""
+    import json
+    json.dump({"type": "TAN", "crval": [float(crval[0]), float(crval[1])], "cd": [[float(cd[0][0]), float(cd[0][1])], [float(cd[1][0]), float(cd[1][1])]],
+               "crpix": [float(crpix[0]), float(crpix[1])], "H": int(H), "W": int(W), "flipud": True}, open(png_path + ".wcs.json", "w"))
+
+
 def save(arr, path):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     Image.fromarray(np.flipud(arr)).save(path, optimize=True)
@@ -72,7 +80,8 @@ def composite(files, outdir, tag):
     items = []
     for p in files:
         name = os.path.basename(p); a, w, f, sc = load_reduced(p, RAWMAX)
-        save(asinh_gray(a), os.path.join(outdir, "raw", name.replace("_i2d.fits", "_raw.png")))
+        rp = os.path.join(outdir, "raw", name.replace("_i2d.fits", "_raw.png")); save(asinh_gray(a), rp)
+        write_wcs(rp, w.wcs.crval, w.pixel_scale_matrix, w.wcs.crpix, a.shape[0], a.shape[1])
         items.append((wavelength_um(name), name, a, w, sc * f))
     items.sort(key=lambda t: t[0])
     if len(items) == 1:
@@ -112,10 +121,11 @@ def composite(files, outdir, tag):
         stretch = float(np.percentile(Rn + Gn + Bn, 99.5)) / 6.0
         rgb = make_lupton_rgb(Rn, Gn, Bn, minimum=mn, stretch=max(stretch, 1e-6), Q=8)
         rows = np.where(rgb.any(axis=(1, 2)))[0]; cols = np.where(rgb.any(axis=(0, 2)))[0]
-        return rgb[rows[0]:rows[-1] + 1, cols[0]:cols[-1] + 1] if rows.size else rgb
+        return (rgb[rows[0]:rows[-1] + 1, cols[0]:cols[-1] + 1], rows[0], cols[0]) if rows.size else (rgb, 0, 0)
     # image row 0 = south; save() flips so the PNG has north up
-    save(lup(R, G, B, True), os.path.join(outdir, "false_color", f"{tag}_rgb_lupton.png"))
-    save(lup(R, G, B, False), os.path.join(outdir, "false_color", f"{tag}_rgb_lupton_nosky.png"))
+    for skysub, suffix in ((True, "_rgb_lupton.png"), (False, "_rgb_lupton_nosky.png")):
+        img, r0, c0 = lup(R, G, B, skysub); fp = os.path.join(outdir, "false_color", f"{tag}{suffix}"); save(img, fp)
+        write_wcs(fp, tw.wcs.crval, [[tw.wcs.cdelt[0], 0.0], [0.0, tw.wcs.cdelt[1]]], [tw.wcs.crpix[0] - c0, tw.wcs.crpix[1] - r0], img.shape[0], img.shape[1])
     with open(os.path.join(outdir, "false_color", f"{tag}_rgb_lupton.txt"), "w") as fh:
         fh.write("_rgb_lupton.png = sky-subtracted (per-channel 15th percentile of positive pixels removed); _rgb_lupton_nosky.png = the original BulletCluster algorithm without sky subtraction\nchannels (blue -> red): " + " | ".join(",".join(planes[i][1].split("_i2d")[0] for i in g) for g in idx) + f"\ngrid {nx}x{ny}, pixel {pix * 3600:.3f} arcsec\n")
     return [p[1] for p in planes]

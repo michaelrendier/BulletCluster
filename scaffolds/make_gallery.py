@@ -6,7 +6,7 @@ def rawfile(t, stem):
         if os.path.exists(f"{t}/raw/{c}"): return f"{t}/raw/{c}"
     m = glob.glob(f"{t}/raw/*{stem}*_raw.png")
     return m[0] if m else None
-for t in sorted(d for d in os.listdir(".") if os.path.isdir(d)):
+for t in sorted(d for d in os.listdir(".") if os.path.isdir(d) and os.path.isdir(f"{d}/false_color")):
     fc = sorted(os.listdir(f"{t}/false_color")); seen = set()
     for f in fc:
         if f.endswith("_rgb_lupton.png"):                                  # composite: sky-subtracted + original
@@ -26,6 +26,13 @@ for t in sorted(d for d in os.listdir(".") if os.path.isdir(d)):
             m = re.search(r"(jw\d+-o\d+_t\d+_(?:miri|nircam)_[a-z0-9-]+)_inferno", f); r = rawfile(t, m.group(1)) if m else None
             items.append({"target": t, "title": (m.group(1) if m else f) + " (single filter)", "false": [("inferno", f"{t}/false_color/{f}")],
                           "raw": [("raw", r)] if r else [], "note": ""})
-html = open("gallery_template.html").read().replace("/*DATA*/", json.dumps(items))
+OV, WCS = {}, {}
+for t in {i["target"] for i in items}:
+    p = f"overlays/{t}/overlay_data.json"
+    if os.path.exists(p): OV[t] = json.load(open(p))
+for i in items:
+    for _, path in i["false"] + i["raw"]:
+        if path and os.path.exists(path + ".wcs.json"): WCS[path] = json.load(open(path + ".wcs.json"))
+html = open("gallery_template.html").read().replace("/*DATA*/", json.dumps(items)).replace("/*OVERLAYS*/", json.dumps(OV)).replace("/*WCS*/", json.dumps(WCS))
 open("gallery.html", "w").write(html)
-n = sum(len(i["raw"]) for i in items); print(len(items), "scaffold items,", sum(len(i["false"]) for i in items), "false-colour images,", n, "raw images paired")
+n = sum(len(i["raw"]) for i in items); print(len(OV), "targets with overlays,", len(WCS), "images with WCS;", len(items), "scaffold items,", sum(len(i["false"]) for i in items), "false-colour images,", n, "raw images paired")

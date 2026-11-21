@@ -10,7 +10,7 @@ import sys, os, json, argparse, html, math
 import numpy as np
 from PIL import Image
 ap = argparse.ArgumentParser()
-ap.add_argument("--kind", required=True); ap.add_argument("--composite", required=True); ap.add_argument("--name", required=True); ap.add_argument("--title", required=True)
+ap.add_argument("--kind", required=True); ap.add_argument("--target", default=""); ap.add_argument("--composite", required=True); ap.add_argument("--name", required=True); ap.add_argument("--title", required=True)
 ap.add_argument("--catalog"); ap.add_argument("--pol"); ap.add_argument("--cell", type=float, default=6.0); ap.add_argument("--minn", type=int, default=6); ap.add_argument("--ref", type=float, default=0.3)
 ap.add_argument("--color", default="#c6ff00"); ap.add_argument("--linecolor", default=None); ap.add_argument("--note", default=""); ap.add_argument("--fill", type=int, default=1); ap.add_argument("--initial", default="data")
 a = ap.parse_args()
@@ -101,7 +101,7 @@ svg_inner = (f'<image id="bg" href="{html.escape(rel)}" x="0" y="0" width="{W0}"
 open(f"{OUT}/{a.name}.svg", "w").write(f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 {W0} {H0}" width="{W0}" height="{H0}">{svg_inner}</svg>')
 leg = ("Harpoon = orientation, drawn pointing toward the top of the image (the data are axial: the head side is a drawing convention). Length ~ amplitude. Faint lines = field lines of the smoothed orientation field. "
        "Fainter vectors = filled from neighbouring cells where too few objects fall in a cell. Wheel = zoom, drag = pan, double-click = fit data, F = full image.")
-page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(a.title)}</title>
+page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(a.title)}</title><meta name="gallery-target" content="{html.escape(a.target)}"><meta name="gallery-kind" content="{html.escape(a.kind)}">
 <style>:root{{--bg:#0b0d14;--p:#141826;--l:#262d44;--t:#e6e9f5;--m:#98a2c3;--acc:#e8b84a}}@media(prefers-color-scheme:light){{:root{{--bg:#f3f4f8;--p:#fff;--l:#cdd2e3;--t:#161a2b;--m:#566086;--acc:#9a6b00}}}}
 *{{box-sizing:border-box}}html,body{{height:100%;margin:0}}body{{background:var(--bg);color:var(--t);font:14px/1.4 system-ui,sans-serif;display:flex;flex-direction:column}}
 header{{padding:8px 14px;border-bottom:1px solid var(--l);display:flex;flex-wrap:wrap;gap:12px;align-items:center}}h1{{font-size:16px;margin:0}}.m{{color:var(--m);font-size:12px}}

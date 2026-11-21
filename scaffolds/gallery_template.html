@@ -22,14 +22,14 @@ nav li{list-style:none;padding:5px 8px;border-radius:6px;cursor:pointer;word-bre
 #empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#889;z-index:2}
 body.blink #panes .pane:nth-child(2){position:absolute;inset:0;border:0}body.blink #panes .pane:nth-child(1){position:absolute;inset:0}
 @media (max-width:820px){main{flex-direction:column}nav{width:auto;max-height:30vh;border-right:0;border-bottom:1px solid var(--line)}#panes{flex-direction:column}.pane+.pane{border-left:0;border-top:1px solid var(--line)}}
-.ov{position:absolute;left:0;top:0;pointer-events:none;z-index:2}#ovctl{display:flex;gap:10px;align-items:center;padding-left:10px;border-left:1px solid var(--line)}#ovctl label{display:flex;gap:4px;align-items:center;cursor:pointer}#ovctl input[type=range]{width:90px}.sw{display:inline-block;width:12px;height:12px;border-radius:3px;border:1px solid #000}#ovctl[hidden],#empty[hidden]{display:none}</style></head><body>
+.ov{position:absolute;left:0;top:0;pointer-events:none;z-index:2}#ovctl{display:flex;gap:10px;align-items:center;padding-left:10px;border-left:1px solid var(--line)}#ovctl label{display:flex;gap:4px;align-items:center;cursor:pointer}#ovctl input[type=range]{width:90px}.sw{display:inline-block;width:12px;height:12px;border-radius:3px;border:1px solid #000}#ovctl[hidden],#empty[hidden],#panes[hidden],#vw[hidden],#bar[hidden]{display:none}#vw{flex:1;border:0;width:100%;min-height:0;background:#000}</style></head><body>
 <header><h1>JWST scaffolds: raw | false colour</h1><span class="mut" id="count"></span><span class="mut">Wheel = zoom, drag = pan (both panes together), double-click = fit. Keys: ←/→ item, B blink, F fit.</span></header>
 <main><nav id="nav" aria-label="Scaffold list"></nav>
 <section id="view"><div id="bar">
 <label>Raw <select id="rawSel"></select></label><label>False colour <select id="falseSel"></select></label>
 <button id="blinkBtn" aria-pressed="false">Blink (B)</button><button id="fitBtn">Fit (F)</button><button id="syncBtn" class="on" aria-pressed="true">Sync zoom</button><span id="ovctl" hidden><label><input type="checkbox" id="ovShear"><span class="sw" id="swS"></span>Shear (JWST)</label><label><input type="checkbox" id="ovPol"><span class="sw" id="swP"></span>Polarization (HST)</label><label><input type="checkbox" id="ovLines" checked>field lines</label><label>min SNR <input type="range" id="ovSnr" min="0" max="8" step="0.5" value="1"><span id="ovSnrV">1</span></label><label>length <input type="range" id="ovLen" min="0.3" max="2.5" step="0.1" value="1"></label></span><span class="mut" id="title"></span></div>
 <div id="panes"><div class="pane" id="p1"><div class="cap" id="c1">raw</div><img id="i1" alt="raw image"><canvas class="ov" id="ov1"></canvas></div><div class="pane" id="p2"><div class="cap" id="c2">false colour</div><img id="i2" alt="false-colour image"><canvas class="ov" id="ov2"></canvas></div><div id="empty" hidden>no raw image paired</div></div>
-<div id="note"></div></section></main>
+<iframe id="vw" hidden title="zoomable field viewer"></iframe><div id="note"></div></section></main>
 <script>
 const DATA=/*DATA*/,OV=/*OVERLAYS*/,WCS=/*WCS*/;let cur=0,blinkOn=false,sync=true,blinkT=null;
 const $=id=>document.getElementById(id),nav=$("nav");
@@ -39,7 +39,8 @@ function build(){const by={};DATA.forEach((d,i)=>(by[d.target]=by[d.target]||[])
   by[t].forEach(i=>{const li=document.createElement("li");li.tabIndex=0;li.textContent=DATA[i].title;li.dataset.i=i;li.onclick=()=>show(i);li.onkeydown=e=>{if(e.key==="Enter")show(i)};ul.appendChild(li)});nav.appendChild(ul)}
  $("count").textContent=DATA.length+" scaffolds";}
 function opts(sel,arr){sel.innerHTML="";arr.forEach((a,k)=>{const o=document.createElement("option");o.value=k;o.textContent=a[0];sel.appendChild(o)});sel.disabled=arr.length<2}
-function show(i){cur=i;const d=DATA[i];[...nav.querySelectorAll("li")].forEach(l=>l.classList.toggle("sel",+l.dataset.i===i));
+function show(i){cur=i;const d=DATA[i];const isV=!!d.viewer;$("panes").hidden=isV;$("bar").hidden=isV;$("vw").hidden=!isV;if(isV){[...nav.querySelectorAll("li")].forEach(l=>l.classList.toggle("sel",+l.dataset.i===i));$("title").textContent=d.target+" · "+d.title;$("note").textContent="Wheel = zoom, drag = pan, double-click = fit data, F = full image (inside the viewer). Use the sidebar to change item.";if($("vw").getAttribute("src")!==d.viewer)$("vw").src=d.viewer;const s=nav.querySelector("li.sel");if(s)s.scrollIntoView({block:"nearest"});return}
+ [...nav.querySelectorAll("li")].forEach(l=>l.classList.toggle("sel",+l.dataset.i===i));
  opts($("rawSel"),d.raw);opts($("falseSel"),d.false);$("title").textContent=d.target+" · "+d.title;ovControls();$("note").textContent=d.note||"";setImgs();
  const s=nav.querySelector("li.sel");if(s)s.scrollIntoView({block:"nearest"})}
 function setImgs(){const d=DATA[cur],r=d.raw[+$("rawSel").value||0],f=d.false[+$("falseSel").value||0];

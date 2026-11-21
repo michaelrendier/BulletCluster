@@ -26,6 +26,14 @@ for t in sorted(d for d in os.listdir(".") if os.path.isdir(d) and os.path.isdir
             m = re.search(r"(jw\d+-o\d+_t\d+_(?:miri|nircam)_[a-z0-9-]+)_inferno", f); r = rawfile(t, m.group(1)) if m else None
             items.append({"target": t, "title": (m.group(1) if m else f) + " (single filter)", "false": [("inferno", f"{t}/false_color/{f}")],
                           "raw": [("raw", r)] if r else [], "note": ""})
+import re as _re
+VIEWERS = []
+for vf in sorted(glob.glob("overlays/viewers/*.html")):
+    h = open(vf, encoding="utf-8").read(40000)
+    mt = _re.search(r'name="gallery-target" content="([^"]+)"', h); tt = _re.search(r"<title>(.*?)</title>", h)
+    if mt and tt: VIEWERS.append({"target": mt.group(1), "title": tt.group(1) + " (zoomable SVG)", "false": [], "raw": [], "note": "", "viewer": vf})
+for v in VIEWERS:                                              # put each viewer at the top of its target's group
+    idx = next((n for n, i in enumerate(items) if i["target"] == v["target"]), len(items)); items.insert(idx, v)
 OV, WCS = {}, {}
 for t in {i["target"] for i in items}:
     p = f"overlays/{t}/overlay_data.json"

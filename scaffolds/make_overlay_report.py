@@ -26,6 +26,7 @@ for tgt, title, comp, why in SC:
         else:
             panels.append((label, None, why if kind == "pol" else "No JWST shear measurement for this scaffold.", 0, 0))
     cards.append((title, panels))
+FAV = open(os.path.join(HERE, "favicon_datauri.txt")).read().strip()
 css = ":root{--bg:#0b0d14;--p:#141826;--l:#262d44;--t:#e6e9f5;--m:#98a2c3}@media(prefers-color-scheme:light){:root{--bg:#f3f4f8;--p:#fff;--l:#cdd2e3;--t:#161a2b;--m:#566086}}body{background:var(--bg);color:var(--t);font:15px/1.45 system-ui,sans-serif;margin:0;padding:16px}h1{font-size:19px;margin:0 0 4px}.lead{color:var(--m);margin:0 0 18px;max-width:1100px}section{margin:0 0 30px}h2{font-size:16px;margin:0 0 8px}.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:900px){.row{grid-template-columns:1fr}}figure{margin:0;background:var(--p);border:1px solid var(--l);border-radius:8px;overflow:hidden}figure img{width:100%;display:block;background:#000}figcaption{padding:8px 10px;font-size:13px;color:var(--m)}figcaption b{color:var(--t)}.none{padding:26px 14px;color:var(--m)}"
 body = ["<h1>Shear and real polarization on the scaffolds</h1><p class='lead'>Each image is the false-colour composite with a transparent overlay: sticks are the field direction (length = amplitude), faint lines behind them are the field lines. Lime = shear, magenta = polarization; both have a dark halo so they read on any background. Where a panel has no image, the reason is the caption: no real data was invented. The gallery (gallery.html) has the same overlays as selectable layers on both raw and false-colour images.</p>"]
 for title, panels in cards:
@@ -34,5 +35,5 @@ for title, panels in cards:
         if img: body.append(f"<figure><img src='{img}' alt='{html.escape(label)}'><figcaption><b>{html.escape(label)}</b> · {n} cells, {nl} field lines<br>{html.escape(note)}</figcaption></figure>")
         else: body.append(f"<figure><div class='none'><b>{html.escape(label)}</b><br>{html.escape(note)}</div></figure>")
     body.append("</div></section>")
-open(f"{HERE}/overlay_report.html", "w").write(f"<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Scaffold overlays</title><style>{css}</style></head><body>{''.join(body)}</body></html>")
+open(f"{HERE}/overlay_report.html", "w").write(f"<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Scaffold overlays</title><link rel='icon' type='image/png' href='{FAV}'><style>{css}</style></head><body>{''.join(body)}</body></html>")
 print("overlay_report.html written;", sum(1 for _, ps in cards for p in ps if p[1]), "images")

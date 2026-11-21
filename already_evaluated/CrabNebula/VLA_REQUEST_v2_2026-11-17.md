@@ -33,4 +33,4 @@ BL182, BM439 (VLBA), 14B-373 (370 MHz shell: check pol states if wanted), ALMA 2
 
 
 ## Sizes of the delivered requests (the author, 2026-11-17/18; recorded 2026-11-20)
-12B-380 360 GB (basic measurement set, uncalibrated) · 12A-486 192.4 GB · 11A-268 21.4 GB (19.29 GB on disk) · 14B-341 920.9 GB (the author wrote "11B-341") · AH919 179.1 MB (on disk) · 15B-252 525.0 GB · 22B-192 494.2 GB · 25A-385 125.5 GB · AGBT19B_352 16.5 MB (on disk) · AGBT18B_338 31.3 MB (on disk). Still to download: 2,618.0 GB. Request numbers and the matching to projects: `../../pending/nrao_downloads/README.md`.
+12B-380 360 GB (basic measurement set, uncalibrated) · 12A-486 192.4 GB · 11A-268 21.4 GB (19.29 GB on disk) · the 920.9 GB request is the author's "11B-341" (NOT the Crab project 14B-341, which the author is going to request; size then unknown) · AH919 179.1 MB (on disk) · 15B-252 525.0 GB · 22B-192 494.2 GB · 25A-385 125.5 GB · AGBT19B_352 16.5 MB (on disk) · AGBT18B_338 31.3 MB (on disk). Still to download: 2,618.0 GB. Request numbers and the matching to projects: `../../pending/nrao_downloads/README.md`.

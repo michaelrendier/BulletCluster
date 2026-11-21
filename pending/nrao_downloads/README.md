@@ -9,7 +9,7 @@ Plan the requests came from: `already_evaluated/CrabNebula/VLA_REQUEST_v2_2026-1
 | 302944689 | EVLA | 12B-380 | 360.0 GB | Wed Nov 18, 5:57 AM | NOT DOWNLOADED | basic measurement set, uncalibrated (author) |
 | 302954368 | EVLA | 12A-486 | 192.4 GB | Wed Nov 18, 12:14 AM | NOT DOWNLOADED |  |
 | 302964371 | EVLA | 11A-268 | 21.4 GB | Tue Nov 17, 7:11 PM | ACQUIRED (19.29 GB on disk) | two tarballs in CrabNebula/data/nrao/11A-268/; 2.1 GB shorter than the stated 21.4 GB, unexplained (a third file? .rar versus .tar.gz overhead?); the request listing would settle it |
-| 302969789 | EVLA | 14B-341 (author wrote '11B-341') | 920.9 GB | Wed Nov 18, 5:23 PM | NOT DOWNLOADED | larger than any drive's free space |
+| 302969789 | EVLA | **11B-341**, as the author labelled it (identity not checked; NOT the Crab project 14B-341) | 920.9 GB | Wed Nov 18, 5:23 PM | NOT DOWNLOADED | larger than any drive's free space; the author's own label, kept as written |
 | 302986674 | EVLA | AH919 | 179.1 MB | Wed Nov 18, 12:09 PM | ACQUIRED | the 179,118,080-byte tar on disk equals the stated 179.1 MB exactly |
 | 302994447 | EVLA | 15B-252 | 525.0 GB | Wed Nov 18, 8:30 AM | NOT DOWNLOADED |  |
 | 302999511 | EVLA | 22B-192 | 494.2 GB | Wed Nov 18, 11:50 AM | NOT DOWNLOADED |  |
@@ -17,7 +17,10 @@ Plan the requests came from: `already_evaluated/CrabNebula/VLA_REQUEST_v2_2026-1
 | 303010600 | GBT | AGBT19B_352 | 16.5 MB | Tue Nov 17, 6:46 PM | ACQUIRED | two tarballs, 16,506,880 bytes = 16.5 MB exactly |
 | 303031735 | GBT | AGBT18B_338 | 31.3 MB | Tue Nov 17, 6:46 PM | ACQUIRED | 31,344,640 bytes = 31.3 MB exactly |
 
-**How the requests were matched to projects (INFERRED, one anchor confirmed).** The emails give only request numbers, but the numbers rise in the order the author requested the projects (the plan's order, and the order the author quoted the sizes): 12B-380, 12A-486, 11A-268, 14B-341, AH919, 15B-252, 22B-192, 25A-385, then the two GBT. The anchor `302964371` = `11A-268` is certain (the on-disk file names end in that number), it falls third in that order as predicted, and the two GBT requests are the two highest numbers and the only ones on the `dl-naasc` host. The remaining matches follow from the order and are not independently confirmed: listing a request (file names start with the project code) confirms each. The author's sizes are from messages of 2026-11-17 18:02-18:42 local; the files arrive as `.rar` (extractable here with `7z`).
+**How the requests were matched to projects (INFERRED, one anchor confirmed).** The emails give only request numbers, but the numbers rise in the order the author requested the projects (the plan's order, and the order the author quoted the sizes): 12B-380, 12A-486, 11A-268, then the 920.9 GB request (the author's label 11B-341; the plan's slot was 14B-341), AH919, 15B-252, 22B-192, 25A-385, then the two GBT. The anchor `302964371` = `11A-268` is certain (the on-disk file names end in that number), it falls third in that order as predicted, and the two GBT requests are the two highest numbers and the only ones on the `dl-naasc` host. The remaining matches follow from the order and are not independently confirmed: listing a request (file names start with the project code) confirms each. The author's sizes are from messages of 2026-11-17 18:02-18:42 local; the files arrive as `.rar` (extractable here with `7z`).
+
+## Open: the Crab project 14B-341 has NOT been requested (author, 2026-11-20)
+The 920.9 GB request is the author's `11B-341`, not `14B-341` ("Exploring the exotic chemistry of the Crab nebula", EVLA, 2014-10-19 to 2014-11-12, 4 execution blocks, the one in the plan). The author will request 14B-341 from the archive; when its completion email arrives, add its request number, size and links here (links to `links_PRIVATE.md`). Plan: take the two 2014-11-12 blocks (9.1 and 23.5 cm) first; the 2.2 and 1.7 cm blocks are very large. Its size is unknown until requested, so it is NOT in the total below. What 11B-341 is has not been looked up (the author's project list of 2026-11-17 had no such project).
 
 ## What is left to download from NRAO
 The three megabyte-sized requests (AH919, AGBT19B_352, AGBT18B_338) are already on disk. Everything else is gigabyte-sized:
@@ -26,7 +29,7 @@ The three megabyte-sized requests (AH919, AGBT19B_352, AGBT18B_338) are already 
 |---|---|---|
 | 12B-380 | 302944689 | 360.0 GB |
 | 12A-486 | 302954368 | 192.4 GB |
-| 14B-341 | 302969789 | 920.9 GB |
+| 11B-341 (author's label) | 302969789 | 920.9 GB |
 | 15B-252 | 302994447 | 525.0 GB |
 | 22B-192 | 302999511 | 494.2 GB |
 | 25A-385 | 303004365 | 125.5 GB |

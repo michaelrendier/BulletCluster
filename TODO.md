@@ -25,4 +25,4 @@ Candidates recorded 2026-11-20 (see `DATA_VERIFIED_2026-11-20.md`): Pillars HST 
 - The Gemini `.md` of Crab and pulsar download links.
 
 ## NRAO Crab nebula and pulsar downloads  (RECORDED, NOT DOWNLOADED)
-Ten requests; the three megabyte-sized ones (AH919, AGBT19B_352, AGBT18B_338) and most of 11A-268 are on disk; six gigabyte-sized EVLA requests remain, 2,618.0 GB in total (no single drive can hold them at once; 14B-341 is 920.9 GB); links (private, gitignored) and methods in `pending/nrao_downloads/`. Next step when you say go: list each request read-only to get files and sizes, then download one at a time.
+Ten requests; the three megabyte-sized ones (AH919, AGBT19B_352, AGBT18B_338) and most of 11A-268 are on disk; six gigabyte-sized EVLA requests remain, 2,618.0 GB in total (no single drive can hold them at once; the 920.9 GB one is the author's "11B-341"); the Crab project 14B-341 itself is still to be requested by the author, then add it to the record; links (private, gitignored) and methods in `pending/nrao_downloads/`. Next step when you say go: list each request read-only to get files and sizes, then download one at a time.

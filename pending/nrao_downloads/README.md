@@ -4,24 +4,43 @@ The author placed these requests in the NRAO Archive Access Tool and received a 
 
 Plan the requests came from: `already_evaluated/CrabNebula/VLA_REQUEST_v2_2026-11-17.md` (nebula time series: 12B-380, 12A-486, 11A-268, 14B-341, AH919; pulsar: 15B-252, 22B-192, 25A-385, AGBT19B_352, AGBT18B_338, plus extra EVLA blocks found by position). The emails give only request numbers, so the seven undownloaded EVLA requests cannot yet be matched to projects.
 
-| request | type | host | emailed | status |
-|---|---|---|---|---|
-| 302944689 | EVLA | dl-dsoc.nrao.edu | Wed, Nov 18, 5:57 AM | NOT DOWNLOADED. Project and size unknown: the email names neither; open the request page (or list the direct URL, read-only) to see files and sizes. |
-| 302954368 | EVLA | dl-dsoc.nrao.edu | Wed, Nov 18, 12:14 AM | NOT DOWNLOADED. Project and size unknown: the email names neither; open the request page (or list the direct URL, read-only) to see files and sizes. |
-| 302964371 | EVLA | dl-dsoc.nrao.edu | Tue, Nov 17, 7:11 PM | ACQUIRED: the two 9.6 GB `11A-268` calibrated measurement-set tarballs (file names end in this request number) are in `Telescope Data/CrabNebula/data/nrao/11A-268/`. |
-| 302969789 | EVLA | dl-dsoc.nrao.edu | Nov 18, 2026, 5:23 PM | NOT DOWNLOADED. Project and size unknown: the email names neither; open the request page (or list the direct URL, read-only) to see files and sizes. |
-| 302986674 | EVLA | dl-dsoc.nrao.edu | Wed, Nov 18, 12:09 PM | NOT DOWNLOADED. Project and size unknown: the email names neither; open the request page (or list the direct URL, read-only) to see files and sizes. |
-| 302994447 | EVLA | dl-dsoc.nrao.edu | Wed, Nov 18, 8:30 AM | NOT DOWNLOADED. Project and size unknown: the email names neither; open the request page (or list the direct URL, read-only) to see files and sizes. |
-| 302999511 | EVLA | dl-dsoc.nrao.edu | Wed, Nov 18, 11:50 AM | NOT DOWNLOADED. Project and size unknown: the email names neither; open the request page (or list the direct URL, read-only) to see files and sizes. |
-| 303004365 | EVLA | dl-dsoc.nrao.edu | Tue, Nov 17, 11:03 PM | NOT DOWNLOADED. Project and size unknown: the email names neither; open the request page (or list the direct URL, read-only) to see files and sizes. |
-| 303010600 | GBT | dl-naasc.nrao.edu | Tue, Nov 17, 6:46 PM | ACQUIRED per the author ('the two small ones'): the other GBT request (request-to-project order not recorded). |
-| 303031735 | GBT | dl-naasc.nrao.edu | Tue, Nov 17, 6:46 PM | ACQUIRED per the author ('the two small ones'): one of the two GBT requests; the `AGBT18B_338` and `AGBT19B_352` tarballs are in `Telescope Data/CrabNebula/data/nrao/`. |
+| request | type | project (sizes from the author, 2026-11-18) | size | emailed | status | note |
+|---|---|---|---|---|---|---|
+| 302944689 | EVLA | 12B-380 | 360.0 GB | Wed Nov 18, 5:57 AM | NOT DOWNLOADED | basic measurement set, uncalibrated (author) |
+| 302954368 | EVLA | 12A-486 | 192.4 GB | Wed Nov 18, 12:14 AM | NOT DOWNLOADED |  |
+| 302964371 | EVLA | 11A-268 | 21.4 GB | Tue Nov 17, 7:11 PM | ACQUIRED (19.29 GB on disk) | two tarballs in CrabNebula/data/nrao/11A-268/; 2.1 GB shorter than the stated 21.4 GB, unexplained (a third file? .rar versus .tar.gz overhead?); the request listing would settle it |
+| 302969789 | EVLA | 14B-341 (author wrote '11B-341') | 920.9 GB | Wed Nov 18, 5:23 PM | NOT DOWNLOADED | larger than any drive's free space |
+| 302986674 | EVLA | AH919 | 179.1 MB | Wed Nov 18, 12:09 PM | ACQUIRED | the 179,118,080-byte tar on disk equals the stated 179.1 MB exactly |
+| 302994447 | EVLA | 15B-252 | 525.0 GB | Wed Nov 18, 8:30 AM | NOT DOWNLOADED |  |
+| 302999511 | EVLA | 22B-192 | 494.2 GB | Wed Nov 18, 11:50 AM | NOT DOWNLOADED |  |
+| 303004365 | EVLA | 25A-385 | 125.5 GB | Tue Nov 17, 11:03 PM | NOT DOWNLOADED |  |
+| 303010600 | GBT | AGBT19B_352 | 16.5 MB | Tue Nov 17, 6:46 PM | ACQUIRED | two tarballs, 16,506,880 bytes = 16.5 MB exactly |
+| 303031735 | GBT | AGBT18B_338 | 31.3 MB | Tue Nov 17, 6:46 PM | ACQUIRED | 31,344,640 bytes = 31.3 MB exactly |
+
+**How the requests were matched to projects (INFERRED, one anchor confirmed).** The emails give only request numbers, but the numbers rise in the order the author requested the projects (the plan's order, and the order the author quoted the sizes): 12B-380, 12A-486, 11A-268, 14B-341, AH919, 15B-252, 22B-192, 25A-385, then the two GBT. The anchor `302964371` = `11A-268` is certain (the on-disk file names end in that number), it falls third in that order as predicted, and the two GBT requests are the two highest numbers and the only ones on the `dl-naasc` host. The remaining matches follow from the order and are not independently confirmed: listing a request (file names start with the project code) confirms each. The author's sizes are from messages of 2026-11-17 18:02-18:42 local; the files arrive as `.rar` (extractable here with `7z`).
+
+## What is left to download from NRAO
+The three megabyte-sized requests (AH919, AGBT19B_352, AGBT18B_338) are already on disk. Everything else is gigabyte-sized:
+
+| project | request | size |
+|---|---|---|
+| 12B-380 | 302944689 | 360.0 GB |
+| 12A-486 | 302954368 | 192.4 GB |
+| 14B-341 | 302969789 | 920.9 GB |
+| 15B-252 | 302994447 | 525.0 GB |
+| 22B-192 | 302999511 | 494.2 GB |
+| 25A-385 | 303004365 | 125.5 GB |
+| **total still to download** | 6 requests | **2,618.0 GB (about 2.6 TB)** |
+
+Plus the 2.1 GB of 11A-268 that is not accounted for (21.4 GB stated, 19.29 GB on disk). All eight EVLA projects together are 2,639.4 GB; 19.3 GB of that is already here.
+
+**Storage.** `Telescope Data` has 345 GB free (about 452 GB if the cleanup candidates were removed); `SDCard` is 235 GB; the 750 GB drive the author was formatting is not mounted. So nothing fits at once: 14B-341 (920.9 GB) is larger than any single drive, and 15B-252 (525 GB) and 22B-192 (494 GB) exceed even the cleaned-up free space. The author's plan is download, evaluate and discard, project by project; 12A-486 (192.4 GB) and 25A-385 (125.5 GB) fit now, 12B-380 (360 GB) needs the cleanup first, and the three over 490 GB need an empty drive of at least 1 TB or a per-block split of the request (14B-341 has four blocks; the plan said take the two 2014-11-12 blocks first).
 
 ## Method for when the downloads are wanted
 Standing rules (the author's, from the telescope-download skill): Mozilla user agent on every request (`$CLAUDE_UA`), ONE download at a time, the author's explicit go first, the author's email is never sent, failures are logged and not repaired, free-space guard on `Telescope Data` (stop at 20 GB spare, overflow to `/media/rendier/SDCard`), record each download under `already_evaluated/CrabNebula/`. Telescope Data's USB bridge has dropped under heavy load (2026-11-17, 2026-11-20): throttle (`ionice -c3 nice`), keep the `noatime` mount, one stream.
 
 1. **List first (read-only, small).** Fetch the request's page or directory index (`<DIRECT>`) to get file names and sizes, and report the total. The names reveal the project (`<project>_sb...` / `<project>.sb....eb....`); sort into `CrabNebula/data/nrao/<project>/`. Flag anything over about 100 GB before queuing (Telescope Data has ~345 GB free; the cleanup list in `../../TODO.md` would add ~110 GB).
-2. **Download.** NRAO's own commands, with the Mozilla user agent added:
+2. **Download** (files arrive as `.rar`; extract with `7z x`). NRAO's own commands, with the Mozilla user agent added:
    * `wget -r -l 10 --reject "index.html*" -np -nH --cut-dirs=3 --user-agent="$CLAUDE_UA" -c <DIRECT>`
    * Calibrated or basic measurement sets can exceed 100 GB and plain `wget` may fail; NRAO recommends `wget2 -r -l 10 --reject-regex="index.html*" --progress=bar -np -nH --cut-dirs=3 --user-agent="$CLAUDE_UA" <DIRECT>`.
    * Resumable alternative that fits the skill: turn the listing into a manifest of per-file URLs and run `telescope_download.py MANIFEST.json --state STATE.json --min-free-gb 20` (8 MB chunks, `.part` files, HTTP Range resume, sha256 recorded, a status line every 15 minutes through Monitor).

@@ -26,3 +26,6 @@ Candidates recorded 2026-11-20 (see `DATA_VERIFIED_2026-11-20.md`): Pillars HST 
 
 ## NRAO Crab nebula and pulsar downloads  (RECORDED, NOT DOWNLOADED)
 Ten requests; the three megabyte-sized ones (AH919, AGBT19B_352, AGBT18B_338) and most of 11A-268 are on disk; six gigabyte-sized EVLA requests remain, 2,618.0 GB in total (no single drive can hold them at once; the 920.9 GB one is the author's "11B-341"); the Crab project 14B-341 itself is still to be requested by the author, then add it to the record; links (private, gitignored) and methods in `pending/nrao_downloads/`. Next step when you say go: list each request read-only to get files and sizes, then download one at a time.
+
+## Galleries open over http, not file://  (2026-11-20)
+Firefox stores no favicon for `file://` pages (checked in its favicons database: none for any local file; it stored the icon for the same page served from 127.0.0.1), so a file:// gallery tab shows the globe. Open the Scaffold Gallery with `scaffolds/serve_gallery.sh` (loopback only, port 8765). Every gallery page carries the author's favicon (embedded); the same launcher pattern is used for the Equation Space Gallery (SedenionSpectralRelativity, port 8766).

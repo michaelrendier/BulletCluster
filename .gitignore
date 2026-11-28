@@ -76,3 +76,14 @@ __pycache__/
 
 # NRAO request links carry per-request keys: keep out of this public repository
 pending/nrao_downloads/links_PRIVATE.md
+
+# Yoga bundle: private links, job state and logs (2026-11-28)
+pending/yoga_bundle/links.txt
+pending/yoga_bundle/STATUS.md
+pending/yoga_bundle/jobs/*/state.json*
+pending/yoga_bundle/jobs/*/download.log
+pending/yoga_bundle/jobs/*/manifest.resolved.json
+pending/yoga_bundle/jobs/*/run.pid
+pending/yoga_bundle/jobs/*/.lock
+pending/yoga_bundle/.venv/
+pending/nrao_downloads/crab_fetch/links.txt

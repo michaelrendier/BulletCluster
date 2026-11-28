@@ -8,7 +8,9 @@ Data root: `/media/rendier/Telescope Data/BulletCluster/Dust/<TARGET>/<TELESCOPE
 | D1 | Zodiacal light | interplanetary dust scattering sunlight; a whole-sky, single-scattering-dominated polarization curve | SOHO/LASCO C2/C3 polarizer sequences (+60°, 0°, −60° plus clear); STEREO SECCHI COR polarizer sequences |
 | D2 | Pillars of Creation (M16) | dense dust column, both optical/IR images and sub-mm polarization | SOFIA/HAWC+ 89 and 154 µm, JCMT POL-2 850 µm (BISTRO), Planck 353 GHz. No optical polarimetry found |
 | D3 | DART impact, Didymos–Dimorphos | an ejecta cloud of known start time whose optical depth falls with time, observed for months | VLT/FORS2 imaging polarimetry + spectropolarimetry, NOT/ALFOSC (pre- and post-impact); HST WFC3 polarization is not used (F350LP imaging) |
-| D4–D6 | to be chosen by Cody | | |
+| D4 | Orion BN/KL (OMC-1) | chosen earlier; on disk | HST NICMOS prog 9752 POL0L/120L/240L; ALMA 2018.1.01162.S full-pol |
+| D5 | Sagittarius A* and the Galactic Center dust (added 2026-11-27) | the dust and magnetised gas along the line of sight to the Galactic Center, with decades of radio data | JWST NIRCam/MIRI imaging of the inner parsec (20+ programs, 2022 on); VLA full-polarization (14A-209, 13A-534 and others, 2–3.5 cm); ALMA full-polarization (0.1–0.7 cm); Planck 353 GHz on disk; SOFIA/HAWC+ and JCMT POL-2 to be checked. **Not EHT** (petabyte-scale horizon-scale VLBI, not dust: deferred to the last PTorrent in situ targets) |
+| D6 | to be chosen by Cody | | |
 
 ## D1 — Zodiacal light
 | telescope | what | size | access |
@@ -50,3 +52,7 @@ Notes: published results already show the polarization dropped about 1 percentag
 
 ## Not queued
 Everything else on the fields (Spitzer, Chandra, TESS). Add on request.
+
+## D5 — Sagittarius A* and the Galactic Center dust (RA 17h45m40.04s, Dec −29°00′28.2″; added 2026-11-27)
+Purpose (Cody, 2026-11-27): ample radio data from the Galactic Center over decades, for his ptychography, birefringence and L_(I|O) work; the dust, not the black hole. EHT data are not part of this target.
+Survey (read-only, 2026-11-27): see `Sgr_A_star_survey_2026-11-27.md` in this directory for the numbers. JWST has 1,324 observations within 120″ of Sgr A* (20+ programs); no MAST polarizer filters within 60″ (no HST/JWST polarimetry there); NRAO holds 1.26 million observation rows within 1.2′ (VLBA 0.7 cm dominates; EVLA and ALMA full-polarization projects exist). Nothing is downloaded by this entry.

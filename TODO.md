@@ -24,7 +24,9 @@ Candidates recorded 2026-11-20 (see `DATA_VERIFIED_2026-11-20.md`): Pillars HST 
 ## Waiting on the author
 - The Gemini `.md` of Crab and pulsar download links.
 
-## NRAO Crab nebula and pulsar downloads  (RECORDED, NOT DOWNLOADED)
+## NRAO Crab nebula and pulsar downloads  (RECORDED, NOT DOWNLOADED; EVLA LINKS DEAD 2026-11-27)
+**2026-11-27: every EVLA request link returns 404; re-request in the Archive Access Tool (author's login) and use `pending/nrao_downloads/crab_fetch/` on the 891 GB laptop.** Sgr A* added as dust target D5 (`already_evaluated/Dust/Dust_catalog.md`, survey `Sgr_A_star_survey_2026-11-27.md`); first download (JWST imaging, 39.5 GB) running into `Telescope Data/BulletCluster/Dust/Sagittarius_A_star/JWST/`.
+
 Ten requests; the three megabyte-sized ones (AH919, AGBT19B_352, AGBT18B_338) and most of 11A-268 are on disk; six gigabyte-sized EVLA requests remain, 2,618.0 GB in total (no single drive can hold them at once; the 920.9 GB one is the author's "11B-341"); the Crab project 14B-341 itself is still to be requested by the author, then add it to the record; links (private, gitignored) and methods in `pending/nrao_downloads/`. Next step when you say go: list each request read-only to get files and sizes, then download one at a time.
 
 ## Galleries open over http, not file://  (2026-11-20)

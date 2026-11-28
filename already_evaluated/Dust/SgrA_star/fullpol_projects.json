@@ -1,0 +1,5242 @@
+[
+ {
+  "project": "LO",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 152,
+  "first": "1977-03-04",
+  "last": "1981-02-07",
+  "lambda_cm": [
+   1.33,
+   1.35,
+   1.99,
+   6.06,
+   6.07,
+   6.47
+  ],
+  "config": [
+   "A",
+   "NA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 2105.4
+ },
+ {
+  "project": "KYL",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 32,
+  "first": "1977-03-05",
+  "last": "1979-05-21",
+  "lambda_cm": [
+   1.35,
+   6.07
+  ],
+  "config": [
+   "NA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 444.1
+ },
+ {
+  "project": "CRAN",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 5,
+  "first": "1977-05-27",
+  "last": "1977-05-30",
+  "lambda_cm": [
+   1.33,
+   2.03,
+   6.07
+  ],
+  "config": [
+   "NA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 135.3
+ },
+ {
+  "project": "BIGN",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 2,
+  "first": "1977-12-16",
+  "last": "1978-06-10",
+  "lambda_cm": [
+   6.07
+  ],
+  "config": [
+   "NA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 46.3
+ },
+ {
+  "project": "JOHN",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 21,
+  "first": "1979-05-19",
+  "last": "1979-05-19",
+  "lambda_cm": [
+   6.07
+  ],
+  "config": [
+   "NA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 315.9
+ },
+ {
+  "project": "SRAM",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 3,
+  "first": "1980-05-05",
+  "last": "1980-05-05",
+  "lambda_cm": [
+   6.07
+  ],
+  "config": [
+   "NA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 47.5
+ },
+ {
+  "project": "BACK",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 173,
+  "first": "1980-05-15",
+  "last": "1982-04-27",
+  "lambda_cm": [
+   1.99,
+   2.0,
+   6.07,
+   19.79,
+   20.43,
+   20.49
+  ],
+  "config": [
+   "A",
+   "NA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 5208.6
+ },
+ {
+  "project": "DB",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 11,
+  "first": "1980-12-08",
+  "last": "1980-12-08",
+  "lambda_cm": [
+   1.99,
+   6.07,
+   17.61,
+   20.89
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 352.7
+ },
+ {
+  "project": "EKER",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 22,
+  "first": "1981-06-30",
+  "last": "1981-11-16",
+  "lambda_cm": [
+   6.07,
+   19.95
+  ],
+  "config": [
+   "B",
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 632.5
+ },
+ {
+  "project": "LISZ",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "1981-08-14",
+  "last": "1981-08-14",
+  "lambda_cm": [
+   17.85
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 7.8
+ },
+ {
+  "project": "MORA",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 8,
+  "first": "1981-12-02",
+  "last": "1981-12-02",
+  "lambda_cm": [
+   1.34,
+   1.35
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 354.1
+ },
+ {
+  "project": "BROW",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 24,
+  "first": "1982-02-01",
+  "last": "1982-02-01",
+  "lambda_cm": [
+   1.99,
+   6.1,
+   20.04
+  ],
+  "config": [
+   "C->A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 777.9
+ },
+ {
+  "project": "YOUN",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 12,
+  "first": "1982-10-18",
+  "last": "1982-10-19",
+  "lambda_cm": [
+   1.33,
+   2.0,
+   6.07,
+   19.79
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 458.3
+ },
+ {
+  "project": "VK11",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 12,
+  "first": "1982-11-30",
+  "last": "1982-11-30",
+  "lambda_cm": [
+   1.35
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 480.2
+ },
+ {
+  "project": "AB21",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 61,
+  "first": "1982-12-31",
+  "last": "1982-12-31",
+  "lambda_cm": [
+   2.03,
+   2.04
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 3138.6
+ },
+ {
+  "project": "VL26",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 14,
+  "first": "1983-06-23",
+  "last": "1983-06-23",
+  "lambda_cm": [
+   1.35
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1141.3
+ },
+ {
+  "project": "AE25",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 31,
+  "first": "1983-07-06",
+  "last": "1983-07-06",
+  "lambda_cm": [
+   2.0
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 571.9
+ },
+ {
+  "project": "AC81",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 40,
+  "first": "1983-09-01",
+  "last": "1984-02-26",
+  "lambda_cm": [
+   1.33,
+   2.0,
+   6.14,
+   19.79
+  ],
+  "config": [
+   "A",
+   "A->BnA",
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 458.6
+ },
+ {
+  "project": "AB248",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 140,
+  "first": "1983-09-02",
+  "last": "1985-01-29",
+  "lambda_cm": [
+   2.0,
+   6.14,
+   20.43
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 7679.5
+ },
+ {
+  "project": "AE26",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 10,
+  "first": "1983-10-18",
+  "last": "1983-10-19",
+  "lambda_cm": [
+   19.95
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 93.4
+ },
+ {
+  "project": "AC80",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 10,
+  "first": "1983-11-06",
+  "last": "1983-11-07",
+  "lambda_cm": [
+   6.14
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 479.7
+ },
+ {
+  "project": "AS198",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 3,
+  "first": "1984-04-16",
+  "last": "1984-06-25",
+  "lambda_cm": [
+   20.46
+  ],
+  "config": [
+   "C",
+   "C->DnC"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 121.6
+ },
+ {
+  "project": "AE32",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 67,
+  "first": "1984-05-31",
+  "last": "1984-08-19",
+  "lambda_cm": [
+   6.15,
+   19.95
+  ],
+  "config": [
+   "C",
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1687.8
+ },
+ {
+  "project": "AP100",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 41,
+  "first": "1984-09-08",
+  "last": "1984-10-04",
+  "lambda_cm": [
+   19.52,
+   19.79
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 199.8
+ },
+ {
+  "project": "TEST",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 20,
+  "first": "1985-08-14",
+  "last": "2001-03-05",
+  "lambda_cm": [
+   0.69,
+   2.0,
+   3.54,
+   6.14,
+   19.79,
+   21.07
+  ],
+  "config": [
+   "A",
+   "B",
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 344.0
+ },
+ {
+  "project": "VL33",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 18,
+  "first": "1986-02-25",
+  "last": "1986-02-25",
+  "lambda_cm": [
+   1.35
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 850.0
+ },
+ {
+  "project": "AM170",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 11,
+  "first": "1986-03-03",
+  "last": "1986-03-03",
+  "lambda_cm": [
+   2.0
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 694.0
+ },
+ {
+  "project": "AB388",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 71,
+  "first": "1986-04-17",
+  "last": "1986-05-29",
+  "lambda_cm": [
+   2.0,
+   6.14,
+   20.43
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 3907.9
+ },
+ {
+  "project": "AY13",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "1986-05-15",
+  "last": "1986-05-15",
+  "lambda_cm": [
+   2.0
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 59.2
+ },
+ {
+  "project": "AE50",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 39,
+  "first": "1986-12-28",
+  "last": "1987-11-28",
+  "lambda_cm": [
+   1.33,
+   2.0
+  ],
+  "config": [
+   "B",
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1624.6
+ },
+ {
+  "project": "AL149",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 13,
+  "first": "1987-05-17",
+  "last": "1987-05-17",
+  "lambda_cm": [
+   3.54
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 119.7
+ },
+ {
+  "project": "AW171",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "1987-06-18",
+  "last": "1987-06-18",
+  "lambda_cm": [
+   6.14
+  ],
+  "config": [
+   "D->A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 27.2
+ },
+ {
+  "project": "AM192",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 14,
+  "first": "1987-07-15",
+  "last": "1987-07-15",
+  "lambda_cm": [
+   6.14
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 980.2
+ },
+ {
+  "project": "AB434",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "1987-08-14",
+  "last": "1987-08-14",
+  "lambda_cm": [
+   6.72
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 97.2
+ },
+ {
+  "project": "AB449",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "1987-08-16",
+  "last": "1987-08-16",
+  "lambda_cm": [
+   19.79
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 184.1
+ },
+ {
+  "project": "AY27",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 5,
+  "first": "1988-10-02",
+  "last": "1988-10-03",
+  "lambda_cm": [
+   2.0
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 304.9
+ },
+ {
+  "project": "AZ39",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 11,
+  "first": "1988-11-07",
+  "last": "1988-12-27",
+  "lambda_cm": [
+   1.33,
+   2.0,
+   3.54,
+   6.14,
+   17.92,
+   19.79
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 89.0
+ },
+ {
+  "project": "AP1",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "1989-01-16",
+  "last": "1989-01-16",
+  "lambda_cm": [
+   3.54
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 5.4
+ },
+ {
+  "project": "AB520",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 78,
+  "first": "1989-01-28",
+  "last": "1989-02-04",
+  "lambda_cm": [
+   2.0,
+   3.54,
+   6.14,
+   20.43
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 4369.6
+ },
+ {
+  "project": "AZ42",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 9,
+  "first": "1989-03-06",
+  "last": "1989-05-12",
+  "lambda_cm": [
+   1.33,
+   2.0,
+   3.54,
+   6.14
+  ],
+  "config": [
+   "BnA->B",
+   "CnB"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 87.8
+ },
+ {
+  "project": "VBV1",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 2,
+  "first": "1990-01-11",
+  "last": "1990-01-11",
+  "lambda_cm": [
+   18.01
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 21.2
+ },
+ {
+  "project": "AZ44",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 232,
+  "first": "1990-03-01",
+  "last": "1992-09-09",
+  "lambda_cm": [
+   1.22,
+   1.33,
+   2.0,
+   2.04,
+   3.54,
+   6.14
+  ],
+  "config": [
+   "A",
+   "B",
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 2548.1
+ },
+ {
+  "project": "VBB2AP",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 6,
+  "first": "1990-04-19",
+  "last": "1990-04-20",
+  "lambda_cm": [
+   1.35,
+   5.95
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 91.1
+ },
+ {
+  "project": "AY36",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 13,
+  "first": "1990-05-17",
+  "last": "1990-05-17",
+  "lambda_cm": [
+   2.0
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 837.4
+ },
+ {
+  "project": "AO97",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 28,
+  "first": "1990-05-30",
+  "last": "1990-05-30",
+  "lambda_cm": [
+   1.33,
+   3.53
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1694.2
+ },
+ {
+  "project": "VBB2JU",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 6,
+  "first": "1990-07-10",
+  "last": "1990-07-13",
+  "lambda_cm": [
+   5.95
+  ],
+  "config": [
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 78.5
+ },
+ {
+  "project": "VBV2",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 3,
+  "first": "1990-07-17",
+  "last": "1990-07-17",
+  "lambda_cm": [
+   17.99
+  ],
+  "config": [
+   "BnA->B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 100.5
+ },
+ {
+  "project": "VBB2AU",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 3,
+  "first": "1990-08-15",
+  "last": "1990-08-15",
+  "lambda_cm": [
+   5.95
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 23.0
+ },
+ {
+  "project": "BB2",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 8,
+  "first": "1991-01-17",
+  "last": "1992-08-25",
+  "lambda_cm": [
+   3.54
+  ],
+  "config": [
+   "C",
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 32.3
+ },
+ {
+  "project": "AF198",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "1991-03-15",
+  "last": "1991-03-15",
+  "lambda_cm": [
+   3.54
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 5.2
+ },
+ {
+  "project": "BY1",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 7,
+  "first": "1991-05-16",
+  "last": "1992-05-14",
+  "lambda_cm": [
+   1.35
+  ],
+  "config": [
+   "C",
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 37.1
+ },
+ {
+  "project": "UL1",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 13,
+  "first": "1991-06-22",
+  "last": "1991-06-22",
+  "lambda_cm": [
+   1.35
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 893.9
+ },
+ {
+  "project": "GM1",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 21,
+  "first": "1991-06-23",
+  "last": "1991-06-23",
+  "lambda_cm": [
+   1.35
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 2140.8
+ },
+ {
+  "project": "AZ52",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 47,
+  "first": "1991-06-26",
+  "last": "1992-01-19",
+  "lambda_cm": [
+   1.33,
+   1.35,
+   2.0,
+   3.54
+  ],
+  "config": [
+   "A",
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 2645.8
+ },
+ {
+  "project": "AH295",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 6,
+  "first": "1991-06-28",
+  "last": "1991-06-28",
+  "lambda_cm": [
+   2.0,
+   21.07
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 100.1
+ },
+ {
+  "project": "AM332",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 14,
+  "first": "1991-08-13",
+  "last": "1991-08-14",
+  "lambda_cm": [
+   6.14
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 311.0
+ },
+ {
+  "project": "AY43",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 67,
+  "first": "1991-08-15",
+  "last": "1992-08-24",
+  "lambda_cm": [
+   3.53,
+   3.54
+  ],
+  "config": [
+   "A",
+   "B",
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 3647.6
+ },
+ {
+  "project": "AY46",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 14,
+  "first": "1991-11-15",
+  "last": "1991-11-16",
+  "lambda_cm": [
+   2.0
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 571.5
+ },
+ {
+  "project": "UL3",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 16,
+  "first": "1991-11-25",
+  "last": "1991-11-25",
+  "lambda_cm": [
+   3.54
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 919.7
+ },
+ {
+  "project": "AR267",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 15,
+  "first": "1992-04-18",
+  "last": "1992-04-18",
+  "lambda_cm": [
+   1.33,
+   19.79
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 219.7
+ },
+ {
+  "project": "BR1",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 10,
+  "first": "1992-05-29",
+  "last": "1992-07-07",
+  "lambda_cm": [
+   1.35,
+   3.54
+  ],
+  "config": [
+   "C->DnC",
+   "DnC->D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 371.3
+ },
+ {
+  "project": "UAH10",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "1992-06-12",
+  "last": "1992-06-12",
+  "lambda_cm": [
+   1.35
+  ],
+  "config": [
+   "DnC"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 20.5
+ },
+ {
+  "project": "GM11",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 24,
+  "first": "1992-11-08",
+  "last": "1992-11-09",
+  "lambda_cm": [
+   1.35
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 2297.4
+ },
+ {
+  "project": "AZ61",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 75,
+  "first": "1992-11-27",
+  "last": "1992-11-28",
+  "lambda_cm": [
+   3.44,
+   3.55,
+   3.56,
+   3.68,
+   6.14,
+   6.15
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 42240.8
+ },
+ {
+  "project": "AZ60",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 56,
+  "first": "1992-11-28",
+  "last": "1993-04-01",
+  "lambda_cm": [
+   1.33,
+   2.0,
+   3.54,
+   6.14,
+   19.79
+  ],
+  "config": [
+   "A",
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1729.4
+ },
+ {
+  "project": "AZ46",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 6,
+  "first": "1993-02-08",
+  "last": "1993-02-08",
+  "lambda_cm": [
+   3.54,
+   6.14,
+   19.79
+  ],
+  "config": [
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 101.2
+ },
+ {
+  "project": "AM432",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 24,
+  "first": "1994-01-11",
+  "last": "1994-01-11",
+  "lambda_cm": [
+   0.69
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 179.6
+ },
+ {
+  "project": "AD334",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 7,
+  "first": "1994-03-06",
+  "last": "1994-03-06",
+  "lambda_cm": [
+   0.69
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 17.4
+ },
+ {
+  "project": "LRTEST",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 6,
+  "first": "1994-03-27",
+  "last": "1994-03-27",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   3.54
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 37.2
+ },
+ {
+  "project": "AB708",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 63,
+  "first": "1994-04-02",
+  "last": "1994-04-26",
+  "lambda_cm": [
+   2.0,
+   3.54,
+   6.14,
+   21.19
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 2417.7
+ },
+ {
+  "project": "AR277",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 6,
+  "first": "1994-04-09",
+  "last": "1994-04-15",
+  "lambda_cm": [
+   0.69
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 161.6
+ },
+ {
+  "project": "BB14",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 9,
+  "first": "1994-07-07",
+  "last": "1994-10-09",
+  "lambda_cm": [
+   3.54
+  ],
+  "config": [
+   "B",
+   "CnB"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 44.3
+ },
+ {
+  "project": "BD10",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 2,
+  "first": "1995-01-07",
+  "last": "1995-01-07",
+  "lambda_cm": [
+   18.01
+  ],
+  "config": [
+   "C->DnC"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 10.4
+ },
+ {
+  "project": "AM493",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 4,
+  "first": "1995-06-27",
+  "last": "1995-06-27",
+  "lambda_cm": [
+   3.54
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 519.3
+ },
+ {
+  "project": "AY69",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 21,
+  "first": "1995-07-21",
+  "last": "1995-07-21",
+  "lambda_cm": [
+   2.0,
+   3.53
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1278.2
+ },
+ {
+  "project": "BL23",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 5,
+  "first": "1995-09-22",
+  "last": "1995-09-23",
+  "lambda_cm": [
+   1.35,
+   3.54,
+   5.95
+  ],
+  "config": [
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 279.2
+ },
+ {
+  "project": "BM60",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 9,
+  "first": "1996-04-25",
+  "last": "1996-07-13",
+  "lambda_cm": [
+   0.69
+  ],
+  "config": [
+   "C",
+   "D",
+   "DnC"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 28.3
+ },
+ {
+  "project": "AS589",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "1996-06-15",
+  "last": "1996-06-15",
+  "lambda_cm": [
+   1.33
+  ],
+  "config": [
+   "DnC"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 61.5
+ },
+ {
+  "project": "AL404",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 8,
+  "first": "1996-10-24",
+  "last": "1996-11-09",
+  "lambda_cm": [
+   21.49
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1329.3
+ },
+ {
+  "project": "AF314",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 23,
+  "first": "1996-10-26",
+  "last": "1996-10-27",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   2.0,
+   3.53,
+   6.14,
+   17.92
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 171.2
+ },
+ {
+  "project": "AY78",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 184,
+  "first": "1996-11-10",
+  "last": "1996-11-11",
+  "lambda_cm": [
+   0.69,
+   1.33
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 21896.8
+ },
+ {
+  "project": "AZ87",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 79,
+  "first": "1996-12-06",
+  "last": "1997-02-03",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   3.53,
+   3.54
+  ],
+  "config": [
+   "A",
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 3176.9
+ },
+ {
+  "project": "AF302",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 44,
+  "first": "1997-01-17",
+  "last": "1997-01-17",
+  "lambda_cm": [
+   0.69,
+   3.53
+  ],
+  "config": [
+   "A->BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1125.0
+ },
+ {
+  "project": "BS55",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 53,
+  "first": "1997-02-07",
+  "last": "1997-02-14",
+  "lambda_cm": [
+   0.69,
+   1.35,
+   1.94,
+   3.54,
+   5.95
+  ],
+  "config": [
+   "B",
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 313.1
+ },
+ {
+  "project": "AP355",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 822,
+  "first": "1997-10-20",
+  "last": "1997-10-27",
+  "lambda_cm": [
+   0.69,
+   2.0
+  ],
+  "config": [
+   "DnC"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 51455.9
+ },
+ {
+  "project": "TESTT",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 3,
+  "first": "1997-12-24",
+  "last": "1998-01-12",
+  "lambda_cm": [
+   0.69,
+   2.0,
+   3.53
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 38.2
+ },
+ {
+  "project": "BR52",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 71,
+  "first": "1998-02-16",
+  "last": "1998-02-16",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   2.0,
+   3.53
+  ],
+  "config": [
+   "D->A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 4326.9
+ },
+ {
+  "project": "AB857",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 57,
+  "first": "1998-04-10",
+  "last": "1998-04-24",
+  "lambda_cm": [
+   3.53,
+   6.14
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 2416.8
+ },
+ {
+  "project": "AY96",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 22,
+  "first": "1998-04-30",
+  "last": "1998-04-30",
+  "lambda_cm": [
+   2.0
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1553.9
+ },
+ {
+  "project": "AZ104",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 53,
+  "first": "1998-05-08",
+  "last": "1998-09-09",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   3.53
+  ],
+  "config": [
+   "A",
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 6261.2
+ },
+ {
+  "project": "AZ1040",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 20,
+  "first": "1998-09-08",
+  "last": "1998-09-09",
+  "lambda_cm": [
+   0.69,
+   3.53
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1813.0
+ },
+ {
+  "project": "TESTS",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 26,
+  "first": "1998-10-31",
+  "last": "2001-05-24",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   2.0,
+   3.53,
+   6.14,
+   20.89
+  ],
+  "config": [
+   "A",
+   "B",
+   "CnB"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 997.5
+ },
+ {
+  "project": "AY99",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 186,
+  "first": "1999-01-08",
+  "last": "1999-01-08",
+  "lambda_cm": [
+   0.69,
+   1.33
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 22270.6
+ },
+ {
+  "project": "BL74",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 10,
+  "first": "1999-03-15",
+  "last": "1999-03-15",
+  "lambda_cm": [
+   5.95
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 220.7
+ },
+ {
+  "project": "AB910",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 287,
+  "first": "1999-06-24",
+  "last": "1999-09-22",
+  "lambda_cm": [
+   2.0,
+   3.53,
+   6.14,
+   21.19
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 9394.6
+ },
+ {
+  "project": "AZ119",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 37,
+  "first": "1999-08-19",
+  "last": "1999-11-16",
+  "lambda_cm": [
+   1.33
+  ],
+  "config": [
+   "A",
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 2054.9
+ },
+ {
+  "project": "BB113",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 41,
+  "first": "1999-08-29",
+  "last": "1999-08-30",
+  "lambda_cm": [
+   3.54,
+   5.95
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 175.8
+ },
+ {
+  "project": "AM639",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 45,
+  "first": "1999-09-27",
+  "last": "1999-09-29",
+  "lambda_cm": [
+   1.33,
+   2.0,
+   3.53
+  ],
+  "config": [
+   "A->BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 2623.7
+ },
+ {
+  "project": "AL494",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 175,
+  "first": "1999-10-21",
+  "last": "1999-11-09",
+  "lambda_cm": [
+   0.69,
+   1.33
+  ],
+  "config": [
+   "B",
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 3611.8
+ },
+ {
+  "project": "AY108",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 21,
+  "first": "1999-10-26",
+  "last": "1999-10-27",
+  "lambda_cm": [
+   2.0
+  ],
+  "config": [
+   "BnA->B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1506.8
+ },
+ {
+  "project": "AB938",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 268,
+  "first": "2000-02-20",
+  "last": "2000-06-15",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   2.0,
+   3.53
+  ],
+  "config": [
+   "C",
+   "CnB",
+   "CnB->C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 10401.1
+ },
+ {
+  "project": "AM648",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 58,
+  "first": "2000-02-24",
+  "last": "2000-02-25",
+  "lambda_cm": [
+   1.33,
+   2.0,
+   3.53
+  ],
+  "config": [
+   "CnB"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1710.5
+ },
+ {
+  "project": "AZ128",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 30,
+  "first": "2000-06-21",
+  "last": "2000-09-27",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   2.0
+  ],
+  "config": [
+   "D",
+   "DnC",
+   "DnC->D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 265.7
+ },
+ {
+  "project": "AZ129",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 141,
+  "first": "2000-10-05",
+  "last": "2001-09-28",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   2.0,
+   3.53
+  ],
+  "config": [
+   "A",
+   "A->BnA",
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1190.9
+ },
+ {
+  "project": "AY118",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 14,
+  "first": "2000-11-11",
+  "last": "2000-11-12",
+  "lambda_cm": [
+   17.43
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 15666.4
+ },
+ {
+  "project": "AH669",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "2000-11-18",
+  "last": "2000-11-18",
+  "lambda_cm": [
+   2.0
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 36.2
+ },
+ {
+  "project": "AL539",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 4,
+  "first": "2001-01-29",
+  "last": "2001-01-29",
+  "lambda_cm": [
+   0.69,
+   3.53,
+   6.14,
+   20.89
+  ],
+  "config": [
+   "A->BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 52.9
+ },
+ {
+  "project": "AK528",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 4,
+  "first": "2001-02-18",
+  "last": "2001-02-18",
+  "lambda_cm": [
+   3.53
+  ],
+  "config": [
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 338.2
+ },
+ {
+  "project": "AL533",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 4,
+  "first": "2001-02-19",
+  "last": "2001-02-19",
+  "lambda_cm": [
+   0.69
+  ],
+  "config": [
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 108.3
+ },
+ {
+  "project": "POINT",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 3,
+  "first": "2001-07-09",
+  "last": "2001-07-09",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   2.0
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 117.2
+ },
+ {
+  "project": "AZ136",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 339,
+  "first": "2001-10-03",
+  "last": "2003-01-04",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   2.0,
+   3.53,
+   6.14,
+   20.89
+  ],
+  "config": [
+   "A",
+   "B",
+   "B->CnB"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 4525.5
+ },
+ {
+  "project": "AL561",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 65,
+  "first": "2002-03-10",
+  "last": "2002-03-10",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   3.53
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 12268.9
+ },
+ {
+  "project": "AB1045",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 17,
+  "first": "2002-08-18",
+  "last": "2002-08-18",
+  "lambda_cm": [
+   3.53
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 3475.6
+ },
+ {
+  "project": "AZ143",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 165,
+  "first": "2003-01-13",
+  "last": "2004-05-16",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   2.0,
+   3.53,
+   6.14
+  ],
+  "config": [
+   "A",
+   "A->BnA",
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 8288.9
+ },
+ {
+  "project": "AH805",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 8,
+  "first": "2003-01-18",
+  "last": "2003-01-19",
+  "lambda_cm": [
+   3.53
+  ],
+  "config": [
+   "DnC"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1526.1
+ },
+ {
+  "project": "AH807",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 3,
+  "first": "2003-02-02",
+  "last": "2003-02-02",
+  "lambda_cm": [
+   3.53
+  ],
+  "config": [
+   "DnC"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 245.9
+ },
+ {
+  "project": "AL587",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 5,
+  "first": "2003-02-09",
+  "last": "2003-02-09",
+  "lambda_cm": [
+   6.47
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 228.8
+ },
+ {
+  "project": "AY143",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 15,
+  "first": "2003-07-18",
+  "last": "2003-09-07",
+  "lambda_cm": [
+   19.95
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 504.7
+ },
+ {
+  "project": "BC139",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "2003-07-26",
+  "last": "2003-07-26",
+  "lambda_cm": [
+   1.33
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 100.5
+ },
+ {
+  "project": "AB1086",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 28,
+  "first": "2003-07-27",
+  "last": "2003-08-03",
+  "lambda_cm": [
+   1.33,
+   3.54
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 8161.4
+ },
+ {
+  "project": "AF400",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "2003-08-08",
+  "last": "2003-08-08",
+  "lambda_cm": [
+   3.53
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 161.5
+ },
+ {
+  "project": "AL609",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 286,
+  "first": "2003-09-27",
+  "last": "2004-01-22",
+  "lambda_cm": [
+   1.33
+  ],
+  "config": [
+   "B->CnB",
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 45320.6
+ },
+ {
+  "project": "AD486",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 7,
+  "first": "2003-10-04",
+  "last": "2003-10-05",
+  "lambda_cm": [
+   3.53
+  ],
+  "config": [
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1961.9
+ },
+ {
+  "project": "AR452",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 30,
+  "first": "2004-03-28",
+  "last": "2004-03-28",
+  "lambda_cm": [
+   0.69
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1160.5
+ },
+ {
+  "project": "AR542",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 200,
+  "first": "2004-03-29",
+  "last": "2004-03-31",
+  "lambda_cm": [
+   0.69
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 18978.0
+ },
+ {
+  "project": "AL625",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 317,
+  "first": "2004-05-29",
+  "last": "2005-06-20",
+  "lambda_cm": [
+   0.69,
+   1.33
+  ],
+  "config": [
+   "BnA",
+   "CnB",
+   "DnC"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 41438.4
+ },
+ {
+  "project": "AL624",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 268,
+  "first": "2004-06-10",
+  "last": "2004-07-31",
+  "lambda_cm": [
+   0.69,
+   1.33
+  ],
+  "config": [
+   "D",
+   "DnC"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 32689.7
+ },
+ {
+  "project": "AB1127",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 771,
+  "first": "2004-06-11",
+  "last": "2004-09-04",
+  "lambda_cm": [
+   0.69
+  ],
+  "config": [
+   "D",
+   "D->A",
+   "DnC"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 63346.5
+ },
+ {
+  "project": "BL121",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 5,
+  "first": "2004-06-23",
+  "last": "2004-06-23",
+  "lambda_cm": [
+   3.54
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 194.9
+ },
+ {
+  "project": "AZ151",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 27,
+  "first": "2004-06-25",
+  "last": "2004-08-14",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   2.0
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 451.2
+ },
+ {
+  "project": "AB1167",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 9,
+  "first": "2004-10-08",
+  "last": "2004-10-08",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   3.53
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 367.5
+ },
+ {
+  "project": "AB1168",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 32,
+  "first": "2004-10-18",
+  "last": "2004-11-01",
+  "lambda_cm": [
+   1.33,
+   2.0,
+   3.53,
+   6.14
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1389.5
+ },
+ {
+  "project": "AY152",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 8,
+  "first": "2004-11-19",
+  "last": "2004-11-20",
+  "lambda_cm": [
+   6.14
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1298.7
+ },
+ {
+  "project": "BY18",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 8,
+  "first": "2004-11-19",
+  "last": "2004-11-20",
+  "lambda_cm": [
+   6.1
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 120.0
+ },
+ {
+  "project": "AT300",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 41,
+  "first": "2004-12-23",
+  "last": "2005-04-26",
+  "lambda_cm": [
+   1.33
+  ],
+  "config": [
+   "A",
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1355.4
+ },
+ {
+  "project": "AS828",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "2005-01-15",
+  "last": "2005-01-15",
+  "lambda_cm": [
+   3.53
+  ],
+  "config": [
+   "A->BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 93.7
+ },
+ {
+  "project": "AR561",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 81,
+  "first": "2005-02-10",
+  "last": "2005-02-11",
+  "lambda_cm": [
+   0.69,
+   1.33
+  ],
+  "config": [
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 7228.4
+ },
+ {
+  "project": "AH875",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 10,
+  "first": "2005-06-26",
+  "last": "2005-06-26",
+  "lambda_cm": [
+   0.69,
+   3.53
+  ],
+  "config": [
+   "CnB"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 706.2
+ },
+ {
+  "project": "AB1178",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 250,
+  "first": "2005-07-28",
+  "last": "2005-08-02",
+  "lambda_cm": [
+   0.69,
+   1.33
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 14806.5
+ },
+ {
+  "project": "AW658",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 12,
+  "first": "2005-10-28",
+  "last": "2005-10-28",
+  "lambda_cm": [
+   3.53
+  ],
+  "config": [
+   "DnC"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 766.5
+ },
+ {
+  "project": "AY165",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 180,
+  "first": "2006-02-10",
+  "last": "2006-02-10",
+  "lambda_cm": [
+   0.69,
+   1.33
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 21976.8
+ },
+ {
+  "project": "AG722",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "2006-07-13",
+  "last": "2006-07-13",
+  "lambda_cm": [
+   3.53
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 390.8
+ },
+ {
+  "project": "AY167",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 406,
+  "first": "2006-07-16",
+  "last": "2006-07-17",
+  "lambda_cm": [
+   0.69,
+   1.33
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 23386.4
+ },
+ {
+  "project": "AL679",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 10,
+  "first": "2006-11-19",
+  "last": "2006-12-09",
+  "lambda_cm": [
+   6.47
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 477.7
+ },
+ {
+  "project": "BC170",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 2,
+  "first": "2007-02-23",
+  "last": "2007-02-23",
+  "lambda_cm": [
+   1.33,
+   20.89
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 14.8
+ },
+ {
+  "project": "AY176",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 611,
+  "first": "2007-04-01",
+  "last": "2007-04-04",
+  "lambda_cm": [
+   0.69,
+   1.33
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 95448.7
+ },
+ {
+  "project": "AY178",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 453,
+  "first": "2007-07-20",
+  "last": "2007-09-09",
+  "lambda_cm": [
+   0.69,
+   1.35
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 64847.8
+ },
+ {
+  "project": "AO219",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "2007-08-20",
+  "last": "2007-08-20",
+  "lambda_cm": [
+   3.53
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1441.7
+ },
+ {
+  "project": "AY185",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1176,
+  "first": "2008-05-05",
+  "last": "2008-07-26",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   3.53
+  ],
+  "config": [
+   "C",
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 104203.7
+ },
+ {
+  "project": "AP557",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 10,
+  "first": "2008-06-17",
+  "last": "2008-06-18",
+  "lambda_cm": [
+   3.53
+  ],
+  "config": [
+   "DnC"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 3035.2
+ },
+ {
+  "project": "AR687",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 12,
+  "first": "2009-01-31",
+  "last": "2009-02-01",
+  "lambda_cm": [
+   3.53
+  ],
+  "config": [
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 13478.4
+ },
+ {
+  "project": "BY126",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 147,
+  "first": "2009-04-01",
+  "last": "2009-04-05",
+  "lambda_cm": [
+   0.69,
+   1.33,
+   3.53
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 11197.5
+ },
+ {
+  "project": "AY193",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 534,
+  "first": "2009-05-28",
+  "last": "2009-05-29",
+  "lambda_cm": [
+   0.69
+  ],
+  "config": [
+   "CnB"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 92757.5
+ },
+ {
+  "project": "AB1322",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 39,
+  "first": "2009-06-11",
+  "last": "2009-06-11",
+  "lambda_cm": [
+   0.69
+  ],
+  "config": [
+   "CnB"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 2737.4
+ },
+ {
+  "project": "AL736",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 13,
+  "first": "2009-06-12",
+  "last": "2009-10-12",
+  "lambda_cm": [
+   3.53
+  ],
+  "config": [
+   "CnB",
+   "DnC"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 3165.5
+ },
+ {
+  "project": "AK720",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 22,
+  "first": "2009-09-03",
+  "last": "2009-09-13",
+  "lambda_cm": [
+   1.33
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 495.1
+ },
+ {
+  "project": "CALSUR",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 1,
+  "first": "2009-09-09",
+  "last": "2009-09-09",
+  "lambda_cm": [
+   6.14
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 91.3
+ },
+ {
+  "project": "AK722",
+  "inst": [
+   "VLA"
+  ],
+  "rows": 32,
+  "first": "2009-11-07",
+  "last": "2009-11-08",
+  "lambda_cm": [
+   1.33
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 614.6
+ },
+ {
+  "project": "10B-168",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 681,
+  "first": "2010-08-13",
+  "last": "2010-08-17",
+  "lambda_cm": [
+   0.75
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 24104.0
+ },
+ {
+  "project": "10B-200",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 32,
+  "first": "2011-02-04",
+  "last": "2011-02-08",
+  "lambda_cm": [
+   1.08,
+   6.04
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1022.1
+ },
+ {
+  "project": "10B-177",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 78,
+  "first": "2011-02-07",
+  "last": "2011-02-09",
+  "lambda_cm": [
+   3.54
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 6741.5
+ },
+ {
+  "project": "S3115",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 78,
+  "first": "2011-02-10",
+  "last": "2011-04-24",
+  "lambda_cm": [
+   3.54
+  ],
+  "config": [
+   "B",
+   "C",
+   "C=>CNB"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 821.6
+ },
+ {
+  "project": "11A-224",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 108,
+  "first": "2011-07-08",
+  "last": "2011-09-02",
+  "lambda_cm": [
+   0.72
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 2123.7
+ },
+ {
+  "project": "12A-121",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 48,
+  "first": "2012-01-29",
+  "last": "2012-02-09",
+  "lambda_cm": [
+   0.73
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 903.7
+ },
+ {
+  "project": "12A-120",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 10,
+  "first": "2012-02-25",
+  "last": "2012-03-10",
+  "lambda_cm": [
+   1.1
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 366.1
+ },
+ {
+  "project": "12A-037",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 86,
+  "first": "2012-03-29",
+  "last": "2012-07-27",
+  "lambda_cm": [
+   6.49
+  ],
+  "config": [
+   "B",
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 2888.9
+ },
+ {
+  "project": "12A-339",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 768,
+  "first": "2012-05-18",
+  "last": "2012-08-04",
+  "lambda_cm": [
+   0.77,
+   1.11,
+   1.61,
+   2.46
+  ],
+  "config": [
+   "B",
+   "CnB"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 60269.9
+ },
+ {
+  "project": "12A-483",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 15,
+  "first": "2012-06-28",
+  "last": "2012-09-15",
+  "lambda_cm": [
+   1.05,
+   1.11,
+   2.32
+  ],
+  "config": [
+   "B",
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 164.0
+ },
+ {
+  "project": "12A-226",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 26,
+  "first": "2012-09-23",
+  "last": "2012-09-25",
+  "lambda_cm": [
+   1.47,
+   3.54
+  ],
+  "config": [
+   "BnA",
+   "BnA->A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 117.8
+ },
+ {
+  "project": "12B-384",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 50,
+  "first": "2012-09-26",
+  "last": "2012-11-17",
+  "lambda_cm": [
+   0.73,
+   0.96,
+   1.47,
+   3.54
+  ],
+  "config": [
+   "A",
+   "BnA->A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 472.6
+ },
+ {
+  "project": "TOBS0006",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 240,
+  "first": "2012-10-14",
+  "last": "2014-05-31",
+  "lambda_cm": [
+   0.75,
+   0.96,
+   1.48,
+   2.29,
+   3.69,
+   6.49
+  ],
+  "config": [
+   "A",
+   "B",
+   "BnA->A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 6188.6
+ },
+ {
+  "project": "12B-375",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 18,
+  "first": "2012-10-15",
+  "last": "2013-07-28",
+  "lambda_cm": [
+   1.11,
+   2.32
+  ],
+  "config": [
+   "A",
+   "C",
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 231.2
+ },
+ {
+  "project": "12B-394",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 16,
+  "first": "2012-11-23",
+  "last": "2012-11-23",
+  "lambda_cm": [
+   348.6
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1071.1
+ },
+ {
+  "project": "13A-130",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 175,
+  "first": "2013-01-31",
+  "last": "2013-04-25",
+  "lambda_cm": [
+   0.71,
+   0.84
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1839.7
+ },
+ {
+  "project": "13A-461",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 9,
+  "first": "2013-03-06",
+  "last": "2013-08-24",
+  "lambda_cm": [
+   1.11,
+   2.32
+  ],
+  "config": [
+   "C",
+   "D",
+   "DnC->C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 119.5
+ },
+ {
+  "project": "13A-451",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 8,
+  "first": "2013-04-17",
+  "last": "2013-05-06",
+  "lambda_cm": [
+   3.59
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 878.2
+ },
+ {
+  "project": "13A-513",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 616,
+  "first": "2013-05-10",
+  "last": "2013-06-03",
+  "lambda_cm": [
+   3.46
+  ],
+  "config": [
+   "DnC",
+   "DnC->C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 10652.9
+ },
+ {
+  "project": "SE0824",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 223,
+  "first": "2013-05-25",
+  "last": "2014-02-21",
+  "lambda_cm": [
+   0.74,
+   0.98,
+   3.69
+  ],
+  "config": [
+   "A",
+   "B",
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 49172.1
+ },
+ {
+  "project": "BR145",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 54,
+  "first": "2013-06-22",
+  "last": "2013-07-02",
+  "lambda_cm": [
+   1.52,
+   3.54
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 489.0
+ },
+ {
+  "project": "13A-534",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 3491,
+  "first": "2013-06-30",
+  "last": "2014-02-22",
+  "lambda_cm": [
+   1.95,
+   3.46
+  ],
+  "config": [
+   "A",
+   "B",
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 103441.1
+ },
+ {
+  "project": "TRSR0067",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 1,
+  "first": "2013-08-11",
+  "last": "2013-08-11",
+  "lambda_cm": [
+   348.6
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 64.2
+ },
+ {
+  "project": "13B-321",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 112,
+  "first": "2013-09-09",
+  "last": "2014-05-26",
+  "lambda_cm": [
+   3.54,
+   124.91,
+   348.6
+  ],
+  "config": [
+   "A",
+   "B",
+   "B->BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 7083.8
+ },
+ {
+  "project": "13B-057",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 5,
+  "first": "2013-10-19",
+  "last": "2014-02-23",
+  "lambda_cm": [
+   1.08,
+   1.11,
+   2.32
+  ],
+  "config": [
+   "A",
+   "B",
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 147.4
+ },
+ {
+  "project": "S61420",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 9,
+  "first": "2013-12-23",
+  "last": "2014-12-18",
+  "lambda_cm": [
+   1.11,
+   2.32
+  ],
+  "config": [
+   "A",
+   "B",
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 157.8
+ },
+ {
+  "project": "14A-231",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 118,
+  "first": "2014-03-01",
+  "last": "2014-04-02",
+  "lambda_cm": [
+   2.29,
+   3.69,
+   6.49,
+   27.97
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 15181.4
+ },
+ {
+  "project": "14A-232",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 70,
+  "first": "2014-03-09",
+  "last": "2014-04-17",
+  "lambda_cm": [
+   0.98,
+   3.69
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 14735.7
+ },
+ {
+  "project": "14A-209",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 2907,
+  "first": "2014-04-25",
+  "last": "2015-02-20",
+  "lambda_cm": [
+   0.69,
+   1.95,
+   3.46
+  ],
+  "config": [
+   "A",
+   "B",
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 84451.9
+ },
+ {
+  "project": "SF0853",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 40,
+  "first": "2014-04-28",
+  "last": "2014-04-28",
+  "lambda_cm": [
+   3.69
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 3998.4
+ },
+ {
+  "project": "14A-547",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 40,
+  "first": "2014-05-10",
+  "last": "2014-05-10",
+  "lambda_cm": [
+   0.75
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 4777.7
+ },
+ {
+  "project": "14A-247",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 4,
+  "first": "2014-05-14",
+  "last": "2014-05-14",
+  "lambda_cm": [
+   0.85
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 783.4
+ },
+ {
+  "project": "14A-346",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 52,
+  "first": "2014-05-17",
+  "last": "2014-05-26",
+  "lambda_cm": [
+   6.49
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 8924.5
+ },
+ {
+  "project": "14A-481",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 59,
+  "first": "2014-05-28",
+  "last": "2014-05-28",
+  "lambda_cm": [
+   1.66,
+   3.54
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 4956.8
+ },
+ {
+  "project": "13B-188",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 96,
+  "first": "2014-06-11",
+  "last": "2014-08-06",
+  "lambda_cm": [
+   0.77,
+   1.11,
+   1.48,
+   2.29,
+   3.69,
+   6.49
+  ],
+  "config": [
+   "A->D",
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 5241.4
+ },
+ {
+  "project": "14B-254",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 2,
+  "first": "2014-09-26",
+  "last": "2014-09-27",
+  "lambda_cm": [
+   7.23
+  ],
+  "config": [
+   "DnC"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 538.0
+ },
+ {
+  "project": "14B-318",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 35,
+  "first": "2015-01-11",
+  "last": "2015-01-31",
+  "lambda_cm": [
+   3.69,
+   124.91
+  ],
+  "config": [
+   "CnB",
+   "CnB->B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 3134.1
+ },
+ {
+  "project": "14B-281",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 42,
+  "first": "2015-01-16",
+  "last": "2015-01-16",
+  "lambda_cm": [
+   0.74
+  ],
+  "config": [
+   "CnB"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 7297.8
+ },
+ {
+  "project": "14B-173",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 24,
+  "first": "2015-01-16",
+  "last": "2015-01-19",
+  "lambda_cm": [
+   3.54
+  ],
+  "config": [
+   "CnB"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1361.7
+ },
+ {
+  "project": "15A-419",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 48,
+  "first": "2015-02-07",
+  "last": "2015-02-21",
+  "lambda_cm": [
+   1.06
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 14246.3
+ },
+ {
+  "project": "15A-195",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 81,
+  "first": "2015-02-16",
+  "last": "2015-09-17",
+  "lambda_cm": [
+   3.54,
+   124.91
+  ],
+  "config": [
+   "A",
+   "B",
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1645.7
+ },
+ {
+  "project": "14B-154",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 658,
+  "first": "2015-02-26",
+  "last": "2015-03-31",
+  "lambda_cm": [
+   0.75,
+   1.48,
+   3.69
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 10441.4
+ },
+ {
+  "project": "TRSR0083",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 14,
+  "first": "2015-03-24",
+  "last": "2015-03-24",
+  "lambda_cm": [
+   1.47
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1094.1
+ },
+ {
+  "project": "Operations",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 247,
+  "first": "2015-03-31",
+  "last": "2018-09-13",
+  "lambda_cm": [
+   1.48,
+   1.95,
+   3.69
+  ],
+  "config": [
+   "B",
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 2723.6
+ },
+ {
+  "project": "15A-257",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 52,
+  "first": "2015-04-03",
+  "last": "2015-05-05",
+  "lambda_cm": [
+   1.47
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 12776.2
+ },
+ {
+  "project": "2013.1.00764.S",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 292,
+  "first": "2015-04-08",
+  "last": "2015-05-28",
+  "lambda_cm": [
+   0.13
+  ],
+  "config": [],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1530.1
+ },
+ {
+  "project": "15A-418",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 105,
+  "first": "2015-05-25",
+  "last": "2015-06-06",
+  "lambda_cm": [
+   3.71
+  ],
+  "config": [
+   "BnA",
+   "BnA->A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 14333.8
+ },
+ {
+  "project": "15A-264",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 183,
+  "first": "2015-05-30",
+  "last": "2016-05-10",
+  "lambda_cm": [
+   2.52
+  ],
+  "config": [
+   "A",
+   "A->D",
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 250252.8
+ },
+ {
+  "project": "TCAL0008",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 32,
+  "first": "2015-06-07",
+  "last": "2026-07-10",
+  "lambda_cm": [
+   0.96,
+   2.33,
+   2.48,
+   3.59,
+   3.69,
+   3.7
+  ],
+  "config": [
+   "A",
+   "A->D",
+   "BnA->A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 563.0
+ },
+ {
+  "project": "14B-357",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 93,
+  "first": "2015-06-15",
+  "last": "2015-06-15",
+  "lambda_cm": [
+   0.77,
+   1.11,
+   1.48,
+   2.29,
+   3.69,
+   6.49
+  ],
+  "config": [
+   "BnA->A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 8313.7
+ },
+ {
+  "project": "15A-310",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 82,
+  "first": "2015-08-21",
+  "last": "2015-08-30",
+  "lambda_cm": [
+   3.69,
+   27.97,
+   124.91
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 7852.6
+ },
+ {
+  "project": "15A-293",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 40,
+  "first": "2015-09-11",
+  "last": "2015-09-16",
+  "lambda_cm": [
+   0.74,
+   1.03
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 8453.1
+ },
+ {
+  "project": "BK193",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 261,
+  "first": "2015-09-12",
+  "last": "2015-09-13",
+  "lambda_cm": [
+   1.35
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 14644.2
+ },
+ {
+  "project": "BD188",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 60,
+  "first": "2015-11-30",
+  "last": "2016-01-30",
+  "lambda_cm": [
+   3.61,
+   5.43
+  ],
+  "config": [
+   "C",
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 15832.8
+ },
+ {
+  "project": "15B-343",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 2,
+  "first": "2015-12-24",
+  "last": "2015-12-24",
+  "lambda_cm": [
+   1.09,
+   2.48
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 92.9
+ },
+ {
+  "project": "16A-113",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 30,
+  "first": "2016-05-23",
+  "last": "2016-05-25",
+  "lambda_cm": [
+   0.74,
+   0.98
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 5969.8
+ },
+ {
+  "project": "16A-209",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 48,
+  "first": "2016-06-02",
+  "last": "2016-08-15",
+  "lambda_cm": [
+   0.75,
+   0.96,
+   1.48
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 693.1
+ },
+ {
+  "project": "16A-174",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 3,
+  "first": "2016-06-06",
+  "last": "2016-10-16",
+  "lambda_cm": [
+   7.23
+  ],
+  "config": [
+   "A",
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 827.6
+ },
+ {
+  "project": "16A-263",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 105,
+  "first": "2016-06-08",
+  "last": "2016-09-01",
+  "lambda_cm": [
+   3.54,
+   124.91
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1985.4
+ },
+ {
+  "project": "BP198",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 168,
+  "first": "2016-07-08",
+  "last": "2017-05-25",
+  "lambda_cm": [
+   13.7
+  ],
+  "config": [
+   "B",
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 53296.1
+ },
+ {
+  "project": "16A-419",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 60,
+  "first": "2016-07-13",
+  "last": "2016-07-19",
+  "lambda_cm": [
+   0.74,
+   0.98
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 22047.6
+ },
+ {
+  "project": "16B-264",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 80,
+  "first": "2016-09-19",
+  "last": "2018-02-19",
+  "lambda_cm": [
+   3.54,
+   124.91
+  ],
+  "config": [
+   "A->D",
+   "B",
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1621.0
+ },
+ {
+  "project": "TSKY0001",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 4,
+  "first": "2017-01-28",
+  "last": "2021-03-05",
+  "lambda_cm": [
+   3.93,
+   14.17,
+   14.32
+  ],
+  "config": [
+   "A->D",
+   "BnA->A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1893.0
+ },
+ {
+  "project": "2016.1.00413.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 704,
+  "first": "2017-04-03",
+  "last": "2017-04-03",
+  "lambda_cm": [
+   0.34
+  ],
+  "config": [
+   "C40-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 6864.8
+ },
+ {
+  "project": "2016.1.01404.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 2313,
+  "first": "2017-04-06",
+  "last": "2017-04-11",
+  "lambda_cm": [
+   0.14
+  ],
+  "config": [
+   "C40-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 28172.2
+ },
+ {
+  "project": "18A-416",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 1030,
+  "first": "2018-03-04",
+  "last": "2018-04-23",
+  "lambda_cm": [
+   0.75,
+   3.54
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 205777.9
+ },
+ {
+  "project": "18A-091",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 30,
+  "first": "2018-04-03",
+  "last": "2018-04-03",
+  "lambda_cm": [
+   0.75
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 16983.3
+ },
+ {
+  "project": "2017.1.00795.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 981,
+  "first": "2018-04-14",
+  "last": "2018-04-17",
+  "lambda_cm": [
+   0.34
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 13575.1
+ },
+ {
+  "project": "2017.1.00797.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 3387,
+  "first": "2018-04-21",
+  "last": "2018-04-25",
+  "lambda_cm": [
+   0.14
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 91078.0
+ },
+ {
+  "project": "BY143",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 1452,
+  "first": "2018-09-21",
+  "last": "2018-10-27",
+  "lambda_cm": [
+   0.69,
+   3.46
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 58253.6
+ },
+ {
+  "project": "BB376",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 8,
+  "first": "2018-11-17",
+  "last": "2018-11-23",
+  "lambda_cm": [
+   3.61,
+   5.43
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1522.5
+ },
+ {
+  "project": "18B-257",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 57,
+  "first": "2019-02-25",
+  "last": "2019-02-25",
+  "lambda_cm": [
+   0.75,
+   3.54
+  ],
+  "config": [
+   "C->B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 5974.0
+ },
+ {
+  "project": "19A-060",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 26,
+  "first": "2019-05-01",
+  "last": "2019-07-13",
+  "lambda_cm": [
+   1.35
+  ],
+  "config": [
+   "B",
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1987.4
+ },
+ {
+  "project": "19A-490",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 60,
+  "first": "2019-07-18",
+  "last": "2019-07-18",
+  "lambda_cm": [
+   0.74
+  ],
+  "config": [
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 25662.1
+ },
+ {
+  "project": "19A-229",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 120,
+  "first": "2019-07-21",
+  "last": "2019-07-26",
+  "lambda_cm": [
+   0.74,
+   0.95
+  ],
+  "config": [
+   "BnA",
+   "BnA->A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 56249.4
+ },
+ {
+  "project": "19A-191",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 150,
+  "first": "2019-08-17",
+  "last": "2019-10-16",
+  "lambda_cm": [
+   0.74,
+   3.69
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 36494.7
+ },
+ {
+  "project": "19A-397",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 128,
+  "first": "2019-08-20",
+  "last": "2019-08-25",
+  "lambda_cm": [
+   14.17
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 9834.7
+ },
+ {
+  "project": "19A-289",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 22,
+  "first": "2019-09-08",
+  "last": "2019-09-21",
+  "lambda_cm": [
+   3.69,
+   6.49
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1553.0
+ },
+ {
+  "project": "TFST0001",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 27,
+  "first": "2019-11-04",
+  "last": "2019-11-05",
+  "lambda_cm": [
+   6.49,
+   7.3
+  ],
+  "config": [
+   "A->D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 95.1
+ },
+ {
+  "project": "19B-216",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 12,
+  "first": "2020-01-11",
+  "last": "2020-01-11",
+  "lambda_cm": [
+   3.54
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1420.5
+ },
+ {
+  "project": "BW134",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 8,
+  "first": "2020-06-29",
+  "last": "2020-08-26",
+  "lambda_cm": [
+   5.11,
+   5.9
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1399.3
+ },
+ {
+  "project": "20B-203",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 36,
+  "first": "2020-11-20",
+  "last": "2020-12-04",
+  "lambda_cm": [
+   3.69
+  ],
+  "config": [
+   "BnA->A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 2699.6
+ },
+ {
+  "project": "TPOL0007",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 12,
+  "first": "2021-01-23",
+  "last": "2021-01-23",
+  "lambda_cm": [
+   14.17,
+   30.16
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 3582.3
+ },
+ {
+  "project": "20B-004",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 168,
+  "first": "2021-02-14",
+  "last": "2021-02-22",
+  "lambda_cm": [
+   14.17,
+   30.16
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 59203.3
+ },
+ {
+  "project": "21A-076",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 267,
+  "first": "2021-04-09",
+  "last": "2021-04-17",
+  "lambda_cm": [
+   0.74,
+   0.96,
+   1.63
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 79424.3
+ },
+ {
+  "project": "2019.1.01812.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 2645,
+  "first": "2021-04-14",
+  "last": "2021-04-17",
+  "lambda_cm": [
+   0.14
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 25867.0
+ },
+ {
+  "project": "22A-201",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 516,
+  "first": "2022-02-23",
+  "last": "2022-03-23",
+  "lambda_cm": [
+   2.47,
+   3.69,
+   7.28
+  ],
+  "config": [
+   "A",
+   "BnA->A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 7543.9
+ },
+ {
+  "project": "22A-106",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 16,
+  "first": "2022-03-05",
+  "last": "2022-03-05",
+  "lambda_cm": [
+   1.66
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 3695.4
+ },
+ {
+  "project": "22A-202",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 18,
+  "first": "2022-03-07",
+  "last": "2022-03-07",
+  "lambda_cm": [
+   3.54
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1761.7
+ },
+ {
+  "project": "2021.1.00906.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 2567,
+  "first": "2022-03-20",
+  "last": "2022-03-23",
+  "lambda_cm": [
+   0.14
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 43279.3
+ },
+ {
+  "project": "2021.1.00910.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 101,
+  "first": "2022-03-22",
+  "last": "2022-03-22",
+  "lambda_cm": [
+   0.14
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1215.4
+ },
+ {
+  "project": "2021.1.00889.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 438,
+  "first": "2022-03-23",
+  "last": "2022-03-23",
+  "lambda_cm": [
+   0.14
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 6630.0
+ },
+ {
+  "project": "22A-409",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 336,
+  "first": "2022-05-09",
+  "last": "2022-06-22",
+  "lambda_cm": [
+   14.17,
+   30.16
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 123858.5
+ },
+ {
+  "project": "22A-327",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 910,
+  "first": "2022-05-28",
+  "last": "2022-06-12",
+  "lambda_cm": [
+   1.03,
+   1.66,
+   2.48
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 387647.3
+ },
+ {
+  "project": "22A-499",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 3,
+  "first": "2022-07-02",
+  "last": "2022-07-02",
+  "lambda_cm": [
+   2.47,
+   3.69,
+   7.28
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 61.4
+ },
+ {
+  "project": "22B-133",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 14,
+  "first": "2022-10-14",
+  "last": "2022-12-19",
+  "lambda_cm": [
+   0.75,
+   1.03,
+   1.64,
+   1.66
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 895.1
+ },
+ {
+  "project": "23A-079",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 735,
+  "first": "2023-01-30",
+  "last": "2023-04-18",
+  "lambda_cm": [
+   0.75,
+   1.03,
+   1.66
+  ],
+  "config": [
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 20986.3
+ },
+ {
+  "project": "23A-205",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 23,
+  "first": "2023-02-04",
+  "last": "2023-08-18",
+  "lambda_cm": [
+   3.54
+  ],
+  "config": [
+   "A",
+   "B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1234.0
+ },
+ {
+  "project": "2022.1.01268.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 3510,
+  "first": "2023-04-15",
+  "last": "2023-04-18",
+  "lambda_cm": [
+   0.09,
+   0.14
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 93800.9
+ },
+ {
+  "project": "2022.1.01293.P",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 1030,
+  "first": "2023-04-29",
+  "last": "2023-04-30",
+  "lambda_cm": [
+   0.34
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 29498.6
+ },
+ {
+  "project": "2022.1.00750.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 150,
+  "first": "2023-05-06",
+  "last": "2023-05-06",
+  "lambda_cm": [
+   0.34
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 3966.3
+ },
+ {
+  "project": "2022.1.01054.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 671,
+  "first": "2023-05-06",
+  "last": "2023-05-06",
+  "lambda_cm": [
+   0.34
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 13371.1
+ },
+ {
+  "project": "23A-172",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 75,
+  "first": "2023-07-19",
+  "last": "2023-07-24",
+  "lambda_cm": [
+   0.75,
+   1.03,
+   3.69
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 18651.2
+ },
+ {
+  "project": "23A-434",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 105,
+  "first": "2023-08-24",
+  "last": "2023-09-22",
+  "lambda_cm": [
+   1.0,
+   2.47
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 52521.4
+ },
+ {
+  "project": "23B-061",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 54,
+  "first": "2023-12-15",
+  "last": "2024-01-19",
+  "lambda_cm": [
+   0.75
+  ],
+  "config": [
+   "D",
+   "D->C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 6421.0
+ },
+ {
+  "project": "22B-193",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 2,
+  "first": "2024-03-11",
+  "last": "2024-03-11",
+  "lambda_cm": [
+   1.35
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1142.4
+ },
+ {
+  "project": "24A-447",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 31,
+  "first": "2024-03-21",
+  "last": "2024-03-21",
+  "lambda_cm": [
+   1.03
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 7048.8
+ },
+ {
+  "project": "2023.1.01244.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 513,
+  "first": "2024-04-04",
+  "last": "2024-04-09",
+  "lambda_cm": [
+   0.09,
+   0.12,
+   0.14
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 12503.0
+ },
+ {
+  "project": "2023.1.01243.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 2217,
+  "first": "2024-04-04",
+  "last": "2024-04-09",
+  "lambda_cm": [
+   0.09,
+   0.12,
+   0.14
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 70419.9
+ },
+ {
+  "project": "24A-106",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 141,
+  "first": "2024-04-05",
+  "last": "2024-04-12",
+  "lambda_cm": [
+   0.75,
+   1.03,
+   1.66
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 47380.5
+ },
+ {
+  "project": "2023.1.01064.P",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 1298,
+  "first": "2024-04-26",
+  "last": "2024-04-27",
+  "lambda_cm": [
+   0.71
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 30360.7
+ },
+ {
+  "project": "24A-198",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 129,
+  "first": "2024-05-10",
+  "last": "2024-10-07",
+  "lambda_cm": [
+   0.86
+  ],
+  "config": [
+   "B",
+   "BnA"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 13299.3
+ },
+ {
+  "project": "24B-326",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 8,
+  "first": "2025-01-21",
+  "last": "2025-02-01",
+  "lambda_cm": [
+   3.7
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 675.1
+ },
+ {
+  "project": "24B-174",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 28,
+  "first": "2025-02-02",
+  "last": "2025-02-02",
+  "lambda_cm": [
+   1.65,
+   3.54
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 7951.3
+ },
+ {
+  "project": "2024.1.01124.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 2145,
+  "first": "2025-04-04",
+  "last": "2025-04-08",
+  "lambda_cm": [
+   0.09,
+   0.14
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 41152.5
+ },
+ {
+  "project": "25A-314",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 248,
+  "first": "2025-04-04",
+  "last": "2025-04-09",
+  "lambda_cm": [
+   0.75,
+   1.03
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 83693.9
+ },
+ {
+  "project": "2024.1.01123.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 165,
+  "first": "2025-04-08",
+  "last": "2025-04-08",
+  "lambda_cm": [
+   0.09
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 2703.8
+ },
+ {
+  "project": "2024.1.01044.P",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 636,
+  "first": "2025-04-20",
+  "last": "2025-05-01",
+  "lambda_cm": [
+   0.71
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 18079.2
+ },
+ {
+  "project": "2024.1.01220.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 1,
+  "first": "2025-04-25",
+  "last": "2025-04-25",
+  "lambda_cm": [
+   0.35
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 11.6
+ },
+ {
+  "project": "25A-396",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 3,
+  "first": "2025-05-02",
+  "last": "2025-05-14",
+  "lambda_cm": [
+   2.98
+  ],
+  "config": [
+   "D",
+   "D->C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 420.2
+ },
+ {
+  "project": "25A-491",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 14,
+  "first": "2025-07-03",
+  "last": "2025-12-22",
+  "lambda_cm": [
+   2.47,
+   3.7
+  ],
+  "config": [
+   "B",
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 145.9
+ },
+ {
+  "project": "25B-221",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 173,
+  "first": "2025-08-05",
+  "last": "2025-08-10",
+  "lambda_cm": [
+   0.75,
+   1.13
+  ],
+  "config": [
+   "C"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 16207.8
+ },
+ {
+  "project": "25A-352",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 7,
+  "first": "2025-08-11",
+  "last": "2025-08-26",
+  "lambda_cm": [
+   7.53
+  ],
+  "config": [
+   "C",
+   "C->B"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 1092.0
+ },
+ {
+  "project": "26A-254",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 8,
+  "first": "2026-03-28",
+  "last": "2026-05-27",
+  "lambda_cm": [
+   3.7,
+   7.3
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 124.6
+ },
+ {
+  "project": "2025.A.00017.V",
+  "inst": [
+   "ALMA"
+  ],
+  "rows": 960,
+  "first": "2026-04-21",
+  "last": "2026-04-21",
+  "lambda_cm": [
+   0.35
+  ],
+  "config": [
+   "C43-1"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 49910.8
+ },
+ {
+  "project": "26A-153",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 241,
+  "first": "2026-04-22",
+  "last": "2026-04-30",
+  "lambda_cm": [
+   3.54
+  ],
+  "config": [
+   "A"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 43803.0
+ },
+ {
+  "project": "26A-271",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 24,
+  "first": "2026-06-29",
+  "last": "2026-06-30",
+  "lambda_cm": [
+   405.12
+  ],
+  "config": [
+   "A->D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 710.3
+ },
+ {
+  "project": "TCAL0010",
+  "inst": [
+   "EVLA"
+  ],
+  "rows": 8,
+  "first": "2026-09-26",
+  "last": "2026-09-26",
+  "lambda_cm": [
+   3.59,
+   6.32,
+   12.19,
+   22.24
+  ],
+  "config": [
+   "D"
+  ],
+  "beam_arcsec_min": null,
+  "access_estsize_GB_overcount": 94.1
+ }
+]

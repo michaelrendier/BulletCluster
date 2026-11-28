@@ -1,0 +1,822 @@
+[
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637-o203_t003_nircam_clear-f150w_cat.ecsv",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637-o203_t003_nircam_clear-f150w_cat.ecsv",
+  "size": 2336634
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637-o203_t003_nircam_clear-f150w_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637-o203_t003_nircam_clear-f150w_i2d.fits",
+  "size": 1386904320
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637-o203_t003_nircam_clear-f356w_cat.ecsv",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637-o203_t003_nircam_clear-f356w_cat.ecsv",
+  "size": 1601846
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637-o203_t003_nircam_clear-f356w_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637-o203_t003_nircam_clear-f356w_i2d.fits",
+  "size": 287904960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrca1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrca1_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrca1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrca1_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrca2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrca2_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrca2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrca2_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrca3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrca3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrca3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrca3_i2d.fits",
+  "size": 119108160
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrca4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrca4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrca4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrca4_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrcalong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrcalong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrcalong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrcalong_i2d.fits",
+  "size": 120257280
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrcb1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrcb1_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrcb1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrcb1_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrcb2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrcb2_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrcb2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrcb2_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrcb3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrcb3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrcb3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrcb3_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrcb4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrcb4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrcb4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrcb4_i2d.fits",
+  "size": 119047680
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrcblong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrcblong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00001_nrcblong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00001_nrcblong_i2d.fits",
+  "size": 120317760
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrca1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrca1_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrca1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrca1_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrca2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrca2_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrca2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrca2_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrca3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrca3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrca3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrca3_i2d.fits",
+  "size": 119108160
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrca4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrca4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrca4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrca4_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrcalong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrcalong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrcalong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrcalong_i2d.fits",
+  "size": 120257280
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrcb1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrcb1_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrcb1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrcb1_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrcb2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrcb2_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrcb2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrcb2_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrcb3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrcb3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrcb3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrcb3_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrcb4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrcb4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrcb4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrcb4_i2d.fits",
+  "size": 119047680
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrcblong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrcblong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00002_nrcblong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00002_nrcblong_i2d.fits",
+  "size": 120317760
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrca1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrca1_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrca1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrca1_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrca2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrca2_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrca2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrca2_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrca3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrca3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrca3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrca3_i2d.fits",
+  "size": 119108160
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrca4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrca4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrca4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrca4_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrcalong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrcalong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrcalong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrcalong_i2d.fits",
+  "size": 120257280
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrcb1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrcb1_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrcb1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrcb1_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrcb2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrcb2_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrcb2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrcb2_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrcb3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrcb3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrcb3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrcb3_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrcb4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrcb4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrcb4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrcb4_i2d.fits",
+  "size": 119047680
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrcblong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrcblong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00003_nrcblong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00003_nrcblong_i2d.fits",
+  "size": 120317760
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrca1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrca1_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrca1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrca1_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrca2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrca2_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrca2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrca2_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrca3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrca3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrca3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrca3_i2d.fits",
+  "size": 119108160
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrca4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrca4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrca4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrca4_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrcalong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrcalong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrcalong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrcalong_i2d.fits",
+  "size": 120257280
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrcb1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrcb1_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrcb1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrcb1_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrcb2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrcb2_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrcb2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrcb2_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrcb3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrcb3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrcb3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrcb3_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrcb4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrcb4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrcb4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrcb4_i2d.fits",
+  "size": 119047680
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrcblong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrcblong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03101_00004_nrcblong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03101_00004_nrcblong_i2d.fits",
+  "size": 120317760
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrca1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrca1_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrca1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrca1_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrca2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrca2_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrca2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrca2_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrca3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrca3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrca3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrca3_i2d.fits",
+  "size": 119108160
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrca4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrca4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrca4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrca4_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrcalong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrcalong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrcalong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrcalong_i2d.fits",
+  "size": 120257280
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrcb1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrcb1_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrcb1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrcb1_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrcb2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrcb2_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrcb2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrcb2_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrcb3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrcb3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrcb3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrcb3_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrcb4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrcb4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrcb4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrcb4_i2d.fits",
+  "size": 119047680
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrcblong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrcblong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00001_nrcblong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00001_nrcblong_i2d.fits",
+  "size": 120317760
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrca1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrca1_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrca1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrca1_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrca2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrca2_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrca2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrca2_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrca3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrca3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrca3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrca3_i2d.fits",
+  "size": 119108160
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrca4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrca4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrca4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrca4_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrcalong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrcalong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrcalong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrcalong_i2d.fits",
+  "size": 120257280
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrcb1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrcb1_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrcb1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrcb1_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrcb2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrcb2_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrcb2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrcb2_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrcb3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrcb3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrcb3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrcb3_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrcb4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrcb4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrcb4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrcb4_i2d.fits",
+  "size": 119047680
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrcblong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrcblong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00002_nrcblong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00002_nrcblong_i2d.fits",
+  "size": 120317760
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrca1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrca1_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrca1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrca1_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrca2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrca2_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrca2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrca2_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrca3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrca3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrca3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrca3_i2d.fits",
+  "size": 119108160
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrca4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrca4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrca4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrca4_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrcalong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrcalong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrcalong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrcalong_i2d.fits",
+  "size": 120257280
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrcb1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrcb1_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrcb1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrcb1_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrcb2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrcb2_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrcb2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrcb2_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrcb3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrcb3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrcb3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrcb3_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrcb4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrcb4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrcb4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrcb4_i2d.fits",
+  "size": 119047680
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrcblong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrcblong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00003_nrcblong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00003_nrcblong_i2d.fits",
+  "size": 120317760
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrca1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrca1_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrca1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrca1_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrca2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrca2_cal.fits",
+  "size": 117573120
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrca2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrca2_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrca3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrca3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrca3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrca3_i2d.fits",
+  "size": 119108160
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrca4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrca4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrca4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrca4_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrcalong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrcalong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrcalong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrcalong_i2d.fits",
+  "size": 120257280
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrcb1_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrcb1_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrcb1_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrcb1_i2d.fits",
+  "size": 118483200
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrcb2_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrcb2_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrcb2_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrcb2_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrcb3_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrcb3_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrcb3_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrcb3_i2d.fits",
+  "size": 118704960
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrcb4_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrcb4_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrcb4_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrcb4_i2d.fits",
+  "size": 119047680
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrcblong_cal.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrcblong_cal.fits",
+  "size": 117576000
+ },
+ {
+  "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3AJWST%2Fproduct%2Fjw09637203001_03103_00004_nrcblong_i2d.fits",
+  "dest": "JWST/jwst_9637_DESJ0408_5354/9637/jw09637203001_03103_00004_nrcblong_i2d.fits",
+  "size": 120317760
+ }
+]

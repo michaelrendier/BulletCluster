@@ -7,14 +7,14 @@
 #   ./fetch_crab.sh status         what is done, partial, expired; free space; is it running
 #   ./fetch_crab.sh stop           ask it to stop (state is saved first)
 #   ./fetch_crab.sh install-service   a systemd user service that restarts after a reboot (needs: loginctl enable-linger $USER, once, with sudo)
-# Environment: DEST (default ~/CrabNebula/data/nrao)  BUDGET_GB (700)  MIN_FREE_GB (20)  MAX_MBPS (0 = none)  NICE (5)  MEM_MAX (6G, needs systemd-run)
+# Environment: EXTRA_ARGS (e.g. "--only 14A-209 18A-416")  DEST (default ~/CrabNebula/data/nrao)  BUDGET_GB (700)  MIN_FREE_GB (20)  MAX_MBPS (0 = none)  NICE (5)  MEM_MAX (6G, needs systemd-run)
 set -u
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DEST="${DEST:-$HOME/CrabNebula/data/nrao}"
 BUDGET_GB="${BUDGET_GB:-700}"; MIN_FREE_GB="${MIN_FREE_GB:-20}"; MAX_MBPS="${MAX_MBPS:-0}"; NICE="${NICE:-5}"; MEM_MAX="${MEM_MAX:-6G}"
 PY="$HERE/.venv/bin/python"; [ -x "$PY" ] || PY="$(command -v python3)"
 mkdir -p "$DEST"; LOG="$DEST/fetch_crab.log"; PIDFILE="$DEST/fetch_crab.pid"
-ENGINE=("$PY" "$HERE/nrao_fetch.py" --run --dest "$DEST" --budget-gb "$BUDGET_GB" --min-free-gb "$MIN_FREE_GB" --max-mbps "$MAX_MBPS" --nice "$NICE")
+ENGINE=("$PY" "$HERE/nrao_fetch.py" --run --dest "$DEST" --budget-gb "$BUDGET_GB" --min-free-gb "$MIN_FREE_GB" --max-mbps "$MAX_MBPS" --nice "$NICE" ${EXTRA_ARGS:-})
 note() { printf '%s %s\n' "$(date '+%F %T')" "$*" | tee -a "$LOG"; }
 
 case "${1:-run}" in

@@ -31,7 +31,7 @@ The owner is building his own weak-gravitational-lensing and ptychography pipeli
 ```
 python3 nrao_fetch.py --setup            # apt packages (asks for sudo once), makes .venv; if sudo is not possible, note it and continue
 .venv/bin/pip install astroquery astropy requests   # only needed for build_mast_manifest.py
-python3 test_nrao_fetch.py               # 14 checks against a local mock server; all must PASS before any real download
+python3 test_nrao_fetch.py               # 16 checks against a local mock server; all must PASS before any real download
 ```
 Choose the data root (default `~/TelescopeData`; it must have at least 150 GB free for the first two jobs): `export DATA_ROOT=/path/with/space`. Check with `df -h "$DATA_ROOT"`.
 
@@ -45,6 +45,10 @@ A `[size-fix]` line is normal: archive size listings are sometimes stale and the
 
 ## Step 3: the NRAO Crab fetch (only if fresh links exist)
 `links.txt` has the request ids of the NRAO Crab nebula and pulsar projects. On 2026-11-27 every EVLA link returned HTTP 404 (expired); the two GBT links worked. Run `python3 nrao_fetch.py --probe` (read-only). If the EVLA requests answer, run `DEST=$DATA_ROOT/CrabNebula/nrao ./fetch_crab.sh start`. If they all say EXPIRED, do nothing: the owner will re-request them and add fresh links with `python3 nrao_fetch.py --add-link REQUEST_ID "URL"`. Do not log in to NRAO.
+
+### New NRAO requests (the owner is requesting Galactic Center projects)
+When the owner pastes a new NRAO request e-mail or link, extract the request number, the project code, the size NRAO reports, and the `direct` download URL (host `dl-dsoc.nrao.edu` for EVLA/VLA, `dl-naasc.nrao.edu` for GBT), then run
+`python3 nrao_fetch.py --add-link REQUEST_ID "DIRECT_URL" --project PROJECT_CODE --size-gb SIZE` (never print the URL back in full), then `python3 nrao_fetch.py --probe` and, if it answers, `EXTRA_ARGS="--only PROJECT_CODE" ./fetch_crab.sh start` (`--only` restricts the run to that project, so the expired Crab requests in the built-in table do not use up the budget; `BUDGET_GB` defaults to 700). These requests expire after about a week, so start promptly. Everything fetched lands under `$DEST/<project>/`.
 
 ## Reporting
 Keep `STATUS.md` up to date (one line per event: time, job, what happened, bytes on disk). When all jobs are done or blocked, write a short summary at the top of `STATUS.md` (files, GB, any failures) and stop. Do not start anything not listed in `JOBS.md`.

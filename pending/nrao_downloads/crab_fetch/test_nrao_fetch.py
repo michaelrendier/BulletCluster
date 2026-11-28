@@ -158,6 +158,17 @@ def main():
     nf.REQUESTS[:] = [("1", "A", "EVLA", 300.0, "fetch"), ("2", "B", "EVLA", 300.0, "fetch"), ("3", "C", "EVLA", 150.0, "fetch"), ("4", "D", "EVLA", 100.0, "skip")]
     chosen, total, _ = nf.select(args_for(dest, links, budget_gb=700))
     check("selection stops at the budget and honours skip (A, B, C = 750 > 700 so C is dropped)", [c[1] for c in chosen] == ["A", "B"] and total == 600.0)
+    # 8. a new request (not in the built-in table) added with a project name and size joins the plan
+    lk = os.path.join(tmp, "links2.txt")
+    nf.REQUESTS[:] = [("1", "A", "EVLA", 10.0, "fetch")]
+    nf.add_link(lk, "999", "https://dl-dsoc.nrao.edu/rendier/999/abcdefghijklmnopqrstuvwxyz/", "14A-209", 85.3)
+    nf.add_link(lk, "1", "https://dl-dsoc.nrao.edu/rendier/1/abcdefghijklmnopqrstuvwxyz/")
+    nf.register_extra_requests(lk)
+    ch, tot, _ = nf.select(args_for(dest, lk, budget_gb=700))
+    check("a new request named in links.txt joins the plan with its size", [c[1] for c in ch] == ["A", "14A-209"] and abs(tot - 95.3) < 1e-9)
+    check("links.txt keeps the project and size on a rewrite", nf.read_link_lines(lk)["999"][1:3] == ["14A-209", 85.3])
+    ch2, tot2, _ = nf.select(args_for(dest, lk, budget_gb=700, only=["14A-209"]))
+    check("--only restricts the plan to the named project", [c[1] for c in ch2] == ["14A-209"] and abs(tot2 - 85.3) < 1e-9)
     check("redact hides the key", "<key>" in nf.redact("https://h.example/rendier/302944689/abcdefghijklmnopqrstuvwxyz/"))
     srv.shutdown()
     shutil.rmtree(tmp)

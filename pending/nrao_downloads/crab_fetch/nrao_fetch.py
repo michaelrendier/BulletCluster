@@ -8,6 +8,7 @@ checkpointed, resumable after a crash, and tolerant of network loss.  Standard l
     python3 nrao_fetch.py --run  --dest DIR       # B. fetch (use fetch_crab.sh to run it under a restart loop)
     python3 nrao_fetch.py --status --dest DIR     # what is done, partial, expired
     python3 nrao_fetch.py --add-link ID URL       # add or replace the direct URL of one request (a fresh NRAO email link)
+    python3 nrao_fetch.py --add-link ID URL --project 14A-209 --size-gb 85.3   # a NEW request (not in the built-in table): name and size as NRAO reported
 
 The request links carry a per-request key: they live in links.txt next to this script (one `REQUEST_ID  DIRECT_URL` per line, `#`
 comments) and are never printed in full. This file contains no key. Rules kept: Mozilla user agent on every request, one download at a time,
@@ -131,15 +132,37 @@ def redact(url):
     return f"{u.scheme}://{u.netloc}{'/'.join(parts)}"
 
 
-def add_link(path, rid, url):
-    """Add or replace one request's direct URL in links.txt."""
-    links = load_links(path)
-    links[rid] = url
+def read_link_lines(path):
+    """links.txt as {request id: [url, project or None, size GB or None, role or None]}; lines may be `ID URL` or `ID URL PROJECT GB [ROLE]`."""
+    out = {}
+    if os.path.exists(path):
+        for line in open(path, encoding="utf-8"):
+            line = line.strip()
+            p = line.split()
+            if line and not line.startswith("#") and len(p) >= 2 and p[0].isdigit() and p[1].startswith("http"):
+                out[p[0]] = [p[1], p[2] if len(p) > 2 else None, float(p[3]) if len(p) > 3 else None, p[4] if len(p) > 4 else None]
+    return out
+
+
+def add_link(path, rid, url, project=None, gb=None, role=None):
+    """Add or replace one request in links.txt. A request that is not in the built-in table needs a project name and a size in GB
+    (the size is only used to plan the budget); it is fetched like the others."""
+    rows = read_link_lines(path)
+    old = rows.get(rid, [None, None, None, None])
+    rows[rid] = [url, project or old[1], gb if gb is not None else old[2], role or old[3]]
     with open(path, "w", encoding="utf-8") as fh:
-        fh.write("# REQUEST_ID  DIRECT_URL   (private: each URL carries a per-request key)\n")
-        for k, v in sorted(links.items()):
-            fh.write(f"{k}  {v}\n")
+        fh.write("# REQUEST_ID  DIRECT_URL  [PROJECT  SIZE_GB  [ROLE]]   (private: each URL carries a per-request key)\n")
+        for k, v in sorted(rows.items()):
+            fh.write("  ".join([k, v[0]] + ([v[1], str(v[2] if v[2] is not None else 0)] + ([v[3]] if v[3] else []) if v[1] else [])) + "\n")
     os.chmod(path, 0o600)
+
+
+def register_extra_requests(path):
+    """Requests named in links.txt but not in REQUESTS (new NRAO e-mails) join the table with role 'fetch'."""
+    known = {r[0] for r in REQUESTS}
+    for rid, (url, proj, gb, role) in read_link_lines(path).items():
+        if rid not in known and proj:
+            REQUESTS.append((rid, proj, "EVLA" if "dsoc" in url else "GBT" if "naasc" in url else "NRAO", float(gb or 0), role or "fetch"))
 
 
 # ---------------------------------------------------------------- network
@@ -355,6 +378,8 @@ def select(args):
     chosen, total, skipped = [], 0.0, []
     for rid, proj, inst, gb, role in REQUESTS:
         want = (role == "fetch") or rid in args.also or proj in args.also or (args.include_have and role == "have")
+        if getattr(args, "only", None):
+            want = rid in args.only or proj in args.only
         if not want or proj in args.skip or rid in args.skip:
             skipped.append((rid, proj, gb, role))
             continue
@@ -531,11 +556,15 @@ def main(argv=None):
     ap.add_argument("--run", action="store_true")
     ap.add_argument("--status", action="store_true")
     ap.add_argument("--add-link", nargs=2, metavar=("ID", "URL"))
+    ap.add_argument("--project", default=None, help="with --add-link: project name of a request that is not in the built-in table")
+    ap.add_argument("--size-gb", type=float, default=None, help="with --add-link: size in GB as NRAO reported it (for the budget)")
+    ap.add_argument("--role", default=None, help="with --add-link: fetch (default), have or skip")
     ap.add_argument("--links", default=os.path.join(HERE, "links.txt"))
     ap.add_argument("--dest", default=os.path.expanduser("~/CrabNebula/data/nrao"))
     ap.add_argument("--budget-gb", type=float, default=700.0)
     ap.add_argument("--min-free-gb", type=float, default=20.0)
     ap.add_argument("--also", nargs="*", default=[], help="request ids or project names to add beyond the default set")
+    ap.add_argument("--only", nargs="*", default=[], help="fetch only these request ids or project names (ignores the default set and the other roles)")
     ap.add_argument("--skip", nargs="*", default=[], help="request ids or project names to leave out")
     ap.add_argument("--include-have", action="store_true", help="also fetch the three small requests already on the main machine")
     ap.add_argument("--all", action="store_true", help="with --probe: probe every request, not only the selected ones")
@@ -546,9 +575,10 @@ def main(argv=None):
     ap.add_argument("--no-verify", action="store_true", help="skip the sha1 check against SHA1SUMS")
     a = ap.parse_args(argv)
     if a.add_link:
-        add_link(a.links, a.add_link[0], a.add_link[1])
-        print("link stored for", a.add_link[0], redact(a.add_link[1]))
+        add_link(a.links, a.add_link[0], a.add_link[1], a.project, a.size_gb, a.role)
+        print("link stored for", a.add_link[0], redact(a.add_link[1]), a.project or "")
         return 0
+    register_extra_requests(a.links)
     for flag, fn in (("setup", setup), ("plan", plan), ("probe", probe), ("status", status), ("run", run)):
         if getattr(a, flag):
             return fn(a)
